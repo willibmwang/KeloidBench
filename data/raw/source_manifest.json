@@ -1,0 +1,60 @@
+{
+  "copied_local_files": {
+    "choi_pdf": true,
+    "choi_supp_pdf": true,
+    "choi_supp_xlsx": true,
+    "dirand_pdf": true
+  },
+  "source_urls": {
+    "choi_article": {
+      "url": "https://doi.org/10.1038/s42003-024-07194-2",
+      "status_code": 200,
+      "final_url": "https://www.nature.com/articles/s42003-024-07194-2"
+    },
+    "dirand_article": {
+      "url": "https://doi.org/10.3390/biomedicines11092350",
+      "status_code": 403,
+      "final_url": "https://www.mdpi.com/2227-9059/11/9/2350"
+    },
+    "bodenmiller_zenodo": {
+      "url": "https://doi.org/10.5281/zenodo.4271910",
+      "status_code": 200,
+      "final_url": "https://zenodo.org/records/4271910"
+    },
+    "spheroscan_training_zenodo": {
+      "url": "https://doi.org/10.5281/zenodo.7555467",
+      "status_code": 200,
+      "final_url": "https://zenodo.org/records/7555467"
+    },
+    "spheroscan_external_test_zenodo": {
+      "url": "https://doi.org/10.5281/zenodo.8211845",
+      "status_code": 200,
+      "final_url": "https://zenodo.org/records/8211845"
+    },
+    "GSE7980": {
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE7980",
+      "status_code": 200,
+      "final_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE7980"
+    },
+    "GSE44270": {
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44270",
+      "status_code": 200,
+      "final_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44270"
+    },
+    "GSE145725": {
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145725",
+      "status_code": 200,
+      "final_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145725"
+    },
+    "E-MTAB-2509": {
+      "url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-2509",
+      "status_code": 200,
+      "final_url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-2509"
+    },
+    "E-MTAB-4945": {
+      "url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-4945",
+      "status_code": 200,
+      "final_url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-4945"
+    }
+  }
+}

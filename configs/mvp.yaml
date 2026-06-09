@@ -1,0 +1,37 @@
+project_root: /gpfs/radev/home/wbw7/Desktop/Spheroid Fibrosis Model
+python: /gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python
+tabpfn_src: /gpfs/radev/home/wbw7/Desktop/0shot_Tabular Inference/TabPFN/src
+
+data:
+  choi_xlsx: data/raw/choi/supplementary_choi.xlsx
+  choi_xlsx_source: supplementary_choi.xlsx
+  dirand_pdf: spheroid_1.pdf
+  bodenmiller_source_url: https://zenodo.org/record/4271910
+  spheroscan_source_url: https://doi.org/10.5281/zenodo.7555467
+  geo_accessions: [GSE7980, GSE44270, GSE145725]
+  arrayexpress_accessions: [E-MTAB-2509, E-MTAB-4945]
+  processed_dir: data/processed
+  results_dir: results
+
+tasks:
+  - drug_response_class
+  - spheroid_state
+  - fibrotic_state
+
+drug_response:
+  sensitive_threshold_pct: 70
+  resistant_threshold_pct: 85
+
+training:
+  random_state: 42
+  baselines: [logistic_regression, lightgbm]
+  group_column: condition_code
+
+features:
+  qpcr_genes: [COL1A1, COL3A1, TGFB1, TGFB3, HIF1A, MMP14, HTRA1, ADAM12, CTHRC1]
+  keloid_modules:
+    ECM: [COL1A1, COL3A1, FN1]
+    myofibroblast: [ACTA2]
+    TGFb: [TGFB1, TGFB3, TGFBR2]
+    hypoxia_vascular: [HIF1A, PECAM1, VWF]
+    remodeling: [MMP14, ADAM12, HTRA1, CTHRC1]

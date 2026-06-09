@@ -1,0 +1,62 @@
+# Canonical feature columns for the tabular spheroid MVP.
+# Dataset A: Choi + Dirand keloid spheroid seed data.
+# Dataset B: Public non-keloid spheroid morphology features.
+# Dataset C: Public keloid expression signatures.
+
+metadata:
+  paper: {dtype: categorical, values: [choi_2024, dirand_2023]}
+  source_dataset: {dtype: string, description: "Dataset family, e.g. choi, dirand, bodenmiller, spheroscan, geo"}
+  source_sheet: {dtype: string, description: "Excel sheet or figure origin"}
+  condition_code: {dtype: string, description: "Raw label e.g. A(F4E1), K1(F4E1)"}
+  cell_source: {dtype: categorical, values: [ATCC_KF, K1, K2, K3, NDF, NF, KF, HUVEC, mixed, cell_line]}
+  patient_id: {dtype: string}
+  culture_format: {dtype: categorical, values: [2D_monolayer, 3D_spheroid]}
+  fb_ec_ratio: {dtype: categorical, values: ["1:0", "8:1", "4:1", "2:1", "1:1", NA]}
+  tgfb1: {dtype: categorical, values: [none, present]}
+  drug: {dtype: categorical, values: [vehicle, triamcinolone, 5FU, bleomycin, NA]}
+  drug_concentration_um: {dtype: categorical, values: [0, 10, 100, NA]}
+  day: {dtype: int, description: "Culture day when applicable"}
+  replicate_id: {dtype: int}
+  experiment_id: {dtype: string}
+
+morphology:
+  spheroid_area_um2: {dtype: float}
+  spheroid_volume: {dtype: float}
+  diameter: {dtype: float}
+  circularity: {dtype: float}
+  morphology_quality_label: {dtype: categorical, values: [valid, malformed, unknown]}
+  propagation_area: {dtype: float}
+  relative_volume_pct: {dtype: float, description: "Percent of vehicle for drug assays"}
+  viability_2d_pct: {dtype: float}
+  viability_3d_pct: {dtype: float}
+
+state_composition:
+  state_name: {dtype: categorical, values: [aggregate, pre_compaction, compact_spheroid, pre_regression, regression]}
+  state_pct: {dtype: float}
+
+qpcr:
+  gene: {dtype: categorical, values: [COL1A1, COL3A1, TGFB1, TGFB3, HIF1A, MMP14, HTRA1, ADAM12, CTHRC1]}
+  expression_relative: {dtype: float, description: "Relative expression vs 2D control (paper units)"}
+
+regression:
+  fibroblast_proportion: {dtype: float}
+  gene_expression_ratio_pct: {dtype: float}
+
+dirand:
+  apoptosis: {dtype: float}
+  alpha_SMA: {dtype: float}
+  fibronectin: {dtype: float}
+  COL1A1_COL3A1_ratio: {dtype: float}
+  CD26: {dtype: float}
+  fibrotic_state: {dtype: categorical, values: [active_fibrotic, deactivated, non_fibrotic_like]}
+
+keloid_signature:
+  sample_id: {dtype: string}
+  accession: {dtype: string}
+  keloid_vs_normal: {dtype: categorical, values: [keloid, normal, scar, unknown]}
+  ECM_score: {dtype: float}
+  myofibroblast_score: {dtype: float}
+  TGFb_score: {dtype: float}
+  hypoxia_vascular_score: {dtype: float}
+  remodeling_score: {dtype: float}
+  keloid_activity_score: {dtype: float}

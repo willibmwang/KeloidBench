@@ -1,0 +1,40 @@
+# Prediction tasks for TabPFN MVP (tabular only)
+
+tasks:
+  fibrotic_state:
+    type: binary
+    labels: [active_fibrotic, deactivated]
+    description: "Dirand 2D KF vs 3D KF and Choi high-qPCR spheroids vs weak/inactive rows"
+    primary_sources: [dirand_seed, qpcr]
+
+  spheroid_state:
+    type: multiclass
+    labels: [aggregate, pre_compaction, compact_spheroid, pre_regression, regression]
+    description: "Dominant morphology state or state composition threshold"
+    primary_sources: [state_composition, morphology_timeseries]
+
+  drug_response_class:
+    type: binary
+    labels: [sensitive, resistant]
+    description: "Derived from relative_volume_pct vs vehicle (default threshold 70%)"
+    primary_sources: [drug_response_3d]
+
+  drug_response_continuous:
+    type: regression
+    target_column: relative_volume_pct
+    primary_sources: [drug_response_3d]
+
+  keloid_activity_score:
+    type: regression
+    target_column: keloid_activity_score
+    description: "Dataset C signature score, reused as a feature for A when qPCR genes overlap"
+    primary_sources: [keloid_geo]
+
+evaluation:
+  cv_strategy: leave_one_condition_out
+  group_columns: [condition_code, cell_source, fb_ec_ratio, drug, drug_concentration_um]
+  no_random_row_splits: true
+  metrics:
+    binary: [roc_auc, accuracy, f1]
+    multiclass: [macro_f1, accuracy]
+    regression: [mae, rmse]

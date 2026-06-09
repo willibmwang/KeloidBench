@@ -1,0 +1,9 @@
+table,n_rows,path
+state_composition_atcc,60,/gpfs/radev/home/wbw7/Desktop/Spheroid Fibrosis Model/data/processed/choi_state_composition_atcc.parquet
+morphology_area,324,/gpfs/radev/home/wbw7/Desktop/Spheroid Fibrosis Model/data/processed/choi_morphology_area.parquet
+propagation,69,/gpfs/radev/home/wbw7/Desktop/Spheroid Fibrosis Model/data/processed/choi_propagation.parquet
+state_composition_patient,76,/gpfs/radev/home/wbw7/Desktop/Spheroid Fibrosis Model/data/processed/choi_state_composition_patient.parquet
+qpcr,450,/gpfs/radev/home/wbw7/Desktop/Spheroid Fibrosis Model/data/processed/choi_qpcr.parquet
+drug_response_3d,265,/gpfs/radev/home/wbw7/Desktop/Spheroid Fibrosis Model/data/processed/choi_drug_response_3d.parquet
+drug_response_2d,225,/gpfs/radev/home/wbw7/Desktop/Spheroid Fibrosis Model/data/processed/choi_drug_response_2d.parquet
+regression_s1,108,/gpfs/radev/home/wbw7/Desktop/Spheroid Fibrosis Model/data/processed/choi_regression_s1.parquet
