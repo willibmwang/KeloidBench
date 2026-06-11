@@ -1,0 +1,4 @@
+# Large local raw data
+/data/raw/microarray/*_RAW.tar
+/data/raw/microarray/platforms/*.txt
+

@@ -1,4 +1,4 @@
-# Prediction tasks for TabPFN MVP (tabular only)
+# Prediction tasks for SpheroScar expression and spheroid-validation workflows
 
 tasks:
   fibrotic_state:

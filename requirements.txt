@@ -10,4 +10,3 @@ GEOparse>=2.0
 matplotlib>=3.8
 seaborn>=0.13
 lightgbm>=3.0
-# TabPFN: use local clone via PYTHONPATH (see configs/mvp.yaml)

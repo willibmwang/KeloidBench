@@ -1,28 +1,27 @@
 # SpheroScar
 
-Keloid spheroid modeling using **tabular data only** (no encoder-decoder LM).
+Encoder-decoder modeling for keloid fibrotic biology from gene-expression data, with spheroid assays used as phenotype grounding and downstream validation.
 
 ## Quick start
 
 ```bash
 # Collect local seed files and source manifests
-/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/01_download_sources.py
+/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/sourcing.py
 
-# Build Dataset A (Choi source Excel + Dirand seed labels)
-/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/02_extract_choi_dirand.py
+# Build the unified microarray disease-state pretraining corpus
+/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/preprocess_microarray.py
 
-# Build Dataset B (Bodenmiller morphology metadata + SpheroScan manifest)
-/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/03_build_morphology_table.py
+# Build spheroid seed/validation data (Choi source Excel + Dirand seed labels)
+/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/data_extraction.py --dataset dataset_a
 
-# Build Dataset C (GEO keloid activity module scores)
-/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/04_build_keloid_signature.py
+# Build optional public morphology context
+/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/build_morphology_table.py
 
-# Harmonize A/B/C and evaluate
-/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/05_harmonize_features.py
-/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/06_train_tabpfn.py
-/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/06_train_tabpfn.py \
-  --data "data/processed/dataset_a_c_augmented.parquet" \
-  --out-dir "results/c_augmented"
+# Build current public keloid signature baseline
+/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/build_keloid_signature.py
+
+# Harmonize current spheroid/signature tables
+/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python scripts/harmonize_features.py
 ```
 
 ## Data
@@ -31,20 +30,24 @@ Keloid spheroid modeling using **tabular data only** (no encoder-decoder LM).
 |------|-------------|
 | `supplementary_choi.xlsx` | Choi et al. 2024 Supplementary Data 1 |
 | `data/processed/choi_*.parquet` | Long-format tables per figure |
-| `data/processed/dataset_a_keloid_spheroid.parquet` | Unified modeling table |
-| `data/processed/dataset_b_morphology.parquet` | Bodenmiller spheroid morphology metadata |
-| `data/processed/dataset_c_keloid_signature.parquet` | GEO keloid marker module scores |
-| `data/processed/dataset_a_c_augmented.parquet` | Dataset A with C-derived signature context |
+| `data/processed/microarray/microarray_expression_wide.parquet` | Unified sample x gene microarray table |
+| `data/processed/microarray/microarray_X.npy` | Encoder-ready dense expression matrix |
+| `data/processed/microarray/microarray_encoder_decoder_samples.jsonl` | Prompt/response records for lightweight encoder-decoder training |
+| `data/processed/microarray/signatures/dataset_c_keloid_signature.parquet` | Legacy GEO keloid marker module baseline |
+| `data/processed/spheroid/dataset_a_keloid_spheroid.parquet` | Choi/Dirand spheroid phenotype grounding table |
+| `data/processed/spheroid/dataset_b_morphology.parquet` | Optional public spheroid morphology context |
 
-## Targets
+## New Direction
 
-- `drug_response_class` — sensitive vs resistant (from 3D relative volume)
-- `spheroid_state` — dominant morphology state (day 4)
-- `fibrotic_state` — planned with Dirand data
+The project is pivoting from a small tabular MVP to a trainable expression-modeling project. Primary training data will come from larger microarray, bulk RNA-seq, scRNA-seq, and spatial keloid datasets. The intended model family is an encoder-decoder architecture adapted from `../Encoder_Decoder_LLM`, where a continuous expression encoder produces learned prefix tokens for a Qwen decoder.
 
-## Config
+Core tasks include:
 
-See [`configs/mvp.yaml`](configs/mvp.yaml) and [`PLAN.md`](PLAN.md).
+- `keloid_vs_normal`
+- `lesional_status`
+- `scar_differential`
+- `fibrotic_activity`
+- fibroblast/endothelial cell-state programs
+- spheroid-state and drug-response validation using Choi/Dirand
 
-TabPFN is installed from the local clone at `../0shot_Tabular Inference/TabPFN/src`.
-Local model-weight download requires `TABPFN_TOKEN`; without it, `06_train_tabpfn.py` uses the logistic regression fallback and records that in the output.
+See [`PLAN.md`](PLAN.md) for the updated project plan.

@@ -1,60 +1,126 @@
 {
+  "project_root": "/gpfs/radev/home/wbw7/Desktop/SpheroScar",
   "copied_local_files": {
-    "choi_pdf": true,
-    "choi_supp_pdf": true,
-    "choi_supp_xlsx": true,
-    "dirand_pdf": true
+    "choi_pdf": false,
+    "choi_supp_pdf": false,
+    "choi_supp_xlsx": false,
+    "dirand_pdf": false
+  },
+  "local_seed_files": {
+    "choi_pdf": {
+      "name": "choi_pdf",
+      "source": "spheroid_2.pdf",
+      "destination": "data/raw/spheroid/choi/spheroid_2.pdf",
+      "description": "Choi et al. article PDF.",
+      "required": false,
+      "exists": false,
+      "copied": false,
+      "error": "source file not found"
+    },
+    "choi_supp_pdf": {
+      "name": "choi_supp_pdf",
+      "source": "supplementary_choi.pdf",
+      "destination": "data/raw/spheroid/choi/supplementary_choi.pdf",
+      "description": "Choi supplementary PDF.",
+      "required": false,
+      "exists": false,
+      "copied": false,
+      "error": "source file not found"
+    },
+    "choi_supp_xlsx": {
+      "name": "choi_supp_xlsx",
+      "source": "supplementary_choi.xlsx",
+      "destination": "data/raw/spheroid/choi/supplementary_choi.xlsx",
+      "description": "Choi supplementary Excel data.",
+      "required": true,
+      "exists": false,
+      "copied": false,
+      "error": "source file not found"
+    },
+    "dirand_pdf": {
+      "name": "dirand_pdf",
+      "source": "spheroid_1.pdf",
+      "destination": "data/raw/spheroid/dirand/spheroid_1.pdf",
+      "description": "Dirand et al. article PDF.",
+      "required": false,
+      "exists": false,
+      "copied": false,
+      "error": "source file not found"
+    }
   },
   "source_urls": {
     "choi_article": {
+      "name": "choi_article",
       "url": "https://doi.org/10.1038/s42003-024-07194-2",
-      "status_code": 200,
-      "final_url": "https://www.nature.com/articles/s42003-024-07194-2"
+      "dataset": "dataset_a",
+      "description": "Keloid fibroblast endothelial spheroid paper.",
+      "status": "not_checked"
     },
     "dirand_article": {
+      "name": "dirand_article",
       "url": "https://doi.org/10.3390/biomedicines11092350",
-      "status_code": 403,
-      "final_url": "https://www.mdpi.com/2227-9059/11/9/2350"
+      "dataset": "dataset_a",
+      "description": "Keloid fibroblast spheroid deactivation control paper.",
+      "status": "not_checked"
     },
     "bodenmiller_zenodo": {
+      "name": "bodenmiller_zenodo",
       "url": "https://doi.org/10.5281/zenodo.4271910",
-      "status_code": 200,
-      "final_url": "https://zenodo.org/records/4271910"
+      "dataset": "dataset_b",
+      "description": "Public quantified 3D spheroid morphology data.",
+      "status": "not_checked"
     },
     "spheroscan_training_zenodo": {
+      "name": "spheroscan_training_zenodo",
       "url": "https://doi.org/10.5281/zenodo.7555467",
-      "status_code": 200,
-      "final_url": "https://zenodo.org/records/7555467"
+      "dataset": "dataset_b",
+      "description": "SpheroScan training/supporting data.",
+      "status": "not_checked"
     },
     "spheroscan_external_test_zenodo": {
+      "name": "spheroscan_external_test_zenodo",
       "url": "https://doi.org/10.5281/zenodo.8211845",
-      "status_code": 200,
-      "final_url": "https://zenodo.org/records/8211845"
+      "dataset": "dataset_b",
+      "description": "SpheroScan external test data.",
+      "status": "not_checked"
     },
     "GSE7980": {
+      "name": "GSE7980",
       "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE7980",
-      "status_code": 200,
-      "final_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE7980"
+      "dataset": "dataset_c",
+      "description": "Public keloid gene expression dataset.",
+      "status": "not_checked"
     },
     "GSE44270": {
+      "name": "GSE44270",
       "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44270",
-      "status_code": 200,
-      "final_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44270"
+      "dataset": "dataset_c",
+      "description": "Public keloid gene expression dataset.",
+      "status": "not_checked"
     },
     "GSE145725": {
+      "name": "GSE145725",
       "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145725",
-      "status_code": 200,
-      "final_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145725"
+      "dataset": "dataset_c",
+      "description": "Public keloid gene expression dataset.",
+      "status": "not_checked"
     },
     "E-MTAB-2509": {
+      "name": "E-MTAB-2509",
       "url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-2509",
-      "status_code": 200,
-      "final_url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-2509"
+      "dataset": "dataset_c",
+      "description": "Public keloid ArrayExpress study.",
+      "status": "not_checked"
     },
     "E-MTAB-4945": {
+      "name": "E-MTAB-4945",
       "url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-4945",
-      "status_code": 200,
-      "final_url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-4945"
+      "dataset": "dataset_c",
+      "description": "Public keloid ArrayExpress study.",
+      "status": "not_checked"
     }
-  }
+  },
+  "missing_required_seed_files": [
+    "choi_supp_xlsx"
+  ]
 }

@@ -1,0 +1,81 @@
+{
+  "n_samples": 135,
+  "n_genes": 48985,
+  "accessions": [
+    {
+      "accession": "GSE7890",
+      "status": "ok",
+      "platform_id": "GPL570",
+      "n_samples": 19,
+      "n_probe_rows": 54675,
+      "n_gene_features": 22877,
+      "n_mapped_probes": 45782,
+      "labels": {
+        "keloid": 10,
+        "normal": 9
+      }
+    },
+    {
+      "accession": "GSE92566",
+      "status": "ok",
+      "platform_id": "GPL570",
+      "n_samples": 7,
+      "n_probe_rows": 54675,
+      "n_gene_features": 22877,
+      "n_mapped_probes": 45782,
+      "labels": {
+        "non_lesional": 3,
+        "lesional": 3,
+        "new_keloid_formation": 1
+      }
+    },
+    {
+      "accession": "GSE90051",
+      "status": "ok",
+      "platform_id": "GPL6480",
+      "n_samples": 7,
+      "n_probe_rows": 41000,
+      "n_gene_features": 19595,
+      "n_mapped_probes": 30936,
+      "labels": {
+        "keloid_over_normal": 7
+      }
+    },
+    {
+      "accession": "GSE44270",
+      "status": "ok",
+      "platform_id": "GPL6244",
+      "n_samples": 32,
+      "n_probe_rows": 28869,
+      "n_gene_features": 23692,
+      "n_mapped_probes": 25293,
+      "labels": {
+        "lesional": 18,
+        "non_lesional": 8,
+        "control": 6
+      }
+    },
+    {
+      "accession": "GSE3189",
+      "status": "ok",
+      "platform_id": "GPL96",
+      "n_samples": 70,
+      "n_probe_rows": 22283,
+      "n_gene_features": 13235,
+      "n_mapped_probes": 21225,
+      "labels": {
+        "melanoma": 45,
+        "nevus": 18,
+        "normal": 7
+      }
+    }
+  ],
+  "outputs": {
+    "metadata": "data/processed/microarray/microarray_sample_metadata.parquet",
+    "wide": "data/processed/microarray/microarray_expression_wide.parquet",
+    "matrix": "data/processed/microarray/microarray_X.npy",
+    "labels": "data/processed/microarray/microarray_encoder_labels.csv",
+    "gene_vocab": "data/processed/microarray/microarray_gene_vocab.txt",
+    "jsonl": "data/processed/microarray/microarray_encoder_decoder_samples.jsonl"
+  }
+}

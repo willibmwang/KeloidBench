@@ -1,0 +1,9 @@
+table,n_rows,path
+state_composition_atcc,60,data/processed/choi_state_composition_atcc.parquet
+morphology_area,324,data/processed/choi_morphology_area.parquet
+propagation,69,data/processed/choi_propagation.parquet
+state_composition_patient,76,data/processed/choi_state_composition_patient.parquet
+qpcr,450,data/processed/choi_qpcr.parquet
+drug_response_3d,265,data/processed/choi_drug_response_3d.parquet
+drug_response_2d,225,data/processed/choi_drug_response_2d.parquet
+regression_s1,108,data/processed/choi_regression_s1.parquet

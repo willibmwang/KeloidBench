@@ -1,0 +1,136 @@
+sample_id,accession,encoder_task,encoder_prompt,encoder_response
+GSM194104,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM194105,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM194106,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM194107,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM194108,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM194109,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM194110,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM194111,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM194112,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM194113,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM194114,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM194115,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM194116,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM194117,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM194118,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM194119,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM194120,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM194121,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM194122,GSE7890,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM2432365,GSE92566,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",non_lesional
+GSM2432366,GSE92566,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM2432367,GSE92566,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",non_lesional
+GSM2432368,GSE92566,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM2432369,GSE92566,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",new_keloid_formation
+GSM2432370,GSE92566,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",non_lesional
+GSM2432371,GSE92566,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM2396556,GSE90051,keloid_normal_contrast,"Given this paired keloid-over-normal expression contrast, identify the contrast type. Answer:",keloid_over_normal
+GSM2396557,GSE90051,keloid_normal_contrast,"Given this paired keloid-over-normal expression contrast, identify the contrast type. Answer:",keloid_over_normal
+GSM2396558,GSE90051,keloid_normal_contrast,"Given this paired keloid-over-normal expression contrast, identify the contrast type. Answer:",keloid_over_normal
+GSM2396559,GSE90051,keloid_normal_contrast,"Given this paired keloid-over-normal expression contrast, identify the contrast type. Answer:",keloid_over_normal
+GSM2396560,GSE90051,keloid_normal_contrast,"Given this paired keloid-over-normal expression contrast, identify the contrast type. Answer:",keloid_over_normal
+GSM2396561,GSE90051,keloid_normal_contrast,"Given this paired keloid-over-normal expression contrast, identify the contrast type. Answer:",keloid_over_normal
+GSM2396562,GSE90051,keloid_normal_contrast,"Given this paired keloid-over-normal expression contrast, identify the contrast type. Answer:",keloid_over_normal
+GSM1081582,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081583,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081584,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081585,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081586,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081587,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081588,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081589,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081590,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081591,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081592,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081593,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081594,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081595,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081596,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081597,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081598,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081599,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",lesional
+GSM1081600,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",non_lesional
+GSM1081601,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",non_lesional
+GSM1081602,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",non_lesional
+GSM1081603,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",non_lesional
+GSM1081604,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",non_lesional
+GSM1081605,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",non_lesional
+GSM1081606,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",non_lesional
+GSM1081607,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",non_lesional
+GSM1081608,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",control
+GSM1081609,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",control
+GSM1081610,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",control
+GSM1081611,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",control
+GSM1081612,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",control
+GSM1081613,GSE44270,lesional_status,"Given this keloid microarray expression profile, predict the lesional status. Answer:",control
+GSM71671,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",normal
+GSM71672,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",normal
+GSM71673,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",normal
+GSM71674,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",normal
+GSM71675,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",normal
+GSM71676,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",normal
+GSM71677,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",normal
+GSM71678,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71679,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71680,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71681,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71682,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71683,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71684,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71685,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71686,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71687,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71688,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71689,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71690,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71691,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71692,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71693,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71694,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71695,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",nevus
+GSM71696,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71697,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71698,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71699,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71700,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71701,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71702,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71703,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71704,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71705,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71706,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71707,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71708,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71709,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71710,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71711,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71712,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71713,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71714,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71715,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71716,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71717,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71718,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71719,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71720,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71721,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71722,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71723,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71724,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71725,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71726,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71727,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71728,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71729,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71730,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71731,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71732,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71733,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71734,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71735,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71736,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71737,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71738,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71739,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM71740,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma

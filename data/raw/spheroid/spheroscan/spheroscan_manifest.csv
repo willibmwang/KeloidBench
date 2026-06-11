@@ -1,0 +1,3 @@
+source_dataset,title,file_key,size_bytes,download_url
+spheroscan_training,"Supporting data for ""SpheroScan: A User-Friendly Deep Learning Tool for Spheroid Image Analysis""",training-data.zip,1105442067,https://zenodo.org/api/records/7555467/files/training-data.zip/content
+spheroscan_external_test,"External test datasets for ""SpheroScan: A User-Friendly Deep Learning Tool for Spheroid Image Analysis""",external-test-datasets.zip,874645131,https://zenodo.org/api/records/8211845/files/external-test-datasets.zip/content
