@@ -1,4 +1,15 @@
 # Large local raw data
 /data/raw/microarray/*_RAW.tar
 /data/raw/microarray/platforms/*.txt
+/data/raw/bulk_rnaseq/*
+/data/raw/scrna_spatial/*
+!/data/raw/bulk_rnaseq/.gitkeep
+!/data/raw/scrna_spatial/.gitkeep
 
+# Model checkpoints and weights
+results/frozen_qwen_adapter/checkpoints/
+results/frozen_qwen_adapter/*.pt
+
+__pycache__/
+*.py[cod]
+wandb/

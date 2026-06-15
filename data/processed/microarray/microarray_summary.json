@@ -1,6 +1,6 @@
 {
-  "n_samples": 135,
-  "n_genes": 48985,
+  "n_samples": 154,
+  "n_genes": 50478,
   "accessions": [
     {
       "accession": "GSE7890",
@@ -67,6 +67,19 @@
         "melanoma": 45,
         "nevus": 18,
         "normal": 7
+      }
+    },
+    {
+      "accession": "GSE145725",
+      "status": "ok",
+      "platform_id": "GPL16043",
+      "n_samples": 19,
+      "n_probe_rows": 49495,
+      "n_gene_features": 19420,
+      "n_mapped_probes": 48722,
+      "labels": {
+        "normal": 10,
+        "keloid": 9
       }
     }
   ],

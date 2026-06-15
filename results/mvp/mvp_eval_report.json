@@ -1,0 +1,60 @@
+{
+  "n_profiles": 267,
+  "modalities": {
+    "microarray": 154,
+    "scrna_spatial": 63,
+    "bulk_rnaseq": 50
+  },
+  "keloid_binary": {
+    "keloid": 106,
+    "non_keloid": 83,
+    "exclude": 78
+  },
+  "n_result_rows": 1426,
+  "n_detailed_eval_rows": 1412,
+  "qwen_adapter_decision": {
+    "decision": "ready_for_frozen_qwen_adapter",
+    "reason": "Best non-dummy baseline beats dummy baselines with a useful weighted-F1 margin and balanced accuracy above chance.",
+    "best_non_dummy": {
+      "task": "keloid_binary",
+      "feature_set": "shared_genes_plus_modules",
+      "model": "elastic_net_logreg",
+      "accuracy_mean": 0.6744688548053179,
+      "accuracy_std": 0.1661248089034874,
+      "accuracy_count": 23,
+      "weighted_f1_mean": 0.6535798207439923,
+      "weighted_f1_std": 0.1789496089580841,
+      "weighted_f1_count": 23,
+      "balanced_accuracy_mean": 0.6508183129917771,
+      "balanced_accuracy_std": 0.1779447922302433,
+      "balanced_accuracy_count": 23,
+      "macro_f1_mean": 0.6178284527180654,
+      "macro_f1_std": 0.1803039583794493,
+      "macro_f1_count": 23,
+      "auroc_mean": 0.6976478496191041,
+      "auroc_std": 0.2139723552139741,
+      "auroc_count": 23
+    },
+    "best_dummy": {
+      "task": "keloid_binary",
+      "feature_set": "modules_only",
+      "model": "stratified_random",
+      "accuracy_mean": 0.4542889497116674,
+      "accuracy_std": 0.118464581738813,
+      "accuracy_count": 23,
+      "weighted_f1_mean": 0.4673965964875493,
+      "weighted_f1_std": 0.1197711444361443,
+      "weighted_f1_count": 23,
+      "balanced_accuracy_mean": 0.4530572448972182,
+      "balanced_accuracy_std": 0.1248557941768731,
+      "balanced_accuracy_count": 23,
+      "macro_f1_mean": 0.43783074536655,
+      "macro_f1_std": 0.115312982700641,
+      "macro_f1_count": 23,
+      "auroc_mean": 0.4530572448972182,
+      "auroc_std": 0.1248557941768731,
+      "auroc_count": 23
+    },
+    "weighted_f1_margin": 0.18618322425644307
+  }
+}

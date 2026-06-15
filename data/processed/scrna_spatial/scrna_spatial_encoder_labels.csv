@@ -1,0 +1,231 @@
+sample_id,accession,encoder_task,encoder_prompt,encoder_response
+GSE175866_KF_other_keloid_fibroblasts,GSE175866,fibroblast_state,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast state. Answer:",other_keloid_fibroblast
+GSE175866_KZ_CD266pos_CD9neg_fibroblasts,GSE175866,fibroblast_state,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast state. Answer:",CD266pos_CD9neg_fibroblast
+GSE163973_KF1_Endothelial,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Endothelial
+GSE163973_KF1_Fibroblast,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Fibroblast
+GSE163973_KF1_Keratinocyte,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Keratinocyte
+GSE163973_KF1_Unknown,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Unknown
+GSE163973_KF1_muscle_fiber,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",muscle_fiber
+GSE163973_KF1_Lymphatic_endothelial,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Lymphatic_endothelial
+GSE163973_KF1_Immune_cell,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Immune_cell
+GSE163973_KF1_Glandular,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Glandular
+GSE163973_KF1_Neural_cell,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Neural_cell
+GSE163973_KF1_Endothelial_cluster_0,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_0
+GSE163973_KF1_Endothelial_cluster_5,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_5
+GSE163973_KF1_Endothelial_cluster_6,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_6
+GSE163973_KF1_Fibroblast_cluster_1,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_1
+GSE163973_KF1_Fibroblast_cluster_3,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_3
+GSE163973_KF1_Fibroblast_cluster_7,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_7
+GSE163973_KF1_Fibroblast_cluster_13,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_13
+GSE163973_KF1_Fibroblast_cluster_14,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_14
+GSE163973_KF1_Glandular_cluster_15,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Glandular_cluster_15
+GSE163973_KF1_Immune_cell_cluster_10,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Immune_cell_cluster_10
+GSE163973_KF1_Keratinocyte_cluster_4,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_4
+GSE163973_KF1_Keratinocyte_cluster_8,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_8
+GSE163973_KF1_Keratinocyte_cluster_12,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_12
+GSE163973_KF1_Keratinocyte_cluster_16,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_16
+GSE163973_KF1_Lymphatic_endothelial_cluster_11,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Lymphatic_endothelial_cluster_11
+GSE163973_KF1_Neural_cell_cluster_18,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Neural_cell_cluster_18
+GSE163973_KF1_muscle_fiber_cluster_2,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",muscle_fiber_cluster_2
+GSE163973_KF1_muscle_fiber_cluster_9,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",muscle_fiber_cluster_9
+GSE163973_KF1_fib_cluster_0,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_0
+GSE163973_KF1_fib_cluster_1,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_1
+GSE163973_KF1_fib_cluster_2,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_2
+GSE163973_KF1_fib_cluster_3,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_3
+GSE163973_KF1_fib_cluster_4,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_4
+GSE163973_KF1_fib_cluster_5,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_5
+GSE163973_KF1_fib_cluster_6,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_6
+GSE163973_KF1_fib_cluster_8,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_8
+GSE163973_KF1_fib_cluster_9,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_9
+GSE163973_KF1_fib_cluster_10,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_10
+GSE163973_KF1_fib_cluster_12,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_12
+GSE163973_KF1_all_cells,GSE163973,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",keloid
+GSE163973_KF2_Fibroblast,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Fibroblast
+GSE163973_KF2_Endothelial,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Endothelial
+GSE163973_KF2_muscle_fiber,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",muscle_fiber
+GSE163973_KF2_Keratinocyte,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Keratinocyte
+GSE163973_KF2_Immune_cell,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Immune_cell
+GSE163973_KF2_Neural_cell,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Neural_cell
+GSE163973_KF2_Glandular,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Glandular
+GSE163973_KF2_Lymphatic_endothelial,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Lymphatic_endothelial
+GSE163973_KF2_Endothelial_cluster_0,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_0
+GSE163973_KF2_Endothelial_cluster_5,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_5
+GSE163973_KF2_Endothelial_cluster_6,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_6
+GSE163973_KF2_Fibroblast_cluster_1,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_1
+GSE163973_KF2_Fibroblast_cluster_3,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_3
+GSE163973_KF2_Fibroblast_cluster_7,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_7
+GSE163973_KF2_Fibroblast_cluster_13,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_13
+GSE163973_KF2_Fibroblast_cluster_14,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_14
+GSE163973_KF2_Glandular_cluster_15,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Glandular_cluster_15
+GSE163973_KF2_Immune_cell_cluster_10,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Immune_cell_cluster_10
+GSE163973_KF2_Keratinocyte_cluster_4,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_4
+GSE163973_KF2_Keratinocyte_cluster_8,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_8
+GSE163973_KF2_Keratinocyte_cluster_12,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_12
+GSE163973_KF2_Keratinocyte_cluster_16,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_16
+GSE163973_KF2_Lymphatic_endothelial_cluster_11,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Lymphatic_endothelial_cluster_11
+GSE163973_KF2_Neural_cell_cluster_18,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Neural_cell_cluster_18
+GSE163973_KF2_muscle_fiber_cluster_2,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",muscle_fiber_cluster_2
+GSE163973_KF2_muscle_fiber_cluster_9,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",muscle_fiber_cluster_9
+GSE163973_KF2_fib_cluster_0,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_0
+GSE163973_KF2_fib_cluster_1,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_1
+GSE163973_KF2_fib_cluster_2,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_2
+GSE163973_KF2_fib_cluster_3,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_3
+GSE163973_KF2_fib_cluster_4,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_4
+GSE163973_KF2_fib_cluster_5,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_5
+GSE163973_KF2_fib_cluster_6,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_6
+GSE163973_KF2_fib_cluster_8,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_8
+GSE163973_KF2_fib_cluster_9,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_9
+GSE163973_KF2_fib_cluster_10,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_10
+GSE163973_KF2_all_cells,GSE163973,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",keloid
+GSE163973_KF3_muscle_fiber,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",muscle_fiber
+GSE163973_KF3_Endothelial,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Endothelial
+GSE163973_KF3_Lymphatic_endothelial,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Lymphatic_endothelial
+GSE163973_KF3_Fibroblast,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Fibroblast
+GSE163973_KF3_Glandular,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Glandular
+GSE163973_KF3_Keratinocyte,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Keratinocyte
+GSE163973_KF3_Unknown,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Unknown
+GSE163973_KF3_Neural_cell,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Neural_cell
+GSE163973_KF3_Immune_cell,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Immune_cell
+GSE163973_KF3_Endothelial_cluster_0,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_0
+GSE163973_KF3_Endothelial_cluster_5,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_5
+GSE163973_KF3_Endothelial_cluster_6,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_6
+GSE163973_KF3_Fibroblast_cluster_1,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_1
+GSE163973_KF3_Fibroblast_cluster_3,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_3
+GSE163973_KF3_Fibroblast_cluster_7,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_7
+GSE163973_KF3_Fibroblast_cluster_13,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_13
+GSE163973_KF3_Fibroblast_cluster_14,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_14
+GSE163973_KF3_Glandular_cluster_15,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Glandular_cluster_15
+GSE163973_KF3_Immune_cell_cluster_10,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Immune_cell_cluster_10
+GSE163973_KF3_Keratinocyte_cluster_4,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_4
+GSE163973_KF3_Keratinocyte_cluster_16,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_16
+GSE163973_KF3_Lymphatic_endothelial_cluster_11,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Lymphatic_endothelial_cluster_11
+GSE163973_KF3_Neural_cell_cluster_18,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Neural_cell_cluster_18
+GSE163973_KF3_muscle_fiber_cluster_2,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",muscle_fiber_cluster_2
+GSE163973_KF3_muscle_fiber_cluster_9,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",muscle_fiber_cluster_9
+GSE163973_KF3_fib_cluster_0,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_0
+GSE163973_KF3_fib_cluster_1,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_1
+GSE163973_KF3_fib_cluster_2,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_2
+GSE163973_KF3_fib_cluster_3,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_3
+GSE163973_KF3_fib_cluster_4,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_4
+GSE163973_KF3_fib_cluster_5,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_5
+GSE163973_KF3_fib_cluster_6,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_6
+GSE163973_KF3_fib_cluster_10,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_10
+GSE163973_KF3_all_cells,GSE163973,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",keloid
+GSE163973_NF1_Lymphatic_endothelial,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Lymphatic_endothelial
+GSE163973_NF1_Endothelial,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Endothelial
+GSE163973_NF1_Fibroblast,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Fibroblast
+GSE163973_NF1_Glandular,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Glandular
+GSE163973_NF1_muscle_fiber,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",muscle_fiber
+GSE163973_NF1_Immune_cell,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Immune_cell
+GSE163973_NF1_Keratinocyte,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Keratinocyte
+GSE163973_NF1_Endothelial_cluster_0,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_0
+GSE163973_NF1_Endothelial_cluster_5,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_5
+GSE163973_NF1_Endothelial_cluster_6,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_6
+GSE163973_NF1_Fibroblast_cluster_1,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_1
+GSE163973_NF1_Fibroblast_cluster_3,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_3
+GSE163973_NF1_Fibroblast_cluster_7,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_7
+GSE163973_NF1_Fibroblast_cluster_13,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_13
+GSE163973_NF1_Fibroblast_cluster_14,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_14
+GSE163973_NF1_Glandular_cluster_15,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Glandular_cluster_15
+GSE163973_NF1_Immune_cell_cluster_10,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Immune_cell_cluster_10
+GSE163973_NF1_Keratinocyte_cluster_4,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_4
+GSE163973_NF1_Keratinocyte_cluster_8,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_8
+GSE163973_NF1_Lymphatic_endothelial_cluster_11,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Lymphatic_endothelial_cluster_11
+GSE163973_NF1_muscle_fiber_cluster_2,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",muscle_fiber_cluster_2
+GSE163973_NF1_muscle_fiber_cluster_9,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",muscle_fiber_cluster_9
+GSE163973_NF1_fib_cluster_0,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_0
+GSE163973_NF1_fib_cluster_1,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_1
+GSE163973_NF1_fib_cluster_2,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_2
+GSE163973_NF1_fib_cluster_4,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_4
+GSE163973_NF1_fib_cluster_5,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_5
+GSE163973_NF1_fib_cluster_6,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_6
+GSE163973_NF1_fib_cluster_8,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_8
+GSE163973_NF1_fib_cluster_9,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_9
+GSE163973_NF1_fib_cluster_10,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_10
+GSE163973_NF1_fib_cluster_11,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_11
+GSE163973_NF1_all_cells,GSE163973,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",normal_scar
+GSE163973_NF2_Fibroblast,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Fibroblast
+GSE163973_NF2_Keratinocyte,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Keratinocyte
+GSE163973_NF2_Endothelial,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Endothelial
+GSE163973_NF2_muscle_fiber,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",muscle_fiber
+GSE163973_NF2_Lymphatic_endothelial,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Lymphatic_endothelial
+GSE163973_NF2_Glandular,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Glandular
+GSE163973_NF2_Melanocytes,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Melanocytes
+GSE163973_NF2_Immune_cell,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Immune_cell
+GSE163973_NF2_Endothelial_cluster_0,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_0
+GSE163973_NF2_Endothelial_cluster_5,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_5
+GSE163973_NF2_Endothelial_cluster_6,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_6
+GSE163973_NF2_Fibroblast_cluster_1,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_1
+GSE163973_NF2_Fibroblast_cluster_3,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_3
+GSE163973_NF2_Fibroblast_cluster_7,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_7
+GSE163973_NF2_Fibroblast_cluster_13,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_13
+GSE163973_NF2_Fibroblast_cluster_14,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_14
+GSE163973_NF2_Glandular_cluster_15,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Glandular_cluster_15
+GSE163973_NF2_Immune_cell_cluster_10,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Immune_cell_cluster_10
+GSE163973_NF2_Keratinocyte_cluster_4,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_4
+GSE163973_NF2_Keratinocyte_cluster_8,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_8
+GSE163973_NF2_Keratinocyte_cluster_12,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_12
+GSE163973_NF2_Keratinocyte_cluster_16,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_16
+GSE163973_NF2_Lymphatic_endothelial_cluster_11,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Lymphatic_endothelial_cluster_11
+GSE163973_NF2_Melanocytes_cluster_19,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Melanocytes_cluster_19
+GSE163973_NF2_muscle_fiber_cluster_2,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",muscle_fiber_cluster_2
+GSE163973_NF2_muscle_fiber_cluster_9,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",muscle_fiber_cluster_9
+GSE163973_NF2_fib_cluster_0,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_0
+GSE163973_NF2_fib_cluster_1,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_1
+GSE163973_NF2_fib_cluster_2,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_2
+GSE163973_NF2_fib_cluster_3,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_3
+GSE163973_NF2_fib_cluster_4,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_4
+GSE163973_NF2_fib_cluster_5,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_5
+GSE163973_NF2_fib_cluster_6,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_6
+GSE163973_NF2_fib_cluster_7,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_7
+GSE163973_NF2_fib_cluster_8,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_8
+GSE163973_NF2_fib_cluster_9,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_9
+GSE163973_NF2_fib_cluster_11,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_11
+GSE163973_NF2_all_cells,GSE163973,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",normal_scar
+GSE163973_NF3_Fibroblast,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Fibroblast
+GSE163973_NF3_Endothelial,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Endothelial
+GSE163973_NF3_Keratinocyte,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Keratinocyte
+GSE163973_NF3_Lymphatic_endothelial,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Lymphatic_endothelial
+GSE163973_NF3_muscle_fiber,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",muscle_fiber
+GSE163973_NF3_Melanocytes,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Melanocytes
+GSE163973_NF3_Glandular,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Glandular
+GSE163973_NF3_Immune_cell,GSE163973,cell_type,"Given this single-cell pseudobulk expression profile, predict the dominant cell type. Answer:",Immune_cell
+GSE163973_NF3_Endothelial_cluster_0,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_0
+GSE163973_NF3_Endothelial_cluster_5,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_5
+GSE163973_NF3_Endothelial_cluster_6,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Endothelial_cluster_6
+GSE163973_NF3_Fibroblast_cluster_1,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_1
+GSE163973_NF3_Fibroblast_cluster_3,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_3
+GSE163973_NF3_Fibroblast_cluster_7,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_7
+GSE163973_NF3_Fibroblast_cluster_13,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_13
+GSE163973_NF3_Fibroblast_cluster_14,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Fibroblast_cluster_14
+GSE163973_NF3_Glandular_cluster_15,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Glandular_cluster_15
+GSE163973_NF3_Immune_cell_cluster_10,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Immune_cell_cluster_10
+GSE163973_NF3_Keratinocyte_cluster_4,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_4
+GSE163973_NF3_Keratinocyte_cluster_8,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_8
+GSE163973_NF3_Keratinocyte_cluster_12,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_12
+GSE163973_NF3_Keratinocyte_cluster_16,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Keratinocyte_cluster_16
+GSE163973_NF3_Lymphatic_endothelial_cluster_11,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Lymphatic_endothelial_cluster_11
+GSE163973_NF3_Melanocytes_cluster_19,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",Melanocytes_cluster_19
+GSE163973_NF3_muscle_fiber_cluster_2,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",muscle_fiber_cluster_2
+GSE163973_NF3_muscle_fiber_cluster_9,GSE163973,celltype_subcluster,"Given this single-cell pseudobulk expression profile, predict the cell-type subcluster. Answer:",muscle_fiber_cluster_9
+GSE163973_NF3_fib_cluster_0,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_0
+GSE163973_NF3_fib_cluster_1,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_1
+GSE163973_NF3_fib_cluster_2,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_2
+GSE163973_NF3_fib_cluster_3,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_3
+GSE163973_NF3_fib_cluster_4,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_4
+GSE163973_NF3_fib_cluster_5,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_5
+GSE163973_NF3_fib_cluster_6,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_6
+GSE163973_NF3_fib_cluster_7,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_7
+GSE163973_NF3_fib_cluster_8,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_8
+GSE163973_NF3_fib_cluster_9,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_9
+GSE163973_NF3_fib_cluster_11,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_11
+GSE163973_NF3_fib_cluster_12,GSE163973,fibroblast_subcluster,"Given this keloid fibroblast pseudobulk expression profile, predict the fibroblast subcluster. Answer:",fib_cluster_12
+GSE163973_NF3_all_cells,GSE163973,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",normal_scar
+GSE181297_Ke01_all_barcodes,GSE181297,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",keloid
+GSE181297_Ke02_all_barcodes,GSE181297,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",keloid
+GSE181297_Pt1_all_barcodes,GSE181297,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",keloid
+GSE181297_Pt2_all_barcodes,GSE181297,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",keloid
+GSE181297_NS02_all_barcodes,GSE181297,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",normal_scar
+GSE181297_NSV1_all_barcodes,GSE181297,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",adjacent_normal
+GSE181297_NSV2_all_barcodes,GSE181297,keloid_vs_normal,"Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",adjacent_normal
+GSE160536_scleroderma_all_cells,GSE160536,out_of_domain_fibrotic_state,"Given this skin single-cell pseudobulk expression profile, predict the out-of-domain fibrotic state. Answer:",scleroderma

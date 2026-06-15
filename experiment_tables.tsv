@@ -1,0 +1,112 @@
+SPHEROSCAR EXPERIMENT TABLES — paste into Google Sheets, then copy into Docs as a real table
+
+DATA CORPUS
+Metric	Count
+Total profiles	434 (was 267)
+scRNA/spatial pseudobulk	230
+Microarray	154
+Bulk RNA-seq	50
+Unique scRNA barcodes	~90k
+Evaluation splits	103
+
+TOP ACCESSIONS
+Accession	Profiles	Notes
+GSE163973	220	Main scRNA study, 40,655 cells
+GSE3189	70	Mostly OOD / contrast
+GSE44270	32	
+Sun_Burns	25	
+GSE7890	19	
+GSE145725	19	
+Others	49	GSE158395, GSE188952, GSE181297, etc.
+
+LABELS AND TASKS
+Task	Profiles	Notes
+keloid_binary	356 eligible (188 keloid / 168 non-keloid / 78 excluded)	Main disease benchmark
+celltype_subcluster	103	Fine scRNA typing (new)
+fibroblast_subcluster	62	Fibroblast subclusters (new)
+cell_type	49	Coarse 10-class scRNA typing
+lesional_status	46	Lesional vs control
+
+SPLITS BY TASK
+Task	Number of splits
+keloid_binary	22
+cell_type	21
+fibroblast_subcluster	21
+celltype_subcluster	21
+lesional_status	18
+
+EXPERIMENT 1 — keloid_binary BASELINES (267-profile MVP, 23 grouped folds)
+Model	Features	Accuracy	Weighted F1	Balanced acc
+Elastic net	genes + modules	0.675	0.654	0.651
+Linear SVM	modules only	0.629	0.616	0.594
+Elastic net	modules only	0.623	0.611	0.589
+Elastic net	genes only	0.635	0.593	0.622
+HGB	genes + modules	0.613	0.589	0.603
+
+EXPERIMENT 1 — cell_type BASELINES (21 folds)
+Model	Features	Accuracy	Weighted F1
+Elastic net	genes	0.945	0.934
+Linear SVM	genes	0.940	0.922
+Random forest	genes	0.913	0.888
+
+EXPERIMENT 1 — lesional_status BASELINES (18 folds)
+Model	Features	Accuracy	Weighted F1
+Random forest	modules only	0.792	0.746
+Random forest	genes + modules	0.793	0.739
+Small MLP	modules only	0.742	0.719
+
+EXPERIMENT 2 — ADAPTER MVP (single split only)
+Metric	Value
+Split	grouped_seed0_fold0
+Train / val / test	127 / 37 / 25
+Accuracy	0.80
+Weighted F1	0.802
+Balanced accuracy	0.795
+AUROC	0.743
+Best epoch	1
+
+EXPERIMENT 3 — PHASE A TOP ADAPTER CONFIGS (3 pilot splits)
+Config	Test weighted F1	Avg best epoch
+mlp_L2_E10	0.662	2.0
+mlp_L2_E15	0.624	2.3
+attentive_pool_L2_E15	0.611	5.7
+
+EXPERIMENT 3 — ADAPTER VS BASELINE (full eval)
+Method	Grouped weighted F1	LOSO weighted F1	Balanced acc (grouped)
+Elastic net (baseline)	0.654	—	0.651
+Qwen adapter — best config	0.600 ± 0.155	0.320 ± 0.148	0.662
+Qwen adapter — alt config	0.541	0.421	0.587
+
+EXPERIMENT 3 — LOSO PER ACCESSION (best adapter config)
+Held-out accession	Test weighted F1
+GSE158395	0.585
+GSE163973	0.531
+GSE7890	0.338
+GSE44270	0.266
+GSE145725	0.259
+GSE181297	0.257
+GSE188952	0.167
+Sun_Burns	0.155
+
+EXPERIMENT 4 — CORPUS GROWTH
+Stage	Total profiles	GSE163973 profiles
+MVP	267	53
++ fibroblast subclusters	320	106
++ celltype subclusters	434	220
+
+HEADLINE RESULTS
+Task	Best approach	Weighted F1	Caveat
+keloid_binary	Elastic net	0.654	267-profile MVP, 23 folds
+keloid_binary (adapter)	Attentive pool Qwen	0.600	15 grouped folds
+keloid_binary (adapter, LOSO)	Attentive pool Qwen	0.320	8 folds, held-out studies
+cell_type	Elastic net	0.934	Strong within GSE163973
+lesional_status	Random forest	0.746	
+Adapter MVP	Frozen Qwen	0.802	Single fold only — do not use as headline number
+
+GO / NO-GO
+Criterion	Result
+Beat 0.654 grouped F1 on keloid_binary	No — adapter hit 0.600
+LOSO within 0.05 of grouped mean	No — 0.32 vs 0.60
+Proceed to generative Qwen decode	On hold
+scRNA subcluster benchmarks ready	Yes
+Corpus ready for serious benchmarking	Yes — 434 profiles, 103 splits

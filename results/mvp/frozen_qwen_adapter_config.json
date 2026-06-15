@@ -1,0 +1,19 @@
+{
+  "stage": "frozen_qwen_adapter_mvp",
+  "decision": "ready_for_frozen_qwen_adapter",
+  "enabled": true,
+  "decoder": "Qwen/Qwen3-1.7B",
+  "trainable_components": [
+    "expression_prefix_adapter",
+    "optional_classification_heads"
+  ],
+  "frozen_components": [
+    "qwen_decoder"
+  ],
+  "input_feature_sets": [
+    "shared_genes_plus_modules",
+    "modules_only"
+  ],
+  "primary_task": "keloid_binary",
+  "notes": "Best non-dummy baseline beats dummy baselines with a useful weighted-F1 margin and balanced accuracy above chance."
+}

@@ -134,3 +134,22 @@ GSM71737,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expr
 GSM71738,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
 GSM71739,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
 GSM71740,GSE3189,out_of_domain_disease_state,"Given this out-of-domain skin expression profile, predict the disease state. Answer:",melanoma
+GSM4331585,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM4331586,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM4331587,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM4331588,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM4331589,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM4331590,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM4331591,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM4331592,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM4331593,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM4331594,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM4331595,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM4331596,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM4331597,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM4331598,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM4331599,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM4331600,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM4331601,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM4331602,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM4331603,GSE145725,keloid_vs_normal,"Given this microarray expression profile, predict whether the sample is keloid or normal. Answer:",normal

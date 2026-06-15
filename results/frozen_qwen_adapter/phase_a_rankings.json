@@ -1,0 +1,23 @@
+[
+  {
+    "config_id": "mlp_L2_E10_P4_D01_LR00001",
+    "mean_val_weighted_f1": 0.7216420961192425,
+    "mean_test_weighted_f1": 0.6623806417250867,
+    "mean_best_epoch": 2.0,
+    "n_splits": 3
+  },
+  {
+    "config_id": "mlp_L2_E15_P4_D01_LR00001",
+    "mean_val_weighted_f1": 0.7127748807261988,
+    "mean_test_weighted_f1": 0.6239890739160807,
+    "mean_best_epoch": 2.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "config_id": "attentive_pool_L2_E15_P4_D01_LR00001_TD1024",
+    "mean_val_weighted_f1": 0.6994198580333032,
+    "mean_test_weighted_f1": 0.6114971275879467,
+    "mean_best_epoch": 5.666666666666667,
+    "n_splits": 3
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "config_id": "attentive_pool_L2_E15_P8_D01_LR00001_TD1024",
+    "mean_val_weighted_f1": 0.7649000031352967,
+    "mean_test_weighted_f1": 0.6973121693121694,
+    "mean_best_epoch": 7.666666666666667,
+    "n_splits": 3
+  },
+  {
+    "config_id": "attentive_pool_L2_E15_P8_D005_LR00001_TD512",
+    "mean_val_weighted_f1": 0.7461829385103037,
+    "mean_test_weighted_f1": 0.43263825410837403,
+    "mean_best_epoch": 3.3333333333333335,
+    "n_splits": 3
+  }
+]

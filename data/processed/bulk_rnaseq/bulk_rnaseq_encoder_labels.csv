@@ -1,0 +1,51 @@
+sample_id,accession,encoder_task,encoder_prompt,encoder_response
+JKR491-163/BA_Normal_Normal_410,GSE158395,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+JKR782-003_Keloid_LS_K5,GSE158395,lesional_status,"Given this keloid bulk RNA-seq expression profile, predict the lesional status. Answer:",lesional
+JKR782-003_Keloid_LS_K4,GSE158395,lesional_status,"Given this keloid bulk RNA-seq expression profile, predict the lesional status. Answer:",lesional
+JKR782-004_Keloid_NL_K6,GSE158395,lesional_status,"Given this keloid bulk RNA-seq expression profile, predict the lesional status. Answer:",non_lesional
+JKR782-001_Keloid_LS_K2,GSE158395,lesional_status,"Given this keloid bulk RNA-seq expression profile, predict the lesional status. Answer:",lesional
+N2_Normal_Normal_N2,GSE158395,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+JKR782-003_Keloid_NL_K3,GSE158395,lesional_status,"Given this keloid bulk RNA-seq expression profile, predict the lesional status. Answer:",non_lesional
+N20_Normal_Normal_N20,GSE158395,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+N3_Normal_Normal_N3,GSE158395,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+N19_Normal_Normal_N19,GSE158395,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+N1_Normal_Normal_N1,GSE158395,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+JKR782-004_Keloid_LS_K7,GSE158395,lesional_status,"Given this keloid bulk RNA-seq expression profile, predict the lesional status. Answer:",lesional
+JKR782-001_Keloid_NL_K1,GSE158395,lesional_status,"Given this keloid bulk RNA-seq expression profile, predict the lesional status. Answer:",non_lesional
+Keloid_01,GSE188952,scar_differential,"Given this scar bulk RNA-seq expression profile, predict the scar type. Answer:",keloid
+Keloid_02,GSE188952,scar_differential,"Given this scar bulk RNA-seq expression profile, predict the scar type. Answer:",keloid
+Keloid_03,GSE188952,scar_differential,"Given this scar bulk RNA-seq expression profile, predict the scar type. Answer:",keloid
+Keloid_04,GSE188952,scar_differential,"Given this scar bulk RNA-seq expression profile, predict the scar type. Answer:",keloid
+HypertrophicScar_01,GSE188952,scar_differential,"Given this scar bulk RNA-seq expression profile, predict the scar type. Answer:",hypertrophic_scar
+HypertrophicScar_02,GSE188952,scar_differential,"Given this scar bulk RNA-seq expression profile, predict the scar type. Answer:",hypertrophic_scar
+HypertrophicScar_03,GSE188952,scar_differential,"Given this scar bulk RNA-seq expression profile, predict the scar type. Answer:",hypertrophic_scar
+HypertrophicScar_04,GSE188952,scar_differential,"Given this scar bulk RNA-seq expression profile, predict the scar type. Answer:",hypertrophic_scar
+HypertrophicScar_05,GSE188952,scar_differential,"Given this scar bulk RNA-seq expression profile, predict the scar type. Answer:",hypertrophic_scar
+NormotrophicScar_01,GSE188952,scar_differential,"Given this scar bulk RNA-seq expression profile, predict the scar type. Answer:",normotrophic_scar
+NormotrophicScar_02,GSE188952,scar_differential,"Given this scar bulk RNA-seq expression profile, predict the scar type. Answer:",normotrophic_scar
+NormotrophicScar_03,GSE188952,scar_differential,"Given this scar bulk RNA-seq expression profile, predict the scar type. Answer:",normotrophic_scar
+Control_N_1,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+Control_N_2,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+Control_N_3,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+Control_N_4,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+Control_N_5,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+Control_N_6,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+Control_N_7,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+Control_N_8,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",normal
+Treat_K_1,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_2,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_3,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_4,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_5,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_6,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_7,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_8,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_9,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_10,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_11,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_12,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_13,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_14,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_15,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_16,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Treat_K_17,Sun_Burns,keloid_vs_normal,"Given this bulk RNA-seq expression profile, predict whether the sample is keloid or normal. Answer:",keloid

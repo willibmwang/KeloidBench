@@ -1,0 +1,16 @@
+{
+  "config_id": "attentive_pool_L2_E15_P8_D01_LR00001_TD1024",
+  "encoder_type": "attentive_pool",
+  "encoder_layers": 2,
+  "encoder_hidden_dim": 1024,
+  "transformer_encoder_dim": 1024,
+  "num_prefix_tokens": 8,
+  "max_epochs": 15,
+  "patience": 3,
+  "dropout": 0.1,
+  "lr": 0.0001,
+  "batch_size": 8,
+  "feature_set": "shared_genes_plus_modules",
+  "model_name": "Qwen/Qwen3-1.7B",
+  "decision": "hold_qwen_decode"
+}

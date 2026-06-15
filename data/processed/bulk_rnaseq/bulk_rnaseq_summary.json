@@ -1,0 +1,68 @@
+{
+  "n_samples": 50,
+  "n_genes": 10016,
+  "accessions": [
+    {
+      "accession": "GSE158395",
+      "status": "ok",
+      "n_samples": 13,
+      "n_genes": 30815,
+      "labels": {
+        "normal": 6,
+        "lesional": 4,
+        "non_lesional": 3
+      }
+    },
+    {
+      "accession": "GSE188952",
+      "status": "ok",
+      "n_samples": 12,
+      "n_genes": 19712,
+      "labels": {
+        "hypertrophic_scar": 5,
+        "keloid": 4,
+        "normotrophic_scar": 3
+      }
+    },
+    {
+      "accession": "Sun_Burns",
+      "status": "ok",
+      "n_samples": 25,
+      "n_genes": 51940,
+      "labels": {
+        "keloid": 17,
+        "normal": 8
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "file": "GSE125022_List_all-genes_RNAseq_PGS-ANOVA_Keloid-vs-ctrl_no-filter.txt.gz",
+      "reason": "differential gene list, not sample-level expression"
+    },
+    {
+      "file": "GSE125022_List_DEGs_RNAseq_PGS-ANOVA_Keloid-vs-ctrl_p0.001_514-genes.txt.gz",
+      "reason": "filtered DEG list, not sample-level expression"
+    },
+    {
+      "file": "GSE125022_List_DARs_keloid-vs-ctrl_gene-body+5K-TSS_1597-regions.txt.gz",
+      "reason": "ATAC/DAR annotation list, not sample-level RNA expression"
+    },
+    {
+      "file": "GSE125022_RAW.tar",
+      "reason": "large raw archive; not needed for encoder-ready matrix"
+    },
+    {
+      "file": "GSE145725_RAW.tar",
+      "reason": "microarray raw archive already represented in legacy signatures"
+    }
+  ],
+  "outputs": {
+    "metadata": "data/processed/bulk_rnaseq/bulk_rnaseq_sample_metadata.parquet",
+    "wide": "data/processed/bulk_rnaseq/bulk_rnaseq_expression_wide.parquet",
+    "matrix": "data/processed/bulk_rnaseq/bulk_rnaseq_X.npy",
+    "labels": "data/processed/bulk_rnaseq/bulk_rnaseq_encoder_labels.csv",
+    "gene_vocab": "data/processed/bulk_rnaseq/bulk_rnaseq_gene_vocab.txt",
+    "jsonl": "data/processed/bulk_rnaseq/bulk_rnaseq_encoder_decoder_samples.jsonl"
+  }
+}

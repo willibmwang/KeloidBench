@@ -1,0 +1,68 @@
+{
+  "file": "GSE163973_integrate.all.NS.all.KL_cell.meta.data.csv.gz",
+  "n_cells": 40655,
+  "columns": [
+    "Unnamed: 0",
+    "orig.ident",
+    "nCount_RNA",
+    "nFeature_RNA",
+    "percent.mt",
+    "RNA_snn_res.0.5",
+    "seurat_clusters",
+    "dataset",
+    "integrated_snn_res.0.5",
+    "integrated_snn_res.0.3",
+    "cellType"
+  ],
+  "dataset_counts": {
+    "KF1": 7612,
+    "NF2": 7523,
+    "KF2": 7159,
+    "KF3": 6717,
+    "NF1": 6541,
+    "NF3": 5103
+  },
+  "orig.ident_counts": {
+    "KF1": 7612,
+    "NF2": 7523,
+    "KF2": 7159,
+    "KF3": 6717,
+    "NF1": 6541,
+    "NF3": 5103
+  },
+  "cellType_counts": {
+    "Fibroblast": 13437,
+    "Endothelial": 12246,
+    "Keratinocyte": 6096,
+    "muscle_fiber": 5594,
+    "Immune_cell": 1086,
+    "Lymphatic_endothelial": 978,
+    "Glandular": 439,
+    "Unknown": 359,
+    "Neural_cell": 242,
+    "Melanocytes": 178
+  },
+  "seurat_clusters_counts": {
+    "0": 6305,
+    "1": 5903,
+    "2": 4253,
+    "3": 4036,
+    "4": 3519,
+    "5": 3290,
+    "6": 2651,
+    "7": 2223,
+    "8": 1346,
+    "9": 1341,
+    "10": 1086,
+    "11": 978,
+    "12": 850,
+    "13": 702,
+    "14": 573,
+    "15": 439,
+    "16": 381,
+    "17": 325,
+    "18": 242,
+    "19": 178,
+    "20": 34
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "file": "GSE163973_integrate.all.NS.all.KL.fib.main.clusters_cell.meta.data.csv.gz",
+  "n_cells": 12177,
+  "columns": [
+    "Unnamed: 0",
+    "orig.ident",
+    "nCount_RNA",
+    "nFeature_RNA",
+    "percent.mt",
+    "RNA_snn_res.0.5",
+    "seurat_clusters",
+    "dataset",
+    "integrated_snn_res.0.4",
+    "integrated_snn_res.0.45",
+    "condition"
+  ],
+  "dataset_counts": {
+    "NF1": 3455,
+    "NF2": 2571,
+    "KF3": 1999,
+    "KF2": 1655,
+    "KF1": 1599,
+    "NF3": 898
+  },
+  "orig.ident_counts": {
+    "NF1": 3455,
+    "NF2": 2571,
+    "KF3": 1999,
+    "KF2": 1655,
+    "KF1": 1599,
+    "NF3": 898
+  },
+  "seurat_clusters_counts": {
+    "0": 2897,
+    "1": 2341,
+    "2": 2269,
+    "3": 1215,
+    "4": 1105,
+    "5": 867,
+    "6": 826,
+    "8": 395,
+    "7": 262
+  }
+}

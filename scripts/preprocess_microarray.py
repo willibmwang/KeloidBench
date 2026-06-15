@@ -29,7 +29,8 @@ RAW_DIR = DATA_DIR / "raw/microarray"
 OUT_DIR = DATA_DIR / "processed/microarray"
 PLATFORM_DIR = RAW_DIR / "platforms"
 
-ACCESSIONS = ["GSE7890", "GSE92566", "GSE90051", "GSE44270", "GSE3189"]
+ACCESSIONS = ["GSE7890", "GSE92566", "GSE90051", "GSE44270", "GSE3189", "GSE145725"]
+EXTRA_SERIES_DIRS = [DATA_DIR / "raw/bulk_rnaseq"]
 
 MODULES = {
     "ECM_score": ["COL1A1", "COL3A1", "FN1"],
@@ -81,7 +82,14 @@ def split_geo_line(line: str) -> list[str]:
 
 
 def series_matrix_path(accession: str, data_dir: Path) -> Path:
-    return data_dir / f"{accession}_series_matrix.txt.gz"
+    primary = data_dir / f"{accession}_series_matrix.txt.gz"
+    if primary.exists():
+        return primary
+    for extra_dir in EXTRA_SERIES_DIRS:
+        candidate = extra_dir / f"{accession}_series_matrix.txt.gz"
+        if candidate.exists():
+            return candidate
+    return primary
 
 
 def parse_series_matrix(path: Path) -> SeriesMatrix:
@@ -319,6 +327,22 @@ def infer_labels(metadata: pd.DataFrame) -> pd.DataFrame:
             patient = row.get("patient", None)
             if pd.notna(patient) and str(patient).strip():
                 out.at[idx, "patient_id"] = str(patient).strip()
+            continue
+
+        if accession == "GSE145725":
+            out.at[idx, "cell_type"] = "fibroblast"
+            out.at[idx, "source_dataset"] = "microarray"
+            title_lower = title.lower()
+            if title_lower.startswith("keloid"):
+                out.at[idx, "disease_label"] = "keloid"
+                out.at[idx, "keloid_vs_normal"] = "keloid"
+            elif title_lower.startswith("normal"):
+                out.at[idx, "disease_label"] = "normal"
+                out.at[idx, "keloid_vs_normal"] = "normal"
+            patient_match = re.search(r"fibrobalst_([0-9]+)", title_lower)
+            if patient_match:
+                prefix = "keloid" if title_lower.startswith("keloid") else "normal"
+                out.at[idx, "patient_id"] = f"{prefix}_fibroblast_{patient_match.group(1)}"
             continue
 
         if "hydrocortisone" in text:

@@ -1,0 +1,830 @@
+[
+  {
+    "search_phase": "phase_a",
+    "config_id": "tiny_transformer_L2_E15_P4_D01_LR00001_TD1024",
+    "encoder_type": "tiny_transformer",
+    "mean_test_weighted_f1": 0.6816697684343653,
+    "std_test_weighted_f1": 0.05120037825721783,
+    "mean_best_epoch": 2.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "mlp_L2_E10_P4_D01_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6623806417250867,
+    "std_test_weighted_f1": 0.04905744641956706,
+    "mean_best_epoch": 2.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "mlp_L4_E10_P4_D01_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6399267786612297,
+    "std_test_weighted_f1": 0.12192497167361639,
+    "mean_best_epoch": 3.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "mlp_L2_E15_P4_D01_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6239890739160807,
+    "std_test_weighted_f1": 0.11632709157463147,
+    "mean_best_epoch": 2.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "tiny_transformer_L4_E15_P4_D01_LR00001_TD1024",
+    "encoder_type": "tiny_transformer",
+    "mean_test_weighted_f1": 0.617241943734015,
+    "std_test_weighted_f1": 0.1033134501974428,
+    "mean_best_epoch": 4.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "attentive_pool_L2_E15_P4_D01_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.6114971275879467,
+    "std_test_weighted_f1": 0.15753129069804025,
+    "mean_best_epoch": 5.666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "mlp_L3_E15_P4_D01_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.609120107919927,
+    "std_test_weighted_f1": 0.1645304583754316,
+    "mean_best_epoch": 2.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "mlp_L3_E10_P4_D01_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6052830064877011,
+    "std_test_weighted_f1": 0.0913929264376683,
+    "mean_best_epoch": 2.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "attentive_pool_L3_E15_P4_D01_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.584443948746546,
+    "std_test_weighted_f1": 0.046793402804341605,
+    "mean_best_epoch": 2.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "attentive_pool_L2_E10_P4_D01_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5841653790884053,
+    "std_test_weighted_f1": 0.15426151398589807,
+    "mean_best_epoch": 2.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "mlp_L4_E15_P4_D01_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5752003347630503,
+    "std_test_weighted_f1": 0.19047489776175802,
+    "mean_best_epoch": 3.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "tiny_transformer_L2_E10_P4_D01_LR00001_TD1024",
+    "encoder_type": "tiny_transformer",
+    "mean_test_weighted_f1": 0.5545335358254243,
+    "std_test_weighted_f1": 0.05365692642933898,
+    "mean_best_epoch": 3.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "tiny_transformer_L3_E15_P4_D01_LR00001_TD1024",
+    "encoder_type": "tiny_transformer",
+    "mean_test_weighted_f1": 0.5201844989736337,
+    "std_test_weighted_f1": 0.04391884541266811,
+    "mean_best_epoch": 2.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "attentive_pool_L4_E10_P4_D01_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5076258677383994,
+    "std_test_weighted_f1": 0.09145040487618081,
+    "mean_best_epoch": 5.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "tiny_transformer_L4_E10_P4_D01_LR00001_TD1024",
+    "encoder_type": "tiny_transformer",
+    "mean_test_weighted_f1": 0.4823313272093757,
+    "std_test_weighted_f1": 0.08366769286847116,
+    "mean_best_epoch": 3.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "tiny_transformer_L3_E10_P4_D01_LR00001_TD1024",
+    "encoder_type": "tiny_transformer",
+    "mean_test_weighted_f1": 0.45360725799565166,
+    "std_test_weighted_f1": 0.02975958050132562,
+    "mean_best_epoch": 2.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "attentive_pool_L3_E10_P4_D01_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.36231076935478107,
+    "std_test_weighted_f1": 0.1607488620174969,
+    "mean_best_epoch": 1.6666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_a",
+    "config_id": "attentive_pool_L4_E15_P4_D01_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.2999475324889137,
+    "std_test_weighted_f1": 0.1419357185732733,
+    "mean_best_epoch": 1.6666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P2_D02_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.7274425827657981,
+    "std_test_weighted_f1": 0.07667840016290353,
+    "mean_best_epoch": 2.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P8_D02_LR00001_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.7233760179575827,
+    "std_test_weighted_f1": 0.07693843375824021,
+    "mean_best_epoch": 5.333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P2_D005_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.7156120817098653,
+    "std_test_weighted_f1": 0.08803703022705109,
+    "mean_best_epoch": 2.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P8_D01_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.6973121693121694,
+    "std_test_weighted_f1": 0.03522546447288803,
+    "mean_best_epoch": 7.666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P8_D02_LR5e-05_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.6962599930483139,
+    "std_test_weighted_f1": 0.1035720805049903,
+    "mean_best_epoch": 7.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P4_D02_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6776655758142432,
+    "std_test_weighted_f1": 0.11482337280483947,
+    "mean_best_epoch": 2.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P8_D01_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6769617474342787,
+    "std_test_weighted_f1": 0.12323683866845517,
+    "mean_best_epoch": 4.333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P8_D005_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.670202926671517,
+    "std_test_weighted_f1": 0.10121510714060686,
+    "mean_best_epoch": 2.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P2_D005_LR5e-05_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.66694726046408,
+    "std_test_weighted_f1": 0.10621228229112079,
+    "mean_best_epoch": 2.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P8_D005_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6619494232754124,
+    "std_test_weighted_f1": 0.04956669357316813,
+    "mean_best_epoch": 3.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P2_D02_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6617247990600547,
+    "std_test_weighted_f1": 0.08067835098639597,
+    "mean_best_epoch": 1.3333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P2_D005_LR5e-05_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.6549416666088407,
+    "std_test_weighted_f1": 0.057399196230853135,
+    "mean_best_epoch": 3.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P2_D01_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.650118784419322,
+    "std_test_weighted_f1": 0.08523501145240157,
+    "mean_best_epoch": 6.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P2_D01_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6448850922634121,
+    "std_test_weighted_f1": 0.06748217895459221,
+    "mean_best_epoch": 3.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P4_D02_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6366344878385247,
+    "std_test_weighted_f1": 0.09159327335852391,
+    "mean_best_epoch": 2.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P4_D01_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6356190476190474,
+    "std_test_weighted_f1": 0.06703733687391968,
+    "mean_best_epoch": 3.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P4_D005_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6277966153095736,
+    "std_test_weighted_f1": 0.0887802806083362,
+    "mean_best_epoch": 3.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P4_D02_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6255785313134054,
+    "std_test_weighted_f1": 0.13432134722682398,
+    "mean_best_epoch": 4.333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P2_D01_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6242502459366287,
+    "std_test_weighted_f1": 0.07639124532011984,
+    "mean_best_epoch": 2.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P8_D005_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6205098605098603,
+    "std_test_weighted_f1": 0.10626053840566194,
+    "mean_best_epoch": 2.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P4_D01_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.616466716305875,
+    "std_test_weighted_f1": 0.16557864971574504,
+    "mean_best_epoch": 2.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P2_D02_LR5e-05_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.6128831168831163,
+    "std_test_weighted_f1": 0.01310162414500441,
+    "mean_best_epoch": 3.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P8_D01_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6103236861026877,
+    "std_test_weighted_f1": 0.08857815228838033,
+    "mean_best_epoch": 2.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P4_D02_LR5e-05_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.6080747702589804,
+    "std_test_weighted_f1": 0.05901498177085075,
+    "mean_best_epoch": 4.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P4_D005_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6053441042011707,
+    "std_test_weighted_f1": 0.14615064221362256,
+    "mean_best_epoch": 3.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P8_D01_LR5e-05_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.6051682195227425,
+    "std_test_weighted_f1": 0.053777094074519576,
+    "mean_best_epoch": 7.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P4_D02_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.6049958610096811,
+    "std_test_weighted_f1": 0.129891453310605,
+    "mean_best_epoch": 6.333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P8_D01_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6046608622920747,
+    "std_test_weighted_f1": 0.03722680522622735,
+    "mean_best_epoch": 1.3333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P8_D02_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6027999651311937,
+    "std_test_weighted_f1": 0.07641882111249713,
+    "mean_best_epoch": 2.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P4_D005_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.6014678498889023,
+    "std_test_weighted_f1": 0.07095339843505662,
+    "mean_best_epoch": 3.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P2_D02_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.599982999343156,
+    "std_test_weighted_f1": 0.1428765462602783,
+    "mean_best_epoch": 2.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P2_D02_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5990150739166754,
+    "std_test_weighted_f1": 0.04293350150227574,
+    "mean_best_epoch": 2.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P2_D02_LR00001_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5989061237143077,
+    "std_test_weighted_f1": 0.05801934404805226,
+    "mean_best_epoch": 2.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P8_D02_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5974065934065934,
+    "std_test_weighted_f1": 0.0752001545020299,
+    "mean_best_epoch": 1.6666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P8_D005_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5954533567452457,
+    "std_test_weighted_f1": 0.07494562097178062,
+    "mean_best_epoch": 2.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P2_D005_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5930230006453864,
+    "std_test_weighted_f1": 0.1319548734651895,
+    "mean_best_epoch": 4.333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P2_D01_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.591047619047619,
+    "std_test_weighted_f1": 0.1491522225363348,
+    "mean_best_epoch": 3.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P8_D01_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5906238847190904,
+    "std_test_weighted_f1": 0.1384220061548239,
+    "mean_best_epoch": 4.333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P8_D01_LR00001_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.590128712498115,
+    "std_test_weighted_f1": 0.11141979419162484,
+    "mean_best_epoch": 5.333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P4_D01_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5884349521248761,
+    "std_test_weighted_f1": 0.055194436979327244,
+    "mean_best_epoch": 3.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P8_D02_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5881710816879097,
+    "std_test_weighted_f1": 0.10268891447472328,
+    "mean_best_epoch": 2.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P4_D005_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5866477333723706,
+    "std_test_weighted_f1": 0.09768068013709143,
+    "mean_best_epoch": 2.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P2_D02_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5846568042195194,
+    "std_test_weighted_f1": 0.1442088746500397,
+    "mean_best_epoch": 4.333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P2_D005_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5846232237689137,
+    "std_test_weighted_f1": 0.11604847196895599,
+    "mean_best_epoch": 2.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P2_D005_LR00001",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5841097002627448,
+    "std_test_weighted_f1": 0.10576927719068867,
+    "mean_best_epoch": 1.3333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P2_D01_LR00001_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5825056365218088,
+    "std_test_weighted_f1": 0.07523987568461135,
+    "mean_best_epoch": 4.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P8_D02_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5772160553812117,
+    "std_test_weighted_f1": 0.11624110236852472,
+    "mean_best_epoch": 1.6666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P4_D01_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5762667961793747,
+    "std_test_weighted_f1": 0.13425791354449637,
+    "mean_best_epoch": 2.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P4_D005_LR5e-05_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5762157287157283,
+    "std_test_weighted_f1": 0.07181548073030383,
+    "mean_best_epoch": 1.6666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P8_D01_LR5e-05_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5757885077885073,
+    "std_test_weighted_f1": 0.2216321592882154,
+    "mean_best_epoch": 3.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P4_D02_LR00001_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5681889493468817,
+    "std_test_weighted_f1": 0.11380962223074294,
+    "mean_best_epoch": 4.666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E15_P2_D005_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5664558213317581,
+    "std_test_weighted_f1": 0.04889843569397895,
+    "mean_best_epoch": 1.6666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P2_D01_LR5e-05_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5628862366071937,
+    "std_test_weighted_f1": 0.058816357144225735,
+    "mean_best_epoch": 4.666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P8_D005_LR5e-05_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.555535871535871,
+    "std_test_weighted_f1": 0.030101395492354757,
+    "mean_best_epoch": 3.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P4_D005_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5546426054959853,
+    "std_test_weighted_f1": 0.11606651955644777,
+    "mean_best_epoch": 2.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P2_D01_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5514119460829984,
+    "std_test_weighted_f1": 0.07347795813400237,
+    "mean_best_epoch": 4.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P4_D01_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5512026159147867,
+    "std_test_weighted_f1": 0.1396689079511703,
+    "mean_best_epoch": 4.666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "mlp_L2_E10_P4_D02_LR5e-05",
+    "encoder_type": "mlp",
+    "mean_test_weighted_f1": 0.5481218430692111,
+    "std_test_weighted_f1": 0.0764279687854633,
+    "mean_best_epoch": 4.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P4_D01_LR5e-05_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5387493389062546,
+    "std_test_weighted_f1": 0.18706347419854757,
+    "mean_best_epoch": 5.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P4_D01_LR00001_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.538367330200208,
+    "std_test_weighted_f1": 0.04620637914320757,
+    "mean_best_epoch": 2.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P2_D005_LR00001_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5373613026819921,
+    "std_test_weighted_f1": 0.1586234672873946,
+    "mean_best_epoch": 4.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P4_D005_LR00001_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5257523767082587,
+    "std_test_weighted_f1": 0.19763550263412302,
+    "mean_best_epoch": 3.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P4_D01_LR5e-05_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5141216216216214,
+    "std_test_weighted_f1": 0.12490613714766444,
+    "mean_best_epoch": 4.666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P8_D005_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5111534391534387,
+    "std_test_weighted_f1": 0.132026668220827,
+    "mean_best_epoch": 4.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P2_D02_LR5e-05_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5090864530550433,
+    "std_test_weighted_f1": 0.20815976903121727,
+    "mean_best_epoch": 1.3333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P8_D005_LR5e-05_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.4972297789621387,
+    "std_test_weighted_f1": 0.22680912152083,
+    "mean_best_epoch": 3.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P2_D01_LR5e-05_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.4547695675971533,
+    "std_test_weighted_f1": 0.08383089163382909,
+    "mean_best_epoch": 1.3333333333333333,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P4_D02_LR5e-05_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.4453924254633357,
+    "std_test_weighted_f1": 0.18069483928487254,
+    "mean_best_epoch": 2.6666666666666665,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P8_D02_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.43894428459634405,
+    "std_test_weighted_f1": 0.19037083591500678,
+    "mean_best_epoch": 1.6666666666666667,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P8_D02_LR5e-05_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.4378255408967017,
+    "std_test_weighted_f1": 0.19106816786087877,
+    "mean_best_epoch": 4.0,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P8_D005_LR00001_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.43263825410837403,
+    "std_test_weighted_f1": 0.07112764696495605,
+    "mean_best_epoch": 3.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_b",
+    "config_id": "attentive_pool_L2_E15_P4_D005_LR5e-05_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.42450788311400073,
+    "std_test_weighted_f1": 0.1722242414457053,
+    "mean_best_epoch": 3.3333333333333335,
+    "n_splits": 3
+  },
+  {
+    "search_phase": "phase_c",
+    "config_id": "attentive_pool_L2_E15_P8_D01_LR00001_TD1024",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.5025548005549565,
+    "std_test_weighted_f1": 0.20294116884211735,
+    "mean_best_epoch": 5.043478260869565,
+    "n_splits": 23
+  },
+  {
+    "search_phase": "phase_c",
+    "config_id": "attentive_pool_L2_E15_P8_D005_LR00001_TD512",
+    "encoder_type": "attentive_pool",
+    "mean_test_weighted_f1": 0.4994639917343753,
+    "std_test_weighted_f1": 0.15044753194424962,
+    "mean_best_epoch": 3.9565217391304346,
+    "n_splits": 23
+  }
+]
