@@ -334,6 +334,15 @@ def compute_training_loss(
 
     if config.training_mode == "hybrid" and tokenizer is not None and prompts and responses:
         input_ids, attention_mask, labels = build_lm_batch(tokenizer, prompts, responses, device)
+        prefix_len = model.prefix_token_count(x)
+        if prefix_len > 0:
+            prefix_pad = torch.full(
+                (labels.shape[0], prefix_len),
+                -100,
+                device=labels.device,
+                dtype=labels.dtype,
+            )
+            labels = torch.cat([prefix_pad, labels], dim=1)
         lm_out = model(
             cell_embeddings=x,
             input_ids=input_ids,
