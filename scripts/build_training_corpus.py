@@ -19,9 +19,13 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import StratifiedGroupKFold
 
+from publication_utils import EXPANDED_PROFIBROTIC_GENES, MODULE_GENES
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = PROJECT_ROOT / "data/processed"
 OUT_DIR = PROCESSED_DIR / "training"
+SIG_DIR = PROJECT_ROOT / "data/raw/signatures"
+CORE_GENES_PATH = PROJECT_ROOT / "results/publication/meta/core_signature_genes.txt"
 
 MODULE_COLUMNS = [
     "ECM_score",
@@ -86,8 +90,10 @@ class ModalityArtifact:
 
 ARTIFACTS = [
     ModalityArtifact("microarray", "microarray", PROCESSED_DIR / "microarray"),
+    ModalityArtifact("arrayexpress", "arrayexpress", PROCESSED_DIR / "arrayexpress"),
     ModalityArtifact("bulk_rnaseq", "bulk_rnaseq", PROCESSED_DIR / "bulk_rnaseq"),
     ModalityArtifact("scrna_spatial", "scrna_spatial", PROCESSED_DIR / "scrna_spatial"),
+    ModalityArtifact("external_fibrosis", "external_fibrosis", PROCESSED_DIR / "external_fibrosis"),
 ]
 
 
@@ -189,13 +195,86 @@ def load_artifacts(max_shared_genes: int) -> tuple[pd.DataFrame, dict[str, pd.Da
         shared_genes = [gene for gene, _ in sorted(variance_scores, key=lambda item: item[1], reverse=True)[:max_shared_genes]]
         shared_genes = sorted(shared_genes)
 
+    pinned_genes = sorted({gene for genes in MODULE_GENES.values() for gene in genes if gene in symbol_presence})
+    shared_genes = sorted(set(shared_genes) | set(pinned_genes))
+
     feature_tables = build_feature_tables(manifest, expression_parts, shared_genes)
+    published_genes = load_published_marker_genes(SIG_DIR)
+    core_genes = load_low_i2_core_genes(CORE_GENES_PATH)
     vocab_report = {
         "shared_genes": shared_genes,
+        "published_marker_genes": published_genes,
+        "low_i2_core_genes": core_genes,
+        "expanded_profibrotic_genes": EXPANDED_PROFIBROTIC_GENES,
         "modality_gene_counts": {name: len(genes) for name, genes in vocabs.items()},
         "n_shared_genes": len(shared_genes),
     }
     return manifest, feature_tables, vocab_report
+
+
+def load_published_marker_genes(sig_dir: Path) -> list[str]:
+    genes: set[str] = set()
+    if not sig_dir.exists():
+        return []
+    for path in sorted(sig_dir.glob("*.tsv")):
+        df = pd.read_csv(path, sep="\t")
+        if "gene" not in df.columns:
+            continue
+        genes.update(str(g).strip().upper() for g in df["gene"].dropna().unique())
+    return sorted(genes)
+
+
+def load_low_i2_core_genes(path: Path) -> list[str]:
+    if not path.exists():
+        return []
+    return [line.strip().upper() for line in path.read_text().splitlines() if line.strip()]
+
+
+def subset_gene_features(shared: pd.DataFrame, genes: list[str]) -> pd.DataFrame:
+    available = [gene for gene in genes if gene in shared.columns]
+    if not available:
+        return shared[["sample_id"]].copy()
+    table = shared[["sample_id", *available]].copy()
+    table[available] = table[available].apply(pd.to_numeric, errors="coerce").fillna(0.0)
+    return table
+
+
+def rank_normalize_modules(modules: pd.DataFrame, manifest: pd.DataFrame) -> pd.DataFrame:
+    merged = modules.merge(manifest[["sample_id", "accession"]], on="sample_id", how="left")
+    cols = [col for col in MODULE_COLUMNS if col in merged.columns]
+    ranked = merged[["sample_id"]].copy()
+    for col in cols:
+        ranked[col] = merged.groupby("accession", dropna=False)[col].rank(pct=True, method="average")
+    ranked[cols] = ranked[cols].fillna(0.5)
+    return ranked
+
+
+def expanded_profibrotic_score(
+    manifest: pd.DataFrame,
+    expression_parts: dict[str, pd.DataFrame],
+    genes: list[str],
+) -> pd.DataFrame:
+    rows = []
+    meta = manifest.set_index("sample_id")
+    for sample_id, row in meta.iterrows():
+        modality = row["processed_modality"]
+        expr = expression_parts[modality]
+        if sample_id not in expr.index:
+            continue
+        sample_expr = expr.loc[sample_id]
+        available = [gene for gene in genes if gene in sample_expr.index]
+        if not available:
+            score = 0.0
+        else:
+            accession_ids = meta.index[meta["accession"].eq(row["accession"])]
+            acc_block = expr.reindex(accession_ids)[available]
+            ranks = acc_block.rank(axis=0, pct=True, method="average")
+            if sample_id in ranks.index:
+                score = float(ranks.loc[sample_id].mean(skipna=True))
+            else:
+                score = 0.5
+        rows.append({"sample_id": sample_id, "expanded_profibrotic_score": score})
+    return pd.DataFrame(rows)
 
 
 def build_feature_tables(
@@ -221,11 +300,26 @@ def build_feature_tables(
     shared[shared_genes] = shared[shared_genes].apply(pd.to_numeric, errors="coerce").fillna(0.0)
 
     shared_plus_modules = shared.merge(modules, on="sample_id", how="left")
-    return {
+    modules_rank = rank_normalize_modules(modules, manifest)
+    expanded = expanded_profibrotic_score(manifest, expression_parts, EXPANDED_PROFIBROTIC_GENES)
+    published_genes = load_published_marker_genes(SIG_DIR)
+    core_genes = load_low_i2_core_genes(CORE_GENES_PATH)
+
+    feature_tables = {
         "modules_only": modules,
+        "modules_rank_only": modules_rank,
         "shared_genes": shared,
         "shared_genes_plus_modules": shared_plus_modules,
+        "profibrotic_module_only": modules[["sample_id", "profibrotic_fibroblast_score"]].copy(),
+        "expanded_profibrotic_only": expanded,
     }
+    modules_rank_plus_expanded = modules_rank.merge(expanded, on="sample_id", how="left")
+    feature_tables["modules_rank_plus_expanded"] = modules_rank_plus_expanded
+    if published_genes:
+        feature_tables["published_markers_only"] = subset_gene_features(shared, published_genes)
+    if core_genes:
+        feature_tables["low_i2_core_only"] = subset_gene_features(shared, core_genes)
+    return feature_tables
 
 
 def valid_task_rows(manifest: pd.DataFrame, task: str) -> pd.DataFrame:

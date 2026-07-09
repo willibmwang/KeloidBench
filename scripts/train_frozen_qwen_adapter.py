@@ -79,6 +79,7 @@ class TrainConfig:
     use_modality_embedding: bool = False
     modality_embed_dim: int = 16
     lm_loss_weight: float = 0.25
+    first_token_loss_weight: float = 0.5
     contrastive_epochs: int = 0
     contrastive_temperature: float = 0.1
 
@@ -310,6 +311,24 @@ def forward_logits(
     raise ValueError(f"Unknown training_mode: {training_mode}")
 
 
+def first_token_only_loss(lm_logits: torch.Tensor, labels: torch.Tensor) -> torch.Tensor | None:
+    """Cross-entropy on the first supervised response token (verbalizer loss)."""
+    losses = []
+    for row_idx in range(labels.shape[0]):
+        valid = (labels[row_idx] != -100).nonzero(as_tuple=False).flatten()
+        if valid.numel() == 0:
+            continue
+        pos = int(valid[0].item())
+        if pos == 0:
+            continue
+        target = labels[row_idx, pos]
+        pred_logits = lm_logits[row_idx, pos - 1]
+        losses.append(F.cross_entropy(pred_logits.unsqueeze(0), target.unsqueeze(0)))
+    if not losses:
+        return None
+    return torch.stack(losses).mean()
+
+
 def compute_training_loss(
     model: EncoderDecoderQwen3ForCausalLM,
     x: torch.Tensor,
@@ -353,6 +372,11 @@ def compute_training_loss(
         if lm_loss is not None:
             parts["lm_loss"] = float(lm_loss.detach().cpu())
             loss = loss + config.lm_loss_weight * lm_loss
+            if config.first_token_loss_weight > 0 and lm_out.logits is not None:
+                ft_loss = first_token_only_loss(lm_out.logits, labels)
+                if ft_loss is not None:
+                    parts["first_token_loss"] = float(ft_loss.detach().cpu())
+                    loss = loss + config.first_token_loss_weight * ft_loss
 
     parts["total_loss"] = float(loss.detach().cpu())
     return loss, parts
@@ -688,11 +712,23 @@ def train_one_split(
     }
 
 
+def _json_default(obj: Any) -> Any:
+    if isinstance(obj, torch.Tensor):
+        return obj.detach().cpu().tolist()
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    if isinstance(obj, (np.floating, np.integer)):
+        return obj.item()
+    if isinstance(obj, Path):
+        return str(obj)
+    raise TypeError(f"Object of type {type(obj).__name__} is not JSON serializable")
+
+
 def append_jsonl(path: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a") as handle:
         for row in rows:
-            handle.write(json.dumps(row) + "\n")
+            handle.write(json.dumps(row, default=_json_default) + "\n")
 
 
 def init_wandb(args: argparse.Namespace, config: TrainConfig, split_names: list[str]):
@@ -729,6 +765,7 @@ def apply_loso_preset(args: argparse.Namespace) -> None:
     args.patience = 5
     args.lr = 5e-5
     args.lm_loss_weight = 0.25
+    args.first_token_loss_weight = 0.5
     args.contrastive_epochs = 3
     args.contrastive_temperature = 0.1
     if not args.config_id or args.config_id == "default":
@@ -764,6 +801,7 @@ def run_training(args: argparse.Namespace, config: TrainConfig | None = None) ->
         use_modality_embedding=args.use_modality_embedding,
         modality_embed_dim=args.modality_embed_dim,
         lm_loss_weight=args.lm_loss_weight,
+        first_token_loss_weight=getattr(args, "first_token_loss_weight", 0.0),
         contrastive_epochs=args.contrastive_epochs,
         contrastive_temperature=args.contrastive_temperature,
     )
@@ -856,13 +894,14 @@ def run_training(args: argparse.Namespace, config: TrainConfig | None = None) ->
             cohort_augmenter=cohort_augmenter,
             tokenizer=tokenizer,
         )
+        skip_keys = {"history", "best_state", "best_modality_state", "best_cohort_state", "contrastive_history"}
         row = {
             "stage": "frozen_qwen_adapter",
             "task": split["task"],
             "config_id": config.config_id,
             "search_phase": config.search_phase,
             **config.to_dict(),
-            **{k: v for k, v in split_result.items() if k not in {"history", "best_state"}},
+            **{k: v for k, v in split_result.items() if k not in skip_keys},
         }
         results.append(row)
 
@@ -953,6 +992,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--modality-embed-dim", type=int, default=16)
     parser.add_argument("--batch-embed-dim", type=int, default=16)
     parser.add_argument("--lm-loss-weight", type=float, default=0.25)
+    parser.add_argument("--first-token-loss-weight", type=float, default=0.0)
     parser.add_argument("--contrastive-epochs", type=int, default=0)
     parser.add_argument("--contrastive-temperature", type=float, default=0.1)
     parser.add_argument(

@@ -27,6 +27,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.svm import LinearSVC
 
+from domain_adaptation import accession_map, apply_normalization
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 TRAINING_DIR = PROJECT_ROOT / "data/processed/training"
 RESULTS_DIR = PROJECT_ROOT / "results/baselines"
@@ -154,13 +156,30 @@ def run_one(
     split: dict,
     target: pd.Series,
     random_state: int,
+    *,
+    manifest: pd.DataFrame | None = None,
+    normalization_mode: str = "none",
 ) -> list[dict]:
     x_train, y_train_raw = split_rows(feature_table, target, split["train_sample_ids"])
+    x_val, y_val_raw = split_rows(feature_table, target, split.get("val_sample_ids", []))
     x_test, y_test_raw = split_rows(feature_table, target, split["test_sample_ids"])
     if len(x_train) < 4 or len(x_test) < 2:
         return []
     if y_train_raw.nunique() < 2 or y_test_raw.nunique() < 2:
         return []
+
+    if normalization_mode != "none" and manifest is not None:
+        acc_map = accession_map(manifest)
+        x_train, x_val, x_test = apply_normalization(
+            x_train,
+            x_val,
+            x_test,
+            x_train.index.tolist(),
+            x_val.index.tolist() if len(x_val) else [],
+            x_test.index.tolist(),
+            acc_map,
+            normalization_mode,
+        )
 
     label_encoder = LabelEncoder()
     label_encoder.fit(pd.concat([y_train_raw, y_test_raw]).astype(str))
@@ -170,8 +189,6 @@ def run_one(
 
     rows = []
     for model_name, model in model_specs(random_state).items():
-        # Small MLP on thousands of genes is useful but slow/noisy for this MVP;
-        # keep it to module/hybrid features where sample count can support it.
         if model_name == "small_mlp" and feature_name == "shared_genes":
             continue
         try:
@@ -186,6 +203,7 @@ def run_one(
                     "task": split["task"],
                     "split_name": split["split_name"],
                     "feature_set": feature_name,
+                    "normalization_mode": normalization_mode,
                     "model": model_name,
                     "n_train": int(len(x_train)),
                     "n_test": int(len(x_test)),
@@ -200,6 +218,7 @@ def run_one(
                     "task": split["task"],
                     "split_name": split["split_name"],
                     "feature_set": feature_name,
+                    "normalization_mode": normalization_mode,
                     "model": model_name,
                     "n_train": int(len(x_train)),
                     "n_test": int(len(x_test)),
@@ -318,18 +337,55 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--wandb-entity", default="williamwang178243-yale-university")
     parser.add_argument("--wandb-run-name", default="baseline-mvp-267-profiles")
     parser.add_argument("--wandb-mode", default="online", choices=["online", "offline", "disabled"])
+    parser.add_argument(
+        "--normalization-mode",
+        choices=["none", "accession_zscore", "quantile_rank"],
+        default="none",
+        help="Transductive per-accession normalization applied before model fitting.",
+    )
+    parser.add_argument("--tasks", nargs="+", default=None)
+    parser.add_argument("--feature-sets", nargs="+", default=None)
+    parser.add_argument(
+        "--split-pattern",
+        default=None,
+        help="Glob pattern for split_name (e.g. leave_accession_out_*)",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     manifest, features, splits = load_inputs(args.training_dir)
+    if args.tasks:
+        task_set = set(args.tasks)
+        splits = [split for split in splits if split["task"] in task_set]
+    if args.split_pattern:
+        import fnmatch
+
+        splits = [split for split in splits if fnmatch.fnmatch(split["split_name"], args.split_pattern)]
+    if args.feature_sets:
+        feature_set = set(args.feature_sets)
+        features = {name: table for name, table in features.items() if name in feature_set}
+    if not splits:
+        raise SystemExit("No splits remain after filtering.")
+    if not features:
+        raise SystemExit("No feature sets remain after filtering.")
     wandb_run = init_wandb(args, manifest, splits)
     results = []
     for split in splits:
         target = target_for_task(manifest, split["task"])
         for feature_name, feature_table in features.items():
-            results.extend(run_one(feature_name, feature_table, split, target, args.random_state))
+            results.extend(
+                run_one(
+                    feature_name,
+                    feature_table,
+                    split,
+                    target,
+                    args.random_state,
+                    manifest=manifest,
+                    normalization_mode=args.normalization_mode,
+                )
+            )
     write_reports(results, manifest, args.out_dir, wandb_run=wandb_run)
     if wandb_run is not None:
         wandb_run.finish()
