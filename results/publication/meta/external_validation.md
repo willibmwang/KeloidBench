@@ -1,0 +1,22 @@
+# External and Cross-Disease Validation
+
+- E-MTAB-2509 (gene_core_score): AUROC=0.845679012345679 [0.631, 0.984], weighted_F1=0.748, n=27, labels={'non_keloid': 18, 'keloid': 9}
+- E-MTAB-2509 (module_mean_score): AUROC=0.8333333333333334 [0.667, 0.966], weighted_F1=0.748, n=27, labels={'non_keloid': 18, 'keloid': 9}
+- E-MTAB-2509 (profibrotic_fibroblast_score): AUROC=0.7777777777777779 [0.593, 0.944], weighted_F1=0.748, n=27, labels={'non_keloid': 18, 'keloid': 9}
+- E-MTAB-2509 (keloid_module_logistic): AUROC=0.7160493827160493 [0.494, 0.899], weighted_F1=0.676, n=27, labels={'non_keloid': 18, 'keloid': 9}
+- E-MTAB-4945 (gene_core_score): AUROC=0.6837606837606838 [0.492, 0.875], weighted_F1=0.637, n=40, labels={'keloid': 27, 'non_keloid': 13}
+- E-MTAB-4945 (module_mean_score): AUROC=0.6552706552706553 [0.489, 0.805], weighted_F1=0.637, n=40, labels={'keloid': 27, 'non_keloid': 13}
+- E-MTAB-4945 (profibrotic_fibroblast_score): AUROC=0.6666666666666666 [0.484, 0.837], weighted_F1=0.588, n=40, labels={'keloid': 27, 'non_keloid': 13}
+- E-MTAB-4945 (keloid_module_logistic): AUROC=0.6666666666666667 [0.504, 0.823], weighted_F1=0.637, n=40, labels={'keloid': 27, 'non_keloid': 13}
+- GSE32537 (gene_core_score): AUROC=0.4369747899159664 [0.345, 0.525], weighted_F1=0.491, n=169, labels={'fibrotic': 119, 'non_fibrotic': 50}
+- GSE32537 (module_mean_score): AUROC=0.9065546218487395 [0.858, 0.950], weighted_F1=0.774, n=169, labels={'fibrotic': 119, 'non_fibrotic': 50}
+- GSE32537 (profibrotic_fibroblast_score): AUROC=0.8722689075630253 [0.810, 0.931], weighted_F1=0.728, n=169, labels={'fibrotic': 119, 'non_fibrotic': 50}
+- GSE32537 (keloid_module_logistic): AUROC=0.746218487394958 [0.668, 0.822], weighted_F1=0.683, n=169, labels={'fibrotic': 119, 'non_fibrotic': 50}
+- GSE48149 (gene_core_score): AUROC=0.5213675213675214 [0.269, 0.761], weighted_F1=0.549, n=22, labels={'fibrotic': 13, 'non_fibrotic': 9}
+- GSE48149 (module_mean_score): AUROC=0.8205128205128205 [0.602, 1.000], weighted_F1=0.820, n=22, labels={'fibrotic': 13, 'non_fibrotic': 9}
+- GSE48149 (profibrotic_fibroblast_score): AUROC=0.9230769230769231 [0.791, 1.000], weighted_F1=0.820, n=22, labels={'fibrotic': 13, 'non_fibrotic': 9}
+- GSE48149 (keloid_module_logistic): AUROC=0.7777777777777779 [0.558, 0.967], weighted_F1=0.730, n=22, labels={'fibrotic': 13, 'non_fibrotic': 9}
+- GSE58095 (gene_core_score): AUROC=0.6776094276094276 [0.553, 0.801], weighted_F1=0.626, n=102, labels={'fibrotic': 66, 'non_fibrotic': 36}
+- GSE58095 (module_mean_score): AUROC=0.859848484848485 [0.795, 0.925], weighted_F1=0.779, n=102, labels={'fibrotic': 66, 'non_fibrotic': 36}
+- GSE58095 (profibrotic_fibroblast_score): AUROC=0.6313131313131314 [0.512, 0.747], weighted_F1=0.607, n=102, labels={'fibrotic': 66, 'non_fibrotic': 36}
+- GSE58095 (keloid_module_logistic): AUROC=0.7167508417508418 [0.621, 0.822], weighted_F1=0.645, n=102, labels={'fibrotic': 66, 'non_fibrotic': 36}

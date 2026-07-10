@@ -1,0 +1,338 @@
+{
+  "version": "rigor_v2",
+  "program_model": {
+    "name": "elastic_net_logreg_modules_only",
+    "module_columns": [
+      "ECM_score",
+      "myofibroblast_score",
+      "TGFb_score",
+      "hypoxia_vascular_score",
+      "remodeling_score",
+      "profibrotic_fibroblast_score",
+      "antifibrotic_fibroblast_score"
+    ],
+    "weights": {
+      "ECM_score": 0.5688800182928949,
+      "myofibroblast_score": 0.03330112859787091,
+      "TGFb_score": 0.10053821214887602,
+      "hypoxia_vascular_score": 0.5799202471686505,
+      "remodeling_score": -0.25149032059207993,
+      "profibrotic_fibroblast_score": 0.7632216431653444,
+      "antifibrotic_fibroblast_score": -0.10166388392836362
+    }
+  },
+  "c1": {
+    "claim": "C1_structural_within_choi",
+    "contrasts": [
+      {
+        "contrast": "fb_endothelial_vs_fb_only",
+        "group_a": "fibroblast_endothelial",
+        "group_b": "fibroblast_only",
+        "expectation": "Co-culture may show higher vascular/fibrotic program score than fibroblast-only.",
+        "n_a": 45,
+        "n_b": 5,
+        "mean_a": 10.558963793860558,
+        "mean_b": 21.741504856265685,
+        "delta_a_minus_b": -11.182541062405127,
+        "mannwhitney_p": 0.5290745530404577,
+        "permutation": {
+          "metric": "<lambda>",
+          "observed": -11.182541062405127,
+          "null_mean": -0.08093911522320679,
+          "null_std": 7.04235336371064,
+          "p_value": 0.07238552289542091,
+          "n_permutations": 5000
+        },
+        "bootstrap_a": {
+          "metric": "mean",
+          "point_estimate": 10.558963793860558,
+          "ci_low": 6.992044866760361,
+          "ci_high": 14.486290770316447,
+          "n_bootstrap": 2000,
+          "method": "percentile"
+        },
+        "bootstrap_b": {
+          "metric": "mean",
+          "point_estimate": 21.741504856265685,
+          "ci_low": 1.6813909666999858,
+          "ci_high": 42.10691753751391,
+          "n_bootstrap": 2000,
+          "method": "percentile"
+        },
+        "passes_gate": false
+      },
+      {
+        "contrast": "fb_only_2D_vs_3D",
+        "group_a": "2D_monolayer",
+        "group_b": "3D_spheroid",
+        "expectation": "Fibroblast-only 3D should show lower/deactivated program score vs 2D.",
+        "n_a": 3,
+        "n_b": 2,
+        "mean_a": 1.692875313799265,
+        "mean_b": 51.814449169965314,
+        "delta_a_minus_b": -50.12157385616605,
+        "mannwhitney_p": 0.2,
+        "permutation": {
+          "metric": "<lambda>",
+          "observed": -50.12157385616605,
+          "null_mean": -0.18504612724464092,
+          "null_std": 25.055904651731325,
+          "p_value": 0.10137972405518897,
+          "n_permutations": 5000
+        },
+        "bootstrap_a": {
+          "metric": "mean",
+          "point_estimate": 1.692875313799265,
+          "ci_low": 1.6102934814569145,
+          "ci_high": 1.7502970492956607,
+          "n_bootstrap": 2000,
+          "method": "percentile"
+        },
+        "bootstrap_b": {
+          "metric": "mean",
+          "point_estimate": 51.814449169965314,
+          "ci_low": 51.051202190758985,
+          "ci_high": 52.57769614917164,
+          "n_bootstrap": 2000,
+          "method": "percentile"
+        },
+        "passes_gate": false
+      },
+      {
+        "contrast": "fb_ec_2D_vs_3D",
+        "group_a": "2D_monolayer",
+        "group_b": "3D_spheroid",
+        "expectation": "3D co-culture may sustain higher fibrotic/vascular program score than 2D.",
+        "n_a": 27,
+        "n_b": 18,
+        "mean_a": 1.6931762986919139,
+        "mean_b": 23.857645036613526,
+        "delta_a_minus_b": -22.164468737921613,
+        "mannwhitney_p": 1.928398190533928e-08,
+        "permutation": {
+          "metric": "<lambda>",
+          "observed": -22.164468737921613,
+          "null_mean": 0.07778768094906595,
+          "null_std": 3.9239987810313797,
+          "p_value": 0.0001999600079984003,
+          "n_permutations": 5000
+        },
+        "bootstrap_a": {
+          "metric": "mean",
+          "point_estimate": 1.6931762986919139,
+          "ci_low": 1.674917263182029,
+          "ci_high": 1.7134554248736371,
+          "n_bootstrap": 2000,
+          "method": "percentile"
+        },
+        "bootstrap_b": {
+          "metric": "mean",
+          "point_estimate": 23.857645036613526,
+          "ci_low": 18.987516413000378,
+          "ci_high": 29.135651203183375,
+          "n_bootstrap": 2000,
+          "method": "percentile"
+        },
+        "passes_gate": true
+      }
+    ],
+    "passes_gate": true
+  },
+  "c2": {
+    "claim": "C2_independent_phenotypes",
+    "correlations": [
+      {
+        "target": "morphology_area",
+        "column": "spheroid_area_um2",
+        "n": 8,
+        "spearman_rho": 0.261904761904762,
+        "p_value": 0.530922861565801,
+        "permutation_p_value": 0.5432913417316537,
+        "ci_low": -0.6708860759493672,
+        "ci_high": 0.9737091938707529,
+        "bh_adjusted_p": 0.7272945410917817,
+        "passes_gate": false
+      },
+      {
+        "target": "propagation_area",
+        "column": "propagation_area",
+        "n": 8,
+        "spearman_rho": -0.9285714285714287,
+        "p_value": 0.0008629681828999769,
+        "permutation_p_value": 0.0027994401119776045,
+        "ci_low": -1.0,
+        "ci_high": -0.5312499999999999,
+        "bh_adjusted_p": 0.016796640671865627,
+        "passes_gate": true
+      },
+      {
+        "target": "compact_state_pct",
+        "column": "compact_spheroid_pct",
+        "n": 50,
+        "spearman_rho": 0.05042278237853517,
+        "p_value": 0.7280307565635644,
+        "permutation_p_value": 0.7370525894821036,
+        "ci_low": -0.26329227767772384,
+        "ci_high": 0.34088360068972284,
+        "bh_adjusted_p": 0.7370525894821037,
+        "passes_gate": false
+      },
+      {
+        "target": "pre_regression_pct",
+        "column": "pre_regression_pct",
+        "n": 50,
+        "spearman_rho": 0.07864732029550758,
+        "p_value": 0.5872008852144471,
+        "permutation_p_value": 0.6022795440911818,
+        "ci_low": -0.20231387235454695,
+        "ci_high": 0.36544960155748474,
+        "bh_adjusted_p": 0.7272945410917817,
+        "passes_gate": false
+      },
+      {
+        "target": "regression_pct",
+        "column": "regression_pct",
+        "n": 15,
+        "spearman_rho": -0.15118578920369086,
+        "p_value": 0.5906804742690956,
+        "permutation_p_value": 0.6060787842431514,
+        "ci_low": -0.6721886730384327,
+        "ci_high": 0.42941544728416126,
+        "bh_adjusted_p": 0.7272945410917817,
+        "passes_gate": false
+      },
+      {
+        "target": "drug_3d_relative_volume",
+        "column": "drug_relative_volume_pct",
+        "n": 8,
+        "spearman_rho": -0.3333333333333334,
+        "p_value": 0.4197530864197531,
+        "permutation_p_value": 0.4217156568686263,
+        "ci_low": -0.8421052631578949,
+        "ci_high": 0.7975316455696202,
+        "bh_adjusted_p": 0.7272945410917817,
+        "passes_gate": false
+      }
+    ],
+    "n_significant_bh": 1,
+    "passes_gate": true
+  },
+  "dirand_anchor": {
+    "claim": "dirand_qualitative_anchor",
+    "note": "Dirand reported separately; not mixed with Choi program-score scale.",
+    "rows": [
+      {
+        "condition_code": "Dirand_KF_2D_monolayer_none",
+        "culture_format": "2D_monolayer",
+        "tgfb1": "none",
+        "fibrotic_state": "active_fibrotic",
+        "alpha_SMA": 1.0,
+        "COL1A1_COL3A1_ratio": 1.0
+      },
+      {
+        "condition_code": "Dirand_KF_2D_monolayer_present",
+        "culture_format": "2D_monolayer",
+        "tgfb1": "present",
+        "fibrotic_state": "active_fibrotic",
+        "alpha_SMA": 1.25,
+        "COL1A1_COL3A1_ratio": 1.2
+      },
+      {
+        "condition_code": "Dirand_KF_3D_spheroid_none",
+        "culture_format": "3D_spheroid",
+        "tgfb1": "none",
+        "fibrotic_state": "deactivated",
+        "alpha_SMA": 0.25,
+        "COL1A1_COL3A1_ratio": 0.3
+      },
+      {
+        "condition_code": "Dirand_KF_3D_spheroid_present",
+        "culture_format": "3D_spheroid",
+        "tgfb1": "present",
+        "fibrotic_state": "deactivated",
+        "alpha_SMA": 0.25,
+        "COL1A1_COL3A1_ratio": 0.3
+      },
+      {
+        "condition_code": "Dirand_NDF_2D_monolayer_none",
+        "culture_format": "2D_monolayer",
+        "tgfb1": "none",
+        "fibrotic_state": "deactivated",
+        "alpha_SMA": 0.4,
+        "COL1A1_COL3A1_ratio": 0.5
+      },
+      {
+        "condition_code": "Dirand_NDF_2D_monolayer_present",
+        "culture_format": "2D_monolayer",
+        "tgfb1": "present",
+        "fibrotic_state": "deactivated",
+        "alpha_SMA": 0.4,
+        "COL1A1_COL3A1_ratio": 0.5
+      },
+      {
+        "condition_code": "Dirand_NDF_3D_spheroid_none",
+        "culture_format": "3D_spheroid",
+        "tgfb1": "none",
+        "fibrotic_state": "deactivated",
+        "alpha_SMA": 0.25,
+        "COL1A1_COL3A1_ratio": 0.3
+      },
+      {
+        "condition_code": "Dirand_NDF_3D_spheroid_present",
+        "culture_format": "3D_spheroid",
+        "tgfb1": "present",
+        "fibrotic_state": "deactivated",
+        "alpha_SMA": 0.25,
+        "COL1A1_COL3A1_ratio": 0.3
+      }
+    ]
+  },
+  "circularity_audit": {
+    "gene_holdout": {
+      "genes_score_side": [
+        "COL1A1",
+        "COL3A1"
+      ],
+      "genes_activity_side": [
+        "TGFB1"
+      ],
+      "weights_used": {
+        "ECM_score": 0.5688800182928949,
+        "TGFb_score": 0.10053821214887602,
+        "hypoxia_vascular_score": 0.5799202471686505,
+        "remodeling_score": -0.25149032059207993
+      },
+      "n": 50,
+      "spearman_rho": 0.8070588235294118,
+      "p_value": 1.462680313871224e-12,
+      "permutation_p_value": 0.0001999600079984003,
+      "ci_low": 0.6064440208304934,
+      "ci_high": 0.9144107701611528,
+      "passes_audit": false,
+      "interpretation": "High cross-half correlation suggests residual self-reference; interpret cautiously."
+    },
+    "label_shuffle_controls": [
+      {
+        "target": "morphology_area",
+        "observed_rho": 0.261904761904762,
+        "null_mean": -0.0017738095238095223,
+        "null_std": 0.388462395526382,
+        "label_shuffle_p": 0.5422288855572214
+      },
+      {
+        "target": "compact_state_pct",
+        "observed_rho": 0.05042278237853517,
+        "null_mean": 0.002276262926992724,
+        "null_std": 0.14010121342541626,
+        "label_shuffle_p": 0.7276361819090454
+      },
+      {
+        "target": "drug_3d_relative_volume",
+        "observed_rho": -0.3333333333333334,
+        "null_mean": 0.008702380952380956,
+        "null_std": 0.3663301716250754,
+        "label_shuffle_p": 0.42128935532233885
+      }
+    ]
+  }
+}

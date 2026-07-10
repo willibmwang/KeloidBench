@@ -65,15 +65,6 @@ def base_config() -> dict:
         "lr": 1e-4,
         "weight_decay": 0.01,
         "dropout": 0.1,
-        "training_mode": "classify",
-        "context_pooling": "flat",
-        "batch_embedding": "none",
-        "batch_embed_dim": 16,
-        "use_modality_embedding": False,
-        "modality_embed_dim": 16,
-        "lm_loss_weight": 0.25,
-        "contrastive_epochs": 0,
-        "contrastive_temperature": 0.1,
     }
 
 
@@ -178,18 +169,6 @@ def make_namespace(
     ns.dropout = config["dropout"]
     ns.config_id = config["config_id"]
     ns.search_phase = config["search_phase"]
-    ns.training_mode = config.get("training_mode", "classify")
-    ns.context_pooling = config.get("context_pooling", "flat")
-    ns.batch_embedding = config.get("batch_embedding", "none")
-    ns.use_modality_embedding = config.get("use_modality_embedding", False)
-    ns.modality_embed_dim = config.get("modality_embed_dim", 16)
-    ns.batch_embed_dim = config.get("batch_embed_dim", 16)
-    ns.lm_loss_weight = config.get("lm_loss_weight", 0.25)
-    ns.contrastive_epochs = config.get("contrastive_epochs", 0)
-    ns.contrastive_temperature = config.get("contrastive_temperature", 0.1)
-    ns.loso_preset = False
-    ns.task = getattr(args, "task", "keloid_binary")
-    ns.all_task_splits = False
     ns.split_names = ",".join(split_names)
     ns.split_name = None
     ns.split_pattern = None

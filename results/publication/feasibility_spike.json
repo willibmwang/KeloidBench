@@ -1,0 +1,113 @@
+{
+  "program_model": {
+    "name": "elastic_net_logreg_modules_only",
+    "module_columns": [
+      "ECM_score",
+      "myofibroblast_score",
+      "TGFb_score",
+      "hypoxia_vascular_score",
+      "remodeling_score",
+      "profibrotic_fibroblast_score",
+      "antifibrotic_fibroblast_score"
+    ],
+    "weights": {
+      "ECM_score": 0.5688800182928949,
+      "myofibroblast_score": 0.03330112859787091,
+      "TGFb_score": 0.10053821214887602,
+      "hypoxia_vascular_score": 0.5799202471686505,
+      "remodeling_score": -0.25149032059207993,
+      "profibrotic_fibroblast_score": 0.7632216431653444,
+      "antifibrotic_fibroblast_score": -0.10166388392836362
+    }
+  },
+  "c1": {
+    "claim": "C1_spheroid_separation",
+    "n_choi_active": 45,
+    "n_choi_fb_only": 5,
+    "n_dirand": 8,
+    "choi_active_mean": 10.558963793860558,
+    "choi_fb_only_mean": 21.741504856265685,
+    "dirand_mean": -0.5,
+    "mannwhitney_u": 360.0,
+    "mannwhitney_p": 4.041884768699045e-06,
+    "permutation_active_vs_dirand": {
+      "metric": "<lambda>",
+      "observed": 11.058963793860558,
+      "null_mean": 0.011518029458887623,
+      "null_std": 4.8457654373003844,
+      "p_value": 0.021595680863827234,
+      "n_permutations": 5000
+    },
+    "permutation_active_vs_fb_only": {
+      "metric": "<lambda>",
+      "observed": -11.182541062405127,
+      "null_mean": -0.08093911522320679,
+      "null_std": 7.04235336371064,
+      "p_value": 0.07238552289542091,
+      "n_permutations": 5000
+    },
+    "bootstrap_choi_active": {
+      "metric": "mean",
+      "point_estimate": 10.558963793860558,
+      "ci_low": 6.992044866760361,
+      "ci_high": 14.486290770316447,
+      "n_bootstrap": 2000,
+      "method": "percentile"
+    },
+    "bootstrap_dirand": {
+      "metric": "mean",
+      "point_estimate": -0.5,
+      "ci_low": -1.0,
+      "ci_high": 0.25,
+      "n_bootstrap": 2000,
+      "method": "percentile"
+    },
+    "passes_gate": true
+  },
+  "c2": {
+    "claim": "C2_qpcr_morphology_correlation",
+    "correlations": [
+      {
+        "target": "internal_qpcr_activity",
+        "column": "qpcr_fibrotic_activity_score",
+        "n": 50,
+        "spearman_rho": 0.9897238895558224,
+        "p_value": 3.298225467535129e-42,
+        "ci_low": 0.964283569664049,
+        "ci_high": 0.9967275360395621
+      },
+      {
+        "target": "morphology_area",
+        "column": "spheroid_area_um2",
+        "n": 20,
+        "spearman_rho": 0.22398291955724406,
+        "p_value": 0.342457135131807,
+        "ci_low": -0.31623731384271936,
+        "ci_high": 0.6667995785358282
+      },
+      {
+        "target": "compact_state_pct",
+        "column": "compact_spheroid_pct",
+        "n": 50,
+        "spearman_rho": 0.05042278237853517,
+        "p_value": 0.7280307565635644,
+        "ci_low": -0.2849238197747839,
+        "ci_high": 0.34594635998657103
+      }
+    ],
+    "n_significant": 1,
+    "passes_gate": true
+  },
+  "c3": {
+    "claim": "C3_drug_response",
+    "n_drug_rows": 120,
+    "baseline_r2": 0.0,
+    "program_r2": 0.004448237026344892,
+    "full_r2": 0.04270131296813173,
+    "delta_r2_vs_baseline": 0.004448237026344892,
+    "permutation_p_value": 0.4642678660669665,
+    "passes_gate": false
+  },
+  "overall_gate": "proceed",
+  "recommendation": "Proceed with full publication build; at least one transfer claim shows signal."
+}

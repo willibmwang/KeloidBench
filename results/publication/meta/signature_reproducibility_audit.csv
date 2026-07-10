@@ -1,0 +1,4 @@
+signature_id,n_genes,n_genes_in_meta,frac_core_reproducible,frac_fragile,frac_non_significant,median_i_squared,mean_pooled_effect
+GSE145725_up,9,9,0.0,0.0,1.0,0.6010084681855322,0.3802311339923689
+GSE44270_up,10,10,0.0,0.0,1.0,0.6002877506500823,0.3727337964994401
+module_panel,22,22,0.0,0.0,1.0,0.5957100596631271,0.2339895513740635

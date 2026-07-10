@@ -1,0 +1,478 @@
+{
+  "program_model_choice": {
+    "available": true,
+    "primary_program_model": "elastic_net_logreg",
+    "primary_feature_set": "shared_genes_plus_modules",
+    "primary_grouped_weighted_f1": 0.6325899793492481,
+    "secondary_model": "frozen_qwen_adapter",
+    "secondary_grouped_weighted_f1": 0.6000123003961889,
+    "recommendation": "Use elastic-net module program as primary interpretable model; report frozen-Qwen adapter as secondary comparison only."
+  },
+  "module_columns": [
+    "ECM_score",
+    "myofibroblast_score",
+    "TGFb_score",
+    "hypoxia_vascular_score",
+    "remodeling_score",
+    "profibrotic_fibroblast_score",
+    "antifibrotic_fibroblast_score"
+  ],
+  "logistic_weights": [
+    {
+      "module": "profibrotic_fibroblast_score",
+      "genes": "POSTN",
+      "keloid_logistic_weight": 0.65162124272141,
+      "abs_weight": 0.65162124272141
+    },
+    {
+      "module": "hypoxia_vascular_score",
+      "genes": "HIF1A,PECAM1,VWF,KDR",
+      "keloid_logistic_weight": 0.397545266388603,
+      "abs_weight": 0.397545266388603
+    },
+    {
+      "module": "ECM_score",
+      "genes": "COL1A1,COL3A1,FN1",
+      "keloid_logistic_weight": 0.3828411165940766,
+      "abs_weight": 0.3828411165940766
+    },
+    {
+      "module": "remodeling_score",
+      "genes": "MMP14,ADAM12,HTRA1,CTHRC1",
+      "keloid_logistic_weight": -0.1545528981985133,
+      "abs_weight": 0.1545528981985133
+    },
+    {
+      "module": "TGFb_score",
+      "genes": "TGFB1,TGFB3,TGFBR1,TGFBR2,SMAD2,SMAD3",
+      "keloid_logistic_weight": 0.07780670232740747,
+      "abs_weight": 0.07780670232740747
+    },
+    {
+      "module": "myofibroblast_score",
+      "genes": "ACTA2,TAGLN,MYL9",
+      "keloid_logistic_weight": -0.07435958500174328,
+      "abs_weight": 0.07435958500174328
+    },
+    {
+      "module": "antifibrotic_fibroblast_score",
+      "genes": "IGFBP2",
+      "keloid_logistic_weight": 0.059142272068591045,
+      "abs_weight": 0.059142272068591045
+    }
+  ],
+  "module_direction_checks": [
+    {
+      "module": "ECM",
+      "score_column": "ECM_score",
+      "genes": "COL1A1,COL3A1,FN1",
+      "keloid_mean": 0.2060059078481818,
+      "non_keloid_mean": -0.15695688217004314,
+      "delta": 0.36296279001822496,
+      "mannwhitney_p": 2.3213585809099264e-07,
+      "direction_expected": true,
+      "direction_matches_expectation": true
+    },
+    {
+      "module": "myofibroblast",
+      "score_column": "myofibroblast_score",
+      "genes": "ACTA2,TAGLN,MYL9",
+      "keloid_mean": 0.10305501860357955,
+      "non_keloid_mean": -0.07851810941225212,
+      "delta": 0.18157312801583167,
+      "mannwhitney_p": 0.004105236981952749,
+      "direction_expected": true,
+      "direction_matches_expectation": true
+    },
+    {
+      "module": "TGFb",
+      "score_column": "TGFb_score",
+      "genes": "TGFB1,TGFB3,TGFBR1,TGFBR2,SMAD2,SMAD3",
+      "keloid_mean": 0.11693944412166726,
+      "non_keloid_mean": -0.08909671933079394,
+      "delta": 0.2060361634524612,
+      "mannwhitney_p": 7.151289458895743e-09,
+      "direction_expected": true,
+      "direction_matches_expectation": true
+    },
+    {
+      "module": "hypoxia_vascular",
+      "score_column": "hypoxia_vascular_score",
+      "genes": "HIF1A,PECAM1,VWF,KDR",
+      "keloid_mean": 0.12819431205306078,
+      "non_keloid_mean": -0.09767185680233137,
+      "delta": 0.22586616885539215,
+      "mannwhitney_p": 0.0033249843296845427,
+      "direction_expected": true,
+      "direction_matches_expectation": true
+    },
+    {
+      "module": "remodeling",
+      "score_column": "remodeling_score",
+      "genes": "MMP14,ADAM12,HTRA1,CTHRC1",
+      "keloid_mean": 0.20701415982012156,
+      "non_keloid_mean": -0.15772507414866388,
+      "delta": 0.36473923396878544,
+      "mannwhitney_p": 3.559016390362899e-07,
+      "direction_expected": true,
+      "direction_matches_expectation": true
+    },
+    {
+      "module": "profibrotic_fibroblast",
+      "score_column": "profibrotic_fibroblast_score",
+      "genes": "POSTN",
+      "keloid_mean": 0.3023022906121888,
+      "non_keloid_mean": -0.2303255547521442,
+      "delta": 0.5326278453643329,
+      "mannwhitney_p": 8.734765740626331e-13,
+      "direction_expected": true,
+      "direction_matches_expectation": true
+    },
+    {
+      "module": "antifibrotic_fibroblast",
+      "score_column": "antifibrotic_fibroblast_score",
+      "genes": "IGFBP2",
+      "keloid_mean": 0.06768685142224724,
+      "non_keloid_mean": -0.05157093441695013,
+      "delta": 0.11925778583919738,
+      "mannwhitney_p": 0.12065943456517308,
+      "direction_expected": false,
+      "direction_matches_expectation": false
+    }
+  ],
+  "cross_modality_stability": [
+    {
+      "modality": "arrayexpress",
+      "module": "ECM_score",
+      "keloid_mean": 0.06923012001232103,
+      "non_keloid_mean": -0.08039626840140526,
+      "delta": 0.14962638841372627,
+      "n_keloid": 36,
+      "n_non_keloid": 31
+    },
+    {
+      "modality": "arrayexpress",
+      "module": "myofibroblast_score",
+      "keloid_mean": 0.06208224986990539,
+      "non_keloid_mean": -0.0720955159779636,
+      "delta": 0.134177765847869,
+      "n_keloid": 36,
+      "n_non_keloid": 31
+    },
+    {
+      "modality": "arrayexpress",
+      "module": "TGFb_score",
+      "keloid_mean": 0.04622127581728696,
+      "non_keloid_mean": -0.053676320303943904,
+      "delta": 0.09989759612123086,
+      "n_keloid": 36,
+      "n_non_keloid": 31
+    },
+    {
+      "modality": "arrayexpress",
+      "module": "hypoxia_vascular_score",
+      "keloid_mean": 0.1535619813140976,
+      "non_keloid_mean": -0.1783300428163672,
+      "delta": 0.3318920241304648,
+      "n_keloid": 36,
+      "n_non_keloid": 31
+    },
+    {
+      "modality": "arrayexpress",
+      "module": "remodeling_score",
+      "keloid_mean": 0.13865059082774553,
+      "non_keloid_mean": -0.16101358934835003,
+      "delta": 0.29966418017609553,
+      "n_keloid": 36,
+      "n_non_keloid": 31
+    },
+    {
+      "modality": "arrayexpress",
+      "module": "fibrotic_activity_score",
+      "keloid_mean": 0.1493012276908788,
+      "non_keloid_mean": -0.17338207086682778,
+      "delta": 0.3226832985577066,
+      "n_keloid": 36,
+      "n_non_keloid": 31
+    },
+    {
+      "modality": "bulk_rnaseq",
+      "module": "ECM_score",
+      "keloid_mean": 0.23574534719856297,
+      "non_keloid_mean": -0.3000395327981714,
+      "delta": 0.5357848799967344,
+      "n_keloid": 28,
+      "n_non_keloid": 22
+    },
+    {
+      "modality": "bulk_rnaseq",
+      "module": "myofibroblast_score",
+      "keloid_mean": -0.20086444873428838,
+      "non_keloid_mean": 0.25564566202545563,
+      "delta": -0.456510110759744,
+      "n_keloid": 28,
+      "n_non_keloid": 22
+    },
+    {
+      "modality": "bulk_rnaseq",
+      "module": "TGFb_score",
+      "keloid_mean": -0.014848310360443836,
+      "non_keloid_mean": 0.018897849549655545,
+      "delta": -0.03374615991009938,
+      "n_keloid": 28,
+      "n_non_keloid": 22
+    },
+    {
+      "modality": "bulk_rnaseq",
+      "module": "hypoxia_vascular_score",
+      "keloid_mean": -0.07380704731649211,
+      "non_keloid_mean": 0.09393624203917157,
+      "delta": -0.16774328935566368,
+      "n_keloid": 28,
+      "n_non_keloid": 22
+    },
+    {
+      "modality": "bulk_rnaseq",
+      "module": "remodeling_score",
+      "keloid_mean": 0.08936745387824728,
+      "non_keloid_mean": -0.11374039584504146,
+      "delta": 0.20310784972328874,
+      "n_keloid": 28,
+      "n_non_keloid": 22
+    },
+    {
+      "modality": "bulk_rnaseq",
+      "module": "fibrotic_activity_score",
+      "keloid_mean": -0.007900943979143078,
+      "non_keloid_mean": 0.010055746882545357,
+      "delta": -0.017956690861688433,
+      "n_keloid": 28,
+      "n_non_keloid": 22
+    },
+    {
+      "modality": "microarray",
+      "module": "ECM_score",
+      "keloid_mean": 0.061816133474046665,
+      "non_keloid_mean": -0.08242151129872831,
+      "delta": 0.14423764477277498,
+      "n_keloid": 44,
+      "n_non_keloid": 33
+    },
+    {
+      "modality": "microarray",
+      "module": "myofibroblast_score",
+      "keloid_mean": 0.16734537086425558,
+      "non_keloid_mean": -0.223127161152341,
+      "delta": 0.3904725320165966,
+      "n_keloid": 44,
+      "n_non_keloid": 33
+    },
+    {
+      "modality": "microarray",
+      "module": "TGFb_score",
+      "keloid_mean": 0.0029490032221349623,
+      "non_keloid_mean": -0.003932004296180555,
+      "delta": 0.006881007518315517,
+      "n_keloid": 44,
+      "n_non_keloid": 33
+    },
+    {
+      "modality": "microarray",
+      "module": "hypoxia_vascular_score",
+      "keloid_mean": 0.026584847013315125,
+      "non_keloid_mean": -0.03544646268441893,
+      "delta": 0.06203130969773406,
+      "n_keloid": 44,
+      "n_non_keloid": 33
+    },
+    {
+      "modality": "microarray",
+      "module": "remodeling_score",
+      "keloid_mean": -0.007747750759622523,
+      "non_keloid_mean": 0.010330334346165797,
+      "delta": -0.01807808510578832,
+      "n_keloid": 44,
+      "n_non_keloid": 33
+    },
+    {
+      "modality": "microarray",
+      "module": "fibrotic_activity_score",
+      "keloid_mean": 0.07399746099962348,
+      "non_keloid_mean": -0.09866328133283082,
+      "delta": 0.17266074233245432,
+      "n_keloid": 44,
+      "n_non_keloid": 33
+    },
+    {
+      "modality": "scrna_spatial",
+      "module": "ECM_score",
+      "keloid_mean": 0.2959677538200979,
+      "non_keloid_mean": -0.3038253048064718,
+      "delta": 0.5997930586265696,
+      "n_keloid": 116,
+      "n_non_keloid": 113
+    },
+    {
+      "modality": "scrna_spatial",
+      "module": "myofibroblast_score",
+      "keloid_mean": 0.16474458119325905,
+      "non_keloid_mean": -0.1691183311364427,
+      "delta": 0.3338629123297018,
+      "n_keloid": 116,
+      "n_non_keloid": 113
+    },
+    {
+      "modality": "scrna_spatial",
+      "module": "TGFb_score",
+      "keloid_mean": 0.21393505260473814,
+      "non_keloid_mean": -0.2196147442668108,
+      "delta": 0.43354979687154893,
+      "n_keloid": 116,
+      "n_non_keloid": 113
+    },
+    {
+      "modality": "scrna_spatial",
+      "module": "hypoxia_vascular_score",
+      "keloid_mean": 0.20762205714529325,
+      "non_keloid_mean": -0.21313414715799991,
+      "delta": 0.4207562043032932,
+      "n_keloid": 116,
+      "n_non_keloid": 113
+    },
+    {
+      "modality": "scrna_spatial",
+      "module": "remodeling_score",
+      "keloid_mean": 0.33808933495466253,
+      "non_keloid_mean": -0.3470651580065565,
+      "delta": 0.685154492961219,
+      "n_keloid": 116,
+      "n_non_keloid": 113
+    },
+    {
+      "modality": "scrna_spatial",
+      "module": "fibrotic_activity_score",
+      "keloid_mean": 0.2395588746030555,
+      "non_keloid_mean": -0.24591884472526046,
+      "delta": 0.48547771932831596,
+      "n_keloid": 116,
+      "n_non_keloid": 113
+    }
+  ],
+  "scrna_localization": [
+    {
+      "sample_id": "GSE163973_KF2_fib_cluster_9",
+      "subcluster": "fib_cluster_9",
+      "core_gene_score": 0.5402459508161128,
+      "n_core_genes": 44,
+      "profibrotic_fibroblast_score": -0.08244940597561749
+    },
+    {
+      "sample_id": "GSE163973_KF2_fib_cluster_3",
+      "subcluster": "fib_cluster_3",
+      "core_gene_score": 0.3518372157151337,
+      "n_core_genes": 44,
+      "profibrotic_fibroblast_score": 2.2137650209691055
+    },
+    {
+      "sample_id": "GSE163973_KF2_fib_cluster_10",
+      "subcluster": "fib_cluster_10",
+      "core_gene_score": 0.31210982003585674,
+      "n_core_genes": 44,
+      "profibrotic_fibroblast_score": 1.768147220961431
+    },
+    {
+      "sample_id": "GSE163973_NF2_fib_cluster_7",
+      "subcluster": "fib_cluster_7",
+      "core_gene_score": 0.310191867063195,
+      "n_core_genes": 44,
+      "profibrotic_fibroblast_score": 1.1007183216531629
+    },
+    {
+      "sample_id": "GSE163973_KF2_fib_cluster_2",
+      "subcluster": "fib_cluster_2",
+      "core_gene_score": 0.30977618948833363,
+      "n_core_genes": 44,
+      "profibrotic_fibroblast_score": 1.3481500597976772
+    },
+    {
+      "sample_id": "GSE163973_KF1_fib_cluster_3",
+      "subcluster": "fib_cluster_3",
+      "core_gene_score": 0.30590348377806875,
+      "n_core_genes": 44,
+      "profibrotic_fibroblast_score": 2.0031348719226987
+    },
+    {
+      "sample_id": "GSE163973_KF1_fib_cluster_9",
+      "subcluster": "fib_cluster_9",
+      "core_gene_score": 0.2994792690685765,
+      "n_core_genes": 44,
+      "profibrotic_fibroblast_score": -0.22590584576631983
+    },
+    {
+      "sample_id": "GSE163973_KF3_fib_cluster_10",
+      "subcluster": "fib_cluster_10",
+      "core_gene_score": 0.29099581166921645,
+      "n_core_genes": 44,
+      "profibrotic_fibroblast_score": 1.4828598528166128
+    },
+    {
+      "sample_id": "GSE163973_NF2_fib_cluster_9",
+      "subcluster": "fib_cluster_9",
+      "core_gene_score": 0.2746702146668856,
+      "n_core_genes": 44,
+      "profibrotic_fibroblast_score": -0.9738987799730968
+    },
+    {
+      "sample_id": "GSE163973_NF2_fib_cluster_3",
+      "subcluster": "fib_cluster_3",
+      "core_gene_score": 0.27180519645700074,
+      "n_core_genes": 44,
+      "profibrotic_fibroblast_score": 1.5895883088807319
+    }
+  ],
+  "core_vs_fragile_enrichment": [
+    {
+      "module": "ECM_score",
+      "n_core_overlap": 0,
+      "n_fragile_overlap": 0,
+      "genes": "COL1A1,COL3A1,FN1"
+    },
+    {
+      "module": "myofibroblast_score",
+      "n_core_overlap": 0,
+      "n_fragile_overlap": 0,
+      "genes": "ACTA2,TAGLN,MYL9"
+    },
+    {
+      "module": "TGFb_score",
+      "n_core_overlap": 0,
+      "n_fragile_overlap": 0,
+      "genes": "TGFB1,TGFB3,TGFBR1,TGFBR2,SMAD2,SMAD3"
+    },
+    {
+      "module": "hypoxia_vascular_score",
+      "n_core_overlap": 0,
+      "n_fragile_overlap": 0,
+      "genes": "HIF1A,PECAM1,VWF,KDR"
+    },
+    {
+      "module": "remodeling_score",
+      "n_core_overlap": 0,
+      "n_fragile_overlap": 0,
+      "genes": "MMP14,ADAM12,HTRA1,CTHRC1"
+    },
+    {
+      "module": "profibrotic_fibroblast_score",
+      "n_core_overlap": 0,
+      "n_fragile_overlap": 0,
+      "genes": "POSTN"
+    },
+    {
+      "module": "antifibrotic_fibroblast_score",
+      "n_core_overlap": 0,
+      "n_fragile_overlap": 0,
+      "genes": "IGFBP2"
+    }
+  ],
+  "c4_passes_gate": true
+}

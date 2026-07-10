@@ -56,6 +56,16 @@ def quantile_rank_within_accessions(
     return out
 
 
+def _combine_splits(*frames: pd.DataFrame) -> pd.DataFrame:
+    """Concatenate train/val/test without losing sample_ids."""
+    parts = [df for df in frames if df is not None and len(df) > 0]
+    if not parts:
+        return pd.DataFrame()
+    combined = pd.concat(parts)
+    # Deduplicate on index (same sample_id), not row values.
+    return combined.loc[~combined.index.duplicated(keep="first")]
+
+
 def apply_normalization(
     x_train: pd.DataFrame,
     x_val: pd.DataFrame,
@@ -76,10 +86,10 @@ def apply_normalization(
         raise ValueError(f"Unknown normalization mode: {mode}")
 
     all_ids = list(dict.fromkeys(train_ids + val_ids + test_ids))
-    combined = pd.concat([x_train, x_val, x_test]).drop_duplicates()
+    combined = _combine_splits(x_train, x_val, x_test)
     normalized = fn(combined, all_ids, accession_by_sample)
     return (
-        normalized.loc[x_train.index],
-        normalized.loc[x_val.index] if len(x_val) else x_val,
-        normalized.loc[x_test.index],
+        normalized.reindex(x_train.index),
+        normalized.reindex(x_val.index) if len(x_val) else x_val,
+        normalized.reindex(x_test.index),
     )

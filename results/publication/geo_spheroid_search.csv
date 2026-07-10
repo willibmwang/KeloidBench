@@ -1,0 +1,5 @@
+term,n_hits,geo_ids,status
+keloid spheroid RNA-seq,0,[],ok
+fibroblast 3D spheroid keloid,1,['100000570'],ok
+fibroblast spheroid deactivation RNA-seq,0,[],ok
+3D fibroblast transcriptome spheroid,3,"['200288929', '200267210', '100000570']",ok

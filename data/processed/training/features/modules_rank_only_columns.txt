@@ -1,0 +1,8 @@
+ECM_score
+myofibroblast_score
+TGFb_score
+hypoxia_vascular_score
+remodeling_score
+profibrotic_fibroblast_score
+antifibrotic_fibroblast_score
+fibrotic_activity_score

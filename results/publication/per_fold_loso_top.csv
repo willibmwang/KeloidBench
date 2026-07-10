@@ -1,0 +1,11 @@
+split_name,feature_set,model,weighted_f1
+leave_accession_out_GSE181297,shared_genes,elastic_net_logreg,1.0
+leave_accession_out_GSE7890,shared_genes,linear_svm,0.8947368421052632
+leave_accession_out_GSE158395,modules_only,elastic_net_logreg,0.8443223443223443
+leave_accession_out_GSE145725,modules_only,random_forest,0.8366132723112127
+leave_accession_out_E-MTAB-2509,modules_only,knn,0.748013090229079
+leave_accession_out_Sun_Burns,modules_only,stratified_random,0.6906666666666667
+leave_accession_out_GSE163973,modules_only,knn,0.6811594202898551
+leave_accession_out_E-MTAB-4945,modules_only,elastic_net_logreg,0.6593333333333333
+leave_accession_out_GSE188952,modules_only,stratified_random,0.5
+leave_accession_out_GSE44270,modules_only,stratified_random,0.4397058823529411

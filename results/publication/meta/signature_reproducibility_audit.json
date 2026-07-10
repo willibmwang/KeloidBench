@@ -1,0 +1,408 @@
+{
+  "n_signatures": 3,
+  "signatures": [
+    {
+      "signature_id": "GSE145725_up",
+      "n_genes": 9,
+      "n_genes_in_meta": 9,
+      "frac_core_reproducible": 0.0,
+      "frac_fragile": 0.0,
+      "frac_non_significant": 1.0,
+      "median_i_squared": 0.6010084681855322,
+      "mean_pooled_effect": 0.3802311339923689
+    },
+    {
+      "signature_id": "GSE44270_up",
+      "n_genes": 10,
+      "n_genes_in_meta": 10,
+      "frac_core_reproducible": 0.0,
+      "frac_fragile": 0.0,
+      "frac_non_significant": 1.0,
+      "median_i_squared": 0.6002877506500823,
+      "mean_pooled_effect": 0.3727337964994401
+    },
+    {
+      "signature_id": "module_panel",
+      "n_genes": 22,
+      "n_genes_in_meta": 22,
+      "frac_core_reproducible": 0.0,
+      "frac_fragile": 0.0,
+      "frac_non_significant": 1.0,
+      "median_i_squared": 0.5957100596631271,
+      "mean_pooled_effect": 0.2339895513740635
+    }
+  ],
+  "marker_loso_fail_fraction": 0.6829268292682927,
+  "marker_loso_audit": [
+    {
+      "signature_id": "GSE145725_up",
+      "gene": "COL1A1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "GSE145725_up",
+      "gene": "COL3A1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "GSE145725_up",
+      "gene": "POSTN",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.5,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "GSE145725_up",
+      "gene": "ACTA2",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "GSE145725_up",
+      "gene": "TGFB1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "GSE145725_up",
+      "gene": "FN1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.75,
+      "frac_studies_fdr_significant": 0.375,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "GSE145725_up",
+      "gene": "CTHRC1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.125,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "GSE145725_up",
+      "gene": "HIF1A",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.5,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "GSE145725_up",
+      "gene": "PECAM1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.375,
+      "frac_studies_fdr_significant": 0.375,
+      "fails_loso_replication": true,
+      "reason": "low_direction_consistency"
+    },
+    {
+      "signature_id": "GSE44270_up",
+      "gene": "COL1A1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "GSE44270_up",
+      "gene": "COL3A1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "GSE44270_up",
+      "gene": "FN1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.75,
+      "frac_studies_fdr_significant": 0.375,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "GSE44270_up",
+      "gene": "POSTN",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.5,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "GSE44270_up",
+      "gene": "ACTA2",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "GSE44270_up",
+      "gene": "TAGLN",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.5,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "GSE44270_up",
+      "gene": "TGFB1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "GSE44270_up",
+      "gene": "CTHRC1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.125,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "GSE44270_up",
+      "gene": "MMP14",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.5,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "GSE44270_up",
+      "gene": "ADAM12",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "COL1A1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "COL3A1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "FN1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.75,
+      "frac_studies_fdr_significant": 0.375,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "ACTA2",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "TAGLN",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.5,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "MYL9",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "TGFB1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "TGFB3",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "TGFBR1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.25,
+      "frac_studies_fdr_significant": 0.375,
+      "fails_loso_replication": true,
+      "reason": "low_direction_consistency"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "TGFBR2",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.375,
+      "frac_studies_fdr_significant": 0.375,
+      "fails_loso_replication": true,
+      "reason": "low_direction_consistency"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "SMAD2",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "SMAD3",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.375,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_direction_consistency"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "HIF1A",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.5,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "PECAM1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.375,
+      "frac_studies_fdr_significant": 0.375,
+      "fails_loso_replication": true,
+      "reason": "low_direction_consistency"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "VWF",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.375,
+      "frac_studies_fdr_significant": 0.125,
+      "fails_loso_replication": true,
+      "reason": "low_direction_consistency"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "KDR",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.0,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "MMP14",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.5,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "ADAM12",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.25,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "HTRA1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.375,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "CTHRC1",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.5,
+      "frac_studies_fdr_significant": 0.125,
+      "fails_loso_replication": true,
+      "reason": "low_per_study_significance"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "POSTN",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.625,
+      "frac_studies_fdr_significant": 0.5,
+      "fails_loso_replication": false,
+      "reason": "passes"
+    },
+    {
+      "signature_id": "module_panel",
+      "gene": "IGFBP2",
+      "n_studies": 8,
+      "frac_studies_same_direction": 0.375,
+      "frac_studies_fdr_significant": 0.0,
+      "fails_loso_replication": true,
+      "reason": "low_direction_consistency"
+    }
+  ],
+  "cautionary_finding": "68% of curated keloid marker genes fail per-study direction/significance checks; published signatures are dominated by study-specific signal."
+}

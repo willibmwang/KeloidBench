@@ -1,0 +1,342 @@
+[
+  {
+    "cohort": "E-MTAB-2509",
+    "status": "ok",
+    "score_type": "gene_core_score",
+    "n": 27,
+    "label_counts": {
+      "non_keloid": 18,
+      "keloid": 9
+    },
+    "weighted_f1": 0.748013090229079,
+    "accuracy": 0.7407407407407407,
+    "auroc": 0.845679012345679,
+    "score_ci_low": -0.05548009304458247,
+    "score_ci_high": 0.05924997580732438,
+    "auroc_ci_low": 0.6311728395061729,
+    "auroc_ci_high": 0.9838636363636363
+  },
+  {
+    "cohort": "E-MTAB-2509",
+    "status": "ok",
+    "score_type": "module_mean_score",
+    "n": 27,
+    "label_counts": {
+      "non_keloid": 18,
+      "keloid": 9
+    },
+    "weighted_f1": 0.748013090229079,
+    "accuracy": 0.7407407407407407,
+    "auroc": 0.8333333333333334,
+    "score_ci_low": -0.1476612368505952,
+    "score_ci_high": 0.14567619143265273,
+    "auroc_ci_low": 0.6673771816418875,
+    "auroc_ci_high": 0.9664991258741258
+  },
+  {
+    "cohort": "E-MTAB-2509",
+    "status": "ok",
+    "score_type": "profibrotic_fibroblast_score",
+    "n": 27,
+    "label_counts": {
+      "non_keloid": 18,
+      "keloid": 9
+    },
+    "weighted_f1": 0.748013090229079,
+    "accuracy": 0.7407407407407407,
+    "auroc": 0.7777777777777779,
+    "score_ci_low": -0.34562683673942085,
+    "score_ci_high": 0.34960831663366804,
+    "auroc_ci_low": 0.592718253968254,
+    "auroc_ci_high": 0.9444787549407113
+  },
+  {
+    "cohort": "E-MTAB-2509",
+    "status": "ok",
+    "score_type": "keloid_module_logistic",
+    "n": 27,
+    "label_counts": {
+      "non_keloid": 18,
+      "keloid": 9
+    },
+    "weighted_f1": 0.6760168302945302,
+    "accuracy": 0.6666666666666666,
+    "auroc": 0.7160493827160493,
+    "score_ci_low": 0.42946855613686785,
+    "score_ci_high": 0.6000675514172116,
+    "auroc_ci_low": 0.49423076923076925,
+    "auroc_ci_high": 0.8989204545454544
+  },
+  {
+    "cohort": "E-MTAB-4945",
+    "status": "ok",
+    "score_type": "gene_core_score",
+    "n": 40,
+    "label_counts": {
+      "keloid": 27,
+      "non_keloid": 13
+    },
+    "weighted_f1": 0.6368471953578336,
+    "accuracy": 0.625,
+    "auroc": 0.6837606837606838,
+    "score_ci_low": -0.07841740127102079,
+    "score_ci_high": 0.07358680645384691,
+    "auroc_ci_low": 0.4921401098901099,
+    "auroc_ci_high": 0.8748416666666667
+  },
+  {
+    "cohort": "E-MTAB-4945",
+    "status": "ok",
+    "score_type": "module_mean_score",
+    "n": 40,
+    "label_counts": {
+      "keloid": 27,
+      "non_keloid": 13
+    },
+    "weighted_f1": 0.6368471953578336,
+    "accuracy": 0.625,
+    "auroc": 0.6552706552706553,
+    "score_ci_low": -0.18504906591143014,
+    "score_ci_high": 0.19956833790817127,
+    "auroc_ci_low": 0.48909765625,
+    "auroc_ci_high": 0.8050947916666665
+  },
+  {
+    "cohort": "E-MTAB-4945",
+    "status": "ok",
+    "score_type": "profibrotic_fibroblast_score",
+    "n": 40,
+    "label_counts": {
+      "keloid": 27,
+      "non_keloid": 13
+    },
+    "weighted_f1": 0.5884268214055448,
+    "accuracy": 0.575,
+    "auroc": 0.6666666666666666,
+    "score_ci_low": -0.31773828885823413,
+    "score_ci_high": 0.25583165216189907,
+    "auroc_ci_low": 0.4841002747252748,
+    "auroc_ci_high": 0.8373141226589502
+  },
+  {
+    "cohort": "E-MTAB-4945",
+    "status": "ok",
+    "score_type": "keloid_module_logistic",
+    "n": 40,
+    "label_counts": {
+      "keloid": 27,
+      "non_keloid": 13
+    },
+    "weighted_f1": 0.6368471953578336,
+    "accuracy": 0.625,
+    "auroc": 0.6666666666666667,
+    "score_ci_low": 0.4565971491257934,
+    "score_ci_high": 0.6073889761378448,
+    "auroc_ci_low": 0.5037682411674347,
+    "auroc_ci_high": 0.8229910714285714
+  },
+  {
+    "cohort": "GSE32537",
+    "status": "ok",
+    "score_type": "gene_core_score",
+    "n": 169,
+    "label_counts": {
+      "fibrotic": 119,
+      "non_fibrotic": 50
+    },
+    "weighted_f1": 0.4906385233595337,
+    "accuracy": 0.46745562130177515,
+    "auroc": 0.4369747899159664,
+    "score_ci_low": -0.0246455504483047,
+    "score_ci_high": 0.027324942540241252,
+    "auroc_ci_low": 0.3448116028708134,
+    "auroc_ci_high": 0.5251292274241959
+  },
+  {
+    "cohort": "GSE32537",
+    "status": "ok",
+    "score_type": "module_mean_score",
+    "n": 169,
+    "label_counts": {
+      "fibrotic": 119,
+      "non_fibrotic": 50
+    },
+    "weighted_f1": 0.7736171214931261,
+    "accuracy": 0.7633136094674556,
+    "auroc": 0.9065546218487395,
+    "score_ci_low": -0.08481320790880517,
+    "score_ci_high": 0.08142255732400337,
+    "auroc_ci_low": 0.8580823544743826,
+    "auroc_ci_high": 0.9496369866754041
+  },
+  {
+    "cohort": "GSE32537",
+    "status": "ok",
+    "score_type": "profibrotic_fibroblast_score",
+    "n": 169,
+    "label_counts": {
+      "fibrotic": 119,
+      "non_fibrotic": 50
+    },
+    "weighted_f1": 0.7283405457917512,
+    "accuracy": 0.7159763313609467,
+    "auroc": 0.8722689075630253,
+    "score_ci_low": -0.15646578490179308,
+    "score_ci_high": 0.1494733391202769,
+    "auroc_ci_low": 0.810229393181338,
+    "auroc_ci_high": 0.9307992613966318
+  },
+  {
+    "cohort": "GSE32537",
+    "status": "ok",
+    "score_type": "keloid_module_logistic",
+    "n": 169,
+    "label_counts": {
+      "fibrotic": 119,
+      "non_fibrotic": 50
+    },
+    "weighted_f1": 0.6830639700903764,
+    "accuracy": 0.6686390532544378,
+    "auroc": 0.746218487394958,
+    "score_ci_low": 0.498404210132447,
+    "score_ci_high": 0.5703694408437251,
+    "auroc_ci_low": 0.6675734286780736,
+    "auroc_ci_high": 0.8224176600872908
+  },
+  {
+    "cohort": "GSE48149",
+    "status": "ok",
+    "score_type": "gene_core_score",
+    "n": 22,
+    "label_counts": {
+      "fibrotic": 13,
+      "non_fibrotic": 9
+    },
+    "weighted_f1": 0.5492424242424243,
+    "accuracy": 0.5454545454545454,
+    "auroc": 0.5213675213675214,
+    "score_ci_low": -0.24062547418951896,
+    "score_ci_high": 0.2628283830566366,
+    "auroc_ci_low": 0.2692708333333333,
+    "auroc_ci_high": 0.7611979166666667
+  },
+  {
+    "cohort": "GSE48149",
+    "status": "ok",
+    "score_type": "module_mean_score",
+    "n": 22,
+    "label_counts": {
+      "fibrotic": 13,
+      "non_fibrotic": 9
+    },
+    "weighted_f1": 0.8196969696969698,
+    "accuracy": 0.8181818181818182,
+    "auroc": 0.8205128205128205,
+    "score_ci_low": -0.26727914389525015,
+    "score_ci_high": 0.2885119378192639,
+    "auroc_ci_low": 0.6024954212454213,
+    "auroc_ci_high": 1.0
+  },
+  {
+    "cohort": "GSE48149",
+    "status": "ok",
+    "score_type": "profibrotic_fibroblast_score",
+    "n": 22,
+    "label_counts": {
+      "fibrotic": 13,
+      "non_fibrotic": 9
+    },
+    "weighted_f1": 0.8196969696969698,
+    "accuracy": 0.8181818181818182,
+    "auroc": 0.9230769230769231,
+    "score_ci_low": -0.35953093435892397,
+    "score_ci_high": 0.4018272664906018,
+    "auroc_ci_low": 0.7910416666666666,
+    "auroc_ci_high": 1.0
+  },
+  {
+    "cohort": "GSE48149",
+    "status": "ok",
+    "score_type": "keloid_module_logistic",
+    "n": 22,
+    "label_counts": {
+      "fibrotic": 13,
+      "non_fibrotic": 9
+    },
+    "weighted_f1": 0.7295454545454546,
+    "accuracy": 0.7272727272727273,
+    "auroc": 0.7777777777777779,
+    "score_ci_low": 0.4201743877353848,
+    "score_ci_high": 0.616804170263164,
+    "auroc_ci_low": 0.5575297619047619,
+    "auroc_ci_high": 0.9666666666666667
+  },
+  {
+    "cohort": "GSE58095",
+    "status": "ok",
+    "score_type": "gene_core_score",
+    "n": 102,
+    "label_counts": {
+      "fibrotic": 66,
+      "non_fibrotic": 36
+    },
+    "weighted_f1": 0.6260987153482083,
+    "accuracy": 0.6176470588235294,
+    "auroc": 0.6776094276094276,
+    "score_ci_low": -0.035376531339797346,
+    "score_ci_high": 0.03394761477920202,
+    "auroc_ci_low": 0.5534492960890054,
+    "auroc_ci_high": 0.801149116244272
+  },
+  {
+    "cohort": "GSE58095",
+    "status": "ok",
+    "score_type": "module_mean_score",
+    "n": 102,
+    "label_counts": {
+      "fibrotic": 66,
+      "non_fibrotic": 36
+    },
+    "weighted_f1": 0.7794941141797126,
+    "accuracy": 0.7745098039215687,
+    "auroc": 0.859848484848485,
+    "score_ci_low": -0.10471065725474334,
+    "score_ci_high": 0.10114517642702203,
+    "auroc_ci_low": 0.794921875,
+    "auroc_ci_high": 0.9254464285714287
+  },
+  {
+    "cohort": "GSE58095",
+    "status": "ok",
+    "score_type": "profibrotic_fibroblast_score",
+    "n": 102,
+    "label_counts": {
+      "fibrotic": 66,
+      "non_fibrotic": 36
+    },
+    "weighted_f1": 0.6069242904942702,
+    "accuracy": 0.5980392156862745,
+    "auroc": 0.6313131313131314,
+    "score_ci_low": -0.19975730990478663,
+    "score_ci_high": 0.17891101780446272,
+    "auroc_ci_low": 0.5122938437074058,
+    "auroc_ci_high": 0.7469243543005434
+  },
+  {
+    "cohort": "GSE58095",
+    "status": "ok",
+    "score_type": "keloid_module_logistic",
+    "n": 102,
+    "label_counts": {
+      "fibrotic": 66,
+      "non_fibrotic": 36
+    },
+    "weighted_f1": 0.6452731402021462,
+    "accuracy": 0.6372549019607843,
+    "auroc": 0.7167508417508418,
+    "score_ci_low": 0.4768872744209388,
+    "score_ci_high": 0.5786411523629271,
+    "auroc_ci_low": 0.621350806451613,
+    "auroc_ci_high": 0.8220796316038853
+  }
+]

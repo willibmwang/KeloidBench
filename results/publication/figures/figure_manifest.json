@@ -1,0 +1,10 @@
+{
+  "figures": [
+    "fig1_concept.png",
+    "fig2_program_validity.png",
+    "fig3_spheroid_separation.png",
+    "fig4_transfer_summary.png",
+    "fig5_ml_ablation.png"
+  ],
+  "output_dir": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/results/publication/figures"
+}

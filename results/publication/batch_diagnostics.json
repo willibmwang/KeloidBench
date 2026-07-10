@@ -1,0 +1,92 @@
+{
+  "pca_diagnostics": {
+    "explained_variance_ratio": [
+      0.48852961487719293,
+      0.18750079582594975,
+      0.12797702307014405,
+      0.07787768478299471,
+      0.06501016709455085
+    ],
+    "accession_explained_fraction_pc1": 3.0143367470707853e-31,
+    "keloid_explained_fraction_pc1": 0.09568500927900787,
+    "batch_mixing_accession": 0.4354838709677419,
+    "batch_mixing_modality": 0.34493087557603686
+  },
+  "n_accessions_direction_correct": 5,
+  "n_accessions_tested": 8,
+  "per_accession": [
+    {
+      "accession": "GSE145725",
+      "n_keloid": 9,
+      "n_non_keloid": 10,
+      "keloid_mean_activity": 0.1954737611940775,
+      "non_keloid_mean_activity": -0.17592638507466885,
+      "delta": 0.37140014626874635,
+      "direction_correct": true
+    },
+    {
+      "accession": "GSE158395",
+      "n_keloid": 7,
+      "n_non_keloid": 6,
+      "keloid_mean_activity": 0.1501815432892028,
+      "non_keloid_mean_activity": -0.17521180050407117,
+      "delta": 0.325393343793274,
+      "direction_correct": true
+    },
+    {
+      "accession": "GSE163973",
+      "n_keloid": 110,
+      "n_non_keloid": 110,
+      "keloid_mean_activity": 0.23728755881881167,
+      "non_keloid_mean_activity": -0.23728755881881156,
+      "delta": 0.4745751176376232,
+      "direction_correct": true
+    },
+    {
+      "accession": "GSE181297",
+      "n_keloid": 4,
+      "n_non_keloid": 3,
+      "keloid_mean_activity": 0.42179949597128924,
+      "non_keloid_mean_activity": -0.5623993279617191,
+      "delta": 0.9841988239330084,
+      "direction_correct": true
+    },
+    {
+      "accession": "GSE188952",
+      "n_keloid": 4,
+      "n_non_keloid": 8,
+      "keloid_mean_activity": -0.3181243086101064,
+      "non_keloid_mean_activity": 0.1590621543050531,
+      "delta": -0.4771864629151595,
+      "direction_correct": false
+    },
+    {
+      "accession": "GSE44270",
+      "n_keloid": 18,
+      "n_non_keloid": 14,
+      "keloid_mean_activity": 0.0,
+      "non_keloid_mean_activity": 0.0,
+      "delta": 0.0,
+      "direction_correct": false
+    },
+    {
+      "accession": "GSE7890",
+      "n_keloid": 10,
+      "n_non_keloid": 9,
+      "keloid_mean_activity": 0.14966244332367326,
+      "non_keloid_mean_activity": -0.1662916036929699,
+      "delta": 0.3159540470166432,
+      "direction_correct": true
+    },
+    {
+      "accession": "Sun_Burns",
+      "n_keloid": 17,
+      "n_non_keloid": 8,
+      "keloid_mean_activity": 0.0,
+      "non_keloid_mean_activity": 0.0,
+      "delta": 0.0,
+      "direction_correct": false
+    }
+  ],
+  "biology_over_batch_pc1": true
+}

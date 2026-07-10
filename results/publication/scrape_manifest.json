@@ -1,0 +1,85 @@
+[
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE32nnn/GSE32537/matrix/GSE32537_series_matrix.txt.gz",
+    "dest": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/data/raw/external_fibrosis/GSE32537_series_matrix.txt.gz",
+    "status": "downloaded",
+    "bytes": 8568817,
+    "accession": "GSE32537",
+    "modality": "external_fibrosis"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE32nnn/GSE32537/suppl/GSE32537_RAW.tar",
+    "dest": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/data/raw/external_fibrosis/GSE32537_RAW.tar",
+    "status": "skipped_large",
+    "bytes": 844840960,
+    "hint": "use --include-raw",
+    "accession": "GSE32537",
+    "modality": "external_fibrosis"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE32nnn/GSE32537/suppl/filelist.txt",
+    "dest": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/data/raw/external_fibrosis/GSE32537_filelist.txt",
+    "status": "downloaded",
+    "bytes": 13764,
+    "accession": "GSE32537",
+    "modality": "external_fibrosis"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE48nnn/GSE48149/matrix/GSE48149_series_matrix.txt.gz",
+    "dest": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/data/raw/external_fibrosis/GSE48149_series_matrix.txt.gz",
+    "status": "downloaded",
+    "bytes": 4080470,
+    "accession": "GSE48149",
+    "modality": "external_fibrosis"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE48nnn/GSE48149/suppl/GSE48149.xls.gz",
+    "dest": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/data/raw/external_fibrosis/GSE48149.xls.gz",
+    "status": "skipped_large",
+    "bytes": 60010072,
+    "hint": "use --include-raw",
+    "accession": "GSE48149",
+    "modality": "external_fibrosis"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE58nnn/GSE58095/matrix/GSE58095_series_matrix.txt.gz",
+    "dest": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/data/raw/external_fibrosis/GSE58095_series_matrix.txt.gz",
+    "status": "downloaded",
+    "bytes": 18421721,
+    "accession": "GSE58095",
+    "modality": "external_fibrosis"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE58nnn/GSE58095/suppl/GSE58095_RAW.tar",
+    "dest": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/data/raw/external_fibrosis/GSE58095_RAW.tar",
+    "status": "skipped_large",
+    "bytes": 27443200,
+    "hint": "use --include-raw",
+    "accession": "GSE58095",
+    "modality": "external_fibrosis"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE58nnn/GSE58095/suppl/GSE58095_all_sample_annotatiions.txt.gz",
+    "dest": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/data/raw/external_fibrosis/GSE58095_all_sample_annotatiions.txt.gz",
+    "status": "downloaded",
+    "bytes": 2743,
+    "accession": "GSE58095",
+    "modality": "external_fibrosis"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE58nnn/GSE58095/suppl/GSE58095_non-normalized.txt.gz",
+    "dest": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/data/raw/external_fibrosis/GSE58095_non-normalized.txt.gz",
+    "status": "downloaded",
+    "bytes": 31477224,
+    "accession": "GSE58095",
+    "modality": "external_fibrosis"
+  },
+  {
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE58nnn/GSE58095/suppl/filelist.txt",
+    "dest": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/data/raw/external_fibrosis/GSE58095_filelist.txt",
+    "status": "downloaded",
+    "bytes": 260,
+    "accession": "GSE58095",
+    "modality": "external_fibrosis"
+  }
+]

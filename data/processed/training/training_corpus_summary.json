@@ -1,28 +1,36 @@
 {
-  "n_profiles": 434,
+  "n_profiles": 794,
   "modalities": {
+    "external_fibrosis": 293,
     "scrna_spatial": 230,
     "microarray": 154,
+    "arrayexpress": 67,
     "bulk_rnaseq": 50
   },
   "accessions": {
     "GSE163973": 220,
+    "GSE32537": 169,
+    "GSE58095": 102,
     "GSE3189": 70,
+    "E-MTAB-4945": 40,
     "GSE44270": 32,
+    "E-MTAB-2509": 27,
     "Sun_Burns": 25,
+    "GSE48149": 22,
     "GSE7890": 19,
     "GSE145725": 19,
     "GSE158395": 13,
     "GSE188952": 12,
-    "GSE90051": 7,
     "GSE92566": 7,
+    "GSE90051": 7,
     "GSE181297": 7,
     "GSE175866": 2,
     "GSE160536": 1
   },
   "tasks": {
+    "fibrosis_binary": 293,
+    "keloid_vs_normal": 149,
     "celltype_subcluster": 103,
-    "keloid_vs_normal": 82,
     "out_of_domain_disease_state": 70,
     "fibroblast_subcluster": 62,
     "cell_type": 49,
@@ -33,18 +41,23 @@
     "out_of_domain_fibrotic_state": 1
   },
   "keloid_binary": {
-    "keloid": 188,
-    "non_keloid": 168,
-    "exclude": 78
+    "exclude": 312,
+    "non_keloid": 258,
+    "keloid": 224
   },
   "feature_sets": {
     "modules_only": 8,
-    "shared_genes": 5000,
-    "shared_genes_plus_modules": 5008
+    "modules_rank_only": 8,
+    "shared_genes": 5006,
+    "shared_genes_plus_modules": 5014,
+    "profibrotic_module_only": 1,
+    "expanded_profibrotic_only": 1,
+    "modules_rank_plus_expanded": 9,
+    "low_i2_core_only": 27
   },
-  "n_splits": 103,
+  "n_splits": 106,
   "split_tasks": {
-    "keloid_binary": 22,
+    "keloid_binary": 25,
     "cell_type": 21,
     "fibroblast_subcluster": 21,
     "celltype_subcluster": 21,

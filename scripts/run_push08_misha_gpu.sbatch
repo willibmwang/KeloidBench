@@ -38,14 +38,18 @@ echo "start: $(date -Is)"
 echo "--- rebuild training corpus ---"
 "${PYTHON}" scripts/build_training_corpus.py
 
-echo "--- baseline LOSO (no normalization) ---"
-"${PYTHON}" scripts/train_baselines.py \
-  --no-wandb \
-  --tasks keloid_binary \
-  --split-pattern 'leave_accession_out_*' \
-  --feature-sets "${FEATURE_SETS[@]}" \
-  --normalization-mode none \
-  --out-dir results/baselines_push08/raw
+if [[ ! -f results/baselines_push08/raw/baseline_results.jsonl ]]; then
+  echo "--- baseline LOSO (no normalization) ---"
+  "${PYTHON}" scripts/train_baselines.py \
+    --no-wandb \
+    --tasks keloid_binary \
+    --split-pattern 'leave_accession_out_*' \
+    --feature-sets "${FEATURE_SETS[@]}" \
+    --normalization-mode none \
+    --out-dir results/baselines_push08/raw
+else
+  echo "--- skipping raw baselines (already complete) ---"
+fi
 
 echo "--- baseline LOSO + accession z-score ---"
 "${PYTHON}" scripts/train_baselines.py \

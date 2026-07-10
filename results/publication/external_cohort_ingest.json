@@ -1,0 +1,16 @@
+{
+  "geo_ingest_attempts": [],
+  "arrayexpress_pending": [
+    {
+      "accession": "E-MTAB-2509",
+      "source_url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-2509",
+      "status": "pending_manual_or_api_download"
+    },
+    {
+      "accession": "E-MTAB-4945",
+      "source_url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-4945",
+      "status": "pending_manual_or_api_download"
+    }
+  ],
+  "note": "E-MTAB studies require manual/API download; GSE7980 can be fetched with --download-geo."
+}

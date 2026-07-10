@@ -1,65 +1,15 @@
-# =============================================================================
-# SpheroScar — keep code + small manifests/reports; ignore data & run artifacts
-# =============================================================================
-
-# --- Raw downloads ---
+# Large local raw data
+/data/raw/microarray/*_RAW.tar
+/data/raw/microarray/platforms/*.txt
 /data/raw/bulk_rnaseq/*
 /data/raw/scrna_spatial/*
-/data/raw/microarray/
-!/data/raw/microarray/keloid_geo_legacy/arrayexpress_manifest.csv
-/data/raw/external_fibrosis/
-/data/raw/platforms/
-/data/raw/signatures/
-/data/raw/arrayexpress/
-/data/raw/cohort_manifest_user.tsv
-/data/raw/spheroid/**/*
-!/data/raw/spheroid/**/.gitkeep
-!/data/raw/spheroid/**/spheroscan_manifest.csv
 !/data/raw/bulk_rnaseq/.gitkeep
 !/data/raw/scrna_spatial/.gitkeep
-!/data/raw/source_manifest.json
 
-# --- Processed matrices / corpora / features ---
-/data/processed/*
-!/data/processed/**/
-!/data/processed/**/.gitkeep
-
-# --- Large binary / tabular artifacts (anywhere in repo) ---
-*.parquet
-*.npy
-*.npz
-*.h5ad
-*.hdf5
-*.feather
-*.arrow
-*.gz
-*.tar
-*.tar.gz
-*.zip
-*.pt
-*.pth
-*.ckpt
-*.safetensors
-*.bin
-*.pdf
-*.xlsx
-*_encoder_decoder_samples.jsonl
-*_gene_vocab.txt
-
-# --- Model runs & HPC logs ---
-results/slurm/
-results/publication/
-results/baselines_pre_arrayexpress/
+# Model checkpoints and weights
 results/frozen_qwen_adapter/checkpoints/
 results/frozen_qwen_adapter/*.pt
-results/frozen_qwen_adapter/*.log
-results/**/*.jsonl
-results/baselines/baseline_results.csv
-results/mvp/detailed_eval_breakdowns.csv
-results/mvp/detailed_eval_breakdowns.json
 
-# --- Python / experiment tracking ---
 __pycache__/
 *.py[cod]
 wandb/
-*.log

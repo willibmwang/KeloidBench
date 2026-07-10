@@ -1,0 +1,8 @@
+module,n_core_overlap,n_fragile_overlap,genes
+ECM_score,0,0,"COL1A1,COL3A1,FN1"
+myofibroblast_score,0,0,"ACTA2,TAGLN,MYL9"
+TGFb_score,0,0,"TGFB1,TGFB3,TGFBR1,TGFBR2,SMAD2,SMAD3"
+hypoxia_vascular_score,0,0,"HIF1A,PECAM1,VWF,KDR"
+remodeling_score,0,0,"MMP14,ADAM12,HTRA1,CTHRC1"
+profibrotic_fibroblast_score,0,0,POSTN
+antifibrotic_fibroblast_score,0,0,IGFBP2

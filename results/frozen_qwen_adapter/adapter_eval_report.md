@@ -1,5 +1,11 @@
 # Frozen-Qwen Adapter Evaluation
 
+## Reporting priority
+
+- Primary metric: leave-one-accession-out weighted F1.
+- Secondary metric: grouped weighted F1.
+- Bootstrap CIs: `results/publication/rigor_stats.md`
+
 ## Decision
 
 - Decision: `hold_qwen_decode`

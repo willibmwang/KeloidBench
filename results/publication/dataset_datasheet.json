@@ -1,0 +1,65 @@
+{
+  "n_profiles": 794,
+  "modalities": {
+    "external_fibrosis": 293,
+    "scrna_spatial": 230,
+    "microarray": 154,
+    "arrayexpress": 67,
+    "bulk_rnaseq": 50
+  },
+  "accessions": {
+    "GSE163973": 220,
+    "GSE32537": 169,
+    "GSE58095": 102,
+    "GSE3189": 70,
+    "E-MTAB-4945": 40,
+    "GSE44270": 32,
+    "E-MTAB-2509": 27,
+    "Sun_Burns": 25,
+    "GSE48149": 22,
+    "GSE7890": 19,
+    "GSE145725": 19,
+    "GSE158395": 13,
+    "GSE188952": 12,
+    "GSE92566": 7,
+    "GSE90051": 7,
+    "GSE181297": 7,
+    "GSE175866": 2,
+    "GSE160536": 1
+  },
+  "keloid_binary": {
+    "non_keloid": 294,
+    "exclude": 276,
+    "keloid": 224
+  },
+  "fibrotic_binary": {
+    "fibrotic": 422,
+    "non_fibrotic": 294,
+    "exclude": 78
+  },
+  "held_out_validation": {
+    "E-MTAB-2509": true,
+    "E-MTAB-4945": true,
+    "GSE145725": false,
+    "GSE158395": false,
+    "GSE160536": false,
+    "GSE163973": false,
+    "GSE175866": false,
+    "GSE181297": false,
+    "GSE188952": false,
+    "GSE3189": false,
+    "GSE32537": true,
+    "GSE44270": false,
+    "GSE48149": true,
+    "GSE58095": true,
+    "GSE7890": false,
+    "GSE90051": false,
+    "GSE92566": false,
+    "Sun_Burns": false
+  },
+  "limitations": [
+    "Keloid signature derivation excludes held-out accessions (E-MTAB-2509/4945) and external fibrosis cohorts.",
+    "Cross-disease validation uses fibrotic-vs-non-fibrotic labels; organ and platform differ from keloid skin cohorts.",
+    "scRNA pseudobulk dominates sample count; interpret meta-analysis study weights accordingly."
+  ]
+}

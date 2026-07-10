@@ -1,0 +1,39 @@
+{
+  "version": "rigor_v2",
+  "gate": {
+    "decision": "proceed_transfer_paper",
+    "reason": "At least one independent spheroid phenotype is significantly associated with the cohort-projected program score after BH correction with CI excluding zero.",
+    "c1_structural_pass": true,
+    "c2_independent_pass": true,
+    "c4_cohort_pass": true,
+    "n_independent_hits": 1,
+    "independent_hits": [
+      {
+        "target": "propagation_area",
+        "column": "propagation_area",
+        "n": 8,
+        "spearman_rho": -0.9285714285714287,
+        "p_value": 0.0008629681828999769,
+        "permutation_p_value": 0.0027994401119776045,
+        "ci_low": -1.0,
+        "ci_high": -0.5312499999999999,
+        "bh_adjusted_p": 0.016796640671865627,
+        "passes_gate": true
+      }
+    ],
+    "strict_gate_definition": "Transfer thesis holds only if >=1 independent phenotype has BH-adjusted p < 0.05 and bootstrap CI for Spearman rho excludes 0."
+  },
+  "c4_status": {
+    "available": true,
+    "c4_passes_gate": true,
+    "program_model_choice": {
+      "available": true,
+      "primary_program_model": "elastic_net_logreg",
+      "primary_feature_set": "shared_genes_plus_modules",
+      "primary_grouped_weighted_f1": 0.6535798207439923,
+      "secondary_model": "frozen_qwen_adapter",
+      "secondary_grouped_weighted_f1": 0.6000123003961889,
+      "recommendation": "Use elastic-net module program as primary interpretable model; report frozen-Qwen adapter as secondary comparison only."
+    }
+  }
+}

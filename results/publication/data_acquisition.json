@@ -1,0 +1,135 @@
+{
+  "choi_seed_check": {
+    "choi_supp_xlsx_present": true,
+    "choi_supp_xlsx_path": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/data/raw/spheroid/choi/supplementary_choi.xlsx",
+    "choi_processed_tables": [
+      "choi_morphology_area.parquet",
+      "choi_qpcr.parquet",
+      "choi_regression_s1.parquet",
+      "choi_propagation.parquet",
+      "choi_state_composition_atcc.parquet",
+      "choi_drug_response_2d.parquet",
+      "choi_drug_response_3d.parquet",
+      "choi_state_composition_patient.parquet"
+    ],
+    "choi_processed_complete_without_xlsx": true,
+    "status": "ok"
+  },
+  "cohort_inventory": [
+    {
+      "accession": "GSE7980",
+      "listed_in_manifest": true,
+      "local_files": [
+        "data/raw/microarray/keloid_geo_legacy/GSE7980_family.soft.gz"
+      ],
+      "present_locally": true
+    },
+    {
+      "accession": "E-MTAB-2509",
+      "listed_in_manifest": true,
+      "local_files": [],
+      "present_locally": false
+    },
+    {
+      "accession": "E-MTAB-4945",
+      "listed_in_manifest": true,
+      "local_files": [],
+      "present_locally": false
+    },
+    {
+      "accession": "GSE44270",
+      "listed_in_manifest": false,
+      "local_files": [
+        "data/raw/microarray/GSE44270_RAW.tar",
+        "data/raw/microarray/GSE44270_series_matrix.txt.gz",
+        "data/raw/microarray/keloid_geo_legacy/GSE44270_family.soft.gz"
+      ],
+      "present_locally": true
+    },
+    {
+      "accession": "GSE145725",
+      "listed_in_manifest": false,
+      "local_files": [
+        "data/raw/microarray/keloid_geo_legacy/GSE145725_family.soft.gz"
+      ],
+      "present_locally": true
+    },
+    {
+      "accession": "GSE7890",
+      "listed_in_manifest": false,
+      "local_files": [
+        "data/raw/microarray/GSE7890_series_matrix.txt.gz",
+        "data/raw/microarray/GSE7890_RAW.tar"
+      ],
+      "present_locally": true
+    }
+  ],
+  "geo_search_results": [
+    {
+      "term": "keloid spheroid RNA-seq",
+      "n_hits": 0,
+      "geo_ids": [],
+      "status": "ok"
+    },
+    {
+      "term": "fibroblast 3D spheroid keloid",
+      "n_hits": 1,
+      "geo_ids": [
+        "100000570"
+      ],
+      "status": "ok"
+    },
+    {
+      "term": "fibroblast spheroid deactivation RNA-seq",
+      "n_hits": 0,
+      "geo_ids": [],
+      "status": "ok"
+    },
+    {
+      "term": "3D fibroblast transcriptome spheroid",
+      "n_hits": 3,
+      "geo_ids": [
+        "200288929",
+        "200267210",
+        "100000570"
+      ],
+      "status": "ok"
+    }
+  ],
+  "literature_candidates": [
+    {
+      "source": "Choi 2024",
+      "doi": "10.1038/s42003-024-07194-2",
+      "has_full_transcriptome": false,
+      "available_modalities": [
+        "qPCR",
+        "morphology",
+        "drug_response",
+        "state_composition"
+      ],
+      "notes": "Primary spheroid grounding dataset already ingested."
+    },
+    {
+      "source": "Dirand 2023",
+      "doi": "10.3390/biomedicines11092350",
+      "has_full_transcriptome": false,
+      "available_modalities": [
+        "qualitative_fibrotic_state",
+        "alpha_SMA",
+        "COL1A1_COL3A1_ratio"
+      ],
+      "notes": "Small qualitative control; no RNA-seq matrix in repo."
+    },
+    {
+      "source": "GEO search targets",
+      "has_full_transcriptome": "unknown",
+      "available_modalities": [],
+      "notes": "Run GEO queries for keloid/fibroblast 3D spheroid RNA-seq; none confirmed in repo yet."
+    }
+  ],
+  "missing_uncollected_cohorts": [
+    "E-MTAB-2509",
+    "E-MTAB-4945"
+  ],
+  "recommendation": "Choi processed tables are complete; prioritize ingesting E-MTAB-2509, E-MTAB-4945 to reduce GSE163973 dominance. No confirmed public keloid spheroid RNA-seq is in-repo yet; continue literature/GEO monitoring for transcriptome-level transfer."
+}

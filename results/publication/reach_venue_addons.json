@@ -1,0 +1,111 @@
+{
+  "sun_burns": {
+    "attempted": false,
+    "status": "skipped"
+  },
+  "domain_adaptation": {
+    "method_means": {
+      "combat_like": 0.5519023027334835,
+      "raw": 0.5519023027334835
+    },
+    "rows": [
+      {
+        "method": "raw",
+        "held_out_accession": "GSE145725",
+        "weighted_f1": 0.7353678313430635,
+        "n_test": 19
+      },
+      {
+        "method": "raw",
+        "held_out_accession": "GSE158395",
+        "weighted_f1": 0.8443223443223443,
+        "n_test": 13
+      },
+      {
+        "method": "raw",
+        "held_out_accession": "GSE163973",
+        "weighted_f1": 0.6574987026466009,
+        "n_test": 220
+      },
+      {
+        "method": "raw",
+        "held_out_accession": "GSE181297",
+        "weighted_f1": 0.8507936507936508,
+        "n_test": 7
+      },
+      {
+        "method": "raw",
+        "held_out_accession": "GSE188952",
+        "weighted_f1": 0.19047619047619047,
+        "n_test": 12
+      },
+      {
+        "method": "raw",
+        "held_out_accession": "GSE44270",
+        "weighted_f1": 0.40499999999999997,
+        "n_test": 32
+      },
+      {
+        "method": "raw",
+        "held_out_accession": "GSE7890",
+        "weighted_f1": 0.5766081871345029,
+        "n_test": 19
+      },
+      {
+        "method": "raw",
+        "held_out_accession": "Sun_Burns",
+        "weighted_f1": 0.15515151515151515,
+        "n_test": 25
+      },
+      {
+        "method": "combat_like",
+        "held_out_accession": "GSE145725",
+        "weighted_f1": 0.7353678313430635,
+        "n_test": 19
+      },
+      {
+        "method": "combat_like",
+        "held_out_accession": "GSE158395",
+        "weighted_f1": 0.8443223443223443,
+        "n_test": 13
+      },
+      {
+        "method": "combat_like",
+        "held_out_accession": "GSE163973",
+        "weighted_f1": 0.6574987026466009,
+        "n_test": 220
+      },
+      {
+        "method": "combat_like",
+        "held_out_accession": "GSE181297",
+        "weighted_f1": 0.8507936507936508,
+        "n_test": 7
+      },
+      {
+        "method": "combat_like",
+        "held_out_accession": "GSE188952",
+        "weighted_f1": 0.19047619047619047,
+        "n_test": 12
+      },
+      {
+        "method": "combat_like",
+        "held_out_accession": "GSE44270",
+        "weighted_f1": 0.40499999999999997,
+        "n_test": 32
+      },
+      {
+        "method": "combat_like",
+        "held_out_accession": "GSE7890",
+        "weighted_f1": 0.5766081871345029,
+        "n_test": 19
+      },
+      {
+        "method": "combat_like",
+        "held_out_accession": "Sun_Burns",
+        "weighted_f1": 0.15515151515151515,
+        "n_test": 25
+      }
+    ],
+    "recommendation": "Raw module scores are acceptable; correction did not clearly improve LOSO."
+  }
+}

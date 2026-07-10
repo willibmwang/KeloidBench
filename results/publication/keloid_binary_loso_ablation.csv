@@ -1,0 +1,13 @@
+task,feature_set,split_family,reporting_label,model,weighted_f1_mean,weighted_f1_std,balanced_accuracy_mean,n_splits
+keloid_binary,profibrotic_module_only,leave_accession_out,loso,small_mlp,0.6514269607800001,0.18009232877533377,0.6575629000600001,10
+keloid_binary,profibrotic_module_only,grouped,grouped,linear_svm,0.7232408596533334,0.10570003304362725,0.69462656012,15
+keloid_binary,modules_only,leave_accession_out,loso,elastic_net_logreg,0.65481072514,0.14141167544703262,0.65400099899,10
+keloid_binary,modules_only,grouped,grouped,linear_svm,0.6858585305866668,0.07862636039307058,0.6647000205333333,15
+keloid_binary,published_markers_only,leave_accession_out,loso,hist_gradient_boosting,0.63024972441,0.1612223770046493,0.64872548747,10
+keloid_binary,published_markers_only,grouped,grouped,linear_svm,0.70272892076,0.10739102334020219,0.6820416153933333,15
+keloid_binary,low_i2_core_only,leave_accession_out,loso,elastic_net_logreg,0.58005826362,0.2232969799129641,0.6242055167,10
+keloid_binary,low_i2_core_only,grouped,grouped,elastic_net_logreg,0.7033724114800001,0.1011543141070232,0.66767642864,15
+keloid_binary,shared_genes,leave_accession_out,loso,hist_gradient_boosting,0.5693932659500001,0.15562250680535974,0.58737225737,10
+keloid_binary,shared_genes,grouped,grouped,elastic_net_logreg,0.7421497560333333,0.13628244604238487,0.7116310725733334,15
+keloid_binary,shared_genes_plus_modules,leave_accession_out,loso,elastic_net_logreg,0.5649178263600001,0.1745196193798564,0.58235246235,10
+keloid_binary,shared_genes_plus_modules,grouped,grouped,elastic_net_logreg,0.7405813894066667,0.13745653108524705,0.7090112221266668,15

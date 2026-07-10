@@ -1,0 +1,363 @@
+{
+  "n_derivation_studies": 10,
+  "derivation_accessions": [
+    "GSE145725",
+    "GSE158395",
+    "GSE163973",
+    "GSE175866",
+    "GSE181297",
+    "GSE188952",
+    "GSE44270",
+    "GSE7890",
+    "GSE92566",
+    "Sun_Burns"
+  ],
+  "held_out_accessions": [
+    "E-MTAB-2509",
+    "E-MTAB-4945",
+    "GSE32537",
+    "GSE48149",
+    "GSE58095"
+  ],
+  "n_genes_tested": 5022,
+  "n_core_genes": 44,
+  "n_fragile_genes": 0,
+  "fdr_threshold": 0.05,
+  "max_i2": 0.5,
+  "min_studies": 3,
+  "top_core_genes": [
+    {
+      "gene": "ASTN2",
+      "pooled_effect": 0.43025949194394475,
+      "pooled_se": 0.10989591621661844,
+      "i_squared": 0.0,
+      "p_value": 9.034633178612022e-05,
+      "n_studies": 8,
+      "q_stat": 5.484897957902979,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "BTG1",
+      "pooled_effect": -0.45642195005493447,
+      "pooled_se": 0.11014726313183093,
+      "i_squared": 0.0,
+      "p_value": 3.4168265534068246e-05,
+      "n_studies": 8,
+      "q_stat": 6.669856262333768,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "CKS2",
+      "pooled_effect": -0.4500461392835999,
+      "pooled_se": 0.11010871445072214,
+      "i_squared": 0.0,
+      "p_value": 4.3644327639264085e-05,
+      "n_studies": 8,
+      "q_stat": 6.673776082397928,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "COL5A3",
+      "pooled_effect": 0.42739611874047284,
+      "pooled_se": 0.1099404167065402,
+      "i_squared": 0.0,
+      "p_value": 0.00010127155896401343,
+      "n_studies": 8,
+      "q_stat": 6.251564972044406,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "CSGALNACT1",
+      "pooled_effect": 0.4431346692829034,
+      "pooled_se": 0.11008270332730073,
+      "i_squared": 0.0,
+      "p_value": 5.686152099030307e-05,
+      "n_studies": 8,
+      "q_stat": 6.861477851441393,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "ELN",
+      "pooled_effect": 0.42957268832269113,
+      "pooled_se": 0.10992962404620098,
+      "i_squared": 0.0,
+      "p_value": 9.317645973825359e-05,
+      "n_studies": 8,
+      "q_stat": 5.952074880378688,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "HSD11B1",
+      "pooled_effect": -0.42654804363560056,
+      "pooled_se": 0.10991287189135633,
+      "i_squared": 0.0,
+      "p_value": 0.00010412055949150109,
+      "n_studies": 8,
+      "q_stat": 5.994032716429631,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "IFI44",
+      "pooled_effect": 0.4295288865226764,
+      "pooled_se": 0.10993803396874581,
+      "i_squared": 0.0,
+      "p_value": 9.344568002812661e-05,
+      "n_studies": 8,
+      "q_stat": 6.045777494957573,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "LIPT1",
+      "pooled_effect": -0.4807477654864676,
+      "pooled_se": 0.11024907952908128,
+      "i_squared": 0.0,
+      "p_value": 1.2972979097475767e-05,
+      "n_studies": 8,
+      "q_stat": 6.042622774911171,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "NUDT4",
+      "pooled_effect": 0.440636753481537,
+      "pooled_se": 0.10996816041808354,
+      "i_squared": 0.0,
+      "p_value": 6.15082726765255e-05,
+      "n_studies": 8,
+      "q_stat": 5.62230010357808,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "RPL36",
+      "pooled_effect": -0.44109754589675004,
+      "pooled_se": 0.11001460250863886,
+      "i_squared": 0.0,
+      "p_value": 6.086151409352059e-05,
+      "n_studies": 8,
+      "q_stat": 6.195207542180242,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "SAA1",
+      "pooled_effect": -0.43646534783114327,
+      "pooled_se": 0.10993170940109458,
+      "i_squared": 0.0,
+      "p_value": 7.177264795427288e-05,
+      "n_studies": 8,
+      "q_stat": 5.514334750076931,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "SHB",
+      "pooled_effect": 0.4331616166885949,
+      "pooled_se": 0.11000967980508143,
+      "i_squared": 0.0,
+      "p_value": 8.233960143804322e-05,
+      "n_studies": 8,
+      "q_stat": 6.678567852052572,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "WNT2",
+      "pooled_effect": 0.45365751398347604,
+      "pooled_se": 0.11003595780655127,
+      "i_squared": 0.0,
+      "p_value": 3.742759442644276e-05,
+      "n_studies": 8,
+      "q_stat": 5.508777942643825,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "ZNF331",
+      "pooled_effect": -0.4422199295623696,
+      "pooled_se": 0.11001514185638768,
+      "i_squared": 0.0,
+      "p_value": 5.8290140077910066e-05,
+      "n_studies": 8,
+      "q_stat": 6.11753420668065,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "NNAT",
+      "pooled_effect": -0.4478216612123529,
+      "pooled_se": 0.11181139744540523,
+      "i_squared": 0.005884951362720444,
+      "p_value": 6.197757018370778e-05,
+      "n_studies": 8,
+      "q_stat": 7.041438523232811,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "OPCML",
+      "pooled_effect": 0.46158961400490234,
+      "pooled_se": 0.11497898627160422,
+      "i_squared": 0.017033972552167334,
+      "p_value": 5.9557726065288505e-05,
+      "n_studies": 8,
+      "q_stat": 7.121304098550343,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "TBCEL",
+      "pooled_effect": 0.47590252367435865,
+      "pooled_se": 0.12132177705609253,
+      "i_squared": 0.041549365213702144,
+      "p_value": 8.75813676502226e-05,
+      "n_studies": 8,
+      "q_stat": 7.303453872259956,
+      "fdr": 0.029049636098128804,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "GSTM3",
+      "pooled_effect": -0.42259657349423047,
+      "pooled_se": 0.1099336675840669,
+      "i_squared": 0.0,
+      "p_value": 0.00012099314155331976,
+      "n_studies": 8,
+      "q_stat": 6.503788718135231,
+      "fdr": 0.030381377844038594,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "TCEAL2",
+      "pooled_effect": -0.42313424234926195,
+      "pooled_se": 0.1099599335557941,
+      "i_squared": 0.0,
+      "p_value": 0.00011904885450725318,
+      "n_studies": 8,
+      "q_stat": 6.846874063587281,
+      "fdr": 0.030381377844038594,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "RPL36A",
+      "pooled_effect": -0.41468076346407323,
+      "pooled_se": 0.10977632418586544,
+      "i_squared": 0.0,
+      "p_value": 0.00015840645717644187,
+      "n_studies": 8,
+      "q_stat": 5.11199472101837,
+      "fdr": 0.03615987399727687,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "STK10",
+      "pooled_effect": 0.4162013699700252,
+      "pooled_se": 0.10993309878447953,
+      "i_squared": 0.0,
+      "p_value": 0.00015312159731273312,
+      "n_studies": 8,
+      "q_stat": 6.918560828600436,
+      "fdr": 0.03615987399727687,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "CTTN",
+      "pooled_effect": 0.41119890710764634,
+      "pooled_se": 0.10987013371056073,
+      "i_squared": 0.0,
+      "p_value": 0.00018213298180746933,
+      "n_studies": 8,
+      "q_stat": 6.495742429914669,
+      "fdr": 0.03811132644321296,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "MYH9",
+      "pooled_effect": 0.4117305943309592,
+      "pooled_se": 0.109793896880413,
+      "i_squared": 0.0,
+      "p_value": 0.00017681221354912797,
+      "n_studies": 8,
+      "q_stat": 5.517837461087056,
+      "fdr": 0.03811132644321296,
+      "tier": "core_reproducible"
+    },
+    {
+      "gene": "ITGB1",
+      "pooled_effect": 0.40668853357686247,
+      "pooled_se": 0.10977217294929158,
+      "i_squared": 0.0,
+      "p_value": 0.00021152271609002052,
+      "n_studies": 8,
+      "q_stat": 5.639727081130452,
+      "fdr": 0.0408564261616955,
+      "tier": "core_reproducible"
+    }
+  ],
+  "module_robustness": [
+    {
+      "module": "ECM_score",
+      "n_genes": 3,
+      "mean_pooled_effect": 0.49979541400686595,
+      "median_i_squared": 0.5421681230229999,
+      "frac_core_reproducible": 0.0,
+      "genes": "COL1A1,COL3A1,FN1"
+    },
+    {
+      "module": "myofibroblast_score",
+      "n_genes": 3,
+      "mean_pooled_effect": 0.13888639337635514,
+      "median_i_squared": 0.4845059413409233,
+      "frac_core_reproducible": 0.0,
+      "genes": "ACTA2,TAGLN,MYL9"
+    },
+    {
+      "module": "TGFb_score",
+      "n_genes": 6,
+      "mean_pooled_effect": 0.09859970764011121,
+      "median_i_squared": 0.633069541815108,
+      "frac_core_reproducible": 0.0,
+      "genes": "TGFB1,TGFB3,TGFBR1,TGFBR2,SMAD2,SMAD3"
+    },
+    {
+      "module": "hypoxia_vascular_score",
+      "n_genes": 4,
+      "mean_pooled_effect": 0.17885021401139523,
+      "median_i_squared": 0.4588281983579825,
+      "frac_core_reproducible": 0.0,
+      "genes": "HIF1A,PECAM1,VWF,KDR"
+    },
+    {
+      "module": "remodeling_score",
+      "n_genes": 4,
+      "mean_pooled_effect": 0.31964164157128866,
+      "median_i_squared": 0.6044093478924476,
+      "frac_core_reproducible": 0.0,
+      "genes": "MMP14,ADAM12,HTRA1,CTHRC1"
+    },
+    {
+      "module": "profibrotic_fibroblast_score",
+      "n_genes": 1,
+      "mean_pooled_effect": 0.6799896548111085,
+      "median_i_squared": 0.6246276660908082,
+      "frac_core_reproducible": 0.0,
+      "genes": "POSTN"
+    },
+    {
+      "module": "antifibrotic_fibroblast_score",
+      "n_genes": 1,
+      "mean_pooled_effect": -0.03383061490277776,
+      "median_i_squared": 0.28014231592619543,
+      "frac_core_reproducible": 0.0,
+      "genes": "IGFBP2"
+    }
+  ]
+}

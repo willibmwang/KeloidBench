@@ -1,0 +1,7 @@
+accession,listed_in_manifest,local_files,present_locally
+GSE7980,True,['data/raw/microarray/keloid_geo_legacy/GSE7980_family.soft.gz'],True
+E-MTAB-2509,True,[],False
+E-MTAB-4945,True,[],False
+GSE44270,False,"['data/raw/microarray/GSE44270_RAW.tar', 'data/raw/microarray/GSE44270_series_matrix.txt.gz', 'data/raw/microarray/keloid_geo_legacy/GSE44270_family.soft.gz']",True
+GSE145725,False,['data/raw/microarray/keloid_geo_legacy/GSE145725_family.soft.gz'],True
+GSE7890,False,"['data/raw/microarray/GSE7890_series_matrix.txt.gz', 'data/raw/microarray/GSE7890_RAW.tar']",True
