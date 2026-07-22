@@ -1,0 +1,170 @@
+sample_id,accession,encoder_task,encoder_prompt,encoder_response
+GSM3440194,GSE121618,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM3440195,GSE121618,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM3440196,GSE121618,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM3440197,GSE121618,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM3440198,GSE121618,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM3440199,GSE121618,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM3440200,GSE121618,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM3440201,GSE121618,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM3440202,GSE121618,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSM3440203,GSE121618,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM3440204,GSE121618,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+KC1,GSE173900,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+KC2,GSE173900,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+KC3,GSE173900,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+KC4,GSE173900,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+KL3,GSE173900,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KL5,GSE173900,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KL6,GSE173900,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KL7,GSE173900,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KL9,GSE173900,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Keloid1,GSE190626,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Keloid2,GSE190626,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Keloid3,GSE190626,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+Normal1,GSE190626,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+Normal2,GSE190626,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+Normal3,GSE190626,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM7846598,GSE245660,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",immature_scar
+GSM7846599,GSE245660,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",immature_scar
+GSM7846600,GSE245660,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",keloid
+GSM7846601,GSE245660,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",keloid
+GSM7846602,GSE245660,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",keloid
+K1-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day0
+K2-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day0
+K3-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day0
+K4-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day0
+K5-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day0
+K6-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day0
+K7-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day0
+K8-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day0
+N1-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",control_day0
+N2-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",control_day0
+N3-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",control_day0
+N4-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",control_day0
+N5-1st,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",control_day0
+K1-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day42
+K2-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day42
+K3-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day42
+K4-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day42
+K5-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day42
+K6-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day42
+K7-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day42
+K8-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",keloid_prone_day42
+N1-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",control_day42
+N2-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",control_day42
+N4-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",control_day42
+N5-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",control_day42
+N6-2nd,GSE113619,wound_susceptibility,"Given this skin expression profile, predict keloid susceptibility / wound timepoint. Answer:",control_day42
+Ctrl1,GSE237752,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+Ctrl2,GSE237752,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+Ctrl3,GSE237752,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+keloid1,GSE237752,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+keloid2,GSE237752,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+keloid3,GSE237752,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+HK-NS1,GSE191067,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",adjacent_normal
+HK-NS2,GSE191067,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",adjacent_normal
+HK-NS3,GSE191067,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",adjacent_normal
+HK1,GSE191067,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+HK2,GSE191067,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+HK3,GSE191067,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+HNS1,GSE191067,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+HNS2,GSE191067,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+HNS3,GSE191067,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+HNSR1,GSE191067,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal_scar
+HNSR2,GSE191067,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal_scar
+HNSR3,GSE191067,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal_scar
+KK_1,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KK_2,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KK_3,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KK_4,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KK_5,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KK_6,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KK_7,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KK_8,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KK_9,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+NK_1,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+NK_2,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+NK_3,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+NK_4,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+NK_5,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+NK_6,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+NK_7,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+NK_8,GSE185309,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSM6430213,GSE210434,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",normal_scar
+GSM6430214,GSE210434,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",hypertrophic_scar
+GSM6430215,GSE210434,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",keloid
+GSM6430216,GSE210434,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",normal_scar
+GSM6430217,GSE210434,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",hypertrophic_scar
+GSM6430218,GSE210434,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",keloid
+GSM6430219,GSE210434,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",normal_scar
+GSM6430220,GSE210434,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",hypertrophic_scar
+GSM6430221,GSE210434,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",keloid
+KDF_C_1,GSE303591,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KDF_C_2,GSE303591,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KDF_C_3,GSE303591,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+KDF_C_4,GSE303591,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+NDF_C_1,GSE303591,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+NDF_C_2,GSE303591,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+NDF_C_3,GSE303591,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+NDF_C_4,GSE303591,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+C-K20,GSE212954,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+C-K23,GSE212954,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+C-K24,GSE212954,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+C-K27,GSE212954,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+M-K20,GSE212954,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+M-K23,GSE212954,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+M-K24,GSE212954,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+N-K20,GSE212954,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+N-K23,GSE212954,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+N-K24,GSE212954,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+N-K27,GSE212954,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+K1,GSE282479,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+K3,GSE282479,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+K5,GSE282479,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+ST1,GSE282479,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+ST3,GSE282479,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+ST5,GSE282479,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+ST7,GSE282479,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+PCS-201-021 P5 DMSO 1,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+PCS-201-021 P4 DMSO 2,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+CRL-1762 P4 DMSO 1,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+CRL-1762 P4 DMSO 2,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+PK1 P7 DMSO 1,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+PK1 P7 DMSO 2,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+PK2 P8 DMSO 1,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+PK2 P4 DMSO 2,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+PK3 P3 DMSO 1,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+PK3 P4 DMSO 2,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+PK4 P2 DMSO 1,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+PK4 P2 DMSO 2,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+PNF4 P3 DMSO 1,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+PNF4 P4 DMSO 2,GSE232079,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+N3 214kPa,GSE246562,stiffness_response,"Given this fibroblast expression profile, predict the ECM stiffness condition. Answer:",214kPa
+N1 214kPa,GSE246562,stiffness_response,"Given this fibroblast expression profile, predict the ECM stiffness condition. Answer:",214kPa
+N3 8kPa,GSE246562,stiffness_response,"Given this fibroblast expression profile, predict the ECM stiffness condition. Answer:",8kPa
+N1 8kPa,GSE246562,stiffness_response,"Given this fibroblast expression profile, predict the ECM stiffness condition. Answer:",8kPa
+N2 8kPa,GSE246562,stiffness_response,"Given this fibroblast expression profile, predict the ECM stiffness condition. Answer:",8kPa
+N2 214kPa,GSE246562,stiffness_response,"Given this fibroblast expression profile, predict the ECM stiffness condition. Answer:",214kPa
+K2 8kPa,GSE246562,stiffness_response,"Given this fibroblast expression profile, predict the ECM stiffness condition. Answer:",8kPa
+K2 214kPa,GSE246562,stiffness_response,"Given this fibroblast expression profile, predict the ECM stiffness condition. Answer:",214kPa
+K1 8kPa,GSE246562,stiffness_response,"Given this fibroblast expression profile, predict the ECM stiffness condition. Answer:",8kPa
+K1 214kPa,GSE246562,stiffness_response,"Given this fibroblast expression profile, predict the ECM stiffness condition. Answer:",214kPa
+K3 8kPa,GSE246562,stiffness_response,"Given this fibroblast expression profile, predict the ECM stiffness condition. Answer:",8kPa
+K3 214kPa,GSE246562,stiffness_response,"Given this fibroblast expression profile, predict the ECM stiffness condition. Answer:",214kPa
+HTS.A,GSE178562,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",hypertrophic_scar
+HTS.B,GSE178562,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",hypertrophic_scar
+Kld.A,GSE178562,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",keloid
+Kld.B,GSE178562,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",keloid
+NS.A,GSE178562,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",normal
+NS.B,GSE178562,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",normal
+Scr.A,GSE178562,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",normal_scar
+Scr.B,GSE178562,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",normal_scar
+GSE181316_GSM5494683_skin_7,GSE181316,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",normal
+GSE181316_GSM5494684_keloid_1,GSE181316,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSE181316_GSM5494685_keloid_2,GSE181316,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSE181316_GSM5494686_keloid_3L,GSE181316,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSE181316_GSM5494687_keloid_3R,GSE181316,keloid_vs_normal,"Given this expression profile, predict whether the sample is keloid or normal. Answer:",keloid
+GSE181316_GSM5494688_scar_1,GSE181316,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",normal_scar
+GSE181316_GSM5494689_scar_2,GSE181316,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",normal_scar
+GSE181316_GSM5494690_scar_3,GSE181316,scar_differential,"Given this scar expression profile, predict the scar type. Answer:",normal_scar

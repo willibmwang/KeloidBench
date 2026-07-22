@@ -5,26 +5,13 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-MODULE_GENES = {
-    "ECM_score": ["COL1A1", "COL3A1", "FN1"],
-    "myofibroblast_score": ["ACTA2", "TAGLN", "MYL9"],
-    "TGFb_score": ["TGFB1", "TGFB3", "TGFBR1", "TGFBR2", "SMAD2", "SMAD3"],
-    "hypoxia_vascular_score": ["HIF1A", "PECAM1", "VWF", "KDR"],
-    "remodeling_score": ["MMP14", "ADAM12", "HTRA1", "CTHRC1"],
-    "profibrotic_fibroblast_score": ["POSTN", "CTHRC1", "COMP", "ASPN", "ADAM12", "TGFBI"],
-    "antifibrotic_fibroblast_score": ["IGFBP2"],
-}
+from gene_modules import EXPANDED_PROFIBROTIC_GENES, MODULE_GENES
 
-EXPANDED_PROFIBROTIC_GENES = [
-    "POSTN",
-    "CTHRC1",
-    "COMP",
-    "ASPN",
-    "ADAM12",
-    "TGFBI",
-    "COL11A1",
-    "SFRP2",
-    "SFRP4",
+__all__ = [
+    "MODULE_GENES",
+    "EXPANDED_PROFIBROTIC_GENES",
+    "split_family",
+    "bootstrap_metric_rows",
 ]
 
 

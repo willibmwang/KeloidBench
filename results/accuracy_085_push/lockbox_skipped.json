@@ -1,0 +1,9 @@
+{
+  "protocol": "accuracy_085_push_v1",
+  "phase": 4,
+  "status": "skipped",
+  "reason": "Public development gates failed (mean 0.826, worst GSE173900 0.182). Lockbox one-shot scoring is only allowed after public gates pass.",
+  "candidates_not_scored": ["GSE212954", "GSE237752"],
+  "immutable_not_rescored": ["GSE185309"],
+  "generated_at": "2026-07-21T15:50:00+00:00"
+}

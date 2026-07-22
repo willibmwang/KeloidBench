@@ -1,0 +1,151 @@
+{
+  "protocol": "breakthrough_sprint_v2",
+  "stage": "stage_b_donor_selection_calibration",
+  "stage_config": {
+    "selection_grain": "donor",
+    "normalization_modes": [
+      "none"
+    ],
+    "calibrations": [
+      "none",
+      "platt_inner_oof"
+    ],
+    "use_routing": false,
+    "label": "stage_b_donor_selection_calibration"
+  },
+  "endpoints": {
+    "keloid_vs_unaffected_skin": {
+      "macro_accession_f1": {
+        "mean": 0.7132277869569251,
+        "lo": 0.5543883711060181,
+        "hi": 0.886002886002886
+      },
+      "worst_fold": 0.43001443001442996,
+      "n_folds": 5,
+      "donor_f1_mean": 0.832962592962593,
+      "frozen_config": {
+        "feature_set": "composition_only",
+        "model": "linear_svm",
+        "weight_mode": "accession_donor",
+        "threshold": 0.4979889121578559,
+        "normalization_mode": "none",
+        "calibration": "none"
+      },
+      "accessions": [
+        "E-MTAB-4945",
+        "GSE173900",
+        "GSE181297",
+        "GSE190626",
+        "Sun_Burns"
+      ]
+    },
+    "keloid_vs_normal_scar": {
+      "macro_accession_f1": {
+        "mean": 0.32856396031153307,
+        "lo": 0.10714285714285714,
+        "hi": 0.549985063480209
+      },
+      "worst_fold": 0.0,
+      "n_folds": 5,
+      "donor_f1_mean": 0.44333333333333336,
+      "frozen_config": {
+        "feature_set": "fused_multiview",
+        "model": "elastic_net_logreg",
+        "weight_mode": "accession_donor",
+        "threshold": 0.774951108844819,
+        "normalization_mode": "none",
+        "calibration": "none"
+      },
+      "accessions": [
+        "GSE163973",
+        "GSE178562",
+        "GSE181297",
+        "GSE188952",
+        "GSE210434"
+      ]
+    },
+    "keloid_vs_pathologic_scar": {
+      "macro_accession_f1": {
+        "mean": 0.4240981240981241,
+        "lo": 0.2717171717171717,
+        "hi": 0.6333333333333333
+      },
+      "worst_fold": 0.22857142857142856,
+      "n_folds": 4,
+      "donor_f1_mean": 0.3904761904761905,
+      "frozen_config": {
+        "feature_set": "fused_multiview",
+        "model": "ridge_logreg",
+        "weight_mode": "accession_donor",
+        "threshold": 0.7899930153734608,
+        "normalization_mode": "none",
+        "calibration": "none"
+      },
+      "accessions": [
+        "GSE178562",
+        "GSE188952",
+        "GSE210434",
+        "GSE245660"
+      ]
+    },
+    "fibroblast_keloid_binary": {
+      "macro_accession_f1": {
+        "mean": 0.6297065166322604,
+        "lo": 0.5083315412633548,
+        "hi": 0.7596397711632046
+      },
+      "worst_fold": 0.3333333333333333,
+      "n_folds": 9,
+      "donor_f1_mean": 0.6908289241622575,
+      "frozen_config": {
+        "feature_set": "fibrosis_only",
+        "model": "ridge_logreg",
+        "weight_mode": "accession_donor",
+        "threshold": 0.4842749168828799,
+        "normalization_mode": "none",
+        "calibration": "platt_inner_oof"
+      },
+      "accessions": [
+        "E-MTAB-2509",
+        "E-MTAB-4945",
+        "GSE145725",
+        "GSE163973",
+        "GSE178562",
+        "GSE210434",
+        "GSE282479",
+        "GSE44270",
+        "GSE7890"
+      ]
+    }
+  },
+  "cascade": {
+    "n_folds": 5,
+    "full_coverage_macro_f1": {
+      "mean": 0.7217566045445662,
+      "lo": 0.5559019390702016,
+      "hi": 0.886002886002886
+    },
+    "selective_macro_f1": {
+      "mean": 0.7662151182151182,
+      "lo": 0.5570917082917083,
+      "hi": 0.9544055944055945
+    },
+    "mean_selective_coverage": 0.6484444444444445,
+    "worst_full_f1": 0.43001443001442996,
+    "worst_selective_f1": 0.36507936507936506,
+    "specimen_routing": false,
+    "selective_tune_on": "inner_equal_accession_oof_only"
+  },
+  "gates": {
+    "full_coverage_macro_ge_0_85": false,
+    "worst_ge_0_75": false,
+    "selective_macro_ge_0_90": false,
+    "selective_coverage_ge_0_60": true
+  },
+  "interim_targets": {
+    "worst_ge_0_50": false,
+    "macro_ge_0_70": true,
+    "no_zero_fold": true
+  },
+  "n_selected_rows": 23
+}

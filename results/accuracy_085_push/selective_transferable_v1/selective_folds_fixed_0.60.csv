@@ -1,0 +1,8 @@
+accession,mode,full_macro_f1,full_weighted_f1,selective_macro_f1,selective_weighted_f1,selective_coverage,selective_dual_class,n_test,n_kept,n_abstain,class_threshold,selective_confidence_threshold
+E-MTAB-4945,fixed_conf_0.6,0.5581014729950899,0.6916530278232406,0.5,1.0,0.4,False,30,12,18,0.5,0.6
+GSE158395,fixed_conf_0.6,0.8375,0.8519230769230769,1.0,1.0,0.6923076923076923,True,13,9,4,0.5,0.6
+GSE181297,fixed_conf_0.6,1.0,1.0,0.5,1.0,0.3333333333333333,False,6,2,4,0.5,0.6
+GSE181316,fixed_conf_0.6,1.0,1.0,1.0,1.0,1.0,True,5,5,0,0.4354576318952971,0.6
+GSE190626,fixed_conf_0.6,1.0,1.0,1.0,1.0,1.0,True,6,6,0,0.5,0.6
+GSE92566,fixed_conf_0.6,1.0,1.0,1.0,1.0,0.7142857142857143,True,7,5,2,0.5216586815410849,0.6
+Sun_Burns,fixed_conf_0.6,0.8263888888888888,0.8438888888888889,1.0,1.0,0.44,True,25,11,14,0.4952199603590005,0.6

@@ -9,17 +9,17 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from gene_modules import MODULE_COLUMNS, MODULE_GENES, MODULES
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-MODULES = {
-    "ECM_score": ["COL1A1", "COL3A1", "FN1"],
-    "myofibroblast_score": ["ACTA2", "TAGLN", "MYL9"],
-    "TGFb_score": ["TGFB1", "TGFB3", "TGFBR1", "TGFBR2", "SMAD2", "SMAD3"],
-    "hypoxia_vascular_score": ["HIF1A", "PECAM1", "VWF", "KDR"],
-    "remodeling_score": ["MMP14", "ADAM12", "HTRA1", "CTHRC1"],
-    "profibrotic_fibroblast_score": ["POSTN"],
-    "antifibrotic_fibroblast_score": ["IGFBP2"],
-}
+def _rel(path: Path) -> str:
+    path = path.resolve()
+    try:
+        return str(path.relative_to(PROJECT_ROOT))
+    except ValueError:
+        return str(path)
+
 
 METADATA_COLUMNS = [
     "sample_id",
@@ -41,7 +41,45 @@ METADATA_COLUMNS = [
     "encoder_task",
     "encoder_prompt",
     "encoder_response",
+    "eval_grain",
+    "cohort_role",
+    "allow_accession_level_grouping",
+    "lockbox",
 ]
+
+
+def is_hgnc_like_symbol(gene: str) -> bool:
+    """Reject RefSeq/Ensembl accessions that are not gene symbols."""
+    if not gene:
+        return False
+    if gene.startswith(("NM_", "NR_", "XM_", "XR_", "NP_", "XP_", "ENSG", "ENST", "ENSP")):
+        return False
+    if gene.isdigit():
+        return False
+    return bool(re.match(r"^[A-Z][A-Z0-9.-]*$", gene))
+
+
+def symbol_from_gene_assignment(raw: object) -> str | None:
+    """Parse Affymetrix-style gene_assignment fields.
+
+    Format is typically:
+      ACCESSION // SYMBOL // description // cytoband // entrez /// ...
+    Prefer the SYMBOL field rather than the first whitespace/RefSeq token.
+    """
+    text = str(raw).strip()
+    if not text or text.lower() in {"nan", "na", "---", "null", "none", "---"}:
+        return None
+    for block in re.split(r"\s*///\s*", text):
+        parts = [part.strip() for part in re.split(r"\s*//\s*", block)]
+        if len(parts) >= 2:
+            candidate = normalize_gene_symbol(parts[1])
+            if candidate and is_hgnc_like_symbol(candidate):
+                return candidate
+        for part in parts:
+            candidate = normalize_gene_symbol(part)
+            if candidate and is_hgnc_like_symbol(candidate):
+                return candidate
+    return None
 
 
 def normalize_gene_symbol(raw: object) -> str | None:
@@ -76,11 +114,43 @@ def zscore_by_accession(expr: pd.DataFrame, metadata: pd.DataFrame) -> pd.DataFr
 
 def add_module_scores(metadata: pd.DataFrame, expr: pd.DataFrame) -> pd.DataFrame:
     out = metadata.copy()
-    for score_name, genes in MODULES.items():
+    for score_name, genes in MODULE_GENES.items():
         available = [gene for gene in genes if gene in expr.columns]
         out[score_name] = expr[available].mean(axis=1).values if available else np.nan
-    out["fibrotic_activity_score"] = out[list(MODULES)].mean(axis=1, skipna=True)
+    score_cols = list(MODULE_GENES)
+    out["fibrotic_activity_score"] = out[score_cols].mean(axis=1, skipna=True)
     return out
+
+
+def module_coverage_report(expr: pd.DataFrame, accession: str | None = None) -> dict:
+    """Report mapped gene coverage and variance for each program."""
+    rows = []
+    for score_name, genes in MODULE_GENES.items():
+        available = [gene for gene in genes if gene in expr.columns]
+        if available:
+            block = expr[available]
+            nonzero = int((block.fillna(0.0).abs() > 0).any(axis=0).sum())
+            variance = float(block.var(axis=0, skipna=True).fillna(0.0).sum())
+        else:
+            nonzero = 0
+            variance = 0.0
+        rows.append(
+            {
+                "accession": accession,
+                "module": score_name,
+                "n_genes_defined": len(genes),
+                "n_genes_present": len(available),
+                "n_genes_nonzero": nonzero,
+                "variance_sum": variance,
+                "genes_present": ",".join(available),
+            }
+        )
+    return {
+        "accession": accession,
+        "modules": rows,
+        "n_modules_with_signal": int(sum(1 for row in rows if row["variance_sum"] > 0)),
+        "all_zero_programs": bool(all(row["variance_sum"] <= 0 for row in rows)),
+    }
 
 
 def write_jsonl(path: Path, metadata: pd.DataFrame, expr: pd.DataFrame, max_genes: int) -> None:
@@ -127,7 +197,7 @@ def write_expression_artifacts(
             metadata[col] = "unknown"
 
     gene_cols = expr.columns.tolist()
-    module_cols = list(MODULES) + ["fibrotic_activity_score"]
+    module_cols = list(MODULE_COLUMNS)
     wide = pd.concat([metadata[METADATA_COLUMNS + module_cols], expr], axis=1)
 
     metadata_path = out_dir / f"{prefix}_sample_metadata.parquet"
@@ -154,12 +224,12 @@ def write_expression_artifacts(
         "accessions": dataset_summaries,
         "skipped": skipped or [],
         "outputs": {
-            "metadata": str(metadata_path.relative_to(PROJECT_ROOT)),
-            "wide": str(wide_path.relative_to(PROJECT_ROOT)),
-            "matrix": str(npy_path.relative_to(PROJECT_ROOT)),
-            "labels": str(labels_path.relative_to(PROJECT_ROOT)),
-            "gene_vocab": str(vocab_path.relative_to(PROJECT_ROOT)),
-            "jsonl": str(jsonl_path.relative_to(PROJECT_ROOT)),
+            "metadata": _rel(metadata_path),
+            "wide": _rel(wide_path),
+            "matrix": _rel(npy_path),
+            "labels": _rel(labels_path),
+            "gene_vocab": _rel(vocab_path),
+            "jsonl": _rel(jsonl_path),
         },
     }
     summary_path.write_text(json.dumps(summary, indent=2))

@@ -1,0 +1,25 @@
+{
+  "stages": [
+    {
+      "stage": "stage_b_donor_selection_calibration",
+      "primary_macro": 0.7132277869569251,
+      "worst_fold": 0.43001443001442996,
+      "gates": {
+        "full_coverage_macro_ge_0_85": false,
+        "worst_ge_0_75": false,
+        "selective_macro_ge_0_90": false,
+        "selective_coverage_ge_0_60": true
+      },
+      "interim_targets": {
+        "worst_ge_0_50": false,
+        "macro_ge_0_70": true,
+        "no_zero_fold": true
+      },
+      "cascade_selective": {
+        "mean": 0.7662151182151182,
+        "lo": 0.5570917082917083,
+        "hi": 0.9544055944055945
+      }
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "protocol": "breakthrough_sprint_v2",
+  "generated_at": "2026-07-20T19:14:32.371032+00:00",
+  "primary_macro_f1": 0.7132277869569251,
+  "worst_fold_f1": 0.43001443001442996,
+  "gates": {
+    "full_coverage_macro_ge_0_85": false,
+    "worst_ge_0_75": false,
+    "selective_macro_ge_0_90": false,
+    "selective_coverage_ge_0_60": true
+  },
+  "interim_targets": {
+    "no_zero_fold": true,
+    "worst_ge_0_50": false,
+    "macro_ge_0_70": true,
+    "source_stage": "stage_b_donor_selection_calibration"
+  },
+  "claim_gates_pass": false,
+  "interim_targets_pass": false,
+  "decision": "EXECUTE_MATCHED_COHORT_PROTOCOL",
+  "rationale": "Corrected public-data benchmark remains materially below claim gates (macro=0.7132277869569251, worst=0.43001443001442996). Stop architecture chasing and execute manuscript/matched_cohort_protocol.md (single assay, matched compartments, adequate independent donors/arm, reserved validation split).",
+  "v1_lockbox_immutable": "GSE185309",
+  "v2_lockbox_withheld": "GSE218007",
+  "do_not_rescore_v1_lockbox": true,
+  "matched_cohort_protocol": "manuscript/matched_cohort_protocol.md",
+  "ablation_stages": [
+    {
+      "stage": "stage_a_endpoint_pure_baseline",
+      "primary_macro": 0.6526743534623152,
+      "worst_fold": 0.2777777777777778,
+      "n_folds": 5,
+      "donor_f1_mean": 0.7682295482295483,
+      "gates": {
+        "full_coverage_macro_ge_0_85": false,
+        "worst_ge_0_75": false,
+        "selective_macro_ge_0_90": false,
+        "selective_coverage_ge_0_60": true
+      },
+      "interim_targets": {
+        "worst_ge_0_50": false,
+        "macro_ge_0_70": false,
+        "no_zero_fold": true
+      },
+      "cascade_selective_mean": 0.7010696123799572,
+      "cascade_coverage": 0.7822222222222223,
+      "cascade_worst_full": 0.43001443001442996,
+      "accessions": [
+        "E-MTAB-4945",
+        "GSE173900",
+        "GSE181297",
+        "GSE190626",
+        "Sun_Burns"
+      ],
+      "specialists": {
+        "keloid_vs_normal_scar": {
+          "macro": 0.5731604114001879,
+          "worst": 0.25396825396825395,
+          "n_folds": 4
+        },
+        "keloid_vs_pathologic_scar": {
+          "macro": 0.674074074074074,
+          "worst": 0.3333333333333333,
+          "n_folds": 3
+        },
+        "fibroblast_keloid_binary": {
+          "macro": 0.4905660482363565,
+          "worst": 0.3333333333333333,
+          "n_folds": 8
+        }
+      }
+    },
+    {
+      "stage": "stage_b_donor_selection_calibration",
+      "primary_macro": 0.7132277869569251,
+      "worst_fold": 0.43001443001442996,
+      "n_folds": 5,
+      "donor_f1_mean": 0.832962592962593,
+      "gates": {
+        "full_coverage_macro_ge_0_85": false,
+        "worst_ge_0_75": false,
+        "selective_macro_ge_0_90": false,
+        "selective_coverage_ge_0_60": true
+      },
+      "interim_targets": {
+        "worst_ge_0_50": false,
+        "macro_ge_0_70": true,
+        "no_zero_fold": true
+      },
+      "cascade_selective_mean": 0.7662151182151182,
+      "cascade_coverage": 0.6484444444444445,
+      "cascade_worst_full": 0.43001443001442996,
+      "accessions": [
+        "E-MTAB-4945",
+        "GSE173900",
+        "GSE181297",
+        "GSE190626",
+        "Sun_Burns"
+      ],
+      "specialists": {
+        "keloid_vs_normal_scar": {
+          "macro": 0.5728764348152187,
+          "worst": 0.25,
+          "n_folds": 4
+        },
+        "keloid_vs_pathologic_scar": {
+          "macro": 0.16498316498316498,
+          "worst": 0.0,
+          "n_folds": 3
+        },
+        "fibroblast_keloid_binary": {
+          "macro": 0.5374487617889825,
+          "worst": 0.266304347826087,
+          "n_folds": 8
+        }
+      }
+    },
+    {
+      "stage": "stage_c_train_only_normalization",
+      "primary_macro": 0.6789420726712109,
+      "worst_fold": 0.43001443001442996,
+      "n_folds": 5,
+      "donor_f1_mean": 0.7986768786768788,
+      "gates": {
+        "full_coverage_macro_ge_0_85": false,
+        "worst_ge_0_75": false,
+        "selective_macro_ge_0_90": false,
+        "selective_coverage_ge_0_60": true
+      },
+      "interim_targets": {
+        "worst_ge_0_50": false,
+        "macro_ge_0_70": false,
+        "no_zero_fold": true
+      },
+      "cascade_selective_mean": 0.7662151182151182,
+      "cascade_coverage": 0.6151111111111112,
+      "cascade_worst_full": 0.43001443001442996,
+      "accessions": [
+        "E-MTAB-4945",
+        "GSE173900",
+        "GSE181297",
+        "GSE190626",
+        "Sun_Burns"
+      ],
+      "specialists": {
+        "keloid_vs_normal_scar": {
+          "macro": 0.5509905722063343,
+          "worst": 0.14285714285714285,
+          "n_folds": 4
+        },
+        "keloid_vs_pathologic_scar": {
+          "macro": 0.21666666666666665,
+          "worst": 0.0,
+          "n_folds": 3
+        },
+        "fibroblast_keloid_binary": {
+          "macro": 0.5655221204445828,
+          "worst": 0.3333333333333333,
+          "n_folds": 8
+        }
+      }
+    },
+    {
+      "stage": "stage_d_specimen_routed_cascade",
+      "primary_macro": 0.6789420726712109,
+      "worst_fold": 0.43001443001442996,
+      "n_folds": 5,
+      "donor_f1_mean": 0.7986768786768788,
+      "gates": {
+        "full_coverage_macro_ge_0_85": false,
+        "worst_ge_0_75": false,
+        "selective_macro_ge_0_90": false,
+        "selective_coverage_ge_0_60": true
+      },
+      "interim_targets": {
+        "worst_ge_0_50": false,
+        "macro_ge_0_70": false,
+        "no_zero_fold": true
+      },
+      "cascade_selective_mean": 0.7662151182151182,
+      "cascade_coverage": 0.6151111111111112,
+      "cascade_worst_full": 0.43001443001442996,
+      "accessions": [
+        "E-MTAB-4945",
+        "GSE173900",
+        "GSE181297",
+        "GSE190626",
+        "Sun_Burns"
+      ],
+      "specialists": {
+        "keloid_vs_normal_scar": {
+          "macro": 0.5509905722063343,
+          "worst": 0.14285714285714285,
+          "n_folds": 4
+        },
+        "keloid_vs_pathologic_scar": {
+          "macro": 0.21666666666666665,
+          "worst": 0.0,
+          "n_folds": 3
+        },
+        "fibroblast_keloid_binary": {
+          "macro": 0.5655221204445828,
+          "worst": 0.3333333333333333,
+          "n_folds": 8
+        }
+      }
+    }
+  ],
+  "targeted_ingest": []
+}

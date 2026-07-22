@@ -22,7 +22,7 @@ from sklearn.metrics import (
     f1_score,
     roc_auc_score,
 )
-from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import StratifiedGroupKFold, StratifiedKFold
 from sklearn.neural_network import MLPClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, StandardScaler
@@ -35,12 +35,13 @@ TRAINING_DIR = PROJECT_ROOT / "data/processed/training"
 RESULTS_DIR = PROJECT_ROOT / "results/ensemble_loso"
 
 DEFAULT_FEATURE_SETS = [
+    "modules_only",
     "modules_rank_only",
     "modules_rank_plus_expanded",
     "profibrotic_module_only",
     "expanded_profibrotic_only",
+    "robust_programs_only",
     "published_markers_only",
-    "shared_genes",
 ]
 
 
@@ -108,63 +109,95 @@ def base_models(random_state: int) -> dict[str, object]:
     }
 
 
-def predict_proba_binary(model, x: pd.DataFrame) -> np.ndarray:
+POSITIVE_LABEL = "keloid"
+RANK_NORMALIZED_FEATURES = {
+    "modules_rank_only",
+    "modules_rank_plus_expanded",
+    "expanded_profibrotic_only",
+    "robust_programs_only",
+}
+
+
+def positive_class_proba(model, x: pd.DataFrame, label_encoder: LabelEncoder) -> np.ndarray:
+    """Return P(keloid) regardless of LabelEncoder class order."""
+    classes = list(label_encoder.classes_)
+    if POSITIVE_LABEL not in classes:
+        raise ValueError(f"{POSITIVE_LABEL} missing from label encoder classes: {classes}")
+    pos_idx = classes.index(POSITIVE_LABEL)
     if hasattr(model, "predict_proba"):
         probs = model.predict_proba(x)
-        if probs.shape[1] == 2:
-            return probs[:, 1]
+        if probs.ndim == 2 and probs.shape[1] == len(classes):
+            return probs[:, pos_idx]
     if hasattr(model, "decision_function"):
-        scores = model.decision_function(x)
-        return 1.0 / (1.0 + np.exp(-scores))
+        scores = np.asarray(model.decision_function(x), dtype=float)
+        # decision_function is oriented toward classes_[1] for binary LinearSVC
+        p_class1 = 1.0 / (1.0 + np.exp(-scores))
+        return p_class1 if pos_idx == 1 else 1.0 - p_class1
     preds = model.predict(x)
-    return preds.astype(float)
+    return (preds == pos_idx).astype(float)
 
 
-def tune_threshold(y_true: np.ndarray, probs: np.ndarray, labels: list[str]) -> float:
-    if len(labels) != 2:
-        return 0.5
-    keloid_idx = labels.index("keloid") if "keloid" in labels else 1
+def tune_threshold(y_true: np.ndarray, probs_positive: np.ndarray, positive_code: int) -> float:
     best_thr = 0.5
     best_f1 = -1.0
     for thr in np.linspace(0.1, 0.9, 33):
-        pred = (probs >= thr).astype(int)
-        if keloid_idx == 0:
-            pred = 1 - pred
-        f1 = f1_score(y_true, pred, average="weighted", zero_division=0)
+        pred = np.where(probs_positive >= thr, positive_code, 1 - positive_code)
+        f1 = f1_score(y_true, pred, average="macro", zero_division=0)
         if f1 > best_f1:
             best_f1 = f1
             best_thr = thr
     return float(best_thr)
 
 
-def fit_calibrated(model, x_train: pd.DataFrame, y_train: np.ndarray, random_state: int):
+def fit_calibrated(
+    model,
+    x_train: pd.DataFrame,
+    y_train: np.ndarray,
+    random_state: int,
+    groups: np.ndarray | None = None,
+):
     if len(np.unique(y_train)) < 2 or len(x_train) < 8:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", ConvergenceWarning)
             model.fit(x_train, y_train)
         return model
+    n_groups = len(np.unique(groups)) if groups is not None else 0
+    if groups is not None and n_groups >= 3:
+        cv = min(3, n_groups)
+        splitter = StratifiedGroupKFold(n_splits=cv, shuffle=True, random_state=random_state)
+        calibrated = CalibratedClassifierCV(model, method="sigmoid", cv=splitter)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", ConvergenceWarning)
+            calibrated.fit(x_train, y_train, groups=groups)
+        return calibrated
     cv = min(3, len(np.unique(y_train)), len(x_train) // 4)
     if cv < 2:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", ConvergenceWarning)
             model.fit(x_train, y_train)
         return model
-    calibrated = CalibratedClassifierCV(model, method="sigmoid", cv=StratifiedKFold(n_splits=cv, shuffle=True, random_state=random_state))
+    calibrated = CalibratedClassifierCV(
+        model, method="sigmoid", cv=StratifiedKFold(n_splits=cv, shuffle=True, random_state=random_state)
+    )
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", ConvergenceWarning)
         calibrated.fit(x_train, y_train)
     return calibrated
 
 
-def evaluate_probs(y_true: np.ndarray, probs: np.ndarray, labels: list[str], threshold: float) -> dict:
-    keloid_idx = labels.index("keloid") if "keloid" in labels else 1
-    pred = (probs >= threshold).astype(int)
-    if keloid_idx == 0:
-        pred = 1 - pred
+def evaluate_probs(
+    y_true: np.ndarray,
+    probs_positive: np.ndarray,
+    labels: list[str],
+    threshold: float,
+    positive_code: int,
+) -> dict:
+    pred = np.where(probs_positive >= threshold, positive_code, 1 - positive_code)
     auc = None
     if len(labels) == 2 and len(np.unique(y_true)) == 2:
-        score = probs if keloid_idx == 1 else 1.0 - probs
-        auc = float(roc_auc_score(y_true, score))
+        auc = float(roc_auc_score(y_true, probs_positive if positive_code == 1 else 1.0 - probs_positive))
+        # Prefer AUROC for detecting keloid regardless of encoding.
+        auc = float(roc_auc_score((y_true == positive_code).astype(int), probs_positive))
     return {
         "accuracy": float(accuracy_score(y_true, pred)),
         "weighted_f1": float(f1_score(y_true, pred, average="weighted", zero_division=0)),
@@ -202,16 +235,18 @@ def run_split(
         if y_train_raw.nunique() < 2 or y_test_raw.nunique() < 2:
             continue
 
-        x_train, x_val, x_test = apply_normalization(
-            x_train,
-            x_val,
-            x_test,
-            x_train.index.tolist(),
-            x_val.index.tolist() if len(x_val) else [],
-            x_test.index.tolist(),
-            acc_map,
-            normalization_mode,
-        )
+        mode = "none" if feature_name in RANK_NORMALIZED_FEATURES else normalization_mode
+        if mode != "none":
+            x_train, x_val, x_test = apply_normalization(
+                x_train,
+                x_val,
+                x_test,
+                x_train.index.tolist(),
+                x_val.index.tolist() if len(x_val) else [],
+                x_test.index.tolist(),
+                acc_map,
+                mode,
+            )
 
         label_encoder = LabelEncoder()
         label_encoder.fit(pd.concat([y_train_raw, y_test_raw]).astype(str))
@@ -220,24 +255,30 @@ def run_split(
         y_val = label_encoder.transform(y_val_raw.astype(str)) if len(y_val_raw) else np.array([])
         y_test = label_encoder.transform(y_test_raw.astype(str))
         labels = local_labels
+        positive_code = int(label_encoder.transform([POSITIVE_LABEL])[0])
 
         val_probs = []
         test_probs = []
+        train_groups = np.asarray([acc_map.get(sid, "unknown") for sid in x_train.index.tolist()])
         for model_name, model in base_models(random_state).items():
             if model_name == "small_mlp" and feature_name == "shared_genes":
                 continue
-            fitted = fit_calibrated(model, x_train, y_train, random_state)
+            fitted = fit_calibrated(model, x_train, y_train, random_state, groups=train_groups)
             if len(y_val):
-                val_probs.append(predict_proba_binary(fitted, x_val))
-            test_probs.append(predict_proba_binary(fitted, x_test))
+                val_probs.append(positive_class_proba(fitted, x_val, label_encoder))
+            test_probs.append(positive_class_proba(fitted, x_test, label_encoder))
 
         if not test_probs:
             continue
 
         val_mean = np.mean(val_probs, axis=0) if val_probs else None
         test_mean = np.mean(test_probs, axis=0)
-        threshold = tune_threshold(y_val, val_mean, labels) if val_mean is not None and len(y_val) else 0.5
-        metrics = evaluate_probs(y_test, test_mean, labels, threshold)
+        threshold = (
+            tune_threshold(y_val, val_mean, positive_code)
+            if val_mean is not None and len(y_val)
+            else 0.5
+        )
+        metrics = evaluate_probs(y_test, test_mean, labels, threshold, positive_code)
         rows.append(
             {
                 "task": split["task"],
@@ -255,14 +296,16 @@ def run_split(
             val_ensemble_probs.append(val_mean)
 
     if ensemble_test_probs and y_test is not None and labels is not None:
+        positive_code = int(labels.index(POSITIVE_LABEL) if POSITIVE_LABEL in labels else 1)
+        # Convert alphabetical encoding index if needed.
+        if POSITIVE_LABEL in labels:
+            positive_code = labels.index(POSITIVE_LABEL)
         stacked_test = np.mean(np.vstack(ensemble_test_probs), axis=0)
         threshold = 0.5
-        if val_ensemble_probs:
-            # Reuse last y_val from final feature iteration when available.
+        if val_ensemble_probs and len(y_val):
             val_stack = np.mean(np.vstack(val_ensemble_probs), axis=0)
-            if len(y_val):
-                threshold = tune_threshold(y_val, val_stack, labels)
-        metrics = evaluate_probs(y_test, stacked_test, labels, threshold)
+            threshold = tune_threshold(y_val, val_stack, positive_code)
+        metrics = evaluate_probs(y_test, stacked_test, labels, threshold, positive_code)
         rows.append(
             {
                 "task": split["task"],
@@ -280,13 +323,15 @@ def run_split(
 
 def summarize(results: pd.DataFrame) -> pd.DataFrame:
     valid = results[results.get("error", pd.Series(dtype=object)).isna()] if "error" in results.columns else results
-    return (
+    grouped = (
         valid.groupby(["feature_set", "model", "normalization_mode"], dropna=False)[
             ["weighted_f1", "balanced_accuracy", "accuracy", "auroc"]
         ]
         .agg(["mean", "std", "count"])
         .reset_index()
     )
+    grouped.columns = ["_".join([part for part in col if part]) for col in grouped.columns.to_flat_index()]
+    return grouped.sort_values("weighted_f1_mean", ascending=False)
 
 
 def parse_args() -> argparse.Namespace:
@@ -296,7 +341,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--random-state", type=int, default=13)
     parser.add_argument(
         "--normalization-mode",
-        choices=["accession_zscore", "quantile_rank"],
+        choices=["none", "accession_zscore", "quantile_rank"],
         default="quantile_rank",
     )
     parser.add_argument("--feature-sets", nargs="+", default=DEFAULT_FEATURE_SETS)

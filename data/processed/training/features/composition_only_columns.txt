@@ -1,0 +1,4 @@
+fibroblast_composition_rank
+keratinocyte_composition_rank
+immune_composition_rank
+endothelial_composition_rank

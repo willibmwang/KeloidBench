@@ -1,0 +1,25 @@
+{
+  "v2_primary_skin_evaluable_accessions": [
+    "E-MTAB-4945",
+    "GSE173900",
+    "GSE181297",
+    "GSE190626",
+    "GSE191067",
+    "GSE212954",
+    "GSE237752",
+    "Sun_Burns"
+  ],
+  "removed_from_primary_skin": [
+    "E-MTAB-2509",
+    "GSE121618",
+    "GSE145725",
+    "GSE232079",
+    "GSE246562",
+    "GSE282479",
+    "GSE303591"
+  ],
+  "n_v2_skin": 8,
+  "n_v2_normal_scar": 5,
+  "n_v2_pathologic_scar": 3,
+  "n_v2_fibroblast": 8
+}

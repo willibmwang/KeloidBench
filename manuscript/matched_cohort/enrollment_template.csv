@@ -1,0 +1,5 @@
+donor_id,arm,anatomical_site,laterality,scar_duration_months,sex,age_years,ancestry_self_id,recurrence_history,prior_treatments,paired_donor_id,collection_date,rna_sample_id,notes
+D001,keloid,earlobe,left,24,F,28,Black/African American,yes,none,,2026-08-01,RNA001,
+D001,unaffected_skin,earlobe,right,,,F,28,Black/African American,,,2026-08-01,RNA002,anatomically matched control
+D002,hypertrophic_scar,chest,midline,12,M,35,Asian,no,steroid_injection,,2026-08-02,RNA003,exclude from primary if recent steroid
+D003,normotrophic_scar,abdomen,right,36,F,42,White,no,none,,2026-08-03,RNA004,

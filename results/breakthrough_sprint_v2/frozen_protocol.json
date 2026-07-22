@@ -1,0 +1,197 @@
+{
+  "protocol": "breakthrough_sprint_v2",
+  "frozen_at": "2026-07-20T18:43:16.636845+00:00",
+  "parent_protocol": "breakthrough_sprint_v1",
+  "v1_immutable": {
+    "directory": "results/breakthrough_sprint/",
+    "frozen_protocol": "results/breakthrough_sprint/frozen_protocol.json",
+    "lockbox_once": "results/breakthrough_sprint/breakthrough_lockbox_once.json",
+    "breakthrough_lockbox_accession": "GSE185309",
+    "lockbox_already_scored": true,
+    "do_not_rescore_v1_lockbox": true
+  },
+  "product": {
+    "primary": "keloid_vs_unaffected_skin",
+    "primary_compartment": "bulk_tissue_or_whole_skin",
+    "specialists": [
+      "keloid_vs_normal_scar",
+      "keloid_vs_pathologic_scar"
+    ],
+    "sensitivity": [
+      "fibroblast_keloid_binary"
+    ],
+    "cascade": "specimen_aware_mixture_of_experts_with_inner_abstention"
+  },
+  "claim_gates": {
+    "full_coverage_macro_accession_f1": 0.85,
+    "selective_macro_accession_f1": 0.9,
+    "selective_min_coverage": 0.6,
+    "worst_accession_f1": 0.75,
+    "lockbox_same_rule": true,
+    "public_data_interim_targets": {
+      "remove_catastrophic_inversion": true,
+      "worst_fold_f1_ge": 0.5,
+      "stable_macro_f1_ge": 0.7
+    },
+    "selection": "equal_accession_mean_donor_f1_with_lower_tail_tiebreak",
+    "no_outer_test_fallback": true
+  },
+  "feature_views": [
+    "fibrosis_only",
+    "scar_discriminative",
+    "composition_only",
+    "fused_multiview"
+  ],
+  "model_grid": [
+    "ridge_logreg",
+    "elastic_net_logreg",
+    "linear_svm"
+  ],
+  "normalization_grid": [
+    "none",
+    "train_accession_zscore"
+  ],
+  "calibration": [
+    "none",
+    "platt_inner_oof"
+  ],
+  "selective_prediction": {
+    "labels": [
+      "keloid",
+      "non_keloid",
+      "abstain"
+    ],
+    "tune_on": "inner_equal_accession_oof_only",
+    "coverage_constraint": ">=0.60",
+    "report_nonselective_alongside": true
+  },
+  "endpoint_purity": {
+    "ledger": "results/breakthrough_sprint_v2/cohort_decision_ledger.json",
+    "primary_skin_include": [
+      "E-MTAB-4945",
+      "GSE173900",
+      "GSE181297",
+      "GSE190626",
+      "Sun_Burns"
+    ],
+    "primary_skin_exclude": [
+      "E-MTAB-2509",
+      "GSE121618",
+      "GSE145725",
+      "GSE163973",
+      "GSE188952",
+      "GSE210434",
+      "GSE232079",
+      "GSE245660",
+      "GSE246562",
+      "GSE282479",
+      "GSE303591",
+      "GSE44270",
+      "GSE7890"
+    ],
+    "interpretation_only_additions": [
+      "GSE232079",
+      "GSE303591"
+    ]
+  },
+  "development_accessions": [
+    "E-MTAB-2509",
+    "E-MTAB-4945",
+    "GSE113619",
+    "GSE121618",
+    "GSE145725",
+    "GSE158395",
+    "GSE163973",
+    "GSE173900",
+    "GSE181297",
+    "GSE188952",
+    "GSE190626",
+    "GSE210434",
+    "GSE232079",
+    "GSE245660",
+    "GSE246562",
+    "GSE282479",
+    "GSE303591",
+    "GSE44270",
+    "GSE7890",
+    "Sun_Burns"
+  ],
+  "interpretation_only": [
+    "GSE232079",
+    "GSE243716",
+    "GSE262112",
+    "GSE266338",
+    "GSE293677",
+    "GSE303591"
+  ],
+  "ladder_reserved_lockbox": [
+    "GSE212954"
+  ],
+  "historical_lockbox_comparators": [
+    "GSE237752",
+    "GSE191067",
+    "GSE185309"
+  ],
+  "breakthrough_lockbox": {
+    "accession": "GSE218007",
+    "role": "breakthrough_lockbox_v2",
+    "rationale": "Independent of v1 lockbox GSE185309 (already scored once; immutable). Multi-donor Affymetrix keloid transcriptome (n\u224829). Expression withheld until v2 nested protocol is frozen and public-data interim targets are assessed. Requires CEL\u2192symbol processing before one-shot score.",
+    "endpoint_fit": [
+      "keloid_vs_unaffected_skin"
+    ],
+    "expression_status": "withheld_until_v2_go",
+    "download_after_freeze": {
+      "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE218nnn/GSE218007/matrix/GSE218007_series_matrix.txt.gz",
+      "supplementary": [
+        "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE218nnn/GSE218007/suppl/GSE218007_RAW.tar"
+      ]
+    }
+  },
+  "targeted_ingest_priority": [
+    "GSE218007",
+    "GSE307504",
+    "GSE125022",
+    "GSE90051",
+    "GSE44270"
+  ],
+  "immutable_comparators": {
+    "accuracy_ladder_baseline": "results/accuracy_ladder_baseline/",
+    "breakthrough_sprint_v1": "results/breakthrough_sprint/",
+    "original_10": [
+      "E-MTAB-2509",
+      "E-MTAB-4945",
+      "GSE145725",
+      "GSE158395",
+      "GSE163973",
+      "GSE181297",
+      "GSE188952",
+      "GSE44270",
+      "GSE7890",
+      "Sun_Burns"
+    ]
+  },
+  "hashes": {
+    "public_keloid_cohorts.json": "298d93ae7a0cefbbcdd5d2a9ac161475cd17573cf1f8b2f39c376bdffa6616cb",
+    "public_keloid_candidate_registry.json": "08061a4b757c8a2a624330dbdba83f880525afefc822015e29899ab831745586",
+    "cohort_decision_ledger.json": "266314b74b53bde7507d1032c6da948ad683de23a1cfed41d7c340778ded86ed",
+    "gene_modules.py": "a1cc612338979ca9a25c14fd6acdb228fb5105bb78318b4d101e655bbf605887",
+    "train_nested_loso.py": "3f9a5d8db904e30018d376507fb7d5a67b3ed095667c541e9d70ef96c34737b5",
+    "build_training_corpus.py": "8f73a61a5d5c1d76ac0ad9f3a1d1cb080af5535d3371f96273f4fafceb415186"
+  },
+  "discovery_snapshot": {
+    "n_candidates": 84,
+    "n_novel": 63,
+    "generated_at": "2026-07-20T15:21:58.491995+00:00"
+  },
+  "ablation_sequence": [
+    "stage_a_endpoint_pure_baseline",
+    "stage_b_donor_selection_calibration",
+    "stage_c_train_only_normalization",
+    "stage_d_specimen_routed_cascade"
+  ],
+  "go_no_go": {
+    "if_public_macro_below_0_85": "execute_matched_cohort_protocol",
+    "matched_cohort_protocol": "manuscript/matched_cohort_protocol.md",
+    "do_not_architecture_chase_below_interim": true
+  }
+}

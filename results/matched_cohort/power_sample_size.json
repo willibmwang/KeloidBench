@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-07-21T02:15:35.652371+00:00",
+  "protocol_ref": "manuscript/matched_cohort_protocol.md",
+  "arms": [
+    "keloid",
+    "hypertrophic_scar",
+    "normotrophic_scar",
+    "unaffected_skin"
+  ],
+  "recommended": {
+    "donors_per_arm": 20,
+    "profiles_if_one_per_donor": 80,
+    "lockbox_fraction": 0.5,
+    "lockbox_donors_per_arm": 10,
+    "development_donors_per_arm": 10,
+    "rationale": "\u226520/arm matches the preregistered protocol and yields \u226510 lockbox donors/arm at 50% reserve. Public v2 nested macro\u22480.71 with worst\u22480.43 implies the binding constraint is hard-donor generalization, not mean performance alone."
+  },
+  "sensitivity_upsizing": {
+    "donors_per_arm_30": {
+      "total": 120,
+      "lockbox_per_arm": 15,
+      "note": "Use if site can expand; better worst-donor stability."
+    },
+    "se_0_05_donors_at_p0_75": 75,
+    "se_0_07_donors_at_p0_75": 39
+  },
+  "scenarios": [
+    {
+      "label": "v2_public_best_macro_proxy",
+      "assumed_donor_accuracy_proxy": 0.71,
+      "n_primary_donors": 40,
+      "wilson95_full": [
+        0.5560241622757165,
+        0.8271735312391186
+      ],
+      "n_lockbox_primary_donors": 20,
+      "wilson95_lockbox": [
+        0.4909016213598656,
+        0.8614237259322624
+      ]
+    },
+    {
+      "label": "interim_target",
+      "assumed_donor_accuracy_proxy": 0.75,
+      "n_primary_donors": 40,
+      "wilson95_full": [
+        0.598057409330299,
+        0.8581303210445048
+      ],
+      "n_lockbox_primary_donors": 20,
+      "wilson95_lockbox": [
+        0.5312949900419365,
+        0.888139947210597
+      ]
+    },
+    {
+      "label": "claim_gate",
+      "assumed_donor_accuracy_proxy": 0.85,
+      "n_primary_donors": 40,
+      "wilson95_full": [
+        0.7092737396097997,
+        0.9293890829149256
+      ],
+      "n_lockbox_primary_donors": 20,
+      "wilson95_lockbox": [
+        0.6395767041130426,
+        0.9476322080405041
+      ]
+    },
+    {
+      "label": "selective_gate_proxy",
+      "assumed_donor_accuracy_proxy": 0.9,
+      "n_primary_donors": 40,
+      "wilson95_full": [
+        0.7694792561952611,
+        0.9604211124044252
+      ],
+      "n_lockbox_primary_donors": 20,
+      "wilson95_lockbox": [
+        0.6989617935882066,
+        0.9721341060158468
+      ]
+    }
+  ],
+  "assay_constraints": [
+    "Single bulk RNA-seq library/sequencing protocol across all arms",
+    "Exclude treated cultures from primary endpoints",
+    "Optional matched fibroblast cultures = sensitivity only"
+  ],
+  "success_criteria": {
+    "full_macro_f1": 0.85,
+    "selective_f1": 0.9,
+    "selective_coverage": 0.6,
+    "worst_fold_f1": 0.75,
+    "lockbox_same_rule": true
+  }
+}

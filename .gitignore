@@ -13,3 +13,12 @@ results/frozen_qwen_adapter/*.pt
 __pycache__/
 *.py[cod]
 wandb/
+
+# Public keloid bulk downloads / wide matrices
+/data/raw/public_keloid/**/*_RAW.tar
+/data/raw/public_keloid/**/*.tar
+/data/processed/public_keloid/*_expression_wide.parquet
+/data/processed/public_keloid/*_X.npy
+/data/processed/public_keloid/*_encoder_decoder_samples.jsonl
+/results/breakthrough_sprint_v2/lockbox_*/processed/*_expression_wide.parquet
+/results/breakthrough_sprint_v2/lockbox_*/processed/*_X.npy

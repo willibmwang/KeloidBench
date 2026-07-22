@@ -1,0 +1,78 @@
+{
+  "protocol": "accuracy_085_push_phase2",
+  "generated_at": "2026-07-21T15:00:00+00:00",
+  "inclusion_gates": [
+    "human",
+    "keloid AND unaffected/normal skin",
+    "unperturbed bulk tissue OR all-barcode tissue pseudobulk",
+    "NOT isolated fibroblast cultures / cell lines / stiffness-drug arms",
+    "recoverable donor IDs",
+    "program coverage passes gene_modules minima"
+  ],
+  "accepted": [
+    {
+      "accession": "GSE158395",
+      "action": "relabel_existing",
+      "rationale": "Already in corpus as bulk tissue; lesional keloid / non-lesional / healthy controls now map onto keloid_vs_unaffected_skin after endpoint purity fix."
+    },
+    {
+      "accession": "GSE92566",
+      "action": "relabel_existing",
+      "rationale": "Microarray bulk_skin keloid lesion vs adjacent non-lesional; same patients as GSE158395 family. Becomes primary-evaluable after lesional_status labeling fix."
+    },
+    {
+      "accession": "GSE181316",
+      "action": "ingest_development",
+      "rationale": "10x all-barcode tissue pseudobulk: 3 keloid donors (+paired 3L/3R), 1 healthy skin, 3 scars. Keloid+skin for primary; scars reserved for scar specialists.",
+      "n_samples": 8,
+      "n_modules_with_signal": 7
+    }
+  ],
+  "rejected": [
+    {
+      "accession": "GSE220300",
+      "reason": "scRNA of keloid activity zones + mature/normal scar; no clean unaffected normal-skin arm for primary."
+    },
+    {
+      "accession": "GSE181318",
+      "reason": "Psoriasis vs normal skin; wrong disease."
+    },
+    {
+      "accession": "GSE211150",
+      "reason": "UCHL1-transfected cultured fibroblasts; intervention culture."
+    },
+    {
+      "accession": "GSE202293",
+      "reason": "Fibroblast lncRNA knockdown; culture intervention."
+    },
+    {
+      "accession": "GSE191267",
+      "reason": "Keloid fibroblast lncRNA/miRNA culture series."
+    },
+    {
+      "accession": "GSE335482",
+      "reason": "Keloid zone-only scRNA (infiltrating vs hypercellular); no unaffected skin."
+    },
+    {
+      "accession": "GSE307504",
+      "reason": "Scar-type scRNA/spatial (keloid/HTS/normal scar); no unaffected skin; raw restricted."
+    },
+    {
+      "accession": "GSE270438",
+      "reason": "CD45+ immune cells only from keloid vs normal scar; not whole-tissue primary."
+    },
+    {
+      "accession": "GSE253664",
+      "reason": "Treated keloid fibroblasts (HMME-SDT); culture intervention."
+    },
+    {
+      "accession": "GSE182192",
+      "reason": "Agilent lncRNA-path Feature Extractor RAW; series matrix lacks usable expression; deferred."
+    }
+  ],
+  "notes": [
+    "PRIMARY_SKIN_EXCLUDE_ACCESSIONS unchanged for culture/stiffness cohorts.",
+    "GSE191067 / GSE212954 / GSE237752 / GSE185309 remain lockbox and are not used for selection.",
+    "Checkpoint C2 target: >=8 evaluable primary tissue folds after corpus rebuild."
+  ]
+}

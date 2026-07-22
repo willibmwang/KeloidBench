@@ -1,0 +1,62 @@
+{
+  "protocol": "breakthrough_sprint_v2",
+  "primary_endpoint": "keloid_vs_unaffected_skin",
+  "source_stage": "stage_b_donor_selection_calibration",
+  "primary_config": {
+    "feature_set": "composition_only",
+    "model": "linear_svm",
+    "weight_mode": "accession_donor",
+    "threshold": 0.4979889121578559,
+    "normalization_mode": "none",
+    "calibration": "none"
+  },
+  "specialist_configs": {
+    "keloid_vs_normal_scar": {
+      "feature_set": "fused_multiview",
+      "model": "elastic_net_logreg",
+      "weight_mode": "accession_donor",
+      "threshold": 0.774951108844819,
+      "normalization_mode": "none",
+      "calibration": "none"
+    },
+    "keloid_vs_pathologic_scar": {
+      "feature_set": "fused_multiview",
+      "model": "ridge_logreg",
+      "weight_mode": "accession_donor",
+      "threshold": 0.7899930153734608,
+      "normalization_mode": "none",
+      "calibration": "none"
+    }
+  },
+  "fibroblast_config": {
+    "feature_set": "fibrosis_only",
+    "model": "ridge_logreg",
+    "weight_mode": "accession_donor",
+    "threshold": 0.4842749168828799,
+    "normalization_mode": "none",
+    "calibration": "platt_inner_oof"
+  },
+  "cascade": {
+    "n_folds": 5,
+    "full_coverage_macro_f1": {
+      "mean": 0.7217566045445662,
+      "lo": 0.5559019390702016,
+      "hi": 0.886002886002886
+    },
+    "selective_macro_f1": {
+      "mean": 0.7662151182151182,
+      "lo": 0.5570917082917083,
+      "hi": 0.9544055944055945
+    },
+    "mean_selective_coverage": 0.6484444444444445,
+    "worst_full_f1": 0.43001443001442996,
+    "worst_selective_f1": 0.36507936507936506,
+    "specimen_routing": false,
+    "selective_tune_on": "inner_equal_accession_oof_only"
+  },
+  "breakthrough_lockbox": "GSE218007",
+  "v1_lockbox_immutable": "GSE185309",
+  "do_not_rescore_v1_lockbox": true,
+  "gse218007_scored_once": true,
+  "gse218007_macro_f1": 0.32558139534883723
+}

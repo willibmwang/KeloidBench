@@ -1,0 +1,30 @@
+{
+  "protocol": "breakthrough_sprint_v2",
+  "v1_lockbox_immutable": "GSE185309",
+  "v2_lockbox_withheld": "GSE218007",
+  "ladder_reserved": [
+    "GSE212954"
+  ],
+  "primary_skin_include": [
+    "E-MTAB-4945",
+    "GSE173900",
+    "GSE181297",
+    "GSE190626",
+    "Sun_Burns"
+  ],
+  "primary_skin_exclude": [
+    "E-MTAB-2509",
+    "GSE121618",
+    "GSE145725",
+    "GSE163973",
+    "GSE188952",
+    "GSE210434",
+    "GSE232079",
+    "GSE245660",
+    "GSE246562",
+    "GSE282479",
+    "GSE303591",
+    "GSE44270",
+    "GSE7890"
+  ]
+}

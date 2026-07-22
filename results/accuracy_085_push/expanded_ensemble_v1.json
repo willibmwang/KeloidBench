@@ -1,0 +1,234 @@
+{
+  "protocol": "accuracy_085_push_v1",
+  "endpoint": "keloid_vs_unaffected_skin",
+  "label": "expanded_ensemble_v1",
+  "generated_at": "2026-07-21T15:44:47.072733+00:00",
+  "metric_definition": {
+    "grain": "donor_primary; sample_fallback for single-donor OR mixed-class within-donor contrasts",
+    "aggregation": "macro_f1_mean_across_LOSO_folds",
+    "mean_gate": 0.85,
+    "worst_gate": 0.75,
+    "full_coverage": true
+  },
+  "source": {
+    "nested_selected": "results/accuracy_085_push/expanded_ensemble_v1/nested_selected.csv",
+    "predictions": "results/accuracy_085_push/expanded_ensemble_v1/predictions_keloid_vs_unaffected_skin.csv",
+    "predictions_crosscheck": [
+      {
+        "accession": "E-MTAB-4945",
+        "n_donors": 10,
+        "grain": "donor",
+        "macro_f1": 0.16666666666666666,
+        "sample_macro_f1": 0.2992213570634038,
+        "donor_macro_f1": 0.16666666666666666,
+        "n_test": 30,
+        "threshold": 0.5
+      },
+      {
+        "accession": "GSE158395",
+        "n_donors": 9,
+        "grain": "sample_mixed_donor",
+        "macro_f1": 0.13333333333333333,
+        "sample_macro_f1": 0.13333333333333333,
+        "donor_macro_f1": 0.0,
+        "n_test": 13,
+        "threshold": 0.5
+      },
+      {
+        "accession": "GSE173900",
+        "n_donors": 9,
+        "grain": "donor",
+        "macro_f1": 0.775,
+        "sample_macro_f1": 0.775,
+        "donor_macro_f1": 0.775,
+        "n_test": 9,
+        "threshold": 0.4906141813319206
+      },
+      {
+        "accession": "GSE181297",
+        "n_donors": 6,
+        "grain": "donor",
+        "macro_f1": 0.0,
+        "sample_macro_f1": 0.0,
+        "donor_macro_f1": 0.0,
+        "n_test": 6,
+        "threshold": 0.5
+      },
+      {
+        "accession": "GSE181316",
+        "n_donors": 4,
+        "grain": "donor",
+        "macro_f1": 0.0,
+        "sample_macro_f1": 0.0,
+        "donor_macro_f1": 0.0,
+        "n_test": 5,
+        "threshold": 0.4354576318952971
+      },
+      {
+        "accession": "GSE190626",
+        "n_donors": 6,
+        "grain": "donor",
+        "macro_f1": 0.0,
+        "sample_macro_f1": 0.0,
+        "donor_macro_f1": 0.0,
+        "n_test": 6,
+        "threshold": 0.5
+      },
+      {
+        "accession": "GSE92566",
+        "n_donors": 3,
+        "grain": "sample_mixed_donor",
+        "macro_f1": 0.0,
+        "sample_macro_f1": 0.0,
+        "donor_macro_f1": 0.4,
+        "n_test": 7,
+        "threshold": 0.5216586815410849
+      },
+      {
+        "accession": "Sun_Burns",
+        "n_donors": 1,
+        "grain": "sample",
+        "macro_f1": 0.15458937198067632,
+        "sample_macro_f1": 0.15458937198067632,
+        "donor_macro_f1": 0.0,
+        "n_test": 25,
+        "threshold": 0.4952199603590005
+      }
+    ]
+  },
+  "n_folds": 8,
+  "folds": [
+    {
+      "accession": "GSE173900",
+      "n_donors": 9,
+      "grain": "donor",
+      "macro_f1": 0.1818181818181818,
+      "weighted_f1": 0.202020202020202,
+      "sample_macro_f1": 0.1818181818181818,
+      "donor_macro_f1": 0.1818181818181818,
+      "n_test": 9,
+      "feature_set": "ensemble:fibrosis_only+fused_multiview",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.4906141813319206
+    },
+    {
+      "accession": "E-MTAB-4945",
+      "n_donors": 10,
+      "grain": "donor",
+      "macro_f1": 0.7619047619047619,
+      "weighted_f1": 0.7809523809523808,
+      "sample_macro_f1": 0.5581014729950899,
+      "donor_macro_f1": 0.7619047619047619,
+      "n_test": 30,
+      "feature_set": "ensemble:fibrosis_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.5
+    },
+    {
+      "accession": "Sun_Burns",
+      "n_donors": 1,
+      "grain": "sample",
+      "macro_f1": 0.8263888888888888,
+      "weighted_f1": 0.8438888888888889,
+      "sample_macro_f1": 0.8263888888888888,
+      "donor_macro_f1": 1.0,
+      "n_test": 25,
+      "feature_set": "ensemble:rank_programs_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.4952199603590005
+    },
+    {
+      "accession": "GSE158395",
+      "n_donors": 9,
+      "grain": "sample_mixed_donor",
+      "macro_f1": 0.8375,
+      "weighted_f1": 0.8519230769230769,
+      "sample_macro_f1": 0.8375,
+      "donor_macro_f1": 1.0,
+      "n_test": 13,
+      "feature_set": "ensemble:fibrosis_only+rank_programs_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.5
+    },
+    {
+      "accession": "GSE181297",
+      "n_donors": 6,
+      "grain": "donor",
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "sample_macro_f1": 1.0,
+      "donor_macro_f1": 1.0,
+      "n_test": 6,
+      "feature_set": "ensemble:fibrosis_only+rank_programs_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.5
+    },
+    {
+      "accession": "GSE181316",
+      "n_donors": 4,
+      "grain": "donor",
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "sample_macro_f1": 1.0,
+      "donor_macro_f1": 1.0,
+      "n_test": 5,
+      "feature_set": "ensemble:fibrosis_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.4354576318952971
+    },
+    {
+      "accession": "GSE190626",
+      "n_donors": 6,
+      "grain": "donor",
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "sample_macro_f1": 1.0,
+      "donor_macro_f1": 1.0,
+      "n_test": 6,
+      "feature_set": "ensemble:rank_programs_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.5
+    },
+    {
+      "accession": "GSE92566",
+      "n_donors": 3,
+      "grain": "sample_mixed_donor",
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "sample_macro_f1": 1.0,
+      "donor_macro_f1": 0.25,
+      "n_test": 7,
+      "feature_set": "ensemble:fused_multiview+rank_programs_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.5216586815410849
+    }
+  ],
+  "mean_macro_f1": 0.825951479076479,
+  "worst_fold_macro_f1": 0.1818181818181818,
+  "bootstrap_ci": {
+    "mean": 0.825951479076479,
+    "lo": 0.6308554292929294,
+    "hi": 0.9702380952380952
+  },
+  "gates": {
+    "mean_macro_ge_0_85": false,
+    "worst_ge_0_75": false,
+    "pass": false
+  }
+}

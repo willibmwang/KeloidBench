@@ -74,7 +74,125 @@ Primary metric: leave-one-accession-out weighted F1 (`keloid_binary`, 10 folds; 
 
 - **Interpretation:** LOSO prediction recapitulates the replication hierarchy—aggregated programs ≥ published marker unions > strict gene core > high-dim genes under true study holdout. A single POSTN program dimension (F1 **0.651**) nearly matches the full 7-module panel (F1 **0.655**), showing that reproducibility concentrates in fibroblast state rather than in any one hub gene.
 - **Hard cohorts:** GSE44270 and Sun_Burns remain ~**0.55** across all feature sets; E-MTAB-2509 / GSE145725 favor modules (~**0.85** / **0.84** per-accession best F1).
-- **Extended push-0.8 evaluation** (transductive normalization + calibrated ensemble, job 2096361 pending): targets LOSO F1 **0.80**; results to be inserted upon completion.
+- **Extended push-0.8 evaluation** (transductive normalization + calibrated ensemble, job 2130265 recovery ladder complete): targets LOSO F1 **0.80**; results to be inserted upon completion.
+
+### RQ2 recovery (input-corrected + nested LOSO)
+
+After repairing GPL6244/`gene_assignment` symbol parsing, GPL570 Affymetrix probe-set IDs, and Sun/Burns Ensembl→symbol mapping, previously all-zero program cohorts regained nonzero program variance. Coverage failures after rebuild: **none**.
+
+**Primary endpoint** (broad profile-level `keloid_binary`, frozen 10-accession LOSO):
+- Locked corrected_fixed best: **profibrotic_module_only / elastic_net_logreg (weight=none, adapt=none): F1=0.685**
+- Cohort-balanced best: **profibrotic_module_only / linear_svm (weight=accession_class, adapt=none): F1=0.662**
+- Nested inner-LOSO selected mean weighted F1 (outer folds): **0.612**
+
+**Secondary endpoint** (separately named `clean_keloid_binary` / high-confidence keloid vs normal):
+- Locked corrected_fixed best: **robust_programs_only / linear_svm (weight=none, adapt=none): F1=0.721**
+- Cohort-balanced best: **robust_programs_only / ridge_logreg (weight=accession_class, adapt=none): F1=0.750**
+- Nested selected mean weighted F1: **0.658**
+
+Hard-cohort program coverage after repair:
+- GSE188952: module_variance_sum=4.8977, n_module_genes_present=45, all_zero=False
+- GSE44270: module_variance_sum=4.6501, n_module_genes_present=45, all_zero=False
+- GSE7890: module_variance_sum=3.2512, n_module_genes_present=45, all_zero=False
+- Sun_Burns: module_variance_sum=5.1154, n_module_genes_present=45, all_zero=False
+
+Hard-cohort predictive recovery (outer-fold best within corrected_fixed):
+- GSE44270 (best corrected_fixed config): F1=0.564 (modules_rank_only / linear_svm)
+- Sun_Burns (best corrected_fixed config): F1=0.884 (modules_only / elastic_net_logreg)
+- GSE188952 (best corrected_fixed config): F1=0.838 (published_markers_only / linear_svm)
+- GSE7890 (best corrected_fixed config): F1=0.788 (robust_programs_only / linear_svm)
+
+Broad-endpoint 0.80 was **not** achieved under the frozen outer LOSO protocol. The clean secondary metric is reported separately and does not replace the broad primary result. Limited adaptation (CORAL / train quantile) did not improve the locked broad mean above corrected program baselines; architecture chase was stopped once corrected programs remained below 0.70 with GSE44270 near chance.
+
+
+### RQ2 public-cohort expansion (prospective ladder)
+
+Public keloid cohorts were pre-registered in `data/raw/public_keloid_cohorts.json` under the accuracy evidence ladder. Development cohorts may enter nested selection; prospective lockbox expression (GSE212954) is downloaded only after protocol freeze and scored once. External fibrosis / IPF profiles are excluded from keloid-negative training. GSE125022 sample-level RNA-seq is unavailable from GEO RAW (ATAC-only) and remains skipped.
+
+**Corpus audit**
+- Profiles: **869**; external-fibrosis excluded count: **n/a**; lockbox profiles: **18**
+- Ingested public accessions: **GSE113619, GSE121618, GSE173900, GSE190626, GSE191067, GSE237752, GSE245660**
+- Coverage failures: **none**
+- Results directory: `results/accuracy_ladder`
+
+**Primary endpoint semantics (non-interchangeable)**
+- Historical comparator (immutable): original-10 nested estimate frozen at baseline macro F1=**0.718**.
+- Broad updated primary: donor-aware `keloid_binary`; all-profile sensitivity: `keloid_binary_all_profiles`.
+- Clinical scar endpoint: `keloid_vs_normal_scar` (keloid vs normal/normotrophic scar only).
+- Pathologic-scar differential: `keloid_vs_pathologic_scar` (hypertrophic/immature; not merged with normal scar).
+- Unaffected-skin endpoint: `keloid_vs_unaffected_skin`; fibroblast sensitivity: `fibroblast_keloid_binary`.
+
+**Estimates (do not conflate historical / post-development / prospective)**
+- Post-hoc current-cohort fixed candidate (prior recovery ladder): F1=**0.685**
+- Post-hoc ensemble candidate: F1=**0.691**
+- Post-development nested current-10 macro-accession F1: **0.713** (worst fold **0.526**, GSE7890); paired Δ vs frozen baseline: **-0.005**
+- Nested clean current-10 mean F1: **0.656**
+- Nested fibroblast-compartment current-10 mean F1: **0.706**
+- Clinical scar nested expanded mean F1: **0.495** (worst **0.257**)
+- Unaffected-skin nested expanded mean F1: **0.734**
+- Inner selection rule: equal-accession mean F1 with lower-tail tie-break (no outer-test fallbacks).
+
+**Frozen lockbox (one-shot)**
+- Frozen config: `rank_programs_only / elastic_net_logreg / thr=0.5299569779466491`
+- lockbox evaluation pending or no lockbox cohorts ingested
+
+**Claim status**
+- Improvement gate (≥0.72 macro, donor≥0.70, worst≥0.60): **FAIL**
+- Broad 0.80 claim under frozen outer LOSO + untouched lockbox: **NO**
+
+Interpretation remains program-level reproducibility across heterogeneous keloid contrasts; endpoint heterogeneity and independent-cohort scarcity—not classifier depth—set the prediction ceiling. Residual hard fold for broad original-10 remains scar-differential biology (e.g. GSE188952).
+
+
+### RQ2 breakthrough sprint (skin-first selective cascade)
+
+The breakthrough sprint reframes prediction as a **molecular triage** product rather than a universal keloid-vs-anything classifier. Primary endpoint is `keloid_vs_unaffected_skin`; `keloid_vs_normal_scar` and `keloid_vs_pathologic_scar` are separate specialists. A selective cascade may abstain when confidence is low. Accuracy-ladder outputs remain immutable comparators; ladder lockbox GSE212954 is not reused as the breakthrough lockbox. After scar-endpoint starvation, development training was expanded with public GEO cohorts (GSE210434 scar triad; GSE303591 / GSE282479 / GSE232079 keloid-vs-normal fibroblasts; GSE246562 stiffness auxiliary) without touching the breakthrough lockbox one-shot score.
+
+**Protocol**
+- Frozen protocol: `results/breakthrough_sprint/frozen_protocol.json` (`breakthrough_sprint_v1`)
+- Breakthrough lockbox (expression withheld until freeze): **GSE185309**
+- Feature views: fibrosis-only, scar-discriminative, composition-only, fused multi-view
+- Follow-up sampling protocol: `manuscript/matched_cohort_protocol.md`
+
+**Primary nested estimates (do not conflate with broad original-10)**
+- Full-coverage nested macro-accession F1: **0.611** (worst fold **0.000**, n=12)
+- Selective cascade macro F1: **0.645** at mean coverage **0.809**
+- Frozen primary config: `composition_only / ridge_logreg / thr=0.5910754312673769`
+
+**Specialists**
+- Normal-scar specialist nested folds: **4**
+- Pathologic-scar specialist nested folds: **3**
+- These are reported separately and are not merged into the skin product claim.
+
+**Breakthrough lockbox (one-shot)**
+- GSE185309: full F1=0.526, selective F1=0.580 (coverage=0.706)
+
+**Claim status**
+- Sprint gate (full≥0.85 or selective≥0.90@≥60% coverage, worst≥0.75): **FAIL**
+- High-accuracy claim with untouched breakthrough lockbox: **NO**
+- Broad original-10 0.80 claim remains governed by the accuracy-ladder protocol and is not implied by skin-endpoint gains.
+
+
+### RQ2 breakthrough sprint v2 (endpoint-pure ceiling + matched-cohort decision)
+
+Public GEO expansion alone did not clear the sprint gates. v1 nested primary macro F1 was **0.611** with worst fold **0.000** (complete inversion on fibroblast culture GSE282479). v2 froze an endpoint-pure protocol that removes culture lines, stiffness arms, and endothelial cohorts from `keloid_vs_unaffected_skin`, adds donor-level nested selection / inner-OOF abstention, and keeps the v1 lockbox (**GSE185309**) immutable.
+
+**v2 nested evidence (tissue-only primary folds)**
+- Best stage (donor selection + calibration): macro F1 **0.713**, worst fold **0.430**, n=5
+- Zero-fold inversion removed; selective coverage gate still the only consistently passing sprint gate
+- Cohorts removed from primary skin: E-MTAB-2509, GSE121618, GSE145725, GSE232079, GSE246562, GSE282479, GSE303591
+- v1 lockbox one-shot (immutable): GSE185309: full F1=0.526, selective F1=0.580
+
+**Go / no-go**
+- Decision: **EXECUTE_MATCHED_COHORT_PROTOCOL**
+- Claim gates (full≥0.85 or selective≥0.90@≥60%, worst≥0.75): **FAIL**
+- Interpretation: compartment-matched public data lifts the floor (~0.61→~0.71) but does not support a high-accuracy claim; further architecture chase on heterogeneous GEO is discontinued.
+
+**Prospective matched cohort (next required evidence)**
+- Protocol: `manuscript/matched_cohort_protocol.md`
+- Ops package: `manuscript/matched_cohort/` (checklist, enrollment CRF, lockbox assigner, power plan)
+- Design: ≥20 donors × 4 arms (keloid / HTS / normotrophic scar / unaffected skin), one bulk RNA-seq assay, 50% donor lockbox reserved before scoring
+- Same success criteria as the breakthrough sprint; public-GEO-frozen model is the primary scorer
+- Friday product packaging: `PRODUCT.md` / `results/product_friday/` (Stage-B joblib cascade + CLI). v2 fibroblast lockbox GSE218007 one-shot macro F1≈0.33 (culture domain fail). Scar specialist refresh with GSE178562: pathologic≈0.42, normal-scar≈0.33.
 
 ### Held-out keloid validation
 

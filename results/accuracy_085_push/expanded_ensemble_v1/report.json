@@ -1,0 +1,44 @@
+{
+  "protocol": "accuracy_085_push_v1",
+  "run_label": "expanded_ensemble_v1",
+  "generated_at": "2026-07-21T15:43:41.832835+00:00",
+  "normalization_modes": [
+    "none",
+    "train_accession_zscore",
+    "train_reference_quantile",
+    "train_combat_lite"
+  ],
+  "calibrations": [
+    "none",
+    "platt_inner_oof"
+  ],
+  "features": [
+    "composition_only",
+    "rank_programs_only",
+    "fibrosis_only",
+    "fused_multiview"
+  ],
+  "ensemble_top_k": 3,
+  "selection_grain": "donor",
+  "n_folds": 8,
+  "frozen_config": {
+    "feature_set": "ensemble:fibrosis_only",
+    "model": "soft_vote",
+    "weight_mode": "accession_donor",
+    "threshold": 0.5,
+    "normalization_mode": "ensemble",
+    "calibration": "ensemble"
+  },
+  "sample_macro_mean": 0.80047606796277,
+  "donor_macro_mean": 0.7742153679653679,
+  "accessions": [
+    "E-MTAB-4945",
+    "GSE158395",
+    "GSE173900",
+    "GSE181297",
+    "GSE181316",
+    "GSE190626",
+    "GSE92566",
+    "Sun_Burns"
+  ]
+}

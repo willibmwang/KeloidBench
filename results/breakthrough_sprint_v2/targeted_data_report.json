@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-07-20T19:14:17.534976+00:00",
+  "policy": "Hard inclusion gates; no indiscriminate GEO expansion.",
+  "probes": {
+    "GSE218007": {
+      "accession": "GSE218007",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE218nnn/GSE218007/suppl/GSE218007_RAW.tar",
+      "local_tar": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/data/raw/public_keloid/GSE218007/GSE218007_RAW.tar",
+      "tar_present": false,
+      "ingestible_now": false,
+      "reason": "CEL-only Affymetrix GPL23126; no R/oligo in env; do not ingest raw CELs into train."
+    },
+    "GSE307504": {
+      "accession": "GSE307504",
+      "ingestible_now": false,
+      "suppl": [
+        "GSE307504_RAW.tar",
+        "GSE307504_Scar_Integration_0427_seurat_annotated.tar.gz"
+      ],
+      "reason": "Suppl listing is empty or RAW/scRNA-dominated; defer until multi-donor bulk scar matrix confirmed."
+    },
+    "GSE125022": {
+      "accession": "GSE125022",
+      "ingestible_now": false,
+      "reason": "Previously documented: GEO RAW ATAC-only; needs SRA RNA reprocess."
+    },
+    "GSE90051": {
+      "accession": "GSE90051",
+      "ingestible_now": false,
+      "reason": "Paired log-ratio contrasts; sample-level expression not available."
+    }
+  },
+  "ingested_into_train": [],
+  "note": "No new development cohorts meet automated hard gates in this pass. v2 lockbox GSE218007 remains withheld. Scar specialist gains continue to rely on GSE210434 / GSE245660 / GSE188952 already in corpus."
+}

@@ -1,0 +1,251 @@
+{
+  "product": "SpheroScar_molecular_triage_friday",
+  "frozen_at": "2026-07-21T14:11:26.060026+00:00",
+  "source_stage": "stage_b_donor_selection_calibration",
+  "claim_gates_pass": false,
+  "honest_ceiling": {
+    "primary_macro_f1": 0.7132277869569251,
+    "primary_worst_fold": 0.43001443001442996,
+    "decision": "EXECUTE_MATCHED_COHORT_PROTOCOL"
+  },
+  "endpoints": {
+    "keloid_vs_unaffected_skin": {
+      "endpoint": "keloid_vs_unaffected_skin",
+      "config": {
+        "feature_set": "composition_only",
+        "model": "linear_svm",
+        "weight_mode": "accession_donor",
+        "threshold": 0.4979889121578559,
+        "normalization_mode": "none",
+        "calibration": "none"
+      },
+      "feature_set": "composition_only",
+      "feature_columns": [
+        "fibroblast_composition_rank",
+        "keratinocyte_composition_rank",
+        "immune_composition_rank",
+        "endothelial_composition_rank"
+      ],
+      "feature_medians": {
+        "fibroblast_composition_rank": 0.015966414490399594,
+        "keratinocyte_composition_rank": 0.012452093632905448,
+        "immune_composition_rank": 0.005296027450482577,
+        "endothelial_composition_rank": -0.017656468706258754
+      },
+      "labels": [
+        "keloid",
+        "non_keloid"
+      ],
+      "positive_label": "keloid",
+      "positive_code": 0,
+      "n_train": 83,
+      "train_accessions": [
+        "E-MTAB-4945",
+        "GSE158395",
+        "GSE173900",
+        "GSE181297",
+        "GSE190626",
+        "GSE92566",
+        "Sun_Burns"
+      ],
+      "model_path": "results/product_friday/models/keloid_vs_unaffected_skin.joblib",
+      "nested_macro_f1": 0.7132277869569251,
+      "nested_worst_fold": 0.43001443001442996
+    },
+    "keloid_vs_normal_scar": {
+      "endpoint": "keloid_vs_normal_scar",
+      "config": {
+        "feature_set": "fused_multiview",
+        "model": "elastic_net_logreg",
+        "weight_mode": "accession_donor",
+        "threshold": 0.774951108844819,
+        "normalization_mode": "none",
+        "calibration": "none"
+      },
+      "feature_set": "fused_multiview",
+      "feature_columns": [
+        "ecm_profibrotic_rank",
+        "remodeling_rank",
+        "yap_taz_mechano_rank",
+        "wound_inflammation_rank",
+        "fibroblast_identity_rank",
+        "keratinocyte_compartment_rank",
+        "immune_activation_rank",
+        "jak_stat_th2_rank",
+        "epidermal_keratinization_rank",
+        "lipid_metabolism_rank",
+        "sensory_neural_rank",
+        "hypoxia_vascular_rank",
+        "fibroblast_composition_rank",
+        "keratinocyte_composition_rank",
+        "immune_composition_rank",
+        "endothelial_composition_rank"
+      ],
+      "feature_medians": {
+        "ecm_profibrotic_rank": 0.06528338838084141,
+        "remodeling_rank": 0.06454197108748422,
+        "yap_taz_mechano_rank": 0.15394421115776846,
+        "wound_inflammation_rank": 0.04181038792241554,
+        "fibroblast_identity_rank": 0.03807571818969535,
+        "keratinocyte_compartment_rank": -0.024645070985802875,
+        "immune_activation_rank": -0.06116832189117738,
+        "jak_stat_th2_rank": 0.05633873225354935,
+        "epidermal_keratinization_rank": -0.04152294541091783,
+        "lipid_metabolism_rank": -0.017390271945610908,
+        "sensory_neural_rank": -0.039042191561687645,
+        "hypoxia_vascular_rank": 0.008194789613505879,
+        "fibroblast_composition_rank": 0.004081326591824461,
+        "keratinocyte_composition_rank": -0.061112777444511115,
+        "immune_composition_rank": -0.06883581144938887,
+        "endothelial_composition_rank": -0.1055322268879558
+      },
+      "labels": [
+        "keloid",
+        "non_keloid"
+      ],
+      "positive_label": "keloid",
+      "positive_code": 0,
+      "n_train": 282,
+      "train_accessions": [
+        "GSE121618",
+        "GSE163973",
+        "GSE173900",
+        "GSE175866",
+        "GSE178562",
+        "GSE181297",
+        "GSE188952",
+        "GSE190626",
+        "GSE210434",
+        "GSE232079",
+        "GSE245660",
+        "GSE282479",
+        "GSE303591",
+        "GSE7890"
+      ],
+      "model_path": "results/product_friday/models/keloid_vs_normal_scar.joblib",
+      "nested_macro_f1": 0.32856396031153307,
+      "nested_worst_fold": 0.0
+    },
+    "keloid_vs_pathologic_scar": {
+      "endpoint": "keloid_vs_pathologic_scar",
+      "config": {
+        "feature_set": "fused_multiview",
+        "model": "ridge_logreg",
+        "weight_mode": "accession_donor",
+        "threshold": 0.7899930153734608,
+        "normalization_mode": "none",
+        "calibration": "none"
+      },
+      "feature_set": "fused_multiview",
+      "feature_columns": [
+        "ecm_profibrotic_rank",
+        "remodeling_rank",
+        "yap_taz_mechano_rank",
+        "wound_inflammation_rank",
+        "fibroblast_identity_rank",
+        "keratinocyte_compartment_rank",
+        "immune_activation_rank",
+        "jak_stat_th2_rank",
+        "epidermal_keratinization_rank",
+        "lipid_metabolism_rank",
+        "sensory_neural_rank",
+        "hypoxia_vascular_rank",
+        "fibroblast_composition_rank",
+        "keratinocyte_composition_rank",
+        "immune_composition_rank",
+        "endothelial_composition_rank"
+      ],
+      "feature_medians": {
+        "ecm_profibrotic_rank": 0.18227441635027064,
+        "remodeling_rank": 0.14524952152426657,
+        "yap_taz_mechano_rank": 0.19332800106645331,
+        "wound_inflammation_rank": 0.04857778444311145,
+        "fibroblast_identity_rank": 0.040783509964673725,
+        "keratinocyte_compartment_rank": -0.05663867226554692,
+        "immune_activation_rank": -0.13697260547890422,
+        "jak_stat_th2_rank": 0.08007148570285944,
+        "epidermal_keratinization_rank": -0.14324635072985403,
+        "lipid_metabolism_rank": 0.043628774245150936,
+        "sensory_neural_rank": 0.009733767532207838,
+        "hypoxia_vascular_rank": 0.06542977118861942,
+        "fibroblast_composition_rank": 0.01269746050789855,
+        "keratinocyte_composition_rank": -0.06322306967177993,
+        "immune_composition_rank": -0.10176536121347168,
+        "endothelial_composition_rank": -0.05679530760514567
+      },
+      "labels": [
+        "keloid",
+        "non_keloid"
+      ],
+      "positive_label": "keloid",
+      "positive_code": 0,
+      "n_train": 173,
+      "train_accessions": [
+        "E-MTAB-2509",
+        "GSE121618",
+        "GSE163973",
+        "GSE173900",
+        "GSE175866",
+        "GSE178562",
+        "GSE181297",
+        "GSE188952",
+        "GSE190626",
+        "GSE210434",
+        "GSE232079",
+        "GSE245660",
+        "GSE282479",
+        "GSE303591"
+      ],
+      "model_path": "results/product_friday/models/keloid_vs_pathologic_scar.joblib",
+      "nested_macro_f1": 0.4240981240981241,
+      "nested_worst_fold": 0.22857142857142856
+    },
+    "fibroblast_keloid_binary": {
+      "endpoint": "fibroblast_keloid_binary",
+      "config": {
+        "feature_set": "fibrosis_only",
+        "model": "ridge_logreg",
+        "weight_mode": "accession_donor",
+        "threshold": 0.4842749168828799,
+        "normalization_mode": "none",
+        "calibration": "platt_inner_oof"
+      },
+      "feature_set": "fibrosis_only",
+      "feature_columns": [
+        "ecm_profibrotic_rank",
+        "remodeling_rank",
+        "yap_taz_mechano_rank",
+        "wound_inflammation_rank"
+      ],
+      "feature_medians": {
+        "ecm_profibrotic_rank": 0.2825135281786295,
+        "remodeling_rank": 0.3461243730261935,
+        "yap_taz_mechano_rank": 0.3508169358140261,
+        "wound_inflammation_rank": 0.0634935512897421
+      },
+      "labels": [
+        "keloid",
+        "non_keloid"
+      ],
+      "positive_label": "keloid",
+      "positive_code": 0,
+      "n_train": 184,
+      "train_accessions": [
+        "E-MTAB-2509",
+        "E-MTAB-4945",
+        "GSE145725",
+        "GSE163973",
+        "GSE175866",
+        "GSE178562",
+        "GSE210434",
+        "GSE282479",
+        "GSE44270",
+        "GSE7890"
+      ],
+      "model_path": "results/product_friday/models/fibroblast_keloid_binary.joblib",
+      "nested_macro_f1": 0.6297065166322604,
+      "nested_worst_fold": 0.3333333333333333
+    }
+  },
+  "selective_confidence_threshold_default": 0.6
+}

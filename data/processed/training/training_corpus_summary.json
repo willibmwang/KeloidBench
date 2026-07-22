@@ -1,8 +1,9 @@
 {
-  "n_profiles": 794,
+  "n_profiles": 963,
   "modalities": {
     "external_fibrosis": 293,
     "scrna_spatial": 230,
+    "public_keloid": 169,
     "microarray": 154,
     "arrayexpress": 67,
     "bulk_rnaseq": 50
@@ -15,52 +16,166 @@
     "E-MTAB-4945": 40,
     "GSE44270": 32,
     "E-MTAB-2509": 27,
+    "GSE113619": 26,
     "Sun_Burns": 25,
     "GSE48149": 22,
-    "GSE7890": 19,
     "GSE145725": 19,
+    "GSE7890": 19,
+    "GSE185309": 17,
+    "GSE232079": 14,
     "GSE158395": 13,
+    "GSE246562": 12,
+    "GSE191067": 12,
     "GSE188952": 12,
+    "GSE121618": 11,
+    "GSE212954": 11,
+    "GSE210434": 9,
+    "GSE173900": 9,
+    "GSE181316": 8,
+    "GSE178562": 8,
+    "GSE303591": 8,
     "GSE92566": 7,
+    "GSE282479": 7,
     "GSE90051": 7,
     "GSE181297": 7,
+    "GSE190626": 6,
+    "GSE237752": 6,
+    "GSE245660": 5,
     "GSE175866": 2,
     "GSE160536": 1
   },
   "tasks": {
     "fibrosis_binary": 293,
-    "keloid_vs_normal": 149,
+    "keloid_vs_normal": 255,
     "celltype_subcluster": 103,
     "out_of_domain_disease_state": 70,
     "fibroblast_subcluster": 62,
     "cell_type": 49,
     "lesional_status": 46,
-    "scar_differential": 12,
+    "scar_differential": 37,
+    "wound_susceptibility": 26,
+    "stiffness_response": 12,
     "keloid_normal_contrast": 7,
     "fibroblast_state": 2,
     "out_of_domain_fibrotic_state": 1
   },
   "keloid_binary": {
-    "exclude": 312,
-    "non_keloid": 258,
-    "keloid": 224
+    "exclude": 611,
+    "keloid": 187,
+    "non_keloid": 165
   },
+  "keloid_binary_all_profiles": {
+    "exclude": 397,
+    "keloid": 294,
+    "non_keloid": 272
+  },
+  "clean_keloid_binary": {
+    "exclude": 493,
+    "keloid": 246,
+    "non_keloid": 224
+  },
+  "fibroblast_keloid_binary": {
+    "exclude": 779,
+    "non_keloid": 98,
+    "keloid": 86
+  },
+  "keloid_vs_normal_scar": {
+    "exclude": 649,
+    "keloid": 184,
+    "non_keloid": 130
+  },
+  "keloid_vs_pathologic_scar": {
+    "exclude": 764,
+    "keloid": 184,
+    "non_keloid": 15
+  },
+  "keloid_vs_unaffected_skin": {
+    "exclude": 836,
+    "keloid": 77,
+    "non_keloid": 50
+  },
+  "n_lockbox_profiles": 46,
+  "n_external_fibrosis_excluded": 293,
+  "original_10_comparator": [
+    "E-MTAB-2509",
+    "E-MTAB-4945",
+    "GSE145725",
+    "GSE158395",
+    "GSE163973",
+    "GSE181297",
+    "GSE188952",
+    "GSE44270",
+    "GSE7890",
+    "Sun_Burns"
+  ],
+  "preregistered_feature_sets": [
+    "profibrotic_module_only",
+    "rank_programs_only",
+    "rank_programs_plus_compartment",
+    "donor_balanced_rank_programs",
+    "scar_discriminative_rank_programs"
+  ],
+  "breakthrough_feature_views": [
+    "fibrosis_only",
+    "scar_discriminative",
+    "composition_only",
+    "fused_multiview"
+  ],
   "feature_sets": {
     "modules_only": 8,
     "modules_rank_only": 8,
-    "shared_genes": 5006,
-    "shared_genes_plus_modules": 5014,
+    "shared_genes": 5033,
+    "shared_genes_plus_modules": 5041,
     "profibrotic_module_only": 1,
     "expanded_profibrotic_only": 1,
+    "robust_programs_only": 7,
+    "rank_programs_only": 6,
+    "rank_programs_plus_compartment": 6,
+    "donor_balanced_rank_programs": 6,
+    "scar_discriminative_rank_programs": 12,
+    "fibrosis_only": 4,
+    "scar_discriminative": 12,
+    "composition_only": 4,
+    "fused_multiview": 16,
     "modules_rank_plus_expanded": 9,
     "low_i2_core_only": 27
   },
-  "n_splits": 106,
+  "n_splits": 328,
   "split_tasks": {
-    "keloid_binary": 25,
+    "keloid_binary": 40,
+    "keloid_binary_all_profiles": 40,
+    "clean_keloid_binary": 35,
+    "keloid_vs_unaffected_skin": 26,
+    "fibroblast_keloid_binary": 24,
     "cell_type": 21,
     "fibroblast_subcluster": 21,
     "celltype_subcluster": 21,
-    "lesional_status": 18
+    "keloid_vs_normal_scar": 20,
+    "scar_differential": 19,
+    "lesional_status": 18,
+    "wound_susceptibility": 15,
+    "stiffness_response": 15,
+    "keloid_vs_pathologic_scar": 13
+  },
+  "coverage_failures": [],
+  "endpoint_eligibility": {
+    "keloid_vs_unaffected_skin": {
+      "n_evaluable_accessions": 11
+    },
+    "keloid_vs_normal_scar": {
+      "n_evaluable_accessions": 7
+    },
+    "keloid_vs_pathologic_scar": {
+      "n_evaluable_accessions": 4
+    },
+    "clean_keloid_binary": {
+      "n_evaluable_accessions": 20
+    },
+    "fibroblast_keloid_binary": {
+      "n_evaluable_accessions": 9
+    },
+    "keloid_binary": {
+      "n_evaluable_accessions": 25
+    }
   }
 }

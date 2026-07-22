@@ -1,0 +1,28 @@
+{
+  "protocol": "accuracy_085_push_v1",
+  "generated_at": "2026-07-21T15:50:00+00:00",
+  "endpoint": "keloid_vs_unaffected_skin",
+  "public_gates_pass": false,
+  "lockbox_scored": false,
+  "lockbox_skip_reason": "Public gates failed (worst fold GSE173900=0.182 < 0.75); one-shot lockbox confirmation not permitted.",
+  "gse185309_rescored": false,
+  "final_public_run": "expanded_ensemble_v1",
+  "mean_macro_f1": 0.825951479076479,
+  "worst_fold_macro_f1": 0.1818181818181818,
+  "worst_fold_accession": "GSE173900",
+  "n_loso_folds": 8,
+  "blocker": {
+    "accession": "GSE173900",
+    "oracle_max_primary_macro": 0.41558441558441556,
+    "oracle_max_auroc_approx": 0.45,
+    "note": "Cross-platform non-transferable under program and gene feature views; train-only norms do not fix."
+  },
+  "exploratory_excl_gse173900": {
+    "mean_macro_f1": 0.9179705215419501,
+    "worst_fold_macro_f1": 0.7619047619047619,
+    "would_pass_numeric_gates": true,
+    "claim_allowed": false,
+    "reason": "Post-hoc exclusion after outer-test failure is not pre-registered."
+  },
+  "recommendation": "EXECUTE_MATCHED_COHORT_PROTOCOL"
+}

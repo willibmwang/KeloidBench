@@ -1,6 +1,6 @@
 {
   "n_samples": 154,
-  "n_genes": 50478,
+  "n_genes": 30760,
   "accessions": [
     {
       "accession": "GSE7890",
@@ -8,8 +8,9 @@
       "platform_id": "GPL570",
       "n_samples": 19,
       "n_probe_rows": 54675,
-      "n_gene_features": 22877,
-      "n_mapped_probes": 45782,
+      "n_gene_features": 22873,
+      "n_mapped_probes": 45778,
+      "n_modules_with_signal": 7,
       "labels": {
         "keloid": 10,
         "normal": 9
@@ -21,8 +22,9 @@
       "platform_id": "GPL570",
       "n_samples": 7,
       "n_probe_rows": 54675,
-      "n_gene_features": 22877,
-      "n_mapped_probes": 45782,
+      "n_gene_features": 22873,
+      "n_mapped_probes": 45778,
+      "n_modules_with_signal": 7,
       "labels": {
         "non_lesional": 3,
         "lesional": 3,
@@ -35,8 +37,9 @@
       "platform_id": "GPL6480",
       "n_samples": 7,
       "n_probe_rows": 41000,
-      "n_gene_features": 19595,
-      "n_mapped_probes": 30936,
+      "n_gene_features": 19594,
+      "n_mapped_probes": 30935,
+      "n_modules_with_signal": 7,
       "labels": {
         "keloid_over_normal": 7
       }
@@ -47,8 +50,9 @@
       "platform_id": "GPL6244",
       "n_samples": 32,
       "n_probe_rows": 28869,
-      "n_gene_features": 23692,
+      "n_gene_features": 23307,
       "n_mapped_probes": 25293,
+      "n_modules_with_signal": 7,
       "labels": {
         "lesional": 18,
         "non_lesional": 8,
@@ -61,8 +65,9 @@
       "platform_id": "GPL96",
       "n_samples": 70,
       "n_probe_rows": 22283,
-      "n_gene_features": 13235,
-      "n_mapped_probes": 21225,
+      "n_gene_features": 13234,
+      "n_mapped_probes": 21224,
+      "n_modules_with_signal": 7,
       "labels": {
         "melanoma": 45,
         "nevus": 18,
@@ -77,12 +82,14 @@
       "n_probe_rows": 49495,
       "n_gene_features": 19420,
       "n_mapped_probes": 48722,
+      "n_modules_with_signal": 7,
       "labels": {
         "normal": 10,
         "keloid": 9
       }
     }
   ],
+  "skipped": [],
   "outputs": {
     "metadata": "data/processed/microarray/microarray_sample_metadata.parquet",
     "wide": "data/processed/microarray/microarray_expression_wide.parquet",
@@ -90,5 +97,6 @@
     "labels": "data/processed/microarray/microarray_encoder_labels.csv",
     "gene_vocab": "data/processed/microarray/microarray_gene_vocab.txt",
     "jsonl": "data/processed/microarray/microarray_encoder_decoder_samples.jsonl"
-  }
+  },
+  "module_coverage": "data/processed/microarray/microarray_module_coverage.csv"
 }

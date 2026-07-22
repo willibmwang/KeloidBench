@@ -1,0 +1,149 @@
+{
+  "protocol": "breakthrough_sprint_v2",
+  "stage": "stage_c_train_only_normalization",
+  "stage_config": {
+    "selection_grain": "donor",
+    "normalization_modes": [
+      "none",
+      "train_accession_zscore"
+    ],
+    "calibrations": [
+      "none",
+      "platt_inner_oof"
+    ],
+    "use_routing": false,
+    "label": "stage_c_train_only_normalization"
+  },
+  "endpoints": {
+    "keloid_vs_unaffected_skin": {
+      "macro_accession_f1": {
+        "mean": 0.6789420726712109,
+        "lo": 0.551910111867157,
+        "hi": 0.797598166539343
+      },
+      "worst_fold": 0.43001443001442996,
+      "n_folds": 5,
+      "donor_f1_mean": 0.7986768786768788,
+      "frozen_config": {
+        "feature_set": "composition_only",
+        "model": "linear_svm",
+        "weight_mode": "accession_donor",
+        "threshold": 0.49798817994833,
+        "normalization_mode": "none",
+        "calibration": "none"
+      },
+      "accessions": [
+        "E-MTAB-4945",
+        "GSE173900",
+        "GSE181297",
+        "GSE190626",
+        "Sun_Burns"
+      ]
+    },
+    "keloid_vs_normal_scar": {
+      "macro_accession_f1": {
+        "mean": 0.5509905722063343,
+        "lo": 0.2507906682221924,
+        "hi": 0.8511904761904763
+      },
+      "worst_fold": 0.14285714285714285,
+      "n_folds": 4,
+      "donor_f1_mean": 0.369047619047619,
+      "frozen_config": {
+        "feature_set": "composition_only",
+        "model": "ridge_logreg",
+        "weight_mode": "accession_donor",
+        "threshold": 0.6376989908773089,
+        "normalization_mode": "train_accession_zscore",
+        "calibration": "platt_inner_oof"
+      },
+      "accessions": [
+        "GSE163973",
+        "GSE181297",
+        "GSE188952",
+        "GSE210434"
+      ]
+    },
+    "keloid_vs_pathologic_scar": {
+      "macro_accession_f1": {
+        "mean": 0.21666666666666665,
+        "lo": 0.0,
+        "hi": 0.3333333333333333
+      },
+      "worst_fold": 0.0,
+      "n_folds": 3,
+      "donor_f1_mean": 0.1111111111111111,
+      "frozen_config": {
+        "feature_set": "scar_discriminative",
+        "model": "elastic_net_logreg",
+        "weight_mode": "accession_donor",
+        "threshold": 0.5444665828087792,
+        "normalization_mode": "train_accession_zscore",
+        "calibration": "platt_inner_oof"
+      },
+      "accessions": [
+        "GSE188952",
+        "GSE210434",
+        "GSE245660"
+      ]
+    },
+    "fibroblast_keloid_binary": {
+      "macro_accession_f1": {
+        "mean": 0.5655221204445828,
+        "lo": 0.4269746841248838,
+        "hi": 0.727961311917785
+      },
+      "worst_fold": 0.3333333333333333,
+      "n_folds": 8,
+      "donor_f1_mean": 0.5277777777777777,
+      "frozen_config": {
+        "feature_set": "fibrosis_only",
+        "model": "elastic_net_logreg",
+        "weight_mode": "accession_donor",
+        "threshold": 0.5115987598722385,
+        "normalization_mode": "none",
+        "calibration": "platt_inner_oof"
+      },
+      "accessions": [
+        "E-MTAB-2509",
+        "E-MTAB-4945",
+        "GSE145725",
+        "GSE163973",
+        "GSE210434",
+        "GSE282479",
+        "GSE44270",
+        "GSE7890"
+      ]
+    }
+  },
+  "cascade": {
+    "n_folds": 5,
+    "full_coverage_macro_f1": {
+      "mean": 0.687470890258852,
+      "lo": 0.5537725018407644,
+      "hi": 0.8042222222222222
+    },
+    "selective_macro_f1": {
+      "mean": 0.7662151182151182,
+      "lo": 0.5570917082917083,
+      "hi": 0.9544055944055945
+    },
+    "mean_selective_coverage": 0.6151111111111112,
+    "worst_full_f1": 0.43001443001442996,
+    "worst_selective_f1": 0.36507936507936506,
+    "specimen_routing": false,
+    "selective_tune_on": "inner_equal_accession_oof_only"
+  },
+  "gates": {
+    "full_coverage_macro_ge_0_85": false,
+    "worst_ge_0_75": false,
+    "selective_macro_ge_0_90": false,
+    "selective_coverage_ge_0_60": true
+  },
+  "interim_targets": {
+    "worst_ge_0_50": false,
+    "macro_ge_0_70": false,
+    "no_zero_fold": true
+  },
+  "n_selected_rows": 20
+}

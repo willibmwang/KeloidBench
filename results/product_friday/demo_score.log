@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/gpfs/radev/home/wbw7/Desktop/SpheroScar/scripts/score_cascade_product.py", line 184, in <module>
+    main()
+  File "/gpfs/radev/home/wbw7/Desktop/SpheroScar/scripts/score_cascade_product.py", line 142, in main
+    x = feature_views.get(feat_name) or feature_views.get(args.feature_set or "") or next(iter(feature_views.values()))
+  File "/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/lib/python3.10/site-packages/pandas/core/generic.py", line 1580, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().

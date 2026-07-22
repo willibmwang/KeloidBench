@@ -1,0 +1,354 @@
+{
+  "protocol": "accuracy_evidence_ladder_v1",
+  "notes": [
+    "Development cohorts may be used for feature/model/threshold selection under nested LOSO.",
+    "Lockbox cohorts are processed under the frozen pipeline but never used for selection.",
+    "GSE212954 expression is reserved until protocol freeze; series metadata may be inspected earlier.",
+    "GSE125022 RAW.tar is ATAC-only; sample-level RNA-seq requires SRA reprocessing and is skipped here.",
+    "GSE7980 GPL5337 is Arabidopsis; keep excluded unless a human probe map is proven.",
+    "GSE266338 / GSE243716 / GSE262112 / GSE293677 are interpretation-only (single-donor or intervention).",
+    "Breakthrough sprint lockbox is GSE185309 (see results/breakthrough_sprint/frozen_protocol.json); GSE212954 remains accuracy-ladder reserved.",
+    "Data expansion (post-breakthrough starvation): GSE210434 / GSE303591 / GSE282479 / GSE232079 added as development. GSE151464 is circRNA-only.",
+    "Friday product push: GSE218007 ingested via RMA-GENE series matrix as v2 fibroblast lockbox (not CEL/oligo). GSE178562 human non-KO scar-triad fibroblasts added for specialists."
+  ],
+  "development": [
+    {
+      "accession": "GSE178562",
+      "role": "development",
+      "modality": "bulk_rnaseq",
+      "platform_id": "GPL16791",
+      "endpoint": "scar_differential",
+      "native_task": "scar_differential",
+      "description": "Human cultured fibroblasts from HTS / keloid / normal skin / scar (JUN non-KO arms only; technical replicates).",
+      "download": {
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE178nnn/GSE178562/suppl/GSE178562_Jun_Human_RNA-seq.txt.gz"
+        ]
+      },
+      "allow_accession_level_grouping": true
+    },
+    {
+      "accession": "GSE181316",
+      "role": "development",
+      "modality": "scrna_pseudobulk",
+      "platform_id": "GPL20301",
+      "endpoint": "keloid_binary",
+      "native_task": "keloid_vs_normal",
+      "description": "All-barcode tissue pseudobulk from 10x scRNA: 4 keloid (3 donors; 3L/3R paired), 1 healthy skin, 3 scars. Primary uses keloid+skin only; scars go to scar specialists.",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE181nnn/GSE181316/matrix/GSE181316_series_matrix.txt.gz",
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE181nnn/GSE181316/suppl/GSE181316_RAW.tar"
+        ]
+      },
+      "allow_accession_level_grouping": false
+    },
+    {
+      "accession": "GSE121618",
+      "role": "development",
+      "modality": "microarray",
+      "platform_id": "GPL21185",
+      "endpoint": "keloid_binary",
+      "native_task": "keloid_vs_normal",
+      "description": "Repaired 5 keloid endothelial (KEC) vs 6 normal endothelial (NEC) samples.",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE121nnn/GSE121618/matrix/GSE121618_series_matrix.txt.gz"
+      },
+      "allow_accession_level_grouping": false
+    },
+    {
+      "accession": "GSE173900",
+      "role": "development",
+      "modality": "bulk_rnaseq",
+      "platform_id": "GPL21697",
+      "endpoint": "keloid_binary",
+      "native_task": "keloid_vs_normal",
+      "description": "5 keloid / 4 normal-skin tissue RNA-seq (KC*=control, KL*=keloid).",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE173nnn/GSE173900/matrix/GSE173900_series_matrix.txt.gz",
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE173nnn/GSE173900/suppl/GSE173900_gene_count_matrix_9samples.csv.gz"
+        ]
+      },
+      "allow_accession_level_grouping": false
+    },
+    {
+      "accession": "GSE190626",
+      "role": "development",
+      "modality": "bulk_rnaseq",
+      "platform_id": "GPL24676",
+      "endpoint": "keloid_binary",
+      "native_task": "keloid_vs_normal",
+      "description": "3 keloid / 3 normal-skin tissue TPM matrix.",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE190nnn/GSE190626/matrix/GSE190626_series_matrix.txt.gz",
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE190nnn/GSE190626/suppl/GSE190626_gene_expression_send.xlsx"
+        ]
+      },
+      "allow_accession_level_grouping": false
+    },
+    {
+      "accession": "GSE245660",
+      "role": "development",
+      "modality": "bulk_rnaseq",
+      "platform_id": "GPL24676",
+      "endpoint": "scar_differential",
+      "native_task": "scar_differential",
+      "description": "Keloid vs immature-scar myofibroblast-rich tissue RNA-seq.",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE245nnn/GSE245660/matrix/GSE245660_series_matrix.txt.gz",
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE245nnn/GSE245660/suppl/GSE245660_RAW.tar",
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE245nnn/GSE245660/suppl/GSE245660_keloid_vs_immature_scar_all.csv.gz"
+        ]
+      },
+      "allow_accession_level_grouping": false
+    },
+    {
+      "accession": "GSE246562",
+      "role": "development",
+      "modality": "bulk_rnaseq",
+      "platform_id": "GPL18573",
+      "endpoint": "stiffness_response",
+      "native_task": "stiffness_response",
+      "description": "KDF/NDF donors under two ECM stiffness conditions; auxiliary mechanobiology task.",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE246nnn/GSE246562/matrix/GSE246562_series_matrix.txt.gz",
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE246nnn/GSE246562/suppl/GSE246562_All_Probes_Raw_counts.csv.gz"
+        ]
+      },
+      "allow_accession_level_grouping": false
+    },
+    {
+      "accession": "GSE113619",
+      "role": "development",
+      "modality": "bulk_rnaseq",
+      "platform_id": "GPL16791",
+      "endpoint": "wound_susceptibility",
+      "native_task": "wound_susceptibility",
+      "description": "Keloid-prone vs control donors; susceptibility-only auxiliary task (excluded from lesion endpoints).",
+      "download": {
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113619/suppl/GSE113619_RNA-seq_keloids_normalized.csv.gz",
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113619/suppl/GSE113619_RNA-seq_keloids_raw.csv.gz"
+        ]
+      },
+      "allow_accession_level_grouping": false
+    },
+    {
+      "accession": "GSE7980",
+      "role": "development_optional",
+      "modality": "microarray",
+      "platform_id": "GPL5337",
+      "endpoint": "keloid_binary",
+      "native_task": "keloid_vs_normal",
+      "description": "Legacy keloid microarray on Arabidopsis GPL5337; excluded unless human probe map yields program coverage.",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE7nnn/GSE7980/matrix/GSE7980_series_matrix.txt.gz"
+      },
+      "allow_accession_level_grouping": true
+    },
+    {
+      "accession": "GSE210434",
+      "role": "development",
+      "modality": "bulk_rnaseq",
+      "platform_id": "GPL24676",
+      "endpoint": "scar_differential",
+      "native_task": "scar_differential",
+      "description": "Fibroblasts from normal scar, hypertrophic scar, and keloid (3 donors × 3 scar types).",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE210nnn/GSE210434/matrix/GSE210434_series_matrix.txt.gz",
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE210nnn/GSE210434/suppl/GSE210434_RAW.tar"
+        ]
+      },
+      "allow_accession_level_grouping": false
+    },
+    {
+      "accession": "GSE303591",
+      "role": "development",
+      "modality": "bulk_rnaseq",
+      "platform_id": "GPL24676",
+      "endpoint": "keloid_binary",
+      "native_task": "keloid_vs_normal",
+      "description": "Keloid vs normal dermal cells bulk RNA-seq; untreated (no AA) replicates only.",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303591/matrix/GSE303591_series_matrix.txt.gz",
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE303nnn/GSE303591/suppl/GSE303591_raw_FPKM_TPM_readcounts_allsamples.xlsx"
+        ]
+      },
+      "allow_accession_level_grouping": false
+    },
+    {
+      "accession": "GSE282479",
+      "role": "development",
+      "modality": "bulk_rnaseq",
+      "platform_id": "GPL24676",
+      "endpoint": "keloid_binary",
+      "native_task": "keloid_vs_normal",
+      "description": "Keloid vs normal fibroblasts; untreated samples only (paricalcitol excluded).",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE282nnn/GSE282479/matrix/GSE282479_series_matrix.txt.gz",
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE282nnn/GSE282479/suppl/GSE282479_VitD_counts.csv.gz"
+        ]
+      },
+      "allow_accession_level_grouping": false
+    },
+    {
+      "accession": "GSE232079",
+      "role": "development",
+      "modality": "bulk_rnaseq",
+      "platform_id": "GPL24676",
+      "endpoint": "keloid_binary",
+      "native_task": "keloid_vs_normal",
+      "description": "Keloid vs normal fibroblast lines under DMSO vehicle (corin-treated excluded).",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE232nnn/GSE232079/matrix/GSE232079_series_matrix.txt.gz",
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE232nnn/GSE232079/suppl/GSE232079_counts.txt.gz"
+        ]
+      },
+      "allow_accession_level_grouping": false
+    }
+  ],
+  "lockbox": [
+    {
+      "accession": "GSE237752",
+      "role": "lockbox",
+      "modality": "bulk_rnaseq",
+      "platform_id": "GPL24676",
+      "endpoint": "keloid_binary",
+      "native_task": "keloid_vs_normal",
+      "description": "Historical lockbox; already scored once under prior freeze (immutable comparator).",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE237nnn/GSE237752/matrix/GSE237752_series_matrix.txt.gz",
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE237nnn/GSE237752/suppl/GSE237752_raw_count.txt.gz"
+        ]
+      },
+      "allow_accession_level_grouping": true
+    },
+    {
+      "accession": "GSE191067",
+      "role": "lockbox",
+      "modality": "scrna_pseudobulk",
+      "platform_id": "GPL24676",
+      "endpoint": "keloid_binary",
+      "native_task": "keloid_vs_normal",
+      "description": "Historical lockbox; already scored once under prior freeze (immutable comparator).",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE191nnn/GSE191067/matrix/GSE191067_series_matrix.txt.gz",
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE191nnn/GSE191067/suppl/GSE191067_all.UMI.matrix.csv.gz"
+        ]
+      },
+      "allow_accession_level_grouping": false
+    },
+    {
+      "accession": "GSE212954",
+      "role": "lockbox",
+      "modality": "bulk_rnaseq",
+      "platform_id": "GPL20301",
+      "endpoint": "keloid_binary",
+      "native_task": "keloid_vs_normal",
+      "description": "Prospective untouched lockbox: keloid center/margin vs clinically annotated normal controls. Expression downloaded only after freeze.",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE212nnn/GSE212954/matrix/GSE212954_series_matrix.txt.gz"
+      },
+      "download_after_freeze": {
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE212nnn/GSE212954/suppl/GSE212954_Expression_Gene.xlsx"
+        ]
+      },
+      "allow_accession_level_grouping": false
+    }
+  ],
+  "skipped_recovery": [
+    {
+      "accession": "GSE125022",
+      "reason": "GSE125022_RAW.tar contains ATAC wigs only; RNA-seq samples list Supplementary_file=NONE. Sample-level bulk RNA-seq requires SRA reprocessing.",
+      "status": "not_feasible_from_geo_suppl"
+    }
+  ],
+  "interpretation_only": [
+    {
+      "accession": "GSE266338",
+      "role": "interpretation_only",
+      "modality": "bulk_rnaseq",
+      "reason": "Single-donor / selected PIEZO2 subpopulation; not for primary prediction."
+    },
+    {
+      "accession": "GSE243716",
+      "role": "interpretation_only",
+      "modality": "bulk_rnaseq",
+      "reason": "One paired donor; auxiliary paired interpretation only."
+    },
+    {
+      "accession": "GSE262112",
+      "role": "interpretation_only",
+      "modality": "bulk_rnaseq",
+      "reason": "Cell lines under stretch; perturbational interpretation only."
+    },
+    {
+      "accession": "GSE293677",
+      "role": "interpretation_only",
+      "modality": "bulk_rnaseq",
+      "reason": "RUNX2 intervention only; not a multi-donor disease contrast."
+    },
+    {
+      "accession": "GSE303591",
+      "role": "interpretation_only",
+      "modality": "bulk_rnaseq",
+      "reason": "Two dermal cell lines with technical replicates; demoted under breakthrough v2 ledger."
+    },
+    {
+      "accession": "GSE232079",
+      "role": "interpretation_only",
+      "modality": "bulk_rnaseq",
+      "reason": "Commercial/immortalized fibroblast lines; demoted under breakthrough v2 ledger."
+    }
+  ],
+  "original_10_comparator": [
+    "E-MTAB-2509",
+    "E-MTAB-4945",
+    "GSE145725",
+    "GSE158395",
+    "GSE163973",
+    "GSE181297",
+    "GSE188952",
+    "GSE44270",
+    "GSE7890",
+    "Sun_Burns"
+  ],
+  "breakthrough_lockbox": [
+    {
+      "accession": "GSE185309",
+      "role": "breakthrough_lockbox",
+      "endpoint": "keloid_vs_unaffected_skin",
+      "description": "Keloid vs normal keratinocyte RNA-seq; scored once after breakthrough freeze (immutable; do not rescore).",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE185nnn/GSE185309/matrix/GSE185309_series_matrix.txt.gz",
+        "supplementary": [
+          "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE185nnn/GSE185309/suppl/GSE185309_counts_keratinocytes.csv.gz"
+        ]
+      }
+    },
+    {
+      "accession": "GSE218007",
+      "role": "lockbox",
+      "modality": "microarray",
+      "platform_id": "GPL23126",
+      "endpoint": "fibroblast_keloid_binary",
+      "native_task": "keloid_vs_normal",
+      "description": "v2 withheld fibroblast lockbox (Clariom S RMA-GENE series matrix). Score once; never use for selection.",
+      "download": {
+        "series_matrix": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE218nnn/GSE218007/matrix/GSE218007_series_matrix.txt.gz"
+      },
+      "allow_accession_level_grouping": false
+    }
+  ]
+}

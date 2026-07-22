@@ -1,0 +1,7 @@
+ECM_score
+profibrotic_fibroblast_score
+remodeling_score
+TGFb_score
+yap_taz_mechano_score
+wound_healing_score
+mesenchymal_score

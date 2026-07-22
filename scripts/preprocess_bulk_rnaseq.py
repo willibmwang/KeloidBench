@@ -5,22 +5,32 @@ from __future__ import annotations
 
 import argparse
 import gzip
+import json
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-from expression_processing import normalize_gene_symbol, write_expression_artifacts
+from expression_processing import module_coverage_report, normalize_gene_symbol, write_expression_artifacts
+from ensembl_map import load_ensembl_symbol_map, strip_ensembl_version
+from gene_modules import ALL_PINNED_GENES, MODULE_GENES
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 RAW_DIR = PROJECT_ROOT / "data/raw/bulk_rnaseq"
 OUT_DIR = PROJECT_ROOT / "data/processed/bulk_rnaseq"
 
 
-def _read_matrix(path: Path, sep: str, gene_col: str) -> pd.DataFrame:
+def _read_matrix(path: Path, sep: str, gene_col: str, *, ensembl_map: dict[str, str] | None = None) -> pd.DataFrame:
     df = pd.read_csv(path, sep=sep, compression="infer")
     df = df.rename(columns={gene_col: "gene"})
-    df["gene"] = df["gene"].map(normalize_gene_symbol)
+    if ensembl_map is not None:
+        mapped = []
+        for raw in df["gene"].astype(str):
+            key = strip_ensembl_version(raw)
+            mapped.append(ensembl_map.get(key) or normalize_gene_symbol(raw))
+        df["gene"] = mapped
+    else:
+        df["gene"] = df["gene"].map(normalize_gene_symbol)
     df = df.dropna(subset=["gene"])
     value_cols = [col for col in df.columns if col != "gene"]
     df[value_cols] = df[value_cols].apply(pd.to_numeric, errors="coerce")
@@ -122,16 +132,17 @@ def process_gse188952(raw_dir: Path) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
                 task,
                 response,
                 scar_type=scar,
-                keloid_vs_normal="keloid" if scar == "keloid" else "normal",
+                # Do not collapse hypertrophic/normotrophic scar into "normal" skin.
+                keloid_vs_normal="keloid" if scar == "keloid" else "unknown",
             )
         )
     meta = pd.DataFrame(rows)
     return meta, expr, {"accession": "GSE188952", "status": "ok", "n_samples": int(len(meta)), "n_genes": int(expr.shape[1]), "labels": meta["encoder_response"].value_counts().to_dict()}
 
 
-def process_sun_burns(raw_dir: Path) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
+def process_sun_burns(raw_dir: Path, ensembl_map: dict[str, str]) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
     path = raw_dir / "Sun et al Burns.txt"
-    expr = _read_matrix(path, sep="\t", gene_col="ensembl_gene_id")
+    expr = _read_matrix(path, sep="\t", gene_col="ensembl_gene_id", ensembl_map=ensembl_map)
     rows = []
     for sample_id in expr.index:
         if sample_id.startswith("Treat_K_"):
@@ -151,51 +162,61 @@ def process_sun_burns(raw_dir: Path) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
             )
         )
     meta = pd.DataFrame(rows)
-    return meta, expr, {"accession": "Sun_Burns", "status": "ok", "n_samples": int(len(meta)), "n_genes": int(expr.shape[1]), "labels": meta["encoder_response"].value_counts().to_dict()}
+    coverage = module_coverage_report(expr, accession="Sun_Burns")
+    if coverage["all_zero_programs"]:
+        raise RuntimeError(
+            "Sun_Burns: all program features have zero variance after Ensembl→symbol mapping."
+        )
+    return (
+        meta,
+        expr,
+        {
+            "accession": "Sun_Burns",
+            "status": "ok",
+            "n_samples": int(len(meta)),
+            "n_genes": int(expr.shape[1]),
+            "n_modules_with_signal": coverage["n_modules_with_signal"],
+            "labels": meta["encoder_response"].value_counts().to_dict(),
+        },
+    )
 
 
 def process(args: argparse.Namespace) -> None:
     args.out_dir.mkdir(parents=True, exist_ok=True)
-    processors = [process_gse158395, process_gse188952, process_sun_burns]
+    ensembl_map = load_ensembl_symbol_map(allow_download=not args.skip_ensembl_download)
+    processors = [
+        process_gse158395,
+        process_gse188952,
+        lambda raw_dir: process_sun_burns(raw_dir, ensembl_map),
+    ]
     metas = []
     exprs = []
     summaries = []
+    coverage_rows = []
     for fn in processors:
         meta, expr, summary = fn(args.raw_dir)
+        coverage = module_coverage_report(expr, accession=summary["accession"])
+        coverage_rows.extend(coverage["modules"])
         metas.append(meta)
         exprs.append(expr)
         summaries.append(summary)
-        print(f"{summary['accession']}: {summary['n_samples']} samples, {summary['n_genes']} genes")
+        print(
+            f"{summary['accession']}: {summary['n_samples']} samples, {summary['n_genes']} genes, "
+            f"{coverage['n_modules_with_signal']}/{len(MODULE_GENES)} modules with signal"
+        )
 
     metadata = pd.concat(metas, ignore_index=True, sort=False)
     expr = pd.concat(exprs, ignore_index=True, sort=False).fillna(0.0)
     if expr.shape[1] > args.max_genes:
         variances = expr.var(axis=0).sort_values(ascending=False)
-        module_genes = {
-            "COL1A1",
-            "COL3A1",
-            "FN1",
-            "ACTA2",
-            "TAGLN",
-            "MYL9",
-            "TGFB1",
-            "TGFB3",
-            "TGFBR1",
-            "TGFBR2",
-            "SMAD2",
-            "SMAD3",
-            "HIF1A",
-            "PECAM1",
-            "VWF",
-            "KDR",
-            "MMP14",
-            "ADAM12",
-            "HTRA1",
-            "CTHRC1",
-            "POSTN",
-            "IGFBP2",
-        }
-        selected = list(dict.fromkeys([*variances.head(args.max_genes).index.tolist(), *[g for g in module_genes if g in expr.columns]]))
+        selected = list(
+            dict.fromkeys(
+                [
+                    *variances.head(args.max_genes).index.tolist(),
+                    *[g for g in ALL_PINNED_GENES if g in expr.columns],
+                ]
+            )
+        )
         expr = expr[selected]
     skipped = [
         {"file": "GSE125022_List_all-genes_RNAseq_PGS-ANOVA_Keloid-vs-ctrl_no-filter.txt.gz", "reason": "differential gene list, not sample-level expression"},
@@ -213,6 +234,10 @@ def process(args: argparse.Namespace) -> None:
         skipped=skipped,
         jsonl_top_genes=args.jsonl_top_genes,
     )
+    coverage_path = args.out_dir / "bulk_rnaseq_module_coverage.csv"
+    pd.DataFrame(coverage_rows).to_csv(coverage_path, index=False)
+    summary["module_coverage"] = str(coverage_path.relative_to(PROJECT_ROOT))
+    (args.out_dir / "bulk_rnaseq_summary.json").write_text(json.dumps(summary, indent=2))
     print(summary)
 
 
@@ -222,6 +247,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--out-dir", type=Path, default=OUT_DIR)
     parser.add_argument("--jsonl-top-genes", type=int, default=2048)
     parser.add_argument("--max-genes", type=int, default=10000)
+    parser.add_argument("--skip-ensembl-download", action="store_true")
     return parser.parse_args()
 
 

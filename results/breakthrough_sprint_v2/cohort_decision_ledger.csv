@@ -1,0 +1,19 @@
+accession,n_profiles_in_corpus,role,compartment,primary_skin,rationale,v1_skin_evaluable,v1_normal_scar_evaluable,v1_pathologic_scar_evaluable
+E-MTAB-2509,27,fibroblast_sensitivity_only,primary_fibroblast,exclude,Fibroblast cultures with drug arms; untreated fibroblast sensitivity only.,True,False,False
+E-MTAB-4945,40,development_tissue_row_filter,mixed_keep_tissue_rows,include_tissue_rows_only,Keep whole_skin/dermis/epidermis rows; drop fibroblast/keratinocyte culture rows for primary.,True,False,False
+GSE121618,11,compartment_specialist_endothelial,endothelial,exclude,Keloid vs normal endothelial cells; not whole-skin tissue.,True,False,False
+GSE145725,19,fibroblast_sensitivity_only,primary_fibroblast,exclude,"Fibroblast cultures; route to fibroblast_keloid_binary, not tissue skin.",True,False,False
+GSE163973,220,scar_and_celltype_auxiliary,scrna_pseudobulk,exclude,"NF labeled normal_scar; use for scar/cell-type tasks, not unaffected-skin primary.",False,True,False
+GSE173900,9,development_tissue,bulk_tissue,include,Multi-donor bulk tissue keloid vs control skin.,True,False,False
+GSE181297,7,development_tissue_pseudobulk,scrna_all_barcodes,include,Donor-level all-barcode pseudobulk approximating tissue mix.,True,True,False
+GSE188952,12,scar_specialist,bulk_tissue,exclude,Scar-differential design (keloid/HTS/normotrophic); single donor.,False,True,True
+GSE190626,6,development_tissue,bulk_tissue,include,Multi-donor bulk tissue keloid vs normal skin.,True,False,False
+GSE210434,9,scar_specialist,primary_fibroblast,exclude,Scar-triad fibroblasts; scar specialists only.,False,True,True
+GSE232079,14,interpretation_only,cell_line,exclude,Commercial / immortalized fibroblast lines under DMSO vehicle; cell-line domain.,True,False,False
+GSE245660,5,scar_specialist,bulk_tissue,exclude,Keloid vs immature scar tissue; pathologic-scar specialist.,False,False,True
+GSE246562,12,auxiliary_stiffness_only,primary_fibroblast,exclude,Stiffness perturbation arm; keep for stiffness_response only.,True,False,False
+GSE282479,7,fibroblast_sensitivity_only,primary_fibroblast,exclude,Isolated fibroblasts forced into tissue skin endpoint caused complete LOSO inversion in v1.,True,False,False
+GSE303591,8,interpretation_only,cell_line,exclude,"Two dermal cell lines with technical replicates, not independent patient donors.",True,False,False
+GSE44270,32,audit_pending_donor_recovery,mixed_fibroblast_keratinocyte,exclude,Single pseudo-donor + mixed compartments; exclude until donor IDs recovered.,False,False,False
+GSE7890,19,fibroblast_sensitivity_only,primary_fibroblast,exclude,Fibroblast cultures; normals are normal_scar and half are hydrocortisone-treated.,False,False,False
+Sun_Burns,25,development_tissue_caution,bulk_tissue,include_with_single_donor_flag,Bulk tissue keloid vs normal but n_donors=1; keep with accession-level grouping caveat.,True,False,False

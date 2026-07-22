@@ -118,6 +118,55 @@
       "dataset": "dataset_c",
       "description": "Public keloid ArrayExpress study.",
       "status": "not_checked"
+    },
+    "GSE121618": {
+      "name": "GSE121618",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE121618",
+      "dataset": "public_keloid_development",
+      "description": "Keloid vs non-keloid-prone tissue microarray.",
+      "status": "registered"
+    },
+    "GSE245660": {
+      "name": "GSE245660",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE245660",
+      "dataset": "public_keloid_development",
+      "description": "Keloid vs immature-scar myofibroblast-rich RNA-seq.",
+      "status": "registered"
+    },
+    "GSE246562": {
+      "name": "GSE246562",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE246562",
+      "dataset": "public_keloid_development",
+      "description": "KDF/NDF stiffness mechanobiology RNA-seq.",
+      "status": "registered"
+    },
+    "GSE113619": {
+      "name": "GSE113619",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE113619",
+      "dataset": "public_keloid_development",
+      "description": "Keloid-prone wound-response time-series RNA-seq.",
+      "status": "registered"
+    },
+    "GSE237752": {
+      "name": "GSE237752",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE237752",
+      "dataset": "public_keloid_lockbox",
+      "description": "Bulk mRNA-seq keloid vs normal lockbox.",
+      "status": "registered"
+    },
+    "GSE191067": {
+      "name": "GSE191067",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE191067",
+      "dataset": "public_keloid_lockbox",
+      "description": "scRNA keloid niche lockbox (donor/sample pseudobulk).",
+      "status": "registered"
+    },
+    "public_keloid_cohorts_registry": {
+      "name": "public_keloid_cohorts_registry",
+      "url": "data/raw/public_keloid_cohorts.json",
+      "dataset": "public_keloid",
+      "description": "Machine-readable development/lockbox cohort registry.",
+      "status": "local"
     }
   },
   "missing_required_seed_files": [

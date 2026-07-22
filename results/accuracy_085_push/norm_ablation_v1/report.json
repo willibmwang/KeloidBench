@@ -1,0 +1,40 @@
+{
+  "protocol": "accuracy_085_push_v1",
+  "run_label": "norm_ablation_v1",
+  "generated_at": "2026-07-21T14:36:24.523961+00:00",
+  "normalization_modes": [
+    "none",
+    "train_accession_zscore",
+    "train_reference_quantile",
+    "train_combat_lite"
+  ],
+  "calibrations": [
+    "none",
+    "platt_inner_oof"
+  ],
+  "features": [
+    "composition_only",
+    "rank_programs_only",
+    "fibrosis_only"
+  ],
+  "ensemble_top_k": 0,
+  "selection_grain": "donor",
+  "n_folds": 5,
+  "frozen_config": {
+    "feature_set": "composition_only",
+    "model": "linear_svm",
+    "weight_mode": "accession_donor",
+    "threshold": 0.48940101604183406,
+    "normalization_mode": "none",
+    "calibration": "none"
+  },
+  "sample_macro_mean": 0.6440442731003605,
+  "donor_macro_mean": 0.7925674325674326,
+  "accessions": [
+    "E-MTAB-4945",
+    "GSE173900",
+    "GSE181297",
+    "GSE190626",
+    "Sun_Burns"
+  ]
+}

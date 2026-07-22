@@ -1,0 +1,122 @@
+{
+  "n_samples": 169,
+  "n_genes": 96574,
+  "accessions": [
+    {
+      "accession": "GSE121618",
+      "role": "development"
+    },
+    {
+      "accession": "GSE173900",
+      "role": "development"
+    },
+    {
+      "accession": "GSE190626",
+      "role": "development"
+    },
+    {
+      "accession": "GSE245660",
+      "role": "development"
+    },
+    {
+      "accession": "GSE113619",
+      "role": "development"
+    },
+    {
+      "accession": "GSE210434",
+      "role": "development"
+    },
+    {
+      "accession": "GSE303591",
+      "role": "development"
+    },
+    {
+      "accession": "GSE282479",
+      "role": "development"
+    },
+    {
+      "accession": "GSE232079",
+      "role": "development"
+    },
+    {
+      "accession": "GSE246562",
+      "role": "development"
+    },
+    {
+      "accession": "GSE237752",
+      "role": "lockbox"
+    },
+    {
+      "accession": "GSE191067",
+      "role": "lockbox"
+    },
+    {
+      "accession": "GSE212954",
+      "role": "lockbox"
+    },
+    {
+      "accession": "GSE178562",
+      "status": "ok",
+      "n_samples": 8,
+      "n_genes": 23412,
+      "n_modules_with_signal": 7,
+      "role": "development",
+      "labels": {
+        "hypertrophic_scar": 2,
+        "keloid": 2,
+        "normal": 2,
+        "normal_scar": 2
+      },
+      "note": "JUN non-KO human fibroblasts only; KO arms excluded; tech-reps share arm donor id."
+    },
+    {
+      "accession": "GSE181316",
+      "status": "ok",
+      "n_samples": 8,
+      "role": "development",
+      "note": "All-barcode tissue pseudobulk; keloid_3L/3R share donor."
+    }
+  ],
+  "skipped": [
+    {
+      "accession": "GSE246562",
+      "status": "error",
+      "error": "\"['N1 214kPa', 'N1 8kPa', 'K1 8kPa', 'K1 214kPa', 'K3 8kPa', 'K3 214kPa'] not in index\"",
+      "role": "development"
+    },
+    {
+      "accession": "GSE7980",
+      "status": "error",
+      "error": "GSE7980: all program features zero after mapping",
+      "role": "development_optional"
+    },
+    {
+      "accession": "GSE212954",
+      "status": "skipped_reserved_until_freeze",
+      "role": "lockbox",
+      "reason": "Expression_Gene.xlsx not present; download only after nested protocol freeze"
+    },
+    {
+      "accession": "GSE282479",
+      "status": "error",
+      "error": "GSE282479: all program features zero",
+      "role": "development"
+    },
+    {
+      "accession": "GSE232079",
+      "status": "error",
+      "error": "GSE232079: all program features zero",
+      "role": "development"
+    }
+  ],
+  "outputs": {
+    "metadata": "data/processed/public_keloid/public_keloid_sample_metadata.parquet",
+    "wide": "data/processed/public_keloid/public_keloid_expression_wide.parquet",
+    "matrix": "data/processed/public_keloid/public_keloid_X.npy",
+    "labels": "data/processed/public_keloid/public_keloid_encoder_labels.csv",
+    "gene_vocab": "data/processed/public_keloid/public_keloid_gene_vocab.txt",
+    "jsonl": "data/processed/public_keloid/public_keloid_encoder_decoder_samples.jsonl"
+  },
+  "cohort_roles": "data/processed/public_keloid/public_keloid_cohort_roles.json",
+  "updated_at": "2026-07-21T14:56:46.309772+00:00"
+}

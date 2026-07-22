@@ -1,0 +1,12 @@
+ecm_profibrotic_rank
+remodeling_rank
+yap_taz_mechano_rank
+wound_inflammation_rank
+fibroblast_identity_rank
+keratinocyte_compartment_rank
+immune_activation_rank
+jak_stat_th2_rank
+epidermal_keratinization_rank
+lipid_metabolism_rank
+sensory_neural_rank
+hypoxia_vascular_rank

@@ -1,0 +1,6 @@
+ecm_profibrotic_rank
+remodeling_rank
+yap_taz_mechano_rank
+wound_inflammation_rank
+fibroblast_identity_rank
+keratinocyte_compartment_rank

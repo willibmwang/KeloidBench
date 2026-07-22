@@ -1,0 +1,65 @@
+{
+  "development": [
+    "GSE121618",
+    "GSE173900",
+    "GSE190626",
+    "GSE245660",
+    "GSE113619",
+    "GSE210434",
+    "GSE303591",
+    "GSE282479",
+    "GSE232079",
+    "GSE246562",
+    "GSE178562",
+    "GSE181316"
+  ],
+  "lockbox": [
+    "GSE237752",
+    "GSE191067",
+    "GSE212954"
+  ],
+  "skipped": [
+    {
+      "accession": "GSE246562",
+      "status": "error",
+      "error": "\"['N1 214kPa', 'N1 8kPa', 'K1 8kPa', 'K1 214kPa', 'K3 8kPa', 'K3 214kPa'] not in index\"",
+      "role": "development"
+    },
+    {
+      "accession": "GSE7980",
+      "status": "error",
+      "error": "GSE7980: all program features zero after mapping",
+      "role": "development_optional"
+    },
+    {
+      "accession": "GSE212954",
+      "status": "skipped_reserved_until_freeze",
+      "role": "lockbox",
+      "reason": "Expression_Gene.xlsx not present; download only after nested protocol freeze"
+    },
+    {
+      "accession": "GSE282479",
+      "status": "error",
+      "error": "GSE282479: all program features zero",
+      "role": "development"
+    },
+    {
+      "accession": "GSE232079",
+      "status": "error",
+      "error": "GSE232079: all program features zero",
+      "role": "development"
+    }
+  ],
+  "original_10_comparator": [
+    "E-MTAB-2509",
+    "E-MTAB-4945",
+    "GSE145725",
+    "GSE158395",
+    "GSE163973",
+    "GSE181297",
+    "GSE188952",
+    "GSE44270",
+    "GSE7890",
+    "Sun_Burns"
+  ]
+}

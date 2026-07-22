@@ -119,6 +119,7 @@ def _metadata_row(
     response: str,
     n_cells: int,
     contrast_type: str = "pseudobulk",
+    eval_grain: str = "celltype_pseudobulk",
 ) -> dict:
     prompts = {
         "keloid_vs_normal": "Given this single-cell pseudobulk expression profile, predict whether the originating tissue is keloid or normal scar. Answer:",
@@ -152,6 +153,8 @@ def _metadata_row(
         "encoder_prompt": prompts[task],
         "encoder_response": response,
         "n_cells_pseudobulk": n_cells,
+        # donor_tissue profiles are used for broad keloid LOSO; celltype/subcluster stay auxiliary.
+        "eval_grain": eval_grain,
     }
 
 
@@ -352,6 +355,7 @@ def read_gse163973_pseudobulk(raw_dir: Path, min_cells: int) -> tuple[pd.DataFra
                         task="keloid_vs_normal",
                         response="keloid" if sample_type == "keloid" else "normal_scar",
                         n_cells=len(all_valid),
+                        eval_grain="donor_tissue",
                     )
                 )
 

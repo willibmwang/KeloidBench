@@ -1,6 +1,6 @@
 {
   "n_samples": 50,
-  "n_genes": 10016,
+  "n_genes": 10027,
   "accessions": [
     {
       "accession": "GSE158395",
@@ -28,7 +28,8 @@
       "accession": "Sun_Burns",
       "status": "ok",
       "n_samples": 25,
-      "n_genes": 51940,
+      "n_genes": 51927,
+      "n_modules_with_signal": 7,
       "labels": {
         "keloid": 17,
         "normal": 8
@@ -64,5 +65,6 @@
     "labels": "data/processed/bulk_rnaseq/bulk_rnaseq_encoder_labels.csv",
     "gene_vocab": "data/processed/bulk_rnaseq/bulk_rnaseq_gene_vocab.txt",
     "jsonl": "data/processed/bulk_rnaseq/bulk_rnaseq_encoder_decoder_samples.jsonl"
-  }
+  },
+  "module_coverage": "data/processed/bulk_rnaseq/bulk_rnaseq_module_coverage.csv"
 }

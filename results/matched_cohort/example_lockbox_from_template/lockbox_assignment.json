@@ -1,0 +1,33 @@
+{
+  "frozen_at": "2026-07-21T02:16:27.038949+00:00",
+  "enrollment_csv": "manuscript/matched_cohort/enrollment_template.csv",
+  "enrollment_sha256": "86f90d0b64d4e5b93c1b1714729e1cbc9e58c7f2fa8a7c24bf7fc65d6ad2817c",
+  "seed": 20260720,
+  "lockbox_fraction": 0.5,
+  "n_rows": 4,
+  "n_unique_donors": 3,
+  "n_lockbox_donors": 3,
+  "n_development_donors": 0,
+  "strata_arm_sets": {
+    "keloid|unaffected_skin": 1,
+    "hypertrophic_scar": 1,
+    "normotrophic_scar": 1
+  },
+  "counts_rows": {
+    "hypertrophic_scar|lockbox": 1,
+    "keloid|lockbox": 1,
+    "normotrophic_scar|lockbox": 1,
+    "unaffected_skin|lockbox": 1
+  },
+  "counts_donors": {
+    "development": 0,
+    "lockbox": 3
+  },
+  "rules": [
+    "Split is donor-grain: all rows for a donor inherit the same split_role.",
+    "Paired multi-arm donors are stratified by their arm-set and kept intact.",
+    "Lockbox donors are untouched until public-GEO-frozen model is applied once.",
+    "No lockbox expression may enter nested selection or threshold tuning.",
+    "Development half may be used only for calibration-transfer checks."
+  ]
+}

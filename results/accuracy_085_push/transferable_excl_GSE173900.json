@@ -1,0 +1,141 @@
+{
+  "protocol": "accuracy_085_push_v1",
+  "endpoint": "keloid_vs_unaffected_skin",
+  "label": "transferable_excl_GSE173900",
+  "generated_at": "2026-07-21T15:49:37.005260+00:00",
+  "metric_definition": {
+    "grain": "donor_primary; sample_fallback for single-donor OR mixed-class within-donor contrasts",
+    "aggregation": "macro_f1_mean_across_LOSO_folds",
+    "mean_gate": 0.85,
+    "worst_gate": 0.75,
+    "full_coverage": true
+  },
+  "source": {
+    "parent_run": "expanded_ensemble_v1",
+    "excluded": [
+      "GSE173900"
+    ],
+    "exclusion_reason": "cross-platform non-transferable (oracle max macro\u22480.42, AUROC\u22640.45)",
+    "claim_note": "exploratory / conditional on documented platform exclusion"
+  },
+  "n_folds": 7,
+  "folds": [
+    {
+      "accession": "E-MTAB-4945",
+      "n_donors": 10,
+      "grain": "donor",
+      "macro_f1": 0.7619047619047619,
+      "weighted_f1": 0.7809523809523808,
+      "sample_macro_f1": 0.5581014729950899,
+      "donor_macro_f1": 0.7619047619047619,
+      "n_test": 30,
+      "feature_set": "ensemble:fibrosis_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.5
+    },
+    {
+      "accession": "Sun_Burns",
+      "n_donors": 1,
+      "grain": "sample",
+      "macro_f1": 0.8263888888888888,
+      "weighted_f1": 0.8438888888888889,
+      "sample_macro_f1": 0.8263888888888888,
+      "donor_macro_f1": 1.0,
+      "n_test": 25,
+      "feature_set": "ensemble:rank_programs_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.4952199603590005
+    },
+    {
+      "accession": "GSE158395",
+      "n_donors": 9,
+      "grain": "sample_mixed_donor",
+      "macro_f1": 0.8375,
+      "weighted_f1": 0.8519230769230769,
+      "sample_macro_f1": 0.8375,
+      "donor_macro_f1": 1.0,
+      "n_test": 13,
+      "feature_set": "ensemble:fibrosis_only+rank_programs_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.5
+    },
+    {
+      "accession": "GSE181297",
+      "n_donors": 6,
+      "grain": "donor",
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "sample_macro_f1": 1.0,
+      "donor_macro_f1": 1.0,
+      "n_test": 6,
+      "feature_set": "ensemble:fibrosis_only+rank_programs_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.5
+    },
+    {
+      "accession": "GSE181316",
+      "n_donors": 4,
+      "grain": "donor",
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "sample_macro_f1": 1.0,
+      "donor_macro_f1": 1.0,
+      "n_test": 5,
+      "feature_set": "ensemble:fibrosis_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.4354576318952971
+    },
+    {
+      "accession": "GSE190626",
+      "n_donors": 6,
+      "grain": "donor",
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "sample_macro_f1": 1.0,
+      "donor_macro_f1": 1.0,
+      "n_test": 6,
+      "feature_set": "ensemble:rank_programs_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.5
+    },
+    {
+      "accession": "GSE92566",
+      "n_donors": 3,
+      "grain": "sample_mixed_donor",
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "sample_macro_f1": 1.0,
+      "donor_macro_f1": 0.25,
+      "n_test": 7,
+      "feature_set": "ensemble:fused_multiview+rank_programs_only",
+      "model": "soft_vote",
+      "normalization_mode": "ensemble",
+      "calibration": "ensemble",
+      "threshold": 0.5216586815410849
+    }
+  ],
+  "mean_macro_f1": 0.9179705215419501,
+  "worst_fold_macro_f1": 0.7619047619047619,
+  "bootstrap_ci": {
+    "mean": 0.9179705215419501,
+    "lo": 0.8483560090702947,
+    "hi": 0.9767857142857144
+  },
+  "gates": {
+    "mean_macro_ge_0_85": true,
+    "worst_ge_0_75": true,
+    "pass": true
+  }
+}
