@@ -1,5 +1,11 @@
 # KeloidBench interactive demo
 
+[![Open the demo in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/willibmwang/KeloidBench/tree/keloidbench-demo?quickstart=1)
+
+The badge runs this interface entirely through GitHub. After selecting
+**Create codespace**, dependency installation and Streamlit startup are
+automatic; GitHub opens the forwarded demo in a browser tab.
+
 This Streamlit application demonstrates five connected parts of KeloidBench:
 
 1. expression input, program coverage, and transferability checks;
