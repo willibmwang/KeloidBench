@@ -174,16 +174,100 @@
     <section class="section method-section" id="method">
       <div class="wrap">
         <div class="section-heading">
-          <div><p class="eyebrow dark">Algorithm</p><h2>Expression in. Auditable evidence out.</h2></div>
-          <p>The generative component is downstream of deterministic inference: it explains an evidence packet but cannot change the probability, class, confidence rule, or transfer warning.</p>
+          <div><p class="eyebrow dark">Method architecture</p><h2>From heterogeneous expression to transferable program evidence.</h2></div>
+          <p>KeloidBench is a program-grounded, cohort-aware classification system. It compresses each transcriptome into interpretable fibroblast and tissue programs, learns only linear decision functions, and separates prediction from confidence policy and explanation.</p>
         </div>
-        <ol class="pipeline" aria-label="KeloidBench algorithm pipeline">
-          <li><span>01</span><div><h3>Normalize</h3><p>Standardize HGNC symbols, collapse duplicates, and check program gene coverage.</p></div></li>
-          <li><span>02</span><div><h3>Program scoring</h3><p>Compute within-sample percentile-rank contrasts for versioned positive and reference gene sets.</p></div></li>
-          <li><span>03</span><div><h3>Classify</h3><p>Align the program feature vector to a frozen linear decision function and derive P(keloid).</p></div></li>
-          <li><span>04</span><div><h3>Abstain</h3><p>Withhold the class when maximum class probability falls below the fixed confidence policy.</p></div></li>
-          <li><span>05</span><div><h3>Explain</h3><p>Package scores, contributions, QC, and provenance into an immutable evidence record.</p></div></li>
-        </ol>
+
+        <div class="architecture-flow" aria-label="KeloidBench product architecture">
+          <div class="architecture-node"><span class="node-icon">G</span><small>Input</small><strong>Gene expression</strong><p>Sample × HGNC matrix</p></div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="architecture-node"><span class="node-icon">16</span><small>Encoder</small><strong>Biological programs</strong><p>Sample-local rank contrasts</p></div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="architecture-node"><span class="node-icon">V</span><small>Representation</small><strong>Program views</strong><p>Fibrosis · composition · fused</p></div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="architecture-node"><span class="node-icon">Σ</span><small>Inference</small><strong>Linear ensemble</strong><p>Study-aware soft vote</p></div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="architecture-node output-node"><span class="node-icon">✓</span><small>Output</small><strong>Selective evidence</strong><p>Predict · abstain · explain</p></div>
+        </div>
+
+        <div class="method-layers">
+          <article class="method-layer">
+            <span class="layer-number">01</span>
+            <div class="layer-title"><p>Input contract</p><h3>Normalize the vocabulary, then audit coverage.</h3></div>
+            <div class="layer-copy">
+              <p>The scorer accepts a sample-by-gene expression matrix. Gene identifiers are standardized to HGNC symbols, duplicate symbols are collapsed by their mean, non-numeric entries are coerced, and coverage is checked against the versioned program gene sets. The source platform and cohort remain attached as provenance—not as predictive features.</p>
+              <div class="method-tags"><span>HGNC mapping</span><span>duplicate collapse</span><span>program QC</span></div>
+            </div>
+          </article>
+
+          <article class="method-layer">
+            <span class="layer-number">02</span>
+            <div class="layer-title"><p>Program encoder</p><h3>Replace fragile markers with sample-local biology.</h3></div>
+            <div class="layer-copy">
+              <p>Within each sample, genes are converted to percentile ranks. A program score contrasts the mean rank of its positive genes with the mean rank of its reference genes. This makes the representation depend on relative pathway activity inside a sample rather than on a platform-specific expression scale.</p>
+              <div class="formula" aria-label="Program score formula"><span>s<sub>p</sub>(x)</span><strong>=</strong><span>mean rank<sub>x</sub>(G<sup>+</sup><sub>p</sub>)</span><strong>−</strong><span>mean rank<sub>x</sub>(G<sup>−</sup><sub>p</sub>)</span></div>
+              <p class="method-note">When a program has no reference set, the positive-gene mean is retained directly. The 16 versioned scores cover ECM/profibrotic activity, remodeling, mechanotransduction, inflammation, fibroblast identity, tissue composition, keratinization, metabolism, neural, and vascular programs. A minimum-gene rule prevents a sparsely represented program from silently appearing informative.</p>
+            </div>
+          </article>
+
+          <article class="method-layer">
+            <span class="layer-number">03</span>
+            <div class="layer-title"><p>Feature architecture</p><h3>Expose several biological views of the same profile.</h3></div>
+            <div class="layer-copy">
+              <p>The program bank is partitioned into predefined views: <strong>fibrosis-only</strong>, <strong>rank-programs-only</strong>, <strong>composition-only</strong>, <strong>scar-discriminative</strong>, and a <strong>fused multiview</strong>. Candidate models operate on these low-dimensional summaries rather than thousands of individual genes, reducing sensitivity to missing probes and cohort-specific marker behavior.</p>
+              <div class="view-strip" aria-label="Program feature views"><span>Fibrosis</span><span>Cell composition</span><span>Scar discrimination</span><span>Fused multiview</span></div>
+            </div>
+          </article>
+
+          <article class="method-layer">
+            <span class="layer-number">04</span>
+            <div class="layer-title"><p>Supervised layer</p><h3>Fit transparent linear learners with cohort-aware weighting.</h3></div>
+            <div class="layer-copy">
+              <p>Each candidate is a standardized linear model: linear SVM, L2-regularized logistic regression, or elastic-net logistic regression. Donor/accession weights prevent a large study or repeatedly sampled donor from dominating the fit. Inside each training partition, accession-blocked validation selects feature view, learner, normalization, calibration, and decision threshold; the three highest-ranked candidates are averaged as a soft-voting ensemble.</p>
+              <div class="method-tags"><span>linear SVM</span><span>ridge logistic</span><span>elastic net</span><span>top-3 soft vote</span></div>
+            </div>
+          </article>
+
+          <article class="method-layer">
+            <span class="layer-number">05</span>
+            <div class="layer-title"><p>Nested evaluation</p><h3>Make study transfer—not random profile splitting—the test.</h3></div>
+            <div class="layer-copy">
+              <p>In the outer loop, one entire public study is held out. The remaining studies alone perform inner model selection and threshold tuning; the chosen ensemble is then refit and evaluated once on the untouched study. Donor-level summaries and equal-accession fold aggregation keep repeated samples and cohort size from overstating performance.</p>
+              <div class="nested-protocol" aria-label="Nested leave-one-study-out evaluation">
+                <div><b>Outer fold</b><span>Hold out one study</span></div>
+                <i>→</i>
+                <div><b>Inner folds</b><span>Select on training studies</span></div>
+                <i>→</i>
+                <div><b>Refit</b><span>All outer-training data</span></div>
+                <i>→</i>
+                <div><b>Score once</b><span>Untouched study</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="method-layer">
+            <span class="layer-number">06</span>
+            <div class="layer-title"><p>Selective output</p><h3>Separate model score, class decision, and permission to answer.</h3></div>
+            <div class="layer-copy">
+              <p>The model score is compared with a learned class threshold. Confidence is <strong>max(score, 1 − score)</strong>; when it falls below the fixed policy threshold, KeloidBench returns <strong>abstain</strong> instead of forcing a label. Every result carries its program scores, linear feature contributions, gene-coverage QC, cohort-transfer status, and source provenance.</p>
+              <p class="method-note">A narrative model may summarize this immutable evidence packet, but it is downstream of inference and cannot alter the score, decision, abstention rule, or transfer warning.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="artifact-comparison" aria-label="Live scorer and benchmark evidence comparison">
+          <div class="comparison-heading"><p class="eyebrow dark">Two evidence objects</p><h3>The interactive scorer and the LOSO claim are deliberately kept separate.</h3></div>
+          <article>
+            <span>Live profile demo</span>
+            <h4>Frozen Stage-B scorer</h4>
+            <p>A standardized linear SVM fitted on 83 eligible profiles. It uses four composition program contrasts—fibroblast, keratinocyte, immune, and endothelial—with a class threshold of 0.498. The SVM margin is mapped through a sigmoid for the displayed score; it is a research score, not a clinically calibrated probability.</p>
+          </article>
+          <article>
+            <span>Cross-study evidence</span>
+            <h4>Nested program ensemble</h4>
+            <p>For each outer study, inner accession-blocked validation selects a top-three soft-voting ensemble from the broader program views and linear learners. On the seven-study transferable subset, this separate evaluation yields 0.918 mean LOSO macro F1 and 77/92 pooled held-out accuracy.</p>
+          </article>
+        </div>
       </div>
     </section>
 
