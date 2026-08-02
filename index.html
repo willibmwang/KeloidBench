@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260802-2">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260802-upload">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -79,8 +79,37 @@
 
         <div class="story-grid" id="story-grid" aria-label="Curated examples"></div>
 
+        <section class="upload-lab" id="upload-lab" aria-labelledby="upload-title">
+          <div class="upload-heading">
+            <div><p class="eyebrow dark">Analyze your data</p><h3 id="upload-title">Upload a processed GEO or keloid expression matrix</h3></div>
+            <p><strong>Private by design:</strong> scoring runs entirely in this browser. Your file is never uploaded to KeloidBench or sent to a server.</p>
+          </div>
+          <div class="upload-workspace">
+            <label class="file-drop" id="file-drop" for="expression-file">
+              <input id="expression-file" class="visually-hidden" type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 9h21l10 10v36H18z"/><path d="M39 9v11h10M32 44V26M25 33l7-7 7 7"/></svg>
+              <strong id="file-name">Drop an expression file here</strong>
+              <span>or click to choose CSV / TSV · up to 30 MB</span>
+            </label>
+            <div class="upload-settings">
+              <div class="upload-fields">
+                <label for="matrix-orientation"><span>Matrix layout</span><select id="matrix-orientation"><option value="auto">Detect automatically</option><option value="samples_rows">Samples in rows</option><option value="genes_rows">Genes in rows</option></select></label>
+                <label for="upload-accession"><span>GEO accession <i>optional</i></span><input id="upload-accession" type="text" placeholder="e.g. GSE123456" maxlength="32"></label>
+              </div>
+              <button id="analyze-upload" class="button upload-button" type="button" disabled>Analyze in browser</button>
+              <p>Use normalized, processed expression with <strong>HGNC gene symbols</strong>. Raw FASTQ, CEL files, and probe-ID-only matrices need preprocessing first.</p>
+              <details class="format-help"><summary>Accepted layouts</summary><code>sample_id,POSTN,COL1A1,KRT1,…<br>sample_01,8.2,7.1,3.4,…</code><code>gene_symbol,sample_01,sample_02,…<br>POSTN,8.2,6.1,…</code></details>
+            </div>
+          </div>
+          <div id="upload-status" class="upload-status hidden" role="status" aria-live="polite"></div>
+          <div id="upload-results" class="upload-results hidden">
+            <div class="upload-results-heading"><div><span class="panel-kicker">Browser-scored profiles</span><h4 id="upload-results-title">Analysis complete</h4></div><p>Click a row to inspect its programs and model drivers below.</p></div>
+            <div class="upload-table-wrap"><table><thead><tr><th>Sample</th><th>Score</th><th>Confidence</th><th>Result</th><th>Program coverage</th></tr></thead><tbody id="upload-results-body"></tbody></table></div>
+          </div>
+        </section>
+
         <div class="profile-toolbar">
-          <label for="profile-select">Browse all eligible public profiles</label>
+          <label for="profile-select">Browse public or uploaded profiles</label>
           <select id="profile-select" aria-label="Public profile"></select>
           <span class="toolbar-note"><span class="dot coral"></span> keloid reference <span class="dot teal"></span> unaffected reference</span>
         </div>
@@ -121,7 +150,7 @@
 
           <div class="visual-panel pca-panel">
             <div class="panel-heading">
-              <div><span class="panel-kicker">101 repository profiles</span><h3>Program-space map</h3></div>
+              <div><span class="panel-kicker" id="pca-count">101 repository profiles</span><h3>Program-space map</h3></div>
               <p>Click any point to inspect it</p>
             </div>
             <div id="pca-chart" class="svg-chart" aria-live="polite"></div>
@@ -280,6 +309,6 @@
   </footer>
 
   <div id="tooltip" class="tooltip" role="tooltip"></div>
-  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/app.js?v=20260802-upload" defer></script>
 </body>
 </html>

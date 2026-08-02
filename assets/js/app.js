@@ -10,7 +10,7 @@ const COLORS = {
   grid: "rgba(16,38,53,.16)",
 };
 
-const state = { data: null, profile: null, confidenceThreshold: 0.55, fold: null };
+const state = { data: null, profile: null, confidenceThreshold: 0.55, fold: null, uploadFile: null };
 const $ = (selector) => document.querySelector(selector);
 
 function escapeHtml(value) {
@@ -79,14 +79,16 @@ function buildStories() {
 
 function populateProfiles() {
   const profiles = [...state.data.profiles].sort((a, b) => {
+    if (Boolean(a.uploaded) !== Boolean(b.uploaded)) return a.uploaded ? -1 : 1;
     if (Boolean(a.curated_slug) !== Boolean(b.curated_slug)) return a.curated_slug ? -1 : 1;
     return `${a.accession}-${a.sample_id}`.localeCompare(`${b.accession}-${b.sample_id}`);
   });
   $("#profile-select").innerHTML = profiles.map((profile) => {
-    const star = profile.curated_slug ? "★ " : "";
-    return `<option value="${escapeHtml(profile.sample_id)}">${star}${escapeHtml(profile.sample_id)} · ${escapeHtml(profile.accession)}</option>`;
+    const marker = profile.uploaded ? "⬆ " : profile.curated_slug ? "★ " : "";
+    const name = profile.display_name || profile.sample_id;
+    return `<option value="${escapeHtml(profile.sample_id)}">${marker}${escapeHtml(name)} · ${escapeHtml(profile.accession)}</option>`;
   }).join("");
-  $("#profile-select").addEventListener("change", (event) => selectProfile(event.target.value, false));
+  $("#profile-select").onchange = (event) => selectProfile(event.target.value, false);
 }
 
 function selectProfile(sampleId, scrollToDemo = false) {
@@ -99,20 +101,27 @@ function selectProfile(sampleId, scrollToDemo = false) {
   renderPrograms(profile);
   renderPca(profile);
   renderContributions(profile);
+  document.querySelectorAll("#upload-results-body tr").forEach((row) => row.classList.toggle("selected", row.dataset.sample === sampleId));
   if (scrollToDemo) document.querySelector(".profile-toolbar").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function decisionForProfile(profile) {
+  if (profile.quality_forced_abstain) return "abstain";
+  return profile.confidence >= state.confidenceThreshold ? profile.pred_label : "abstain";
 }
 
 function updateDecision() {
   const profile = state.profile;
   if (!profile) return;
-  const represented = profile.accession !== "GSE173900";
-  const decision = profile.confidence >= state.confidenceThreshold ? profile.pred_label : "abstain";
-  $("#profile-name").textContent = profile.sample_id;
+  const transferStatus = profile.transfer_status || (profile.accession === "GSE173900" ? "non-transferable" : "represented");
+  const represented = transferStatus === "represented";
+  const decision = decisionForProfile(profile);
+  $("#profile-name").textContent = profile.display_name || profile.sample_id;
   $("#profile-meta").textContent = `${profile.accession} · ${titleCase(profile.modality)} · ${profile.platform_id}`;
 
   const transfer = $("#transfer-badge");
   transfer.className = `status-badge ${represented ? "" : "warning"}`;
-  transfer.textContent = represented ? "represented transfer subset" : "non-transferable platform";
+  transfer.textContent = represented ? "represented transfer subset" : transferStatus === "non-transferable" ? "non-transferable platform" : "uploaded · transfer unverified";
 
   $("#probability-value").textContent = pct(profile.prob_keloid);
   $("#probability-gauge").style.setProperty("--angle", `${profile.prob_keloid * 360}deg`);
@@ -126,9 +135,13 @@ function updateDecision() {
 
   const explanation = $("#decision-explanation");
   if (decision === "abstain") {
-    explanation.textContent = `Confidence ${fmt(profile.confidence)} does not meet the selected ${fmt(state.confidenceThreshold, 2)} policy. The probability remains visible, but no class is returned.`;
-  } else if (!represented) {
+    explanation.textContent = profile.quality_forced_abstain
+      ? `Only ${profile.live_programs_usable}/${profile.live_programs_expected} required model programs passed gene-coverage QC. The score remains visible, but the class is withheld.`
+      : `Confidence ${fmt(profile.confidence)} does not meet the selected ${fmt(state.confidenceThreshold, 2)} policy. The probability remains visible, but no class is returned.`;
+  } else if (transferStatus === "non-transferable") {
     explanation.textContent = "The model returns a class, but the platform transfer warning should take precedence over the prediction.";
+  } else if (!represented) {
+    explanation.textContent = `This uploaded cohort was not part of transfer evaluation. Confidence ${fmt(profile.confidence)} describes the model score, not external validation.`;
   } else {
     explanation.textContent = `Confidence ${fmt(profile.confidence)} meets the selected ${fmt(state.confidenceThreshold, 2)} policy.`;
   }
@@ -174,7 +187,7 @@ function renderPrograms(profile) {
     });
     content += svg("text", { x: labelWidth, y: y + 4, "text-anchor": "end", class: "chart-small" }, `${row.score >= 0 ? "+" : ""}${fmt(row.score, 2)}`);
   });
-  $("#program-chart").innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Program scores for ${escapeHtml(profile.sample_id)}">${content}</svg>`;
+  $("#program-chart").innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Program scores for ${escapeHtml(profile.display_name || profile.sample_id)}">${content}</svg>`;
 }
 
 function renderPca(profile) {
@@ -190,7 +203,7 @@ function renderPca(profile) {
   content += svg("text", { x: pad + 4, y: 17, class: "chart-small" }, "PC2");
   points.forEach((point) => {
     const selected = point.sample_id === profile.sample_id;
-    const fill = point.reference_label === "keloid" ? COLORS.coral : COLORS.teal;
+    const fill = point.reference_label === "keloid" ? COLORS.coral : point.reference_label === "non_keloid" ? COLORS.teal : COLORS.gold;
     const shape = point.transfer_group === "non-transferable platform" ? "rect" : "circle";
     const attrs = shape === "circle"
       ? { cx: x(point.pc1), cy: y(point.pc2), r: selected ? 7 : 4, fill, opacity: selected ? 1 : .58 }
@@ -294,18 +307,288 @@ function buildSources() {
   </article>`).join("");
 }
 
+function normalizeGeneSymbol(value) {
+  const gene = String(value || "").trim().replace(/[^A-Za-z0-9_.-]/g, "").toUpperCase();
+  if (!gene || ["NA", "NAN", "NULL", "GENE", "SYMBOL", "GENE_SYMBOL"].includes(gene)) return null;
+  return gene;
+}
+
+function detectDelimiter(text) {
+  const line = text.replace(/^\uFEFF/, "").split(/\r?\n/).find((item) => item.trim() && !item.trim().startsWith("!")) || "";
+  const tabs = (line.match(/\t/g) || []).length;
+  const commas = (line.match(/,/g) || []).length;
+  return tabs > commas ? "\t" : ",";
+}
+
+function parseDelimited(text, delimiter) {
+  const rows = [];
+  let row = [], field = "", quoted = false;
+  const input = text.replace(/^\uFEFF/, "");
+  for (let index = 0; index < input.length; index += 1) {
+    const character = input[index];
+    if (character === '"') {
+      if (quoted && input[index + 1] === '"') { field += '"'; index += 1; }
+      else quoted = !quoted;
+    } else if (character === delimiter && !quoted) {
+      row.push(field); field = "";
+    } else if (character === "\n" && !quoted) {
+      row.push(field.replace(/\r$/, "")); rows.push(row); row = []; field = "";
+    } else field += character;
+  }
+  if (field.length || row.length) { row.push(field.replace(/\r$/, "")); rows.push(row); }
+  return rows.filter((values) => values.some((value) => String(value).trim()) && !String(values[0] || "").trim().startsWith("!") && !String(values[0] || "").trim().startsWith("#"));
+}
+
+function uniqueNames(values) {
+  const counts = new Map();
+  return values.map((value, index) => {
+    const base = String(value || "").trim() || `sample_${index + 1}`;
+    const count = (counts.get(base) || 0) + 1;
+    counts.set(base, count);
+    return count === 1 ? base : `${base}_${count}`;
+  });
+}
+
+function numericValue(value) {
+  const number = Number(String(value ?? "").trim());
+  return Number.isFinite(number) ? number : 0;
+}
+
+function finalizeGeneAccumulator(accumulator) {
+  const genes = {};
+  accumulator.forEach((value, gene) => { genes[gene] = value.sum / value.count; });
+  return genes;
+}
+
+function parseExpressionMatrix(text, requestedOrientation = "auto") {
+  const delimiter = detectDelimiter(text);
+  const rows = parseDelimited(text, delimiter);
+  if (rows.length < 2 || rows[0].length < 2) throw new Error("The file needs a header row and at least one data row.");
+  const headers = rows[0].map((value) => String(value).trim());
+  const programGenes = new Set(Object.values(state.data.browser_scorer.program_sets).flatMap((program) => [...program.positive, ...program.negative]));
+  const firstHeader = String(headers[0] || "").trim().toLowerCase().replace(/[^a-z_]/g, "");
+  const headerMatches = headers.slice(1).map(normalizeGeneSymbol).filter((gene) => gene && programGenes.has(gene)).length;
+  const firstColumnMatches = rows.slice(1, 501).map((row) => normalizeGeneSymbol(row[0])).filter((gene) => gene && programGenes.has(gene)).length;
+  let orientation = requestedOrientation;
+  if (orientation === "auto") {
+    if (["gene", "genes", "symbol", "gene_symbol", "hgnc", "id_ref"].includes(firstHeader)) orientation = "genes_rows";
+    else if (["sample", "sample_id", "samples", "profile", "profile_id"].includes(firstHeader)) orientation = "samples_rows";
+    else orientation = firstColumnMatches > headerMatches ? "genes_rows" : "samples_rows";
+  }
+  const samples = [];
+  if (orientation === "samples_rows") {
+    const geneColumns = headers.slice(1).map(normalizeGeneSymbol);
+    const sampleNames = uniqueNames(rows.slice(1).map((row) => row[0]));
+    rows.slice(1).forEach((row, sampleIndex) => {
+      const accumulator = new Map();
+      geneColumns.forEach((gene, geneIndex) => {
+        if (!gene) return;
+        const current = accumulator.get(gene) || { sum: 0, count: 0 };
+        current.sum += numericValue(row[geneIndex + 1]); current.count += 1; accumulator.set(gene, current);
+      });
+      samples.push({ name: sampleNames[sampleIndex], genes: finalizeGeneAccumulator(accumulator) });
+    });
+  } else {
+    const sampleNames = uniqueNames(headers.slice(1));
+    const accumulators = sampleNames.map(() => new Map());
+    rows.slice(1).forEach((row) => {
+      const gene = normalizeGeneSymbol(row[0]);
+      if (!gene) return;
+      accumulators.forEach((accumulator, sampleIndex) => {
+        const current = accumulator.get(gene) || { sum: 0, count: 0 };
+        current.sum += numericValue(row[sampleIndex + 1]); current.count += 1; accumulator.set(gene, current);
+      });
+    });
+    sampleNames.forEach((name, index) => samples.push({ name, genes: finalizeGeneAccumulator(accumulators[index]) }));
+  }
+  if (!samples.length) throw new Error("No samples could be read from this matrix.");
+  if (samples.length > 200) throw new Error("This browser demo accepts up to 200 samples at once. Split larger cohorts into smaller files.");
+  return { samples, orientation, delimiter: delimiter === "\t" ? "TSV" : "CSV" };
+}
+
+function percentileRanks(geneValues) {
+  const entries = Object.entries(geneValues).filter(([, value]) => Number.isFinite(value)).sort((a, b) => a[1] - b[1]);
+  const ranks = {};
+  const count = entries.length;
+  let index = 0;
+  while (index < count) {
+    let end = index + 1;
+    while (end < count && entries[end][1] === entries[index][1]) end += 1;
+    const percentile = ((index + 1 + end) / 2) / count;
+    for (let cursor = index; cursor < end; cursor += 1) ranks[entries[cursor][0]] = percentile;
+    index = end;
+  }
+  return ranks;
+}
+
+function meanRank(ranks, genes) {
+  const values = genes.filter((gene) => Object.hasOwn(ranks, gene)).map((gene) => ranks[gene]);
+  return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+}
+
+function median(values) {
+  if (!values.length) return 0;
+  const sorted = [...values].sort((a, b) => a - b);
+  const middle = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
+}
+
+function referenceMedian(programName, referenceLabel) {
+  const values = state.data.profiles.filter((profile) => !profile.uploaded && profile.reference_label === referenceLabel).map((profile) => profile.programs.find((program) => program.program === programName)?.score).filter(Number.isFinite);
+  return median(values);
+}
+
+function scoreUploadedSample(sample, accession, batchId, layout) {
+  const scorer = state.data.browser_scorer;
+  const ranks = percentileRanks(sample.genes);
+  if (!Object.keys(ranks).length) throw new Error(`Sample ${sample.name} has no numeric gene values.`);
+  const scoreByProgram = {}, coverageByProgram = {};
+  Object.entries(scorer.program_sets).forEach(([name, program]) => {
+    const expected = [...new Set([...program.positive, ...program.negative])];
+    const present = expected.filter((gene) => Object.hasOwn(ranks, gene));
+    const usable = present.length >= program.min_genes_present;
+    const positive = meanRank(ranks, program.positive);
+    const negative = meanRank(ranks, program.negative);
+    let score = 0;
+    if (usable) {
+      if (positive !== null && negative !== null) score = positive - negative;
+      else if (positive !== null) score = positive;
+      else if (negative !== null) score = -negative;
+    }
+    scoreByProgram[name] = score;
+    coverageByProgram[name] = { present: present.length, expected: expected.length, usable };
+  });
+  const features = scorer.feature_columns.map((name) => scoreByProgram[name] ?? 0);
+  const standardized = features.map((value, index) => (value - scorer.scaler_mean[index]) / (scorer.scaler_scale[index] || 1));
+  const margin = scorer.intercept + standardized.reduce((sum, value, index) => sum + value * scorer.coefficients[index], 0);
+  const probKeloid = 1 / (1 + Math.exp(-(scorer.positive_direction * margin)));
+  const confidence = Math.max(probKeloid, 1 - probKeloid);
+  const predLabel = probKeloid >= scorer.class_threshold ? "keloid" : "non_keloid";
+  const liveUsable = scorer.feature_columns.filter((name) => coverageByProgram[name].usable).length;
+  const expectedGenes = new Set(Object.values(scorer.program_sets).flatMap((program) => [...program.positive, ...program.negative]));
+  const genesPresent = [...expectedGenes].filter((gene) => Object.hasOwn(sample.genes, gene)).length;
+  const programs = Object.keys(scorer.program_sets).map((name) => ({
+    program: name,
+    display_name: state.data.program_labels[name] || titleCase(name),
+    score: scoreByProgram[name],
+    direction: scoreByProgram[name] > 0 ? "positive" : scoreByProgram[name] < 0 ? "negative" : "neutral",
+    keloid_median: referenceMedian(name, "keloid"),
+    unaffected_median: referenceMedian(name, "non_keloid"),
+  }));
+  const contributions = scorer.feature_columns.map((feature, index) => ({
+    feature,
+    display_name: state.data.program_labels[feature] || titleCase(feature),
+    value: features[index],
+    contribution: scorer.positive_direction * standardized[index] * scorer.coefficients[index],
+  })).sort((a, b) => b.contribution - a.contribution);
+  const pca = scorer.pca;
+  const pcaFeatures = pca.feature_columns.map((name) => scoreByProgram[name] ?? 0);
+  const pcaScaled = pcaFeatures.map((value, index) => (value - pca.scaler_mean[index]) / (pca.scaler_scale[index] || 1) - pca.center[index]);
+  const coordinate = pca.components.map((component) => component.reduce((sum, weight, index) => sum + weight * pcaScaled[index], 0));
+  const sampleId = `uploaded::${batchId}::${sample.name}`;
+  const profile = {
+    sample_id: sampleId, display_name: sample.name, accession, reference_label: "unknown",
+    modality: "uploaded expression", platform_id: layout, uploaded: true, transfer_status: "unverified",
+    prob_keloid: probKeloid, confidence, pred_label: predLabel,
+    decision_threshold: scorer.class_threshold, confidence_threshold: state.confidenceThreshold,
+    quality_forced_abstain: liveUsable < scorer.feature_columns.length,
+    live_programs_usable: liveUsable, live_programs_expected: scorer.feature_columns.length,
+    program_genes_present: genesPresent, program_genes_expected: expectedGenes.size,
+    programs, contributions,
+  };
+  const point = { sample_id: sampleId, pc1: coordinate[0], pc2: coordinate[1], reference_label: "unknown", accession, transfer_group: "uploaded · transfer unverified", uploaded: true };
+  return { profile, point };
+}
+
+function setUploadStatus(message, kind = "") {
+  const status = $("#upload-status");
+  status.className = `upload-status ${kind}`.trim();
+  status.textContent = message;
+}
+
+function renderUploadResults() {
+  const profiles = state.data.profiles.filter((profile) => profile.uploaded);
+  const results = $("#upload-results");
+  if (!profiles.length) { results.classList.add("hidden"); return; }
+  results.classList.remove("hidden");
+  $("#upload-results-title").textContent = `${profiles.length} sample${profiles.length === 1 ? "" : "s"} analyzed`;
+  $("#upload-results-body").innerHTML = profiles.map((profile) => {
+    const decision = decisionForProfile(profile);
+    const label = decision === "abstain" ? "Not sure" : `${titleCase(decision)}-like`;
+    return `<tr data-sample="${escapeHtml(profile.sample_id)}"><td>${escapeHtml(profile.display_name)}</td><td>${pct(profile.prob_keloid)}</td><td>${fmt(profile.confidence)}</td><td><span class="upload-result-label ${decision.replaceAll("_", "-")}">${label}</span></td><td>${profile.program_genes_present}/${profile.program_genes_expected} genes · ${profile.live_programs_usable}/${profile.live_programs_expected} model programs</td></tr>`;
+  }).join("");
+  document.querySelectorAll("#upload-results-body tr").forEach((row) => row.addEventListener("click", () => selectProfile(row.dataset.sample, true)));
+}
+
+function setUploadFile(file) {
+  if (!file) return;
+  if (file.size > 30 * 1024 * 1024) {
+    state.uploadFile = null; $("#analyze-upload").disabled = true;
+    setUploadStatus("That file is larger than the 30 MB browser-demo limit.", "error"); return;
+  }
+  state.uploadFile = file;
+  $("#file-name").textContent = file.name;
+  $("#analyze-upload").disabled = false;
+  setUploadStatus(`${file.name} is ready. Nothing has left your device.`);
+}
+
+async function analyzeUpload() {
+  if (!state.uploadFile) return;
+  const button = $("#analyze-upload");
+  button.disabled = true; button.textContent = "Analyzing…";
+  setUploadStatus("Reading the matrix and scoring biological programs…");
+  await new Promise((resolve) => setTimeout(resolve, 30));
+  try {
+    const parsed = parseExpressionMatrix(await state.uploadFile.text(), $("#matrix-orientation").value);
+    const accession = String($("#upload-accession").value || "UPLOADED").trim().replace(/[^A-Za-z0-9_.-]/g, "").toUpperCase() || "UPLOADED";
+    const batchId = Date.now();
+    const newProfiles = [], newPoints = [];
+    for (let index = 0; index < parsed.samples.length; index += 1) {
+      const layout = `${parsed.delimiter} · ${parsed.orientation === "genes_rows" ? "genes in rows" : "samples in rows"}`;
+      const scored = scoreUploadedSample(parsed.samples[index], accession, batchId, layout);
+      newProfiles.push(scored.profile); newPoints.push(scored.point);
+      if (index && index % 20 === 0) await new Promise((resolve) => requestAnimationFrame(resolve));
+    }
+    state.data.profiles = [...state.data.profiles.filter((profile) => !profile.uploaded), ...newProfiles];
+    state.data.pca = [...state.data.pca.filter((point) => !point.uploaded), ...newPoints];
+    populateProfiles(); renderUploadResults();
+    const uploaded = state.data.profiles.filter((profile) => profile.uploaded);
+    const repositoryCount = state.data.profiles.filter((profile) => !profile.uploaded).length;
+    $("#pca-count").textContent = `${repositoryCount} repository profiles + ${uploaded.length} uploaded`;
+    selectProfile(uploaded[0].sample_id, false);
+    const lowCoverage = uploaded.filter((profile) => profile.quality_forced_abstain).length;
+    const warning = lowCoverage ? ` ${lowCoverage} sample${lowCoverage === 1 ? " was" : "s were"} withheld because required program coverage was incomplete.` : " All required model programs passed coverage QC.";
+    setUploadStatus(`Analyzed ${uploaded.length} sample${uploaded.length === 1 ? "" : "s"} locally. Detected ${parsed.orientation === "genes_rows" ? "genes in rows" : "samples in rows"}.${warning}`, lowCoverage ? "warning" : "");
+    $("#upload-results").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  } catch (error) {
+    console.error(error); setUploadStatus(error.message || "The matrix could not be analyzed.", "error");
+  } finally {
+    button.disabled = false; button.textContent = "Analyze in browser";
+  }
+}
+
+function wireUpload() {
+  const input = $("#expression-file"), drop = $("#file-drop");
+  input.addEventListener("change", () => setUploadFile(input.files[0]));
+  ["dragenter", "dragover"].forEach((name) => drop.addEventListener(name, (event) => { event.preventDefault(); drop.classList.add("dragging"); }));
+  ["dragleave", "drop"].forEach((name) => drop.addEventListener(name, (event) => { event.preventDefault(); drop.classList.remove("dragging"); }));
+  drop.addEventListener("drop", (event) => setUploadFile(event.dataTransfer.files[0]));
+  $("#analyze-upload").addEventListener("click", analyzeUpload);
+}
+
 function wireControls() {
   const threshold = $("#confidence-threshold");
   threshold.addEventListener("input", (event) => {
     state.confidenceThreshold = Number(event.target.value);
     $("#threshold-output").textContent = state.confidenceThreshold.toFixed(2);
     updateDecision();
+    renderUploadResults();
   });
 }
 
 async function init() {
   try {
-    const response = await fetch("assets/data/demo-data.json");
+    const response = await fetch("assets/data/demo-data.json?v=20260802-upload");
     if (!response.ok) throw new Error(`Data request failed (${response.status})`);
     state.data = await response.json();
     populateHeadline();
@@ -314,6 +597,7 @@ async function init() {
     buildEvidence();
     buildSources();
     wireControls();
+    wireUpload();
     const first = state.data.curated_examples.confident_keloid.sample_id;
     selectProfile(first, false);
   } catch (error) {
