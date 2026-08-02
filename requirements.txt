@@ -11,3 +11,4 @@ matplotlib>=3.8
 seaborn>=0.13
 lightgbm>=3.0
 wandb>=0.16
+streamlit>=1.32
