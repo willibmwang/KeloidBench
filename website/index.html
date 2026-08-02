@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260802-upload">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260802-artifact">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -138,6 +138,15 @@
             <input id="confidence-threshold" type="range" min="0.50" max="0.90" value="0.55" step="0.01">
             <p id="decision-explanation" class="policy-note"></p>
             <a id="paper-link" class="text-link hidden" href="#" target="_blank" rel="noreferrer">Trace to original paper ↗</a>
+
+            <div class="embedded-contributions">
+              <div class="embedded-contribution-heading">
+                <div><span class="panel-kicker">Transparent linear model</span><h4>Feature contributions</h4></div>
+                <p>← unaffected · keloid →</p>
+              </div>
+              <div id="contribution-chart"></div>
+              <p class="artifact-note">Frozen Stage-B artifact. Later LOSO ensemble evidence is shown separately below.</p>
+            </div>
           </aside>
 
           <div class="visual-panel program-panel">
@@ -156,14 +165,6 @@
             <div id="pca-chart" class="svg-chart" aria-live="polite"></div>
           </div>
 
-          <div class="visual-panel contribution-panel">
-            <div class="panel-heading">
-              <div><span class="panel-kicker">Transparent linear model</span><h3>Feature contributions</h3></div>
-              <p>← unaffected · keloid →</p>
-            </div>
-            <div id="contribution-chart"></div>
-            <p class="artifact-note">The live panel uses the frozen Stage-B artifact. Later LOSO ensemble evidence is displayed separately below.</p>
-          </div>
         </div>
       </div>
     </section>
