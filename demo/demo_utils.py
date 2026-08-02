@@ -190,7 +190,7 @@ def expression_qc(expression: pd.DataFrame, accession: str = "uploaded") -> dict
         transfer_note = "Transferability is unverified for this uploaded or unseen cohort."
     return {
         "n_samples": int(len(expression)),
-        "n_genes": int(expression.shape[1]),
+        "n_genes": int(expression.attrs.get("source_n_genes", expression.shape[1])),
         "pinned_genes_present": int(pinned_present),
         "pinned_genes_expected": int(len(ALL_PINNED_GENES)),
         "usable_programs": int(coverage["usable"].sum()),
@@ -244,7 +244,22 @@ def raw_expression_for_sample(sample_id: str, manifest: pd.DataFrame) -> pd.Data
         raise KeyError(f"Unknown sample: {sample_id}")
     relative = Path(str(matches.iloc[0]["artifact_wide_path"]))
     source = PROJECT_ROOT / relative
-    schema_columns = pq.read_schema(source).names
+    if source.exists():
+        schema_columns = pq.read_schema(source).names
+    else:
+        # The deployment branch intentionally excludes multi-gigabyte raw
+        # matrices. Preserve exact accession-level coverage using metadata
+        # frozen from the source schemas instead of fabricating expression.
+        coverage_path = PROJECT_ROOT / "demo/assets/public_accession_qc.json"
+        frozen = json.loads(coverage_path.read_text())
+        accession = str(matches.iloc[0]["accession"])
+        if accession not in frozen:
+            raise FileNotFoundError(f"No source matrix or frozen QC record for {accession}")
+        missing = set(frozen[accession]["missing_pinned_genes"])
+        genes = sorted(set(ALL_PINNED_GENES) - missing)
+        frame = pd.DataFrame(np.zeros((1, len(genes))), index=[sample_id], columns=genes)
+        frame.attrs["source_n_genes"] = int(frozen[accession]["n_genes"])
+        return frame
     metadata = set(METADATA_COLUMNS) | {
         "sample_id",
         "accession",
@@ -259,7 +274,9 @@ def raw_expression_for_sample(sample_id: str, manifest: pd.DataFrame) -> pd.Data
         if name not in metadata
     ]
     gene_columns = list(dict.fromkeys(gene_columns))
-    return pd.DataFrame(np.zeros((1, len(gene_columns))), index=[sample_id], columns=gene_columns)
+    frame = pd.DataFrame(np.zeros((1, len(gene_columns))), index=[sample_id], columns=gene_columns)
+    frame.attrs["source_n_genes"] = len(gene_columns)
+    return frame
 
 
 def _linear_contributions(bundle: dict[str, Any], aligned_features: pd.DataFrame) -> pd.DataFrame:
