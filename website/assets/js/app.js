@@ -51,15 +51,6 @@ function moveTooltip(event) {
 
 function hideTooltip() { $("#tooltip").style.display = "none"; }
 
-function populateHeadline() {
-  const h = state.data.headline;
-  $("#metric-studies").textContent = h.transferable_studies;
-  $("#metric-f1").textContent = fmt(h.loso_macro_f1);
-  $("#metric-accuracy").textContent = h.pooled_accuracy_count;
-  $("#metric-selective").textContent = fmt(h.selective_macro_f1);
-  $("#metric-coverage").textContent = pct(h.selective_coverage);
-}
-
 function buildStories() {
   const order = ["confident_keloid", "confident_unaffected", "abstention", "transfer_failure"];
   $("#story-grid").innerHTML = order.map((slug) => {
@@ -591,7 +582,6 @@ async function init() {
     const response = await fetch("assets/data/demo-data.json?v=20260802-upload");
     if (!response.ok) throw new Error(`Data request failed (${response.status})`);
     state.data = await response.json();
-    populateHeadline();
     buildStories();
     populateProfiles();
     buildEvidence();
