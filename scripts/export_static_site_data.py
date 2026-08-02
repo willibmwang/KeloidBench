@@ -33,6 +33,7 @@ from demo_utils import (  # noqa: E402
     program_score_table,
     score_sample,
 )
+from gene_modules import ALL_RANK_PROGRAM_SETS  # noqa: E402
 
 
 def parse_args() -> argparse.Namespace:
@@ -77,9 +78,10 @@ def main() -> None:
     sample_ids = [sample_id for sample_id in eligible.index if sample_id in fused.index]
 
     matrix = fused.loc[sample_ids].astype(float)
-    coordinates = PCA(n_components=2, random_state=13).fit_transform(
-        StandardScaler().fit_transform(matrix)
-    )
+    pca_scaler = StandardScaler().fit(matrix)
+    scaled_matrix = pca_scaler.transform(matrix)
+    pca_model = PCA(n_components=2, random_state=13).fit(scaled_matrix)
+    coordinates = pca_model.transform(scaled_matrix)
     pca = []
     for sample_id, coordinate in zip(sample_ids, coordinates, strict=True):
         row = eligible.loc[sample_id]
@@ -182,6 +184,12 @@ def main() -> None:
         }
 
     fixed = selective_report["fixed_confidence_baselines"]["0.55"]
+    pipeline = bundle["model"]
+    scaler = pipeline.named_steps["scale"]
+    classifier = pipeline.named_steps["clf"]
+    classes = [int(value) for value in classifier.classes_.tolist()]
+    positive_code = int(bundle["meta"]["positive_code"])
+    positive_direction = 1.0 if classes[1] == positive_code else -1.0
     payload = {
         "generated_from": "versioned repository artifacts",
         "endpoint": PRIMARY_ENDPOINT,
@@ -202,6 +210,37 @@ def main() -> None:
             "feature_set": str(bundle["meta"]["feature_set"]),
             "class_threshold": float(bundle["meta"]["config"]["threshold"]),
             "feature_columns": list(bundle["meta"]["feature_columns"]),
+        },
+        "browser_scorer": {
+            "input_contract": "processed sample-by-gene or gene-by-sample matrix with HGNC symbols",
+            "program_sets": {
+                name: {
+                    "positive": list(spec.get("positive", [])),
+                    "negative": list(spec.get("negative", [])),
+                    "min_genes_present": int(spec.get("min_genes_present", 1) or 1),
+                }
+                for name, spec in ALL_RANK_PROGRAM_SETS.items()
+            },
+            "feature_columns": list(bundle["meta"]["feature_columns"]),
+            "scaler_mean": [float(value) for value in scaler.mean_.tolist()],
+            "scaler_scale": [float(value) for value in scaler.scale_.tolist()],
+            "coefficients": [float(value) for value in classifier.coef_[0].tolist()],
+            "intercept": float(classifier.intercept_[0]),
+            "classes": classes,
+            "positive_code": positive_code,
+            "positive_direction": positive_direction,
+            "class_threshold": float(bundle["meta"]["config"]["threshold"]),
+            "confidence_threshold": float(DEFAULT_CONFIDENCE_THRESHOLD),
+            "pca": {
+                "feature_columns": list(matrix.columns),
+                "scaler_mean": [float(value) for value in pca_scaler.mean_.tolist()],
+                "scaler_scale": [float(value) for value in pca_scaler.scale_.tolist()],
+                "center": [float(value) for value in pca_model.mean_.tolist()],
+                "components": [
+                    [float(value) for value in component]
+                    for component in pca_model.components_.tolist()
+                ],
+            },
         },
         "curated_examples": CURATED_EXAMPLES,
         "program_labels": PROGRAM_LABELS,

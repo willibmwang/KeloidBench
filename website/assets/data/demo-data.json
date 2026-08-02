@@ -11,6 +11,431 @@
     "model": "linear_svm",
     "stage": "stage_b_donor_selection_calibration"
   },
+  "browser_scorer": {
+    "class_threshold": 0.4979889121578559,
+    "classes": [
+      0,
+      1
+    ],
+    "coefficients": [
+      1.09912832308967,
+      1.407902386326542,
+      0.8175558198564549,
+      -0.26837851575587196
+    ],
+    "confidence_threshold": 0.55,
+    "feature_columns": [
+      "fibroblast_composition_rank",
+      "keratinocyte_composition_rank",
+      "immune_composition_rank",
+      "endothelial_composition_rank"
+    ],
+    "input_contract": "processed sample-by-gene or gene-by-sample matrix with HGNC symbols",
+    "intercept": -0.15971115063865568,
+    "pca": {
+      "center": [
+        7.474768878664421e-17,
+        4.3969228698026004e-17,
+        -4.61676901329273e-17,
+        -3.29769215235195e-18,
+        2.41830757839143e-17,
+        0.0,
+        -1.31907686094078e-17,
+        2.5282306501364952e-17,
+        -4.3969228698026e-18,
+        1.31907686094078e-17,
+        -1.31907686094078e-17,
+        6.37553816121377e-17,
+        -2.6931152577540925e-17,
+        4.83661515678286e-17,
+        -8.7938457396052e-18,
+        -4.83661515678286e-17
+      ],
+      "components": [
+        [
+          0.2959129682702295,
+          0.30269102965164124,
+          0.2686261199619387,
+          0.27230401216246475,
+          0.29828906757270823,
+          -0.2991834103307325,
+          -0.1073115240270163,
+          0.2678941188544751,
+          -0.2952058965279278,
+          0.23791807439817578,
+          0.09514434958865445,
+          0.274062184720484,
+          0.27252455289101213,
+          -0.29731903396179066,
+          0.012700518881269864,
+          0.14829188301836263
+        ],
+        [
+          -0.1519493973990641,
+          -0.07303354378117365,
+          -0.06015874905898486,
+          0.2142252329109957,
+          -0.10645231912442518,
+          0.11932274922338165,
+          0.48545367391951527,
+          0.23153092606392314,
+          0.09470575493136676,
+          0.13767141915650632,
+          0.3459589653298469,
+          0.1947594753904119,
+          -0.20318210385677526,
+          0.0381322814814212,
+          0.5078595760547617,
+          0.34788540758164394
+        ]
+      ],
+      "feature_columns": [
+        "ecm_profibrotic_rank",
+        "remodeling_rank",
+        "yap_taz_mechano_rank",
+        "wound_inflammation_rank",
+        "fibroblast_identity_rank",
+        "keratinocyte_compartment_rank",
+        "immune_activation_rank",
+        "jak_stat_th2_rank",
+        "epidermal_keratinization_rank",
+        "lipid_metabolism_rank",
+        "sensory_neural_rank",
+        "hypoxia_vascular_rank",
+        "fibroblast_composition_rank",
+        "keratinocyte_composition_rank",
+        "immune_composition_rank",
+        "endothelial_composition_rank"
+      ],
+      "scaler_mean": [
+        -0.03975947194896642,
+        -0.05418086657521135,
+        -0.08069716830753408,
+        -0.1124192302750909,
+        -0.05011121742986642,
+        0.04533697735962506,
+        -0.023937516978910146,
+        -0.07957598034688662,
+        0.022072619934327433,
+        -0.058973975523699,
+        -0.04530813368271763,
+        -0.07972353823757572,
+        -0.032617885667616586,
+        0.04155430214249437,
+        -0.022191129026989963,
+        -0.01146412313099873
+      ],
+      "scaler_scale": [
+        0.5119876372551724,
+        0.5566032011640191,
+        0.3573688059949671,
+        0.4309050003381388,
+        0.48222720203354014,
+        0.5029137072406014,
+        0.342738684310779,
+        0.38448975439907074,
+        0.4254770477249355,
+        0.27374675917854985,
+        0.24470828603923533,
+        0.46743897756795083,
+        0.3410971107971723,
+        0.471055241006838,
+        0.28810981636148203,
+        0.2844318033123158
+      ]
+    },
+    "positive_code": 0,
+    "positive_direction": -1.0,
+    "program_sets": {
+      "ecm_profibrotic_rank": {
+        "min_genes_present": 4,
+        "negative": [
+          "KRT1",
+          "KRT10",
+          "KRT14",
+          "DMKN"
+        ],
+        "positive": [
+          "POSTN",
+          "CTHRC1",
+          "COMP",
+          "ASPN",
+          "ADAM12",
+          "TGFBI",
+          "COL1A1",
+          "COL3A1",
+          "FN1",
+          "COL11A1"
+        ]
+      },
+      "endothelial_composition_rank": {
+        "min_genes_present": 2,
+        "negative": [
+          "KRT1",
+          "PDGFRA",
+          "COL1A1"
+        ],
+        "positive": [
+          "PECAM1",
+          "VWF",
+          "KDR",
+          "CDH5",
+          "ENG"
+        ]
+      },
+      "epidermal_keratinization_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "POSTN",
+          "COL1A1",
+          "ACTA2"
+        ],
+        "positive": [
+          "KRT1",
+          "KRT10",
+          "KRT14",
+          "FLG",
+          "LOR",
+          "IVL",
+          "DMKN",
+          "DSC1"
+        ]
+      },
+      "fibroblast_composition_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "KRT1",
+          "KRT14",
+          "CD3D",
+          "CD68"
+        ],
+        "positive": [
+          "PDGFRA",
+          "LUM",
+          "DCN",
+          "COL1A2",
+          "FBLN1",
+          "THY1",
+          "DPT"
+        ]
+      },
+      "fibroblast_identity_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "KRT1",
+          "KRT14",
+          "KRT5",
+          "DMKN"
+        ],
+        "positive": [
+          "PDGFRA",
+          "LUM",
+          "DCN",
+          "COL1A2",
+          "FBLN1",
+          "THY1"
+        ]
+      },
+      "hypoxia_vascular_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "KRT1",
+          "KRT10"
+        ],
+        "positive": [
+          "HIF1A",
+          "VEGFA",
+          "PECAM1",
+          "VWF",
+          "KDR",
+          "ANGPT1",
+          "EDN1"
+        ]
+      },
+      "immune_activation_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "COL1A1",
+          "POSTN"
+        ],
+        "positive": [
+          "CD3D",
+          "CD8A",
+          "GZMB",
+          "PRF1",
+          "HLA-DRA",
+          "CD74",
+          "CCL5",
+          "CXCL9",
+          "CXCL10"
+        ]
+      },
+      "immune_composition_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "COL1A1",
+          "KRT1",
+          "POSTN"
+        ],
+        "positive": [
+          "CD3D",
+          "CD8A",
+          "CD68",
+          "CD74",
+          "HLA-DRA",
+          "LYZ",
+          "CSF1R"
+        ]
+      },
+      "jak_stat_th2_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "KRT1",
+          "KRT10"
+        ],
+        "positive": [
+          "IL4R",
+          "IL13",
+          "CCL11",
+          "CCL17",
+          "CCL18",
+          "JAK3",
+          "STAT6",
+          "OX40L",
+          "ICOS"
+        ]
+      },
+      "keratinocyte_compartment_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "PDGFRA",
+          "LUM",
+          "COL1A1"
+        ],
+        "positive": [
+          "KRT1",
+          "KRT10",
+          "KRT14",
+          "KRT5",
+          "DMKN",
+          "DSC1"
+        ]
+      },
+      "keratinocyte_composition_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "PDGFRA",
+          "LUM",
+          "COL1A1",
+          "CD3D"
+        ],
+        "positive": [
+          "KRT1",
+          "KRT10",
+          "KRT14",
+          "KRT5",
+          "DMKN",
+          "DSC1",
+          "FLG"
+        ]
+      },
+      "lipid_metabolism_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "KRT14",
+          "DMKN"
+        ],
+        "positive": [
+          "LGMN",
+          "FABP4",
+          "FABP5",
+          "PPARG",
+          "ACSL1",
+          "SCD",
+          "FASN",
+          "DGAT2"
+        ]
+      },
+      "remodeling_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "KRT1",
+          "KRT10"
+        ],
+        "positive": [
+          "MMP14",
+          "ADAM12",
+          "HTRA1",
+          "CTHRC1",
+          "MMP2",
+          "LOX",
+          "LOXL2"
+        ]
+      },
+      "sensory_neural_rank": {
+        "min_genes_present": 2,
+        "negative": [
+          "KRT1",
+          "PDGFRA"
+        ],
+        "positive": [
+          "NTRK1",
+          "NTRK2",
+          "NGFR",
+          "RET",
+          "TAC1",
+          "CALCA",
+          "TRPV1",
+          "PIEZO2"
+        ]
+      },
+      "wound_inflammation_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "KRT1",
+          "KRT10"
+        ],
+        "positive": [
+          "IL6",
+          "CXCL8",
+          "CCL2",
+          "ICAM1",
+          "VCAM1",
+          "SERPINE1",
+          "TNF",
+          "IL1B"
+        ]
+      },
+      "yap_taz_mechano_rank": {
+        "min_genes_present": 3,
+        "negative": [
+          "KRT14",
+          "DMKN"
+        ],
+        "positive": [
+          "CTGF",
+          "CYR61",
+          "ANKRD1",
+          "AMOTL2",
+          "TEAD1",
+          "WWTR1",
+          "YAP1"
+        ]
+      }
+    },
+    "scaler_mean": [
+      -0.047422392490997826,
+      0.060517581253685865,
+      -0.017265670266321576,
+      -0.023125984700059152
+    ],
+    "scaler_scale": [
+      0.3262648258129869,
+      0.4628121088782088,
+      0.29477591337580106,
+      0.29710795617808455
+    ]
+  },
   "curated_examples": {
     "abstention": {
       "description": "A borderline profile that the interface deliberately withholds.",
@@ -1052,16 +1477,16 @@
   "pca": [
     {
       "accession": "GSE92566",
-      "pc1": -3.7896806126244456,
-      "pc2": 2.332648175393344,
+      "pc1": -3.7896806126244518,
+      "pc2": 2.3326481753933415,
       "reference_label": "non_keloid",
       "sample_id": "GSM2432365",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE92566",
-      "pc1": 1.3263363832284858,
-      "pc2": -0.14417821920968357,
+      "pc1": 1.3263363832284867,
+      "pc2": -0.14417821920968477,
       "reference_label": "keloid",
       "sample_id": "GSM2432366",
       "transfer_group": "transferable subset"
@@ -1069,254 +1494,254 @@
     {
       "accession": "GSE92566",
       "pc1": -1.2525868102453093,
-      "pc2": 1.4556327709974057,
+      "pc2": 1.4556327709974055,
       "reference_label": "non_keloid",
       "sample_id": "GSM2432367",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE92566",
-      "pc1": -0.7759999462494742,
-      "pc2": -1.4543095089786007,
+      "pc1": -0.7759999462494751,
+      "pc2": -1.4543095089786022,
       "reference_label": "keloid",
       "sample_id": "GSM2432368",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE92566",
-      "pc1": 5.6929816194113165,
-      "pc2": -0.2776234963025161,
+      "pc1": 5.692981619411319,
+      "pc2": -0.27762349630251637,
       "reference_label": "keloid",
       "sample_id": "GSM2432369",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE92566",
-      "pc1": -2.573529100869879,
-      "pc2": 0.05553385366353437,
+      "pc1": -2.5735291008698793,
+      "pc2": 0.055533853663534326,
       "reference_label": "non_keloid",
       "sample_id": "GSM2432370",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE92566",
-      "pc1": 0.48805950853417374,
-      "pc2": -1.0006423395380988,
+      "pc1": 0.4880595085341738,
+      "pc2": -1.000642339538097,
       "reference_label": "keloid",
       "sample_id": "GSM2432371",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -1.3689624473030018,
-      "pc2": -0.42435001629333796,
+      "pc1": -1.3689624473030026,
+      "pc2": -0.42435001629333824,
       "reference_label": "non_keloid",
       "sample_id": "E-MTAB-4945_Sample_29",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 0.23917420169537057,
-      "pc2": 0.0842959875128422,
+      "pc1": 0.23917420169537051,
+      "pc2": 0.08429598751284154,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_30",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 4.066654924581118,
-      "pc2": 0.06795862512571428,
+      "pc1": 4.066654924581119,
+      "pc2": 0.06795862512571309,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_31",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 1.6061233170332232,
-      "pc2": 0.7659009047239068,
+      "pc1": 1.6061233170332245,
+      "pc2": 0.7659009047239054,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_32",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -3.8650250991505763,
-      "pc2": -0.09471842546552936,
+      "pc1": -3.8650250991505777,
+      "pc2": -0.09471842546552899,
       "reference_label": "non_keloid",
       "sample_id": "E-MTAB-4945_Sample_1",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -4.148171502056308,
-      "pc2": -1.2048580463842549,
+      "pc1": -4.148171502056309,
+      "pc2": -1.204858046384254,
       "reference_label": "non_keloid",
       "sample_id": "E-MTAB-4945_Sample_2",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -3.0721622596765976,
-      "pc2": 0.1357527644830443,
+      "pc1": -3.072162259676599,
+      "pc2": 0.13575276448304419,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_3",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -4.420560567646471,
-      "pc2": 0.31509091546227935,
+      "pc1": -4.420560567646473,
+      "pc2": 0.31509091546227885,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_4",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 2.0529155783225184,
-      "pc2": 1.4218220741671952,
+      "pc1": 2.05291557832252,
+      "pc2": 1.421822074167194,
       "reference_label": "non_keloid",
       "sample_id": "E-MTAB-4945_Sample_5",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 2.749543603974354,
-      "pc2": 2.1873899425535335,
+      "pc1": 2.7495436039743546,
+      "pc2": 2.1873899425535313,
       "reference_label": "non_keloid",
       "sample_id": "E-MTAB-4945_Sample_6",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 1.2712418335954823,
-      "pc2": -0.9517157837025912,
+      "pc1": 1.271241833595483,
+      "pc2": -0.9517157837025898,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_7",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 4.102279006165096,
-      "pc2": 0.7706255304720269,
+      "pc1": 4.102279006165098,
+      "pc2": 0.770625530472027,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_8",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -4.584981139757126,
-      "pc2": -0.15986851537147553,
+      "pc1": -4.584981139757128,
+      "pc2": -0.15986851537147534,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_9",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 3.0857845937440143,
-      "pc2": -1.360999156183507,
+      "pc1": 3.0857845937440147,
+      "pc2": -1.3609991561835049,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_10",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -3.1675176179086595,
-      "pc2": -2.0385616374182605,
+      "pc1": -3.16751761790866,
+      "pc2": -2.038561637418259,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_11",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 3.758433590827344,
-      "pc2": 0.43899158816442063,
+      "pc1": 3.7584335908273454,
+      "pc2": 0.43899158816442013,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_12",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -4.519481785511445,
-      "pc2": -0.6421394745714734,
+      "pc1": -4.519481785511447,
+      "pc2": -0.6421394745714726,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_13",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 3.3894739901425774,
-      "pc2": 1.4753770153479535,
+      "pc1": 3.3894739901425797,
+      "pc2": 1.4753770153479524,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_14",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -4.741215785858828,
-      "pc2": -0.07743157357208234,
+      "pc1": -4.741215785858831,
+      "pc2": -0.07743157357208247,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_15",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 3.979428342866483,
-      "pc2": 1.1903500325916956,
+      "pc1": 3.9794283428664845,
+      "pc2": 1.1903500325916943,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_16",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -4.406360377675049,
-      "pc2": -0.5947446386821994,
+      "pc1": -4.4063603776750515,
+      "pc2": -0.594744638682199,
       "reference_label": "non_keloid",
       "sample_id": "E-MTAB-4945_Sample_21",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 1.5123800517153205,
-      "pc2": 1.46627444706536,
+      "pc1": 1.5123800517153208,
+      "pc2": 1.4662744470653577,
       "reference_label": "non_keloid",
       "sample_id": "E-MTAB-4945_Sample_22",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -4.437352995464538,
-      "pc2": 0.785304845252715,
+      "pc1": -4.43735299546454,
+      "pc2": 0.7853048452527139,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_33",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 1.411740580449429,
-      "pc2": 0.03197013127525674,
+      "pc1": 1.4117405804494296,
+      "pc2": 0.03197013127525707,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_34",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -4.383696142944738,
-      "pc2": 0.6033308505296086,
+      "pc1": -4.383696142944737,
+      "pc2": 0.6033308505296072,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_35",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 1.689306419910363,
-      "pc2": -0.18922879734927064,
+      "pc1": 1.6893064199103642,
+      "pc2": -0.18922879734926984,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_36",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -3.059189829225901,
+      "pc1": -3.059189829225902,
       "pc2": -0.2765659324413629,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_37",
@@ -1324,55 +1749,55 @@
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 5.334654044043437,
-      "pc2": 0.0289812461241767,
+      "pc1": 5.334654044043438,
+      "pc2": 0.028981246124177098,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_38",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": -4.253204760551105,
-      "pc2": 0.137089872833108,
+      "pc1": -4.253204760551106,
+      "pc2": 0.13708987283310797,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_39",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "E-MTAB-4945",
-      "pc1": 0.13276150202778148,
-      "pc2": 0.7446154385585319,
+      "pc1": 0.13276150202778192,
+      "pc2": 0.7446154385585315,
       "reference_label": "keloid",
       "sample_id": "E-MTAB-4945_Sample_40",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE158395",
-      "pc1": -3.521315261092285,
-      "pc2": -0.898768515925964,
+      "pc1": -3.521315261092286,
+      "pc2": -0.8987685159259633,
       "reference_label": "non_keloid",
       "sample_id": "JKR491-163/BA_Normal_Normal_410",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE158395",
-      "pc1": 6.192492527374501,
-      "pc2": 0.17910122199475864,
+      "pc1": 6.192492527374502,
+      "pc2": 0.17910122199475947,
       "reference_label": "keloid",
       "sample_id": "JKR782-003_Keloid_LS_K5",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE158395",
-      "pc1": 2.9265277557190963,
-      "pc2": 0.4726912788350133,
+      "pc1": 2.9265277557190976,
+      "pc2": 0.47269127883501266,
       "reference_label": "keloid",
       "sample_id": "JKR782-003_Keloid_LS_K4",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE158395",
-      "pc1": -1.1787606261429782,
+      "pc1": -1.1787606261429784,
       "pc2": 1.1042835618127171,
       "reference_label": "non_keloid",
       "sample_id": "JKR782-004_Keloid_NL_K6",
@@ -1380,168 +1805,168 @@
     },
     {
       "accession": "GSE158395",
-      "pc1": 3.2036558164676507,
-      "pc2": -0.01762430078069745,
+      "pc1": 3.2036558164676516,
+      "pc2": -0.017624300780697735,
       "reference_label": "keloid",
       "sample_id": "JKR782-001_Keloid_LS_K2",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE158395",
-      "pc1": -2.743817191522775,
-      "pc2": 0.8692833138163051,
+      "pc1": -2.7438171915227754,
+      "pc2": 0.869283313816304,
       "reference_label": "non_keloid",
       "sample_id": "N2_Normal_Normal_N2",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE158395",
-      "pc1": 0.08786251885574521,
-      "pc2": 1.0482255921947798,
+      "pc1": 0.08786251885574524,
+      "pc2": 1.0482255921947792,
       "reference_label": "non_keloid",
       "sample_id": "JKR782-003_Keloid_NL_K3",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE158395",
-      "pc1": 0.7899732840937711,
-      "pc2": -0.288529261764176,
+      "pc1": 0.7899732840937714,
+      "pc2": -0.2885292617641749,
       "reference_label": "non_keloid",
       "sample_id": "N20_Normal_Normal_N20",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE158395",
-      "pc1": -2.5697054530586496,
-      "pc2": -1.5536649926622814,
+      "pc1": -2.56970545305865,
+      "pc2": -1.5536649926622796,
       "reference_label": "non_keloid",
       "sample_id": "N3_Normal_Normal_N3",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE158395",
-      "pc1": -4.064990398163827,
-      "pc2": 0.42365477412534314,
+      "pc1": -4.06499039816383,
+      "pc2": 0.4236547741253427,
       "reference_label": "non_keloid",
       "sample_id": "N19_Normal_Normal_N19",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE158395",
-      "pc1": -1.0095851882128049,
-      "pc2": 1.6263834714173768,
+      "pc1": -1.009585188212805,
+      "pc2": 1.6263834714173746,
       "reference_label": "non_keloid",
       "sample_id": "N1_Normal_Normal_N1",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE158395",
-      "pc1": 4.863879438221817,
-      "pc2": -0.10588045514871351,
+      "pc1": 4.8638794382218205,
+      "pc2": -0.10588045514871261,
       "reference_label": "keloid",
       "sample_id": "JKR782-004_Keloid_LS_K7",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE158395",
-      "pc1": -3.7507784696425435,
-      "pc2": 1.376934480810922,
+      "pc1": -3.7507784696425452,
+      "pc2": 1.37693448081092,
       "reference_label": "non_keloid",
       "sample_id": "JKR782-001_Keloid_NL_K1",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": 1.1983133188902149,
-      "pc2": 2.429305610944771,
+      "pc1": 1.1983133188902146,
+      "pc2": 2.429305610944768,
       "reference_label": "non_keloid",
       "sample_id": "Control_N_1",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": -0.04043850724429059,
-      "pc2": 2.2260888870113305,
+      "pc1": -0.04043850724429066,
+      "pc2": 2.2260888870113287,
       "reference_label": "non_keloid",
       "sample_id": "Control_N_2",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": 3.171317701495597,
-      "pc2": 3.7231948749660506,
+      "pc1": 3.1713177014955973,
+      "pc2": 3.7231948749660475,
       "reference_label": "non_keloid",
       "sample_id": "Control_N_3",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": -2.165320775384173,
-      "pc2": 0.5754979929685172,
+      "pc1": -2.1653207753841732,
+      "pc2": 0.5754979929685174,
       "reference_label": "non_keloid",
       "sample_id": "Control_N_4",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": -3.027565356803031,
-      "pc2": 0.20152957327366938,
+      "pc1": -3.0275653568030325,
+      "pc2": 0.20152957327366952,
       "reference_label": "non_keloid",
       "sample_id": "Control_N_5",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": -2.3278067595741545,
-      "pc2": 0.44307550050005956,
+      "pc1": -2.3278067595741563,
+      "pc2": 0.4430755005000595,
       "reference_label": "non_keloid",
       "sample_id": "Control_N_6",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": -2.826134271381004,
-      "pc2": 0.8619412263244044,
+      "pc1": -2.826134271381005,
+      "pc2": 0.8619412263244036,
       "reference_label": "non_keloid",
       "sample_id": "Control_N_7",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": 2.743191099369052,
-      "pc2": 2.326496905511771,
+      "pc1": 2.743191099369053,
+      "pc2": 2.326496905511768,
       "reference_label": "non_keloid",
       "sample_id": "Control_N_8",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": 1.298994284748665,
-      "pc2": -1.2558657572503478,
+      "pc1": 1.2989942847486646,
+      "pc2": -1.2558657572503469,
       "reference_label": "keloid",
       "sample_id": "Treat_K_1",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": 3.8608323359785586,
-      "pc2": -1.7803521308878825,
+      "pc1": 3.8608323359785603,
+      "pc2": -1.7803521308878807,
       "reference_label": "keloid",
       "sample_id": "Treat_K_2",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": 0.9388059260741073,
-      "pc2": 2.754991490222169,
+      "pc1": 0.9388059260741072,
+      "pc2": 2.754991490222166,
       "reference_label": "keloid",
       "sample_id": "Treat_K_3",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": -2.016445481919373,
-      "pc2": -0.6114329606835908,
+      "pc1": -2.0164454819193733,
+      "pc2": -0.6114329606835901,
       "reference_label": "keloid",
       "sample_id": "Treat_K_4",
       "transfer_group": "transferable subset"
@@ -1549,15 +1974,15 @@
     {
       "accession": "Sun_Burns",
       "pc1": 0.7179289471385705,
-      "pc2": -2.654234284363332,
+      "pc2": -2.65423428436333,
       "reference_label": "keloid",
       "sample_id": "Treat_K_5",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": -1.3722931042330235,
-      "pc2": -3.1152453375682554,
+      "pc1": -1.372293104233024,
+      "pc2": -3.1152453375682523,
       "reference_label": "keloid",
       "sample_id": "Treat_K_6",
       "transfer_group": "transferable subset"
@@ -1565,95 +1990,95 @@
     {
       "accession": "Sun_Burns",
       "pc1": 3.663426449555643,
-      "pc2": 3.0091300310960976,
+      "pc2": 3.009130031096095,
       "reference_label": "keloid",
       "sample_id": "Treat_K_7",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": 0.8992139248065615,
-      "pc2": -0.4781927541199945,
+      "pc1": 0.8992139248065617,
+      "pc2": -0.478192754119994,
       "reference_label": "keloid",
       "sample_id": "Treat_K_8",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": 0.6607924647611122,
-      "pc2": -1.6772982439043944,
+      "pc1": 0.6607924647611125,
+      "pc2": -1.6772982439043926,
       "reference_label": "keloid",
       "sample_id": "Treat_K_9",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": -1.5903164147157762,
-      "pc2": 0.5362277710178086,
+      "pc1": -1.590316414715777,
+      "pc2": 0.5362277710178085,
       "reference_label": "keloid",
       "sample_id": "Treat_K_10",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": -0.9339131226000977,
-      "pc2": -3.321074454670122,
+      "pc1": -0.933913122600098,
+      "pc2": -3.3210744546701183,
       "reference_label": "keloid",
       "sample_id": "Treat_K_11",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": -0.2893609971029093,
-      "pc2": -1.760052294530169,
+      "pc1": -0.2893609971029096,
+      "pc2": -1.7600522945301678,
       "reference_label": "keloid",
       "sample_id": "Treat_K_12",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": 0.17939976018815726,
-      "pc2": -2.703044747181514,
+      "pc1": 0.1793997601881572,
+      "pc2": -2.7030447471815116,
       "reference_label": "keloid",
       "sample_id": "Treat_K_13",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": 2.979666399969273,
-      "pc2": 1.6927057258607139,
+      "pc1": 2.9796663999692745,
+      "pc2": 1.6927057258607123,
       "reference_label": "keloid",
       "sample_id": "Treat_K_14",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": 0.8169960962737636,
-      "pc2": -2.515133319118535,
+      "pc1": 0.8169960962737635,
+      "pc2": -2.5151333191185326,
       "reference_label": "keloid",
       "sample_id": "Treat_K_15",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": -0.9109152173238135,
-      "pc2": 0.5559136859429197,
+      "pc1": -0.9109152173238139,
+      "pc2": 0.555913685942919,
       "reference_label": "keloid",
       "sample_id": "Treat_K_16",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "Sun_Burns",
-      "pc1": -0.04139162234700847,
-      "pc2": -1.7805761382507381,
+      "pc1": -0.041391622347007946,
+      "pc2": -1.7805761382507357,
       "reference_label": "keloid",
       "sample_id": "Treat_K_17",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE181297",
-      "pc1": -0.3758195025020632,
-      "pc2": -1.332799630147916,
+      "pc1": -0.37581950250206314,
+      "pc2": -1.3327996301479146,
       "reference_label": "keloid",
       "sample_id": "GSE181297_Ke01_all_barcodes",
       "transfer_group": "transferable subset"
@@ -1661,15 +2086,15 @@
     {
       "accession": "GSE181297",
       "pc1": 5.345779033445751,
-      "pc2": -0.07449668595070164,
+      "pc2": -0.07449668595070053,
       "reference_label": "keloid",
       "sample_id": "GSE181297_Ke02_all_barcodes",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE181297",
-      "pc1": -1.832640411863863,
-      "pc2": -3.7252757855646887,
+      "pc1": -1.8326404118638633,
+      "pc2": -3.725275785564686,
       "reference_label": "keloid",
       "sample_id": "GSE181297_Pt1_all_barcodes",
       "transfer_group": "transferable subset"
@@ -1677,151 +2102,151 @@
     {
       "accession": "GSE181297",
       "pc1": 0.7895752998439842,
-      "pc2": -1.3888180020261758,
+      "pc2": -1.3888180020261751,
       "reference_label": "keloid",
       "sample_id": "GSE181297_Pt2_all_barcodes",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE181297",
-      "pc1": -2.325306568537719,
-      "pc2": 2.1220570297989947,
+      "pc1": -2.3253065685377194,
+      "pc2": 2.122057029798993,
       "reference_label": "non_keloid",
       "sample_id": "GSE181297_NSV1_all_barcodes",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE181297",
-      "pc1": -0.2817887687500848,
-      "pc2": 2.609647309049119,
+      "pc1": -0.2817887687500851,
+      "pc2": 2.609647309049117,
       "reference_label": "non_keloid",
       "sample_id": "GSE181297_NSV2_all_barcodes",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE173900",
-      "pc1": 1.9500118626945646,
-      "pc2": 0.6753211782458126,
+      "pc1": 1.9500118626945655,
+      "pc2": 0.6753211782458133,
       "reference_label": "non_keloid",
       "sample_id": "KC1",
       "transfer_group": "non-transferable platform"
     },
     {
       "accession": "GSE173900",
-      "pc1": 4.15299461501117,
-      "pc2": 0.3383396283557101,
+      "pc1": 4.1529946150111705,
+      "pc2": 0.3383396283557098,
       "reference_label": "non_keloid",
       "sample_id": "KC2",
       "transfer_group": "non-transferable platform"
     },
     {
       "accession": "GSE173900",
-      "pc1": 0.39583570617928604,
-      "pc2": -6.3284137737349155,
+      "pc1": 0.39583570617928643,
+      "pc2": -6.32841377373491,
       "reference_label": "non_keloid",
       "sample_id": "KC3",
       "transfer_group": "non-transferable platform"
     },
     {
       "accession": "GSE173900",
-      "pc1": 3.7764679600124347,
-      "pc2": -0.4853580877008781,
+      "pc1": 3.776467960012434,
+      "pc2": -0.48535808770087774,
       "reference_label": "non_keloid",
       "sample_id": "KC4",
       "transfer_group": "non-transferable platform"
     },
     {
       "accession": "GSE173900",
-      "pc1": -5.283257055599243,
-      "pc2": 3.0445589786630562,
+      "pc1": -5.283257055599242,
+      "pc2": 3.0445589786630536,
       "reference_label": "keloid",
       "sample_id": "KL3",
       "transfer_group": "non-transferable platform"
     },
     {
       "accession": "GSE173900",
-      "pc1": -4.253270457694015,
-      "pc2": 1.5968298530430662,
+      "pc1": -4.2532704576940175,
+      "pc2": 1.5968298530430642,
       "reference_label": "keloid",
       "sample_id": "KL5",
       "transfer_group": "non-transferable platform"
     },
     {
       "accession": "GSE173900",
-      "pc1": 0.2382588943683475,
-      "pc2": 1.9203217293217387,
+      "pc1": 0.23825889436834774,
+      "pc2": 1.9203217293217374,
       "reference_label": "keloid",
       "sample_id": "KL6",
       "transfer_group": "non-transferable platform"
     },
     {
       "accession": "GSE173900",
-      "pc1": 3.7002679744150977,
-      "pc2": -2.333671322233853,
+      "pc1": 3.7002679744150995,
+      "pc2": -2.3336713222338514,
       "reference_label": "keloid",
       "sample_id": "KL7",
       "transfer_group": "non-transferable platform"
     },
     {
       "accession": "GSE173900",
-      "pc1": 5.514827543668004,
-      "pc2": 2.123417904217425,
+      "pc1": 5.514827543668006,
+      "pc2": 2.1234179042174226,
       "reference_label": "keloid",
       "sample_id": "KL9",
       "transfer_group": "non-transferable platform"
     },
     {
       "accession": "GSE190626",
-      "pc1": -1.5831009947252992,
-      "pc2": -1.2516028826762242,
+      "pc1": -1.5831009947253,
+      "pc2": -1.2516028826762238,
       "reference_label": "keloid",
       "sample_id": "Keloid1",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE190626",
-      "pc1": -0.6951091147633474,
-      "pc2": -4.592840770636839,
+      "pc1": -0.6951091147633475,
+      "pc2": -4.592840770636835,
       "reference_label": "keloid",
       "sample_id": "Keloid2",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE190626",
-      "pc1": 6.658534986861742,
-      "pc2": -0.09103542864010755,
+      "pc1": 6.658534986861744,
+      "pc2": -0.0910354286401067,
       "reference_label": "keloid",
       "sample_id": "Keloid3",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE190626",
-      "pc1": -4.8427430621160825,
-      "pc2": -0.22870892987701608,
+      "pc1": -4.842743062116085,
+      "pc2": -0.22870892987701663,
       "reference_label": "non_keloid",
       "sample_id": "Normal1",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE190626",
-      "pc1": -4.168675561737433,
-      "pc2": 2.6981551555944354,
+      "pc1": -4.168675561737434,
+      "pc2": 2.698155155594432,
       "reference_label": "non_keloid",
       "sample_id": "Normal2",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE190626",
-      "pc1": -4.725441362416142,
-      "pc2": 0.9715104403182213,
+      "pc1": -4.725441362416145,
+      "pc2": 0.9715104403182202,
       "reference_label": "non_keloid",
       "sample_id": "Normal3",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE181316",
-      "pc1": -4.728206503534197,
-      "pc2": 0.7589045304545703,
+      "pc1": -4.728206503534198,
+      "pc2": 0.7589045304545701,
       "reference_label": "non_keloid",
       "sample_id": "GSE181316_GSM5494683_skin_7",
       "transfer_group": "transferable subset"
@@ -1829,30 +2254,30 @@
     {
       "accession": "GSE181316",
       "pc1": 3.233285860275128,
-      "pc2": -0.07502524017009485,
+      "pc2": -0.07502524017009465,
       "reference_label": "keloid",
       "sample_id": "GSE181316_GSM5494684_keloid_1",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE181316",
-      "pc1": 6.391766033022646,
-      "pc2": -1.8017647483581098,
+      "pc1": 6.391766033022648,
+      "pc2": -1.801764748358108,
       "reference_label": "keloid",
       "sample_id": "GSE181316_GSM5494685_keloid_2",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE181316",
-      "pc1": -2.0101832954022263,
-      "pc2": -2.0111417696242087,
+      "pc1": -2.010183295402227,
+      "pc2": -2.0111417696242078,
       "reference_label": "keloid",
       "sample_id": "GSE181316_GSM5494686_keloid_3L",
       "transfer_group": "transferable subset"
     },
     {
       "accession": "GSE181316",
-      "pc1": 5.075926746777787,
+      "pc1": 5.075926746777789,
       "pc2": -0.6607991523906173,
       "reference_label": "keloid",
       "sample_id": "GSE181316_GSM5494687_keloid_3R",

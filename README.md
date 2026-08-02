@@ -21,7 +21,8 @@ and optional grounded language-model configuration.
 
 The browser-native demonstration is published from the `gh-pages` branch. It
 runs entirely as a GitHub website and does not require Codespaces or a Python
-server.
+server. Visitors can upload processed HGNC-symbol CSV/TSV expression matrices;
+the frozen scorer runs locally in their browser and does not transmit the file.
 
 ## Quick start
 
