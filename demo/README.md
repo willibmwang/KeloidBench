@@ -1,10 +1,10 @@
 # KeloidBench interactive demo
 
-[![Open the demo in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/willibmwang/KeloidBench/tree/keloidbench-demo?quickstart=1)
+[Open the static GitHub Pages demonstration](https://willibmwang.github.io/KeloidBench/)
 
-The badge runs this interface entirely through GitHub. After selecting
-**Create codespace**, dependency installation and Streamlit startup are
-automatic; GitHub opens the forwarded demo in a browser tab.
+The GitHub Pages version is browser-native and requires no Codespace or Python
+server. This Streamlit application remains the development and uploaded-CSV
+scoring surface.
 
 This Streamlit application demonstrates five connected parts of KeloidBench:
 

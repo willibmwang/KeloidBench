@@ -2,7 +2,7 @@
 
 Encoder-decoder modeling for keloid fibrotic biology from gene-expression data, with spheroid assays used as phenotype grounding and downstream validation.
 
-[![Open the demo in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/willibmwang/KeloidBench/tree/keloidbench-demo?quickstart=1)
+[Open the KeloidBench website](https://willibmwang.github.io/KeloidBench/)
 
 ## Interactive demonstration
 
@@ -19,9 +19,9 @@ KB_PY=/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python
 See [`demo/README.md`](demo/README.md) for input formats, artifact boundaries,
 and optional grounded language-model configuration.
 
-To run entirely through GitHub, open the Codespaces badge above, choose
-**Create codespace**, and wait for the environment to finish installing. GitHub
-will automatically open the forwarded **KeloidBench interactive demo** tab.
+The browser-native demonstration is published from the `gh-pages` branch. It
+runs entirely as a GitHub website and does not require Codespaces or a Python
+server.
 
 ## Quick start
 
