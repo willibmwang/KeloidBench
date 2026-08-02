@@ -73,15 +73,17 @@ button { color: inherit; }
 
 .demo-section { background: #e8eee9; border-top: 1px solid var(--line); }
 .story-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-.story-card { position: relative; min-height: 185px; padding: 22px; border: 1px solid var(--line); border-radius: 4px; text-align: left; background: rgba(255,255,255,.38); cursor: pointer; transition: background .2s, border-color .2s, transform .2s; }
+.story-card { --story-color: var(--teal); position: relative; min-height: 185px; padding: 22px; border: 1px solid var(--line); border-radius: 4px; text-align: left; background: rgba(255,255,255,.38); cursor: pointer; transition: background .2s, border-color .2s, transform .2s; }
 .story-card:hover { transform: translateY(-2px); background: rgba(255,255,255,.72); }
-.story-card.active { border-color: var(--teal); background: var(--white); box-shadow: 0 8px 24px rgba(16,38,53,.07); }
-.story-icon { display: grid; place-items: center; width: 32px; height: 32px; margin-bottom: 25px; border-radius: 50%; color: white; background: var(--teal); font-size: 12px; }
-.story-card[data-slug="confident_keloid"] .story-icon { background: var(--coral); }
-.story-card[data-slug="transfer_failure"] .story-icon { background: var(--gold); }
+.story-card[data-slug="confident_keloid"] { --story-color: var(--coral); }
+.story-card[data-slug="confident_unaffected"] { --story-color: var(--teal); }
+.story-card[data-slug="abstention"] { --story-color: var(--gold); }
+.story-card[data-slug="transfer_failure"] { --story-color: #b66b32; }
+.story-card.active { border-color: var(--story-color); background: var(--white); box-shadow: 0 8px 24px rgba(16,38,53,.07); }
+.story-icon { display: grid; place-items: center; width: 32px; height: 32px; margin-bottom: 25px; border-radius: 50%; color: white; background: var(--story-color); font-size: 12px; }
 .story-card h3 { margin: 0 0 7px; font-size: 15px; }
 .story-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
-.story-arrow { position: absolute; top: 22px; right: 20px; color: var(--teal); }
+.story-arrow { position: absolute; top: 22px; right: 20px; color: var(--story-color); }
 .profile-toolbar { display: grid; grid-template-columns: auto minmax(280px, 1fr) auto; gap: 18px; align-items: center; padding: 22px 0; margin-top: 30px; border-top: 1px solid var(--line); }
 .profile-toolbar label, .fold-toolbar label { font-size: 12px; font-weight: 700; }
 select { width: 100%; height: 44px; padding: 0 37px 0 13px; border: 1px solid var(--line); border-radius: 2px; color: var(--ink); background: var(--white); }
