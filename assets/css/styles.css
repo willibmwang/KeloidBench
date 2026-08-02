@@ -77,6 +77,7 @@ button { color: inherit; }
 .story-card:hover { transform: translateY(-2px); background: rgba(255,255,255,.72); }
 .story-card.active { border-color: var(--teal); background: var(--white); box-shadow: 0 8px 24px rgba(16,38,53,.07); }
 .story-icon { display: grid; place-items: center; width: 32px; height: 32px; margin-bottom: 25px; border-radius: 50%; color: white; background: var(--teal); font-size: 12px; }
+.story-card[data-slug="confident_keloid"] .story-icon { background: var(--coral); }
 .story-card[data-slug="transfer_failure"] .story-icon { background: var(--gold); }
 .story-card h3 { margin: 0 0 7px; font-size: 15px; }
 .story-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
