@@ -1,0 +1,34 @@
+{
+  "E-MTAB-4945": {
+    "missing_pinned_genes": ["OX40L"],
+    "n_genes": 24766
+  },
+  "GSE158395": {
+    "missing_pinned_genes": ["CD68", "OX40L"],
+    "n_genes": 10035
+  },
+  "GSE173900": {
+    "missing_pinned_genes": [],
+    "n_genes": 107834
+  },
+  "GSE181297": {
+    "missing_pinned_genes": ["ANKRD1", "NTRK1", "OX40L"],
+    "n_genes": 10010
+  },
+  "GSE181316": {
+    "missing_pinned_genes": [],
+    "n_genes": 107834
+  },
+  "GSE190626": {
+    "missing_pinned_genes": [],
+    "n_genes": 107834
+  },
+  "GSE92566": {
+    "missing_pinned_genes": ["OX40L"],
+    "n_genes": 30768
+  },
+  "Sun_Burns": {
+    "missing_pinned_genes": ["CD68", "OX40L"],
+    "n_genes": 10035
+  }
+}

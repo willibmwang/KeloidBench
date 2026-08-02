@@ -1,6 +1,21 @@
-# SpheroScar
+# KeloidBench
 
 Encoder-decoder modeling for keloid fibrotic biology from gene-expression data, with spheroid assays used as phenotype grounding and downstream validation.
+
+## Interactive demonstration
+
+The five-screen research demo covers expression quality control, program-score
+features, live prediction with confidence-based abstention, evidence-grounded
+narratives, and study-held-out cohort exploration.
+
+```bash
+KB_PY=/gpfs/radev/home/wbw7/.conda/envs/encdec_llm/bin/python
+"$KB_PY" -m pip install -r requirements.txt
+"$KB_PY" demo/launch_demo.py
+```
+
+See [`demo/README.md`](demo/README.md) for input formats, artifact boundaries,
+and optional grounded language-model configuration.
 
 ## Quick start
 
