@@ -304,7 +304,7 @@ def draw_figure(rows: list[dict], report: dict, output_dir: Path, web_export_dir
         fontsize=8.6,
         color=MUTED_COLOR,
     )
-    fig.subplots_adjust(left=0.075, right=0.985, bottom=0.19, top=0.80)
+    fig.subplots_adjust(left=0.075, right=0.985, bottom=0.19, top=0.855)
 
     stem = "fig_loso_per_study_journal"
     outputs = []
@@ -315,6 +315,9 @@ def draw_figure(rows: list[dict], report: dict, output_dir: Path, web_export_dir
     ]:
         path = output_dir / f"{stem}.{suffix}"
         fig.savefig(path, facecolor="white", bbox_inches="tight", **kwargs)
+        if suffix == "svg":
+            svg_text = path.read_text()
+            path.write_text("\n".join(line.rstrip() for line in svg_text.splitlines()) + "\n")
         outputs.append(path)
     plt.close(fig)
 
