@@ -1,0 +1,10 @@
+accession,display_name,macro_f1,evaluation_units,grain,n_donors,n_test,transferable_subset
+E-MTAB-4945,E-MTAB-4945,0.7619047619047619,n = 10 donors,donor,10,30,True
+GSE158395,GSE158395,0.8375,n = 13 profiles,sample_mixed_donor,9,13,True
+GSE181297,GSE181297,1.0,n = 6 donors,donor,6,6,True
+GSE181316,GSE181316,1.0,n = 4 donors,donor,4,5,True
+GSE190626,GSE190626,1.0,n = 6 donors,donor,6,6,True
+GSE92566,GSE92566,1.0,n = 7 profiles,sample_mixed_donor,3,7,True
+Sun_Burns,Sun & Burns,0.8263888888888888,n = 25 profiles,sample,1,25,True
+GSE173900,GSE173900,0.1818181818181818,n = 9 donors,donor,9,9,False
+MEAN_TRANSFERABLE,Mean LOSO,0.9179705215419501,7 studies,unweighted fold mean,,,True

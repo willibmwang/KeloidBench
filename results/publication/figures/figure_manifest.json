@@ -4,7 +4,8 @@
     "fig2_program_validity.png",
     "fig3_spheroid_separation.png",
     "fig4_transfer_summary.png",
-    "fig5_ml_ablation.png"
+    "fig5_ml_ablation.png",
+    "fig_loso_per_study_journal.png"
   ],
-  "output_dir": "/gpfs/radev/home/wbw7/Desktop/SpheroScar/results/publication/figures"
+  "output_dir": "results/publication/figures"
 }
