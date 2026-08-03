@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="670" viewBox="0 0 1200 670" role="img" aria-labelledby="title desc">
+  <title id="title">KeloidBench model results</title>
+  <desc id="desc">Across seven transferable studies, study-held-out macro F1 is 91.8 percent, pooled held-out accuracy is 83.7 percent or 77 of 92 profiles, selective macro F1 is 92.9 percent, and coverage at confidence 0.55 is 80.4 percent.</desc>
+  <rect width="1200" height="670" rx="12" fill="#f6f3ec"/>
+  <rect width="12" height="670" rx="6" fill="#8bd4bd"/>
+
+  <text x="64" y="58" fill="#3d806e" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2.2">TRANSFERABLE PUBLIC-STUDY SUBSET</text>
+  <text x="64" y="111" fill="#102635" font-family="Georgia, serif" font-size="43">Model performance at a glance</text>
+  <text x="64" y="145" fill="#68757a" font-family="Arial, sans-serif" font-size="17">Study-held-out evaluation · 92 profiles · confidence-aware reporting</text>
+
+  <rect x="947" y="46" width="189" height="88" rx="8" fill="#102635"/>
+  <text x="971" y="80" fill="#8bd4bd" font-family="Georgia, serif" font-size="34">7</text>
+  <text x="1010" y="76" fill="#ffffff" font-family="Arial, sans-serif" font-size="13" font-weight="700">TRANSFERABLE</text>
+  <text x="1010" y="98" fill="#ffffff" font-family="Arial, sans-serif" font-size="13" font-weight="700">STUDIES</text>
+  <text x="971" y="118" fill="#aab5b7" font-family="Arial, sans-serif" font-size="11">whole studies held out</text>
+
+  <line x1="64" y1="180" x2="1136" y2="180" stroke="#102635" stroke-opacity="0.14"/>
+
+  <text x="360" y="210" fill="#68757a" font-family="Arial, sans-serif" font-size="11">0%</text>
+  <text x="537.5" y="210" fill="#68757a" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">25%</text>
+  <text x="715" y="210" fill="#68757a" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">50%</text>
+  <text x="892.5" y="210" fill="#68757a" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">75%</text>
+  <text x="1070" y="210" fill="#68757a" font-family="Arial, sans-serif" font-size="11" text-anchor="end">100%</text>
+  <g stroke="#102635" stroke-opacity="0.09">
+    <line x1="360" y1="222" x2="360" y2="491"/>
+    <line x1="537.5" y1="222" x2="537.5" y2="491"/>
+    <line x1="715" y1="222" x2="715" y2="491"/>
+    <line x1="892.5" y1="222" x2="892.5" y2="491"/>
+    <line x1="1070" y1="222" x2="1070" y2="491"/>
+  </g>
+
+  <text x="64" y="255" fill="#102635" font-family="Arial, sans-serif" font-size="18" font-weight="700">Study-held-out macro F1</text>
+  <text x="64" y="279" fill="#68757a" font-family="Arial, sans-serif" font-size="13">mean across leave-one-study-out folds</text>
+  <rect x="360" y="242" width="710" height="36" rx="7" fill="#e3ded4"/>
+  <rect x="360" y="242" width="652" height="36" rx="7" fill="#3d806e"/>
+  <circle cx="1012" cy="260" r="7" fill="#8bd4bd"/>
+  <text x="1136" y="270" fill="#102635" font-family="Georgia, serif" font-size="32" text-anchor="end">91.8%</text>
+
+  <text x="64" y="360" fill="#102635" font-family="Arial, sans-serif" font-size="18" font-weight="700">Pooled held-out accuracy</text>
+  <text x="64" y="384" fill="#68757a" font-family="Arial, sans-serif" font-size="13">77 correct predictions / 92 profiles</text>
+  <rect x="360" y="347" width="710" height="36" rx="7" fill="#e3ded4"/>
+  <rect x="360" y="347" width="594" height="36" rx="7" fill="#bf684f"/>
+  <circle cx="954" cy="365" r="7" fill="#eda78f"/>
+  <text x="1136" y="375" fill="#102635" font-family="Georgia, serif" font-size="32" text-anchor="end">83.7%</text>
+
+  <text x="64" y="465" fill="#102635" font-family="Arial, sans-serif" font-size="18" font-weight="700">Selective macro F1</text>
+  <text x="64" y="489" fill="#68757a" font-family="Arial, sans-serif" font-size="13">after confidence-based abstention</text>
+  <rect x="360" y="452" width="710" height="36" rx="7" fill="#e3ded4"/>
+  <rect x="360" y="452" width="660" height="36" rx="7" fill="#3d806e"/>
+  <circle cx="1020" cy="470" r="7" fill="#8bd4bd"/>
+  <text x="1136" y="480" fill="#102635" font-family="Georgia, serif" font-size="32" text-anchor="end">92.9%</text>
+
+  <rect x="64" y="535" width="1072" height="95" rx="8" fill="#102635"/>
+  <text x="88" y="567" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="700">Selective prediction coverage</text>
+  <text x="88" y="590" fill="#aab5b7" font-family="Arial, sans-serif" font-size="12">confidence threshold = 0.55</text>
+  <rect x="365" y="558" width="570" height="28" rx="6" fill="#d7a34b"/>
+  <path d="M371 558h452v28H371a6 6 0 0 1-6-6v-16a6 6 0 0 1 6-6z" fill="#8bd4bd"/>
+  <text x="591" y="578" fill="#102635" font-family="Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">80.4% predicted</text>
+  <text x="879" y="578" fill="#102635" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">19.6% abstained</text>
+  <text x="1112" y="580" fill="#8bd4bd" font-family="Georgia, serif" font-size="28" text-anchor="end">80.4%</text>
+  <text x="1112" y="603" fill="#aab5b7" font-family="Arial, sans-serif" font-size="11" text-anchor="end">received a label</text>
+
+  <text x="64" y="654" fill="#68757a" font-family="Arial, sans-serif" font-size="11">Selective F1 is calculated on retained predictions; coverage is the fraction receiving a label, not a measure of accuracy.</text>
+</svg>
