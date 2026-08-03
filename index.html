@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260802-legibility">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260802-results">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -167,6 +167,20 @@
           <div><p class="eyebrow">Outer-fold evidence</p><h2>What happens when a whole study is unseen?</h2></div>
           <p>Inspect stored predictions from the later nested leave-one-study-out evaluation. The orange band marks cases withheld at confidence 0.55.</p>
         </div>
+
+        <figure class="results-overview">
+          <div class="results-overview-heading">
+            <div><span>Main results</span><strong>Transferable-subset summary</strong></div>
+            <div class="results-downloads">
+              <a href="assets/images/keloidbench-results.svg" download>SVG ↓</a>
+              <a href="assets/images/keloidbench-results.png" download>PNG ↓</a>
+            </div>
+          </div>
+          <div class="results-graphic-frame">
+            <img src="assets/images/keloidbench-results.svg?v=20260802-results" alt="KeloidBench results: 91.8% study-held-out macro F1, 83.7% pooled accuracy, 92.9% selective macro F1, and 80.4% selective coverage across seven transferable studies.">
+          </div>
+          <figcaption>Selective macro F1 applies to predictions retained at the 0.55 confidence policy; coverage reports how often the model returns a label.</figcaption>
+        </figure>
 
         <div class="fold-toolbar">
           <label for="fold-select">Held-out study</label>
